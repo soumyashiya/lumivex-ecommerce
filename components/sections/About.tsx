@@ -1,80 +1,75 @@
-﻿'use client';
+import { PROCESS_STEPS, STATS } from '@/lib/data';
 
-import { img, IMAGES, STATS } from '@/lib/data';
-import CurtainImage from '@/components/animations/CurtainImage';
-import RevealText from '@/components/animations/RevealText';
-import FadeIn from '@/components/animations/FadeIn';
-import CountUp from '@/components/animations/CountUp';
-
+/**
+ * Who we are, followed by the three stages between synthesis and dispatch.
+ * The steps are numbered because they genuinely are a sequence — each one
+ * has to complete before the next can start.
+ *
+ * `stack-over` is what lets this ride up over the parked section above — see
+ * `.stack-pin` in globals.css. The top radius is the tell that one surface is
+ * sliding over another; without it the overlap is invisible and the effect
+ * just reads as a stall.
+ */
 export default function About() {
   return (
-    <section id="about" className="relative bg-cream py-section">
-      <div className="container-wide">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-20">
-          {/* Portrait */}
-          <div className="lg:col-span-5">
-            <CurtainImage
-              src={img(IMAGES.aboutPortrait, 1200)}
-              alt="Lumivex research compound, in-house"
-              className="aspect-[3/4] w-full"
-              sizes="(max-width: 1023px) 100vw, 42vw"
-              direction="up"
-              intensity={9}
-            />
-          </div>
-
-          {/* Story */}
-          <div className="lg:col-span-6 lg:col-start-7">
-            <span className="eyebrow">About Lumivex</span>
-            <RevealText
-              as="h2"
-              split="lines"
-              className="mt-6 text-section font-extralight text-charcoal"
-            >
-              Effortlessly advance science and research.
-            </RevealText>
-
-            <div className="mt-8 space-y-6">
-              <RevealText
-                as="p"
-                split="lines"
-                className="text-base font-light leading-relaxed text-charcoal/65"
-              >
-                Lumivex develops compounds for laboratory research use only. Our
-                research peptides and formulations are supplied in sealed,
-                fixed-volume formats with regulated, research-only supply and
-                full traceability across Europe &amp; the UK.
-              </RevealText>
-              <RevealText
-                as="p"
-                split="lines"
-                className="text-base font-light leading-relaxed text-charcoal/65"
-              >
-                Our in-house R&amp;D lab produces research-grade peptide APIs
-                under controlled clean room conditions with batch validation,
-                third-party analysis and a documented chain of custody from
-                synthesis through release.
-              </RevealText>
-            </div>
-
-            {/* Stats */}
-            <div className="mt-14 grid grid-cols-1 gap-x-8 gap-y-10 border-t border-charcoal/10 pt-12 sm:grid-cols-3">
-              {STATS.map((stat) => (
-                <FadeIn key={stat.label} y={28}>
-                  <div>
-                    <p className="text-4xl font-extralight tracking-tightest text-charcoal md:text-5xl">
-                      <CountUp value={stat.value} />
-                      <span className="text-gold">{stat.suffix}</span>
-                    </p>
-                    <p className="mt-3 text-[11px] uppercase tracking-wider leading-snug text-charcoal/50">
-                      {stat.label}
-                    </p>
-                  </div>
-                </FadeIn>
-              ))}
-            </div>
+    <section
+      id="about"
+      className="stack-over section-y bg-off-white desktop:rounded-t-2xl"
+    >
+      <div className="container-ag">
+        <div className="grid grid-cols-1 gap-lg desktop:grid-cols-2 desktop:gap-4xl">
+          <h2 className="max-w-[16ch] text-h2 text-green-deep">
+            Purity verified. Paperwork included.
+          </h2>
+          <div className="space-y-md">
+            <p className="max-w-prose text-base text-grey-700">
+              Lumivex supplies laboratories across the UK and EU with
+              research-grade peptides and reference compounds. We built the
+              company around being unremarkable about the basics: synthesise
+              in-house, test independently, document everything, and answer
+              the phone.
+            </p>
+            <p className="max-w-prose text-base text-grey-700">
+              Every compound is produced under controlled clean-room
+              conditions, assayed by a third-party laboratory, and released
+              with a certificate tied to its own batch number. Supplied
+              strictly for in vitro research.
+            </p>
           </div>
         </div>
+
+        {/* Measures */}
+        <dl className="mt-2xl grid grid-cols-1 gap-lg border-t border-[color:var(--border-hair)] pt-xl sm:grid-cols-3 desktop:mt-5xl">
+          {STATS.map((stat) => (
+            <div key={stat.label}>
+              <dt className="sr-only">{stat.label}</dt>
+              <dd>
+                <span className="block text-[clamp(2.5rem,5vw,3.75rem)] leading-none tracking-tighter text-green-deep">
+                  {stat.value}
+                  <span className="text-earth">{stat.suffix}</span>
+                </span>
+                <span className="mt-sm block max-w-[26ch] text-sm text-grey-500">
+                  {stat.label}
+                </span>
+              </dd>
+            </div>
+          ))}
+        </dl>
+
+        {/* Sequence */}
+        <ol className="mt-2xl grid grid-cols-1 gap-lg border-t border-[color:var(--border-hair)] pt-xl tablet:grid-cols-3 desktop:mt-5xl">
+          {PROCESS_STEPS.map((step, i) => (
+            <li key={step.title}>
+              <span className="font-mono text-xs uppercase tracking-label text-earth">
+                Step {String(i + 1).padStart(2, '0')}
+              </span>
+              <h3 className="mt-sm text-h3 text-green-deep">{step.title}</h3>
+              <p className="mt-sm max-w-[40ch] text-base text-grey-700">
+                {step.text}
+              </p>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );

@@ -51,10 +51,10 @@ function RegisterForm() {
   };
 
   return (
-    <div className="container-wide flex min-h-[80vh] items-center justify-center py-24">
+    <div className="container-ag flex min-h-[60vh] items-center justify-center section-y">
       <div className="w-full max-w-md">
-        <span className="eyebrow">Account</span>
-        <h1 className="mt-3 text-display font-extralight tracking-tightest text-charcoal">
+        
+        <h1 className="text-h2 text-black">
           Create account
         </h1>
 
@@ -67,7 +67,7 @@ function RegisterForm() {
           <Input label="Country of residence" value={form.country_of_residence} onChange={onChange('country_of_residence')} required placeholder="United Kingdom" />
 
           {error && (
-            <p className="rounded-[4px] border border-red-600/20 bg-red-600/5 px-4 py-3 text-[13px] font-light text-red-600/90">
+            <p className="rounded-card border border-danger/30 bg-danger-bg px-md py-smd text-sm text-black">
               {error}
             </p>
           )}
@@ -75,17 +75,17 @@ function RegisterForm() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full rounded-full bg-charcoal py-4 text-sm font-medium text-ivory transition-colors duration-500 hover:bg-gold disabled:cursor-not-allowed disabled:opacity-70"
+            className="btn btn-primary btn-lg w-full"
           >
             {loading ? 'Creating account…' : 'Create account'}
           </button>
         </form>
 
-        <p className="mt-6 text-center text-[13px] font-light text-charcoal/55">
+        <p className="mt-6 text-center text-[13px] text-grey-500">
           Already have an account?{' '}
           <Link
             href={`/login?next=${encodeURIComponent(next)}`}
-            className="link-underline font-medium text-charcoal"
+            className="underline-offset-4 hover:underline font-medium text-black"
           >
             Sign in
           </Link>
@@ -101,10 +101,10 @@ function Input({
 }: { label: string } & React.InputHTMLAttributes<HTMLInputElement>) {
   return (
     <label className="flex flex-col gap-2">
-      <span className="text-[12px] font-medium text-charcoal/55">{label}</span>
+      <span className="label-mono">{label}</span>
       <input
         {...props}
-        className="rounded-[4px] border border-charcoal/15 bg-ivory px-4 py-3 text-sm font-light text-charcoal outline-none focus:border-gold"
+        className="field"
       />
     </label>
   );

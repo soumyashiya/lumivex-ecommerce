@@ -2,13 +2,31 @@
 
 import { useState } from 'react';
 import { newsletter, ApiError } from '@/lib/api';
+import { ArrowRight } from '@/components/ui/Icons';
 
-export default function Newsletter() {
+/**
+ * Newsletter sign-up. Renders against either the dark footer field or a
+ * light page background; the submit control collapses into the input as an
+ * arrow, as on the reference footer.
+ *
+ * Network behaviour is unchanged — this still posts through newsletter.subscribe.
+ */
+export default function Newsletter({
+  tone = 'dark',
+  source = 'footer',
+}: {
+  tone?: 'dark' | 'light';
+  source?: string;
+}) {
   const [email, setEmail] = useState('');
   const [consent, setConsent] = useState(false);
   const [website, setWebsite] = useState(''); // honeypot
-  const [status, setStatus] = useState<'idle' | 'sending' | 'done' | 'duplicate'>('idle');
+  const [status, setStatus] = useState<
+    'idle' | 'sending' | 'done' | 'duplicate'
+  >('idle');
   const [error, setError] = useState('');
+
+  const dark = tone === 'dark';
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -16,7 +34,12 @@ export default function Newsletter() {
     setStatus('sending');
     setError('');
     try {
-      const res = await newsletter.subscribe({ email, consent, website, source: 'footer' });
+      const res = await newsletter.subscribe({
+        email,
+        consent,
+        website,
+        source,
+      });
       setStatus(res.already_subscribed ? 'duplicate' : 'done');
     } catch (err) {
       setStatus('idle');
@@ -32,37 +55,49 @@ export default function Newsletter() {
 
   if (status === 'done' || status === 'duplicate') {
     return (
-      <div className="rounded-[6px] border border-gold/40 bg-gold/5 px-5 py-4">
-        <p className="text-[13px] font-medium text-charcoal">
-          {status === 'duplicate'
-            ? 'You’re already on the list — thank you.'
-            : 'You’re on the list — we’ll email new batch documentation as it’s published.'}
-        </p>
-      </div>
+      <p
+        role="status"
+        className={`rounded-card px-md py-smd text-base ${
+          dark ? 'bg-white/10 text-white' : 'bg-success-bg text-success'
+        }`}
+      >
+        {status === 'duplicate'
+          ? 'You’re already on the list — thank you.'
+          : 'You’re on the list. New batch documentation lands in your inbox as it publishes.'}
+      </p>
     );
   }
 
   return (
-    <form onSubmit={onSubmit} className="space-y-3">
-      <div className="flex flex-col gap-2 sm:flex-row">
+    <form onSubmit={onSubmit} className="space-y-smd">
+      <div className="relative">
+        <label htmlFor={`nl-email-${source}`} className="sr-only">
+          Email address
+        </label>
         <input
+          id={`nl-email-${source}`}
           type="email"
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="you@lab.com"
-          className="min-w-0 flex-1 rounded-[4px] border border-charcoal/15 bg-ivory px-4 py-3 text-sm font-light text-charcoal outline-none focus:border-gold"
+          className={dark ? 'field-pill-dark pr-[52px]' : 'field pr-[52px]'}
         />
         <button
           type="submit"
           disabled={status === 'sending' || !consent}
-          className="shrink-0 rounded-full bg-charcoal px-6 py-3 text-[13px] font-medium text-ivory transition-colors duration-500 hover:bg-gold disabled:cursor-not-allowed disabled:bg-taupe-deep disabled:text-ivory/80 disabled:hover:bg-taupe-deep"
+          aria-label="Subscribe"
+          className={`absolute right-xs top-1/2 inline-flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-pill transition-colors duration-200 ease-ag disabled:cursor-not-allowed disabled:opacity-40 ${
+            dark
+              ? 'text-white hover:bg-white/15'
+              : 'text-green hover:bg-grey-25'
+          }`}
         >
-          {status === 'sending' ? 'Submitting…' : 'Subscribe'}
+          <ArrowRight size={20} />
         </button>
       </div>
 
-      {/* Honeypot — kept off-screen for accessibility but invisible to humans */}
+      {/* Honeypot — present for bots, hidden from people and assistive tech */}
       <input
         type="text"
         name="website"
@@ -74,22 +109,28 @@ export default function Newsletter() {
         className="hidden"
       />
 
-      <label className="flex items-start gap-2 text-[12px] font-light text-charcoal/55">
+      <label
+        className={`flex items-start gap-sm text-sm ${
+          dark ? 'text-white/70' : 'text-grey-500'
+        }`}
+      >
         <input
           type="checkbox"
           checked={consent}
           onChange={(e) => setConsent(e.target.checked)}
-          className="mt-0.5 accent-gold"
+          className="mt-[3px] h-4 w-4 shrink-0 accent-green"
           required
         />
         <span>
-          I confirm I am a research professional and consent to receive
-          catalogue and documentation updates.
+          I confirm I am a research professional and consent to catalogue and
+          documentation updates.
         </span>
       </label>
 
       {error && (
-        <p className="text-[12px] font-light text-red-600/80">{error}</p>
+        <p role="alert" className={`text-sm ${dark ? 'text-white' : 'text-danger'}`}>
+          {error}
+        </p>
       )}
     </form>
   );

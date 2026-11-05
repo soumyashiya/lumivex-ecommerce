@@ -1,14 +1,20 @@
-﻿'use client';
+'use client';
 
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { RESEARCH_DISCLAIMER, type Product } from '@/lib/data';
+import {
+  PROGRAMME,
+  RESEARCH_DISCLAIMER,
+  type Product,
+} from '@/lib/data';
 import { useCart } from '@/components/providers/CartProvider';
 import ProductGallery from '@/components/shop/ProductGallery';
 import CertificateModal from '@/components/shop/CertificateModal';
 import LabAnalysisModal from '@/components/shop/LabAnalysisModal';
+import ProductCard from '@/components/ui/ProductCard';
+import Button from '@/components/ui/Button';
+import Accordion from '@/components/ui/Accordion';
+import { ArrowRight, Check, Minus, Plus } from '@/components/ui/Icons';
 
 export default function ProductDetail({
   product,
@@ -34,6 +40,9 @@ export default function ProductDetail({
     ((product.janoshik.certificateImages?.length ?? 0) > 0 ||
       !!product.janoshik.verifyUrl);
 
+  const perDelivery =
+    product.priceValue * (1 - PROGRAMME.discountPercent / 100);
+
   // Surface each product's own lab analysis when its page opens — once per
   // product per browser session, so browsing back to it isn't a nag.
   useEffect(() => {
@@ -47,165 +56,176 @@ export default function ProductDetail({
     return () => clearTimeout(t);
   }, [hasCertificate, product.slug]);
 
+  const detailItems = [
+    product.details?.contents && {
+      title: 'What is in the kit',
+      body: (
+        <p className="whitespace-pre-line">{product.details.contents}</p>
+      ),
+    },
+    product.details?.storage && {
+      title: 'Storage and handling',
+      body: <p className="whitespace-pre-line">{product.details.storage}</p>,
+    },
+    {
+      title: 'Research specifications',
+      body: (
+        <dl className="grid grid-cols-1 gap-x-lg gap-y-sm sm:grid-cols-2">
+          {product.specs.map((s) => (
+            <div key={s.label} className="flex justify-between gap-sm">
+              <dt className="label-mono">{s.label}</dt>
+              <dd className="text-right text-base text-black">{s.value}</dd>
+            </div>
+          ))}
+        </dl>
+      ),
+    },
+    {
+      title: 'Shipping and cold chain',
+      body: (
+        <p>
+          Dispatched at 2–8°C in validated insulated packaging rated for 48
+          hours in transit. Refrigerate on arrival and do not freeze. Shipped
+          across the UK and EU with customs documentation where required.
+        </p>
+      ),
+    },
+  ].filter(Boolean) as { title: string; body: React.ReactNode }[];
+
   return (
-    <div className="bg-ivory">
-      <div className="container-wide py-10 md:py-16">
+    <div className="bg-white">
+      <div className="container-ag section-y">
         {/* Breadcrumb */}
-        <nav className="mb-8 flex items-center gap-2 text-[12px] font-light text-charcoal/45">
-          <Link href="/" className="transition-colors hover:text-charcoal">
-            Home
-          </Link>
-          <span aria-hidden>/</span>
-          <Link
-            href="/#products"
-            className="transition-colors hover:text-charcoal"
-          >
-            Shop
-          </Link>
-          <span aria-hidden>/</span>
-          <span className="text-charcoal/70">{product.name}</span>
+        <nav aria-label="Breadcrumb">
+          <ol className="flex flex-wrap items-center gap-xs font-mono text-xs uppercase tracking-label text-grey-500">
+            <li>
+              <Link
+                href="/"
+                className="transition-colors duration-200 ease-ag hover:text-green"
+              >
+                Home
+              </Link>
+            </li>
+            <li aria-hidden>/</li>
+            <li>
+              <Link
+                href="/shop"
+                className="transition-colors duration-200 ease-ag hover:text-green"
+              >
+                Catalogue
+              </Link>
+            </li>
+            <li aria-hidden>/</li>
+            <li className="text-black">{product.name}</li>
+          </ol>
         </nav>
 
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
-          {/* Left — image */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="mx-auto w-full max-w-md lg:sticky lg:top-24 lg:mx-0 lg:max-w-none lg:self-start"
-          >
+        <div className="mt-lg grid grid-cols-1 gap-xl desktop:mt-xl desktop:grid-cols-2 desktop:gap-4xl">
+          {/* Gallery */}
+          <div className="desktop:sticky desktop:top-[calc(var(--bar-h)+var(--header-h)+24px)] desktop:self-start">
             <ProductGallery
               image={product.image}
               alt={product.name}
               gallery={product.gallery}
             />
-          </motion.div>
+          </div>
 
-          {/* Right — details */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-col"
-          >
-            <span className="eyebrow">{product.category}</span>
-            <h1 className="mt-5 text-display font-extralight leading-[1] tracking-tightest text-charcoal">
-              {product.name}{' '}
-              <span className="text-charcoal/35">({product.tag})</span>
-            </h1>
+          {/* Buy column */}
+          <div>
+            <p className="label-mono">{product.category}</p>
+            <h1 className="mt-sm text-h2 text-black">{product.name}</h1>
 
-            <div className="mt-6 flex items-center gap-4">
-              <span className="text-3xl font-light text-charcoal md:text-4xl">
+            <div className="mt-md flex flex-wrap items-baseline gap-smd">
+              <span className="text-[clamp(1.75rem,3vw,2.25rem)] leading-none tracking-tighter text-black">
                 {product.price}
               </span>
-              <span className="text-[11px] uppercase tracking-wider text-charcoal/40">
-                USD
-              </span>
-              {!hasCertificate && product.purity && (
-                <span className="ml-auto text-[11px] uppercase tracking-wider text-gold">
-                  {product.purity} purity
+              <span className="label-mono">USD</span>
+              {product.purity && (
+                <span className="rounded-sm bg-success-bg px-sm py-xxs font-mono text-xxs uppercase tracking-label text-success">
+                  {product.purity} assayed
                 </span>
               )}
             </div>
 
-            <p className="mt-7 text-base font-light leading-relaxed text-charcoal/65">
+            <p className="mt-lg max-w-prose text-base text-grey-700">
               {product.longDescription}
             </p>
 
-            {/* Research-only disclaimer — placement 1 of 3: product info */}
-            <p className="mt-7 border-l-2 border-gold bg-cream px-5 py-4 text-[12px] font-light leading-relaxed text-charcoal/60">
-              <span className="font-medium text-charcoal">
-                For research purposes only.
-              </span>{' '}
-              Not intended for human or veterinary use. Not intended to
-              diagnose, treat, cure, or prevent any disease. Supplied strictly
-              for laboratory and analytical research conducted by qualified
-              professionals.
-            </p>
-
-            {/* Quantity + add to cart */}
-            <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <div className="flex items-center rounded-full border border-charcoal/15">
+            {/* Quantity + add */}
+            <div className="mt-lg flex flex-wrap items-center gap-smd">
+              <div className="flex items-center rounded-round border border-grey-100">
                 <button
+                  type="button"
                   onClick={() => setQty((q) => Math.max(1, q - 1))}
-                  className="flex h-12 w-12 items-center justify-center text-xl text-charcoal/70 transition-colors hover:text-charcoal"
+                  className="flex h-11 w-11 items-center justify-center rounded-l-round text-green transition-colors duration-200 ease-ag hover:bg-grey-25 disabled:text-grey-100"
+                  disabled={qty <= 1}
                   aria-label="Decrease quantity"
                 >
-                  −
+                  <Minus size={18} />
                 </button>
-                <span className="w-10 text-center text-base font-light text-charcoal">
+                <span
+                  aria-live="polite"
+                  className="w-10 text-center text-base text-black"
+                >
                   {qty}
                 </span>
                 <button
+                  type="button"
                   onClick={() => setQty((q) => q + 1)}
-                  className="flex h-12 w-12 items-center justify-center text-xl text-charcoal/70 transition-colors hover:text-charcoal"
+                  className="flex h-11 w-11 items-center justify-center rounded-r-round text-green transition-colors duration-200 ease-ag hover:bg-grey-25"
                   aria-label="Increase quantity"
                 >
-                  +
+                  <Plus size={18} />
                 </button>
               </div>
 
-              <button
-                onClick={handleAdd}
-                className={`w-fit rounded-full px-6 py-2.5 text-[13px] font-medium transition-all duration-500 ${
-                  added
-                    ? 'bg-gold text-ivory'
-                    : 'bg-charcoal text-ivory hover:bg-gold'
-                }`}
-              >
-                {added ? 'Added to cart ✓' : 'Add to cart'}
-              </button>
+              <Button size="lg" onClick={handleAdd} arrow={!added}>
+                {added ? (
+                  <>
+                    <Check size={18} /> Added to cart
+                  </>
+                ) : (
+                  'Add to cart'
+                )}
+              </Button>
             </div>
 
-            {/* Research-only disclaimer — placement 2 of 3: beside Add to Cart */}
-            <p className="mt-4 text-[11px] font-medium uppercase tracking-wider text-charcoal/45">
+            {/* Standing order offer */}
+            <div className="mt-lg rounded-card bg-mint p-md">
+              <p className="text-base font-medium text-green-deep">
+                ${perDelivery.toFixed(2)} per delivery on a standing order
+              </p>
+              <p className="mt-xxs text-sm text-grey-700">
+                {PROGRAMME.discountPercent}% off each of{' '}
+                {PROGRAMME.deliveries} monthly deliveries, cold-chain shipping
+                included, cancel any time.
+              </p>
+              <Link
+                href="/#programme"
+                className="mt-sm inline-flex items-center gap-xs font-mono text-xs uppercase tracking-label text-green transition-colors duration-200 ease-ag hover:text-green-light"
+              >
+                How the programme works
+                <ArrowRight size={16} />
+              </Link>
+            </div>
+
+            <p className="mt-md font-mono text-xs uppercase tracking-label text-grey-500">
               Research use only — not for human or veterinary use
             </p>
 
+            {/* Assay summary */}
             {hasCertificate && (
-              <>
-                <button
-                  onClick={() => setCertOpen(true)}
-                  className="link-underline mx-auto mt-10 flex w-fit items-center gap-2 text-[13px] font-medium text-gold"
-                >
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 14 14"
-                    fill="none"
-                    aria-hidden
-                  >
-                    <path
-                      d="M8.17 1.17H3.5a1.17 1.17 0 00-1.17 1.16v9.34A1.17 1.17 0 003.5 12.83h7a1.17 1.17 0 001.17-1.16V4.67L8.17 1.17z"
-                      stroke="currentColor"
-                      strokeWidth="1.2"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M8.17 1.17v3.5h3.5"
-                      stroke="currentColor"
-                      strokeWidth="1.2"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                  View Janoshik Analytical Report
-                </button>
-
-                <LabAnalysisPanel
-                  purity={product.janoshik?.purity ?? product.purity}
-                  batchNumber={product.janoshik?.batchNumber}
-                  fillVolume={product.janoshik?.fillVolume}
-                  compounds={product.janoshik?.compounds}
-                />
-              </>
+              <AssayPanel
+                purity={product.janoshik?.purity ?? product.purity}
+                batchNumber={product.janoshik?.batchNumber}
+                fillVolume={product.janoshik?.fillVolume}
+                compounds={product.janoshik?.compounds}
+                onOpen={() => setCertOpen(true)}
+              />
             )}
 
-            {/* Package contents / storage / supply chain */}
-            <DetailTabs
-              details={product.details}
-              highlights={product.highlights}
-            />
-          </motion.div>
+            <Accordion items={detailItems} className="mt-xl" />
+          </div>
         </div>
 
         {hasCertificate && product.janoshik && (
@@ -236,38 +256,35 @@ export default function ProductDetail({
           </>
         )}
 
-        {/* Related products */}
+        {/* Related */}
         {related.length > 0 && (
-          <section className="mt-24 md:mt-32">
-            <div className="mb-10 flex items-end justify-between">
-              <div>
-                <span className="eyebrow">Continue exploring</span>
-                <h2 className="mt-4 text-section font-extralight tracking-tightest text-charcoal">
-                  Related compounds
-                </h2>
-              </div>
+          <section className="mt-2xl border-t border-[color:var(--border-hair)] pt-xl desktop:mt-5xl">
+            <div className="flex flex-wrap items-end justify-between gap-md">
+              <h2 className="text-h2 text-black">Related compounds</h2>
               <Link
-                href="/#products"
-                className="link-underline hidden text-[13px] font-medium text-charcoal sm:inline-block"
+                href="/shop"
+                className="inline-flex items-center gap-xs font-mono text-xs uppercase tracking-label text-green transition-colors duration-200 ease-ag hover:text-green-light"
               >
                 View all
+                <ArrowRight size={16} />
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <ul className="mt-lg grid grid-cols-1 gap-md sm:grid-cols-2 desktop:grid-cols-3">
               {related.map((p) => (
-                <RelatedCard key={p.id} product={p} />
+                <li key={p.id}>
+                  <ProductCard
+                    product={p}
+                    sizes="(max-width: 479px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                  />
+                </li>
               ))}
-            </div>
+            </ul>
           </section>
         )}
 
-        {/* Research-only disclaimer — placement 3 of 3: product footer */}
-        <section className="mt-20 border-t border-charcoal/10 pt-10 md:mt-24">
-          <p className="text-[11px] uppercase tracking-eyebrow text-charcoal/40">
-            Compliance notice
-          </p>
-          <p className="mt-4 max-w-3xl text-[13px] font-light leading-relaxed text-charcoal/55">
+        <section className="mt-2xl border-t border-[color:var(--border-hair)] pt-xl">
+          <p className="max-w-prose font-mono text-xs uppercase leading-5 tracking-label text-grey-500">
             {RESEARCH_DISCLAIMER}
           </p>
         </section>
@@ -276,206 +293,93 @@ export default function ProductDetail({
   );
 }
 
-function LabAnalysisPanel({
+function AssayPanel({
   purity,
   batchNumber,
   fillVolume,
   compounds,
+  onOpen,
 }: {
   purity?: string;
   batchNumber?: string;
   fillVolume?: string;
   compounds?: { name: string; concentration: string; content: string }[];
+  onOpen: () => void;
 }) {
   const facts = [
-    { label: 'Batch Number', value: batchNumber },
-    { label: 'Fill Volume', value: fillVolume },
+    { label: 'Batch number', value: batchNumber },
+    { label: 'Fill volume', value: fillVolume },
     { label: 'Purity', value: purity },
   ].filter((f) => !!f.value);
 
   if (facts.length === 0 && !compounds?.length) return null;
 
   return (
-    <div className="mt-6 rounded-[6px] border border-charcoal/10 bg-cream p-6">
-      <div className="text-center">
-        <span className="mx-auto flex h-9 w-9 items-center justify-center rounded-full bg-gold/15 text-gold">
-          <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden>
-            <path
-              d="M10 1.667a4.167 4.167 0 100 8.333 4.167 4.167 0 000-8.333zM5.833 12.5v5.833l4.167-2.083 4.167 2.083V12.5"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </span>
-        <h3 className="mt-3 text-sm font-medium text-charcoal">
-          Janoshik Third-Party Lab Analysis
-        </h3>
-        <p className="mt-1 text-[12px] font-light text-charcoal/50">
-          Independently tested and verified by Janoshik Analytical.
-        </p>
-      </div>
+    <section className="mt-lg rounded-card border border-[color:var(--border-soft)] p-md">
+      <h2 className="text-base font-medium text-black">
+        Third-party assay, this batch
+      </h2>
+      <p className="mt-xxs text-sm text-grey-500">
+        Measured by Janoshik Analytical and published as issued.
+      </p>
 
       {facts.length > 0 && (
-        <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-3">
+        <dl className="mt-md grid grid-cols-1 gap-sm sm:grid-cols-3">
           {facts.map((f) => (
             <div
               key={f.label}
-              className="rounded-[4px] border border-charcoal/10 bg-ivory px-4 py-3 text-center"
+              className="rounded-sm bg-grey-25 px-smd py-sm"
             >
-              <div className="text-[10px] uppercase tracking-wider text-charcoal/45">
-                {f.label}
-              </div>
-              <div className="mt-1 text-sm font-medium text-charcoal">
+              <dt className="label-mono">{f.label}</dt>
+              <dd className="mt-xxs text-base font-medium text-black">
                 {f.value}
-              </div>
+              </dd>
             </div>
           ))}
-        </div>
+        </dl>
       )}
 
       {compounds && compounds.length > 0 && (
-        <>
-          <div className="mt-5 overflow-hidden rounded-[4px] border border-charcoal/10">
-            <table className="w-full text-left text-[13px]">
-              <thead className="bg-ivory text-[10px] uppercase tracking-wider text-charcoal/45">
-                <tr>
-                  <th className="px-3 py-2 font-medium">Compound</th>
-                  <th className="px-3 py-2 font-medium">Concentration</th>
-                  <th className="px-3 py-2 font-medium">Verified Content</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-charcoal/10 bg-ivory/50">
-                {compounds.map((c) => (
-                  <tr key={c.name}>
-                    <td className="px-3 py-2 font-medium text-charcoal">
-                      {c.name}
-                    </td>
-                    <td className="px-3 py-2 text-charcoal/70">
-                      {c.concentration}
-                    </td>
-                    <td className="px-3 py-2 text-charcoal/70">{c.content}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className="mt-3 text-[11px] font-light leading-relaxed text-charcoal/45">
-            Concentration is measured per mL; verified content reflects the
-            total assayed mass across the stated fill volume.
-          </p>
-        </>
+        <table className="mt-md w-full border-collapse text-left">
+          <thead>
+            <tr className="border-b border-[color:var(--border-hair)]">
+              <th scope="col" className="py-sm pr-sm label-mono">
+                Compound
+              </th>
+              <th scope="col" className="py-sm pr-sm label-mono">
+                Concentration
+              </th>
+              <th scope="col" className="py-sm text-right label-mono">
+                Measured content
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {compounds.map((c) => (
+              <tr key={c.name}>
+                <td className="py-sm pr-sm text-sm font-medium text-black">
+                  {c.name}
+                </td>
+                <td className="py-sm pr-sm text-sm text-grey-700">
+                  {c.concentration}
+                </td>
+                <td className="py-sm text-right text-sm text-grey-700">
+                  {c.content}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       )}
-    </div>
-  );
-}
 
-function DetailTabs({
-  details,
-  highlights,
-}: {
-  details?: Product['details'];
-  highlights: string[];
-}) {
-  const tabs = [
-    { label: 'Package Contents', body: details?.contents },
-    { label: 'Storage Logic', body: details?.storage },
-  ].filter((t) => !!t.body);
-
-  const [active, setActive] = useState(0);
-
-  if (tabs.length === 0) {
-    if (highlights.length === 0) return null;
-    return (
-      <ul className="mt-10 space-y-2.5">
-        {highlights.map((h) => (
-          <li
-            key={h}
-            className="flex items-start gap-3 text-[13px] font-light text-charcoal/70"
-          >
-            <span
-              className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold"
-              aria-hidden
-            />
-            {h}
-          </li>
-        ))}
-      </ul>
-    );
-  }
-
-  return (
-    <div className="mt-10">
-      <div
-        role="tablist"
-        className="flex gap-7 overflow-x-auto border-b border-charcoal/10"
+      <button
+        type="button"
+        onClick={onOpen}
+        className="mt-md inline-flex items-center gap-xs font-mono text-xs uppercase tracking-label text-green transition-colors duration-200 ease-ag hover:text-green-light"
       >
-        {tabs.map((t, i) => (
-          <button
-            key={t.label}
-            role="tab"
-            aria-selected={active === i}
-            onClick={() => setActive(i)}
-            className={`-mb-px shrink-0 border-b-2 pb-3 text-[13px] font-medium transition-colors ${
-              active === i
-                ? 'border-gold text-charcoal'
-                : 'border-transparent text-charcoal/45 hover:text-charcoal'
-            }`}
-          >
-            {t.label}
-          </button>
-        ))}
-      </div>
-      <p
-        role="tabpanel"
-        className="mt-5 whitespace-pre-line text-sm font-light leading-relaxed text-charcoal/65"
-      >
-        {tabs[active].body}
-      </p>
-    </div>
-  );
-}
-
-function RelatedCard({ product }: { product: Product }) {
-  const { addItem } = useCart();
-  return (
-    <article className="group overflow-hidden rounded-[4px] bg-cream transition-shadow duration-700 hover:shadow-[0_30px_60px_-30px_rgba(28,26,23,0.25)]">
-      <Link
-        href={`/product/${product.slug}`}
-        className="relative block aspect-[3/2] overflow-hidden bg-[#eef1f4]"
-      >
-        <Image
-          src={product.image}
-          alt={product.name}
-          fill
-          sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
-          className="object-cover transition-transform duration-[1.2s] ease-lux group-hover:scale-105"
-        />
-        <span className="absolute left-4 top-4 rounded-full bg-ivory/85 px-3 py-1 text-[10px] uppercase tracking-wider text-charcoal backdrop-blur-sm">
-          {product.category}
-        </span>
-      </Link>
-      <div className="flex flex-col gap-3 p-6">
-        <div className="flex items-start justify-between gap-3">
-          <h3 className="text-lg font-light text-charcoal">
-            <Link
-              href={`/product/${product.slug}`}
-              className="transition-colors hover:text-gold"
-            >
-              {product.name}
-            </Link>
-          </h3>
-          <span className="shrink-0 text-lg font-light text-charcoal">
-            {product.price}
-          </span>
-        </div>
-        <button
-          onClick={() => addItem(product)}
-          className="mt-1 rounded-full bg-charcoal py-2.5 text-[12px] font-medium text-ivory transition-colors duration-500 hover:bg-gold"
-        >
-          Add to cart
-        </button>
-      </div>
-    </article>
+        Open the full report
+        <ArrowRight size={16} />
+      </button>
+    </section>
   );
 }

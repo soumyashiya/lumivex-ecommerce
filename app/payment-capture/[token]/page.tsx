@@ -131,19 +131,19 @@ export default function PaymentCapturePage() {
 
   if (loading) {
     return (
-      <div className="container-wide flex min-h-[60vh] items-center justify-center py-24">
-        <span className="h-6 w-6 animate-spin rounded-full border-2 border-charcoal/20 border-t-charcoal" />
+      <div className="container-ag flex min-h-[60vh] items-center justify-center py-24">
+        <span className="h-6 w-6 animate-spin rounded-pill border-2 border-grey-100 border-t-green" />
       </div>
     );
   }
 
   if (loadError || !data) {
     return (
-      <div className="container-wide flex min-h-[60vh] flex-col items-center justify-center py-24 text-center">
-        <h1 className="text-section font-extralight tracking-tightest text-charcoal">
+      <div className="container-ag flex min-h-[60vh] flex-col items-center justify-center py-24 text-center">
+        <h1 className="text-h2 tracking-tighter text-black">
           Link unavailable
         </h1>
-        <p className="mt-4 max-w-md text-base font-light text-charcoal/55">
+        <p className="mt-4 max-w-md text-base text-grey-500">
           {loadError || 'Payment link not found.'}
         </p>
       </div>
@@ -158,12 +158,12 @@ export default function PaymentCapturePage() {
   const busy = uploadStatus === 'uploading' || uploadStatus === 'verifying';
 
   return (
-    <div className="min-h-screen bg-ivory">
+    <div className="min-h-screen bg-white">
       <div className="mx-auto w-full max-w-6xl px-5 pb-24 pt-8 sm:px-8 sm:pt-12 lg:px-12">
         {/* Minimal brand bar */}
         <div className="flex items-center justify-between">
-          <Logo className="text-charcoal" />
-          <span className="hidden text-[10px] font-medium uppercase tracking-eyebrow text-charcoal/40 sm:inline">
+          <Logo className="text-black" />
+          <span className="hidden text-[10px] font-medium uppercase tracking-label text-grey-500 sm:inline">
             Secure checkout
           </span>
         </div>
@@ -173,16 +173,16 @@ export default function PaymentCapturePage() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: EASE }}
-          className="mt-12 border-b border-charcoal/[0.08] pb-10 sm:mt-16"
+          className="mt-12 border-b border-[color:var(--border-soft)] pb-10 sm:mt-16"
         >
-          <span className="eyebrow">Complete payment</span>
-          <h1 className="mt-5 text-[44px] font-extralight leading-[0.95] tracking-tightest text-charcoal sm:text-[64px]">
+          <span className="label-mono">Complete payment</span>
+          <h1 className="mt-5 text-[44px] leading-[0.95] tracking-tighter text-black sm:text-[64px]">
             Order
           </h1>
-          <p className="mt-4 inline-flex items-center rounded-[5px] bg-cream px-3 py-2 font-mono text-[12px] font-light tracking-[0.08em] text-charcoal/75 ring-1 ring-charcoal/[0.07] sm:text-[13px]">
+          <p className="mt-4 inline-flex items-center rounded-smd bg-off-white px-3 py-2 font-mono text-[12px] tracking-[0.08em] text-grey-700 ring-1 ring-[color:var(--border-soft)] sm:text-[13px]">
             {orderNumber}
           </p>
-          <p className="mt-6 max-w-xl text-[15px] font-light leading-relaxed text-charcoal/60">
+          <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-grey-700">
             Transfer the total below to the account, then upload a screenshot of
             your transfer to confirm.
           </p>
@@ -258,11 +258,11 @@ export default function PaymentCapturePage() {
           </div>
         </div>
 
-        <footer className="mt-20 flex flex-wrap items-center justify-between gap-4 border-t border-charcoal/[0.08] pt-8">
-          <p className="text-[11px] font-light text-charcoal/45">
+        <footer className="mt-20 flex flex-wrap items-center justify-between gap-4 border-t border-[color:var(--border-soft)] pt-8">
+          <p className="text-[11px] text-grey-500">
             Lumivex Laboratories · Research use only
           </p>
-          <p className="font-mono text-[10px] font-light tracking-[0.12em] text-charcoal/30">
+          <p className="font-mono text-[10px] tracking-[0.12em] text-grey-500">
             ENC-TLS 1.3
           </p>
         </footer>
@@ -292,8 +292,8 @@ function ProgressSteps({ activeIndex }: { activeIndex: number }) {
                 <StepMarker status={status} />
               </div>
               <span
-                className={`text-[10px] font-medium uppercase tracking-eyebrow transition-colors duration-500 ${
-                  status === 'upcoming' ? 'text-charcoal/35' : 'text-charcoal/70'
+                className={`text-[10px] font-medium uppercase tracking-label transition-colors duration-200 ${
+                  status === 'upcoming' ? 'text-grey-500' : 'text-grey-700'
                 }`}
               >
                 {label}
@@ -301,9 +301,9 @@ function ProgressSteps({ activeIndex }: { activeIndex: number }) {
             </div>
 
             {!isLast && (
-              <div className="mx-3 mt-[11px] h-px flex-1 bg-sand sm:mx-5">
+              <div className="mx-3 mt-[11px] h-px flex-1 bg-stone sm:mx-5">
                 <motion.div
-                  className="h-px bg-gold"
+                  className="h-px bg-green"
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: index < activeIndex ? 1 : 0 }}
                   transition={{ duration: 0.7, ease: EASE, delay: 0.1 * index }}
@@ -325,7 +325,7 @@ function StepMarker({ status }: { status: 'complete' | 'current' | 'upcoming' })
         initial={{ scale: 0.6, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.4, ease: EASE }}
-        className="flex h-[22px] w-[22px] items-center justify-center rounded-full bg-gold text-ivory"
+        className="flex h-[22px] w-[22px] items-center justify-center rounded-pill bg-green text-white"
       >
         <IconCheck className="h-3 w-3" strokeWidth={2.5} />
       </motion.span>
@@ -335,17 +335,17 @@ function StepMarker({ status }: { status: 'complete' | 'current' | 'upcoming' })
     return (
       <span className="relative flex h-[22px] w-[22px] items-center justify-center">
         <motion.span
-          className="absolute inset-0 rounded-full border border-charcoal/25"
+          className="absolute inset-0 rounded-pill border border-[color:var(--border-soft)]5"
           animate={{ scale: [1, 1.35, 1], opacity: [0.7, 0, 0.7] }}
           transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
         />
-        <span className="h-[14px] w-[14px] rounded-full bg-charcoal" />
+        <span className="h-[14px] w-[14px] rounded-pill bg-green" />
       </span>
     );
   }
   return (
     <span className="flex h-[22px] w-[22px] items-center justify-center">
-      <span className="h-[10px] w-[10px] rounded-full border border-taupe-deep/60 bg-ivory" />
+      <span className="h-[10px] w-[10px] rounded-pill border border-grey-100 bg-white" />
     </span>
   );
 }
@@ -387,29 +387,29 @@ function BankTransferCard({
   ];
 
   return (
-    <section className="overflow-hidden rounded-[10px] bg-cream shadow-[0_10px_40px_-15px_rgba(28,26,23,0.12)] ring-1 ring-charcoal/[0.06]">
+    <section className="overflow-hidden rounded-[10px] bg-off-white shadow-[0_10px_40px_-15px_rgba(28,26,23,0.12)] ring-1 ring-[color:var(--border-soft)]">
       <header className="flex items-start justify-between gap-4 px-6 pb-5 pt-6 sm:px-8 sm:pt-8">
         <div>
-          <span className="eyebrow">Step 01</span>
-          <h2 className="mt-3 text-2xl font-extralight tracking-tightest text-charcoal sm:text-[28px]">
+          <span className="label-mono">Step 01</span>
+          <h2 className="mt-3 text-2xl tracking-tighter text-black sm:text-[28px]">
             Bank transfer details
           </h2>
         </div>
-        <span className="flex h-9 w-9 flex-none items-center justify-center rounded-[6px] bg-sand/70 text-charcoal/60">
+        <span className="flex h-9 w-9 flex-none items-center justify-center rounded-smd bg-stone/70 text-grey-700">
           <IconBank className="h-4 w-4" />
         </span>
       </header>
 
-      <dl className="grid grid-cols-1 gap-px bg-charcoal/[0.07] sm:grid-cols-2">
+      <dl className="grid grid-cols-1 gap-px bg-green-deep[0.07] sm:grid-cols-2">
         {rows.map((detail) => (
-          <div key={detail.label} className="bg-cream px-6 py-5 sm:px-8">
-            <dt className="text-[10px] font-medium uppercase tracking-eyebrow text-charcoal/45">
+          <div key={detail.label} className="bg-off-white px-6 py-5 sm:px-8">
+            <dt className="text-[10px] font-medium uppercase tracking-label text-grey-500">
               {detail.label}
             </dt>
             <dd className="mt-2 flex items-center gap-2">
               <span
-                className={`break-all text-charcoal ${
-                  detail.mono ? 'font-mono text-[13px] font-light tracking-[0.02em]' : 'text-[15px] font-light'
+                className={`break-all text-black ${
+                  detail.mono ? 'font-mono text-[13px] tracking-[0.02em]' : 'text-[15px]'
                 }`}
               >
                 {detail.value}
@@ -417,7 +417,7 @@ function BankTransferCard({
               <button
                 type="button"
                 onClick={() => handleCopy(detail.label, detail.value)}
-                className="ml-auto flex h-7 w-7 flex-none items-center justify-center rounded-[5px] text-charcoal/35 transition-colors duration-200 hover:bg-sand/70 hover:text-charcoal focus:outline-none focus-visible:ring-1 focus-visible:ring-charcoal/40"
+                className="ml-auto flex h-7 w-7 flex-none items-center justify-center rounded-smd text-grey-500 transition-colors duration-200 hover:bg-stone/70 hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-grey-100"
                 aria-label={`Copy ${detail.label.toLowerCase()}`}
               >
                 <AnimatePresence mode="wait" initial={false}>
@@ -429,7 +429,7 @@ function BankTransferCard({
                       exit={{ scale: 0.7, opacity: 0 }}
                       transition={{ duration: 0.18 }}
                     >
-                      <IconCheck className="h-3.5 w-3.5 text-gold" strokeWidth={2} />
+                      <IconCheck className="h-3.5 w-3.5 text-green" strokeWidth={2} />
                     </motion.span>
                   ) : (
                     <motion.span
@@ -448,17 +448,17 @@ function BankTransferCard({
           </div>
         ))}
 
-        <div className="col-span-full bg-charcoal px-6 py-7 sm:px-8">
+        <div className="col-span-full bg-green px-6 py-7 sm:px-8">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
-              <span className="block text-[10px] font-medium uppercase tracking-eyebrow text-ivory/45">
+              <span className="block text-[10px] font-medium uppercase tracking-label text-white/80">
                 Amount due
               </span>
-              <p className="mt-2 text-[11px] font-light leading-relaxed text-ivory/50">
+              <p className="mt-2 text-[11px] leading-relaxed text-white/80">
                 Send as a single transfer, including the reference.
               </p>
             </div>
-            <p className="text-5xl font-extralight tracking-tightest text-ivory sm:text-[56px]">
+            <p className="text-5xl tracking-tighter text-white sm:text-[56px]">
               {amountDue}
             </p>
           </div>
@@ -488,16 +488,16 @@ function PromoCodeRow({
   applied: string | null;
 }) {
   return (
-    <div className="rounded-[10px] bg-cream/70 px-6 py-5 ring-1 ring-charcoal/[0.06] sm:px-8">
+    <div className="rounded-[10px] bg-off-white px-6 py-5 ring-1 ring-[color:var(--border-soft)] sm:px-8">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end">
         <div className="flex-1">
           <label
             htmlFor="promo-code"
-            className="flex items-center gap-2 text-[10px] font-medium uppercase tracking-eyebrow text-charcoal/45"
+            className="flex items-center gap-2 text-[10px] font-medium uppercase tracking-label text-grey-500"
           >
             <IconTag className="h-3 w-3" />
             Promo code
-            <span className="normal-case tracking-normal text-charcoal/30">(optional)</span>
+            <span className="normal-case tracking-normal text-grey-500">(optional)</span>
           </label>
           <input
             id="promo-code"
@@ -512,14 +512,14 @@ function PromoCodeRow({
             }}
             placeholder="Enter code"
             autoComplete="off"
-            className="mt-3 w-full border-b border-charcoal/15 bg-transparent pb-2 text-[15px] font-light uppercase tracking-[0.01em] text-charcoal outline-none placeholder:normal-case placeholder:tracking-normal placeholder:text-charcoal/30 focus:border-gold"
+            className="mt-3 w-full border-b border-[color:var(--border-soft)] bg-transparent pb-2 text-[15px] uppercase tracking-[0.01em] text-black outline-none placeholder:normal-case placeholder:tracking-normal placeholder:text-grey-500 focus:border-green"
           />
         </div>
         <button
           type="button"
           onClick={onApply}
           disabled={loading}
-          className="rounded-full border border-charcoal/20 px-7 py-2.5 text-[11px] font-medium uppercase tracking-eyebrow text-charcoal transition-colors duration-300 hover:border-gold hover:bg-gold hover:text-ivory disabled:cursor-not-allowed disabled:opacity-60 focus:outline-none focus-visible:ring-1 focus-visible:ring-charcoal/40"
+          className="rounded-pill border border-grey-100 px-7 py-2.5 text-[11px] font-medium uppercase tracking-label text-black transition-colors duration-200 hover:border-green hover:bg-green-hover hover:text-white disabled:cursor-not-allowed disabled:opacity-60 focus:outline-none focus-visible:ring-1 focus-visible:ring-grey-100"
         >
           {loading ? 'Applying…' : 'Apply'}
         </button>
@@ -531,7 +531,7 @@ function PromoCodeRow({
             initial={{ opacity: 0, y: -4 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
-            className="mt-4 font-mono text-[11px] font-light tracking-[0.04em] text-gold"
+            className="mt-4 font-mono text-[11px] tracking-[0.04em] text-green"
           >
             {applied} applied — total updated above.
           </motion.p>
@@ -541,7 +541,7 @@ function PromoCodeRow({
             initial={{ opacity: 0, y: -4 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
-            className="mt-3 text-[12px] font-light text-red-600/80"
+            className="mt-3 text-[12px] text-red-600/80"
           >
             {error}
           </motion.p>
@@ -583,10 +583,10 @@ function UploadSection({
   verifyNote: string;
 }) {
   return (
-    <section className="rounded-[10px] bg-cream shadow-[0_10px_40px_-15px_rgba(28,26,23,0.12)] ring-1 ring-charcoal/[0.06]">
+    <section className="rounded-[10px] bg-off-white shadow-[0_10px_40px_-15px_rgba(28,26,23,0.12)] ring-1 ring-[color:var(--border-soft)]">
       <header className="px-6 pb-5 pt-6 sm:px-8 sm:pt-8">
-        <span className="eyebrow">Step 02</span>
-        <h2 className="mt-3 text-2xl font-extralight tracking-tightest text-charcoal sm:text-[28px]">
+        <span className="label-mono">Step 02</span>
+        <h2 className="mt-3 text-2xl tracking-tighter text-black sm:text-[28px]">
           Upload your transfer screenshot
         </h2>
       </header>
@@ -606,8 +606,8 @@ function UploadSection({
             const dropped = e.dataTransfer.files?.[0] ?? null;
             if (dropped) onPick(dropped);
           }}
-          className={`relative w-full rounded-[8px] border border-dashed px-6 py-12 text-center transition-colors duration-300 ${
-            dragActive ? 'border-gold bg-sand/50' : 'border-taupe-deep/45 bg-ivory/60 hover:border-taupe-deep/70'
+          className={`relative w-full rounded-card border border-dashed px-6 py-12 text-center transition-colors duration-200 ${
+            dragActive ? 'border-green bg-stone/50' : 'border-grey-100 bg-white hover:border-grey-100'
           }`}
         >
           <input
@@ -621,18 +621,18 @@ function UploadSection({
           <motion.span
             animate={dragActive ? { y: -4 } : { y: 0 }}
             transition={{ duration: 0.3 }}
-            className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-sand/70 text-charcoal/60"
+            className="mx-auto flex h-12 w-12 items-center justify-center rounded-pill bg-stone/70 text-grey-700"
           >
             <IconUpload className="h-5 w-5" />
           </motion.span>
 
-          <p className="mt-5 text-[15px] font-light text-charcoal/70">
+          <p className="mt-5 text-[15px] text-grey-700">
             Drag and drop your screenshot here, or{' '}
-            <span className="border-b border-charcoal/30 pb-px text-charcoal transition-colors duration-200 hover:border-gold hover:text-gold">
+            <span className="border-b border-grey-100 pb-px text-black transition-colors duration-200 hover:border-green hover:text-green">
               browse files
             </span>
           </p>
-          <p className="mt-3 text-[10px] font-medium uppercase tracking-eyebrow text-charcoal/40">
+          <p className="mt-3 text-[10px] font-medium uppercase tracking-label text-grey-500">
             PNG, JPG, or PDF · max 25 MB.
           </p>
         </button>
@@ -645,16 +645,16 @@ function UploadSection({
               exit={{ opacity: 0, height: 0 }}
               className="overflow-hidden"
             >
-              <div className="mt-4 flex items-center gap-3 rounded-[6px] bg-sand/50 px-4 py-3">
-                <IconFile className="h-4 w-4 flex-none text-charcoal/50" />
-                <span className="truncate font-mono text-[12px] font-light text-charcoal/75">
+              <div className="mt-4 flex items-center gap-3 rounded-smd bg-stone/50 px-4 py-3">
+                <IconFile className="h-4 w-4 flex-none text-grey-500" />
+                <span className="truncate font-mono text-[12px] text-grey-700">
                   {file.name}
                 </span>
                 {!busy && (
                   <button
                     type="button"
                     onClick={() => onPick(null)}
-                    className="ml-auto flex h-6 w-6 flex-none items-center justify-center rounded-full text-charcoal/40 transition-colors duration-200 hover:bg-ivory hover:text-charcoal"
+                    className="ml-auto flex h-6 w-6 flex-none items-center justify-center rounded-pill text-grey-500 transition-colors duration-200 hover:bg-white hover:text-black"
                     aria-label="Remove file"
                   >
                     <IconX className="h-3.5 w-3.5" />
@@ -666,7 +666,7 @@ function UploadSection({
         </AnimatePresence>
 
         {uploadError && (
-          <p className="mt-4 rounded-[4px] border border-red-600/20 bg-red-600/5 px-4 py-3 text-[13px] font-light text-red-600/90">
+          <p className="mt-4 rounded-sm border border-red-600/20 bg-red-600/5 px-4 py-3 text-[13px] text-red-600/90">
             {uploadError}
           </p>
         )}
@@ -674,17 +674,17 @@ function UploadSection({
         <AnimatePresence mode="wait">{statusBanner}</AnimatePresence>
 
         {verifyNote && (
-          <p className="mt-3 text-[12px] font-light text-charcoal/45">{verifyNote}</p>
+          <p className="mt-3 text-[12px] text-grey-500">{verifyNote}</p>
         )}
 
         <button
           type="button"
           onClick={onSubmit}
           disabled={!file || busy || submitted}
-          className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-charcoal px-8 py-3.5 text-[11px] font-medium uppercase tracking-eyebrow text-ivory transition-colors duration-300 hover:bg-gold disabled:cursor-not-allowed disabled:bg-charcoal/25 focus:outline-none focus-visible:ring-1 focus-visible:ring-charcoal/40 focus-visible:ring-offset-2 focus-visible:ring-offset-cream sm:w-auto"
+          className="mt-6 flex w-full items-center justify-center gap-2 rounded-pill bg-green px-8 py-3.5 text-[11px] font-medium uppercase tracking-label text-white transition-colors duration-200 hover:bg-green-hover disabled:cursor-not-allowed disabled:bg-green-deep focus:outline-none focus-visible:ring-1 focus-visible:ring-grey-100 focus-visible:ring-offset-2 focus-visible:ring-offset-off-white sm:w-auto"
         >
           {busy && (
-            <span className="h-3.5 w-3.5 animate-spin rounded-full border-2 border-ivory/30 border-t-ivory" />
+            <span className="h-3.5 w-3.5 animate-spin rounded-pill border-2 border-white/20 border-t-white" />
           )}
           {busy ? busyLabel : 'Submit screenshot'}
         </button>
@@ -701,8 +701,8 @@ function StatusBanner({
   children: React.ReactNode;
 }) {
   const styles = {
-    gold: 'border-gold/40 bg-gold/10 text-charcoal',
-    amber: 'border-amber-500/40 bg-amber-500/10 text-charcoal',
+    gold: 'border-green bg-mint text-black',
+    amber: 'border-amber-500/40 bg-amber-500/10 text-black',
     red: 'border-red-600/30 bg-red-600/5 text-red-600/90',
   }[tone];
 
@@ -712,7 +712,7 @@ function StatusBanner({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -8 }}
       transition={{ duration: 0.35, ease: EASE }}
-      className={`mt-4 rounded-[4px] border px-4 py-3 text-[13px] font-medium ${styles}`}
+      className={`mt-4 rounded-sm border px-4 py-3 text-[13px] font-medium ${styles}`}
     >
       {children}
     </motion.p>
@@ -739,19 +739,19 @@ function VerificationPanel({
   const confidence = verdict ? Math.round(verdict.probability * 100) : 0;
 
   return (
-    <section className="relative overflow-hidden rounded-[10px] bg-ivory shadow-[0_30px_80px_-20px_rgba(28,26,23,0.18)] ring-1 ring-charcoal/[0.08]">
+    <section className="relative overflow-hidden rounded-[10px] bg-white shadow-[0_30px_80px_-20px_rgba(28,26,23,0.18)] ring-1 ring-[color:var(--border-soft)]">
       <span
         aria-hidden
-        className={`absolute inset-x-0 top-0 h-[3px] ${isResolved ? (isRejected ? 'bg-red-600' : 'bg-gold') : 'bg-sand'}`}
+        className={`absolute inset-x-0 top-0 h-[3px] ${isResolved ? (isRejected ? 'bg-red-600' : 'bg-green') : 'bg-stone'}`}
       />
 
       <header className="flex flex-wrap items-start justify-between gap-5 px-6 pb-6 pt-8 sm:px-8 sm:pt-10">
         <div>
-          <span className="eyebrow">Verification result</span>
-          <h2 className="mt-3 text-[30px] font-extralight leading-[1.05] tracking-tightest text-charcoal sm:text-[38px]">
+          <span className="label-mono">Verification result</span>
+          <h2 className="mt-3 text-[30px] leading-[1.05] tracking-tighter text-black sm:text-[38px]">
             Proof of payment
           </h2>
-          <p className="mt-3 font-mono text-[11px] font-light tracking-[0.06em] text-charcoal/40">
+          <p className="mt-3 font-mono text-[11px] tracking-[0.06em] text-grey-500">
             {orderNumber}
           </p>
         </div>
@@ -759,9 +759,9 @@ function VerificationPanel({
         {isResolved ? (
           <DecisionBadge rejected={isRejected} />
         ) : (
-          <span className="inline-flex items-center gap-2 rounded-full bg-sand/70 px-4 py-2 text-[10px] font-medium uppercase tracking-eyebrow text-charcoal/55">
+          <span className="inline-flex items-center gap-2 rounded-pill bg-stone/70 px-4 py-2 text-[10px] font-medium uppercase tracking-label text-grey-500">
             {status === 'verifying' && (
-              <span className="h-3 w-3 animate-spin rounded-full border-2 border-charcoal/30 border-t-charcoal" />
+              <span className="h-3 w-3 animate-spin rounded-pill border-2 border-grey-100 border-t-green" />
             )}
             {status === 'verifying' ? 'Analysing' : 'Awaiting proof'}
           </span>
@@ -770,12 +770,12 @@ function VerificationPanel({
 
       {isResolved && verdict ? (
         <>
-          <div className="border-t border-charcoal/[0.08] px-6 py-7 sm:px-8">
+          <div className="border-t border-[color:var(--border-soft)] px-6 py-7 sm:px-8">
             <ConfidenceMeter value={confidence} tone={isRejected ? 'red' : 'gold'} />
           </div>
 
-          <div className="border-t border-charcoal/[0.08] px-6 py-7 sm:px-8">
-            <span className="eyebrow">Match criteria</span>
+          <div className="border-t border-[color:var(--border-soft)] px-6 py-7 sm:px-8">
+            <span className="label-mono">Match criteria</span>
             <ul className="mt-5 grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
               {verdict.reasons.map((reason, index) => {
                 const meta = reasonMeta(reason);
@@ -788,8 +788,8 @@ function VerificationPanel({
                     className="flex items-center gap-3"
                   >
                     <span
-                      className={`flex h-[18px] w-[18px] flex-none items-center justify-center rounded-full ${
-                        meta.ok ? 'bg-gold/15 text-gold' : 'bg-red-600/10 text-red-600'
+                      className={`flex h-[18px] w-[18px] flex-none items-center justify-center rounded-pill ${
+                        meta.ok ? 'bg-mint text-green' : 'bg-red-600/10 text-red-600'
                       }`}
                     >
                       {meta.ok ? (
@@ -798,7 +798,7 @@ function VerificationPanel({
                         <IconX className="h-[11px] w-[11px]" strokeWidth={2.6} />
                       )}
                     </span>
-                    <span className="text-[13px] font-light leading-relaxed text-charcoal/70">
+                    <span className="text-[13px] leading-relaxed text-grey-700">
                       {meta.label}
                     </span>
                   </motion.li>
@@ -807,9 +807,9 @@ function VerificationPanel({
             </ul>
           </div>
 
-          <div className="border-t border-charcoal/[0.08] bg-cream/60 px-6 py-7 sm:px-8">
-            <span className="eyebrow">Extracted data</span>
-            <dl className="mt-5 divide-y divide-charcoal/[0.07]">
+          <div className="border-t border-[color:var(--border-soft)] bg-off-white px-6 py-7 sm:px-8">
+            <span className="label-mono">Extracted data</span>
+            <dl className="mt-5 divide-y divide-[color:var(--border-soft)][0.07]">
               {[
                 {
                   label: 'Detected amount',
@@ -822,8 +822,8 @@ function VerificationPanel({
                 { label: 'OCR confidence', value: `${Math.round(verdict.extracted.ocr_avg_conf * 100)}%` },
               ].map((row) => (
                 <div key={row.label} className="flex items-baseline justify-between gap-6 py-2.5">
-                  <dt className="text-[12px] font-light text-charcoal/50">{row.label}</dt>
-                  <dd className="truncate font-mono text-[12px] font-light tracking-[0.02em] text-charcoal/85">
+                  <dt className="text-[12px] text-grey-500">{row.label}</dt>
+                  <dd className="truncate font-mono text-[12px] tracking-[0.02em] text-black">
                     {row.value}
                   </dd>
                 </div>
@@ -832,8 +832,8 @@ function VerificationPanel({
           </div>
         </>
       ) : (
-        <div className="border-t border-charcoal/[0.08] px-6 py-10 sm:px-8">
-          <p className="text-[13px] font-light leading-relaxed text-charcoal/50">
+        <div className="border-t border-[color:var(--border-soft)] px-6 py-10 sm:px-8">
+          <p className="text-[13px] leading-relaxed text-grey-500">
             {status === 'verifying'
               ? 'Reading your screenshot and matching it against the order…'
               : 'Submit your screenshot above to run verification — the result will appear here.'}
@@ -841,9 +841,9 @@ function VerificationPanel({
         </div>
       )}
 
-      <footer className="flex items-center gap-3 border-t border-charcoal/[0.08] px-6 py-5 sm:px-8">
-        <IconShield className="h-4 w-4 flex-none text-charcoal/35" />
-        <p className="text-[11px] font-light leading-relaxed text-charcoal/45">
+      <footer className="flex items-center gap-3 border-t border-[color:var(--border-soft)] px-6 py-5 sm:px-8">
+        <IconShield className="h-4 w-4 flex-none text-grey-500" />
+        <p className="text-[11px] leading-relaxed text-grey-500">
           Checked automatically against your order. A specialist reviews every flagged transfer.
         </p>
       </footer>
@@ -857,8 +857,8 @@ function DecisionBadge({ rejected }: { rejected: boolean }) {
       initial={{ opacity: 0, scale: 0.94 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.45, ease: EASE }}
-      className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-[10px] font-medium uppercase tracking-eyebrow ${
-        rejected ? 'bg-red-600/10 text-red-600 ring-1 ring-red-600/25' : 'bg-gold/12 text-gold ring-1 ring-gold/30'
+      className={`inline-flex items-center gap-2 rounded-pill px-4 py-2 text-[10px] font-medium uppercase tracking-label ${
+        rejected ? 'bg-red-600/10 text-red-600 ring-1 ring-red-600/25' : 'bg-mint text-green ring-1 ring-green/30'
       }`}
     >
       {rejected ? <IconX className="h-3 w-3" strokeWidth={2.6} /> : <IconCheck className="h-3 w-3" strokeWidth={2.6} />}
@@ -876,20 +876,20 @@ function ConfidenceMeter({ value, tone }: { value: number; tone: 'gold' | 'red' 
     return () => controls.stop();
   }, [count, value]);
 
-  const barColor = tone === 'gold' ? 'bg-gold' : 'bg-red-600';
+  const barColor = tone === 'gold' ? 'bg-green' : 'bg-red-600';
 
   return (
     <div>
       <div className="flex items-end justify-between gap-4">
-        <span className="text-[10px] font-medium uppercase tracking-eyebrow text-charcoal/45">
+        <span className="text-[10px] font-medium uppercase tracking-label text-grey-500">
           OCR match confidence
         </span>
-        <motion.span className="font-mono text-[22px] font-light tracking-tightest text-charcoal">
+        <motion.span className="font-mono text-[22px] tracking-tighter text-black">
           {rounded}
         </motion.span>
       </div>
       <div
-        className="mt-3 h-[3px] w-full overflow-hidden rounded-full bg-sand"
+        className="mt-3 h-[3px] w-full overflow-hidden rounded-pill bg-stone"
         role="progressbar"
         aria-valuenow={value}
         aria-valuemin={0}

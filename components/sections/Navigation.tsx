@@ -1,253 +1,233 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { NAV_LINKS } from '@/lib/data';
-import { scrollToSection } from '@/lib/lenis';
-import Magnetic from '@/components/ui/Magnetic';
+import { MENU } from '@/lib/data';
 import Logo from '@/components/ui/Logo';
 import CartButton from '@/components/cart/CartButton';
 import AccountMenu from '@/components/ui/AccountMenu';
-import { useAuth } from '@/components/providers/AuthProvider';
+import { ButtonLink } from '@/components/ui/Button';
+import { ChevronDown, Close, Menu as MenuIcon } from '@/components/ui/Icons';
 
+/**
+ * Header: an opaque white bar pinned below the notice strip, with three
+ * mega-menu groups on desktop and a full-screen panel on small screens.
+ * Unlike the previous translucent treatment it never changes colour on
+ * scroll — the reference system keeps the chrome constant so the page
+ * underneath is the only thing that moves.
+ */
 export default function Navigation() {
-  const [scrolled, setScrolled] = useState(false);
-  const [active, setActive] = useState('#home');
-  const [menuOpen, setMenuOpen] = useState(false);
-  const { user, logout } = useAuth();
+  const [openGroup, setOpenGroup] = useState<string | null>(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileGroup, setMobileGroup] = useState<string | null>(null);
+  const headerRef = useRef<HTMLElement>(null);
 
+  // Close the desktop panel on outside click or Escape.
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+    if (!openGroup) return;
+    const onDown = (e: MouseEvent) => {
+      if (headerRef.current && !headerRef.current.contains(e.target as Node)) {
+        setOpenGroup(null);
+      }
+    };
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpenGroup(null);
+    document.addEventListener('mousedown', onDown);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('mousedown', onDown);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [openGroup]);
 
+  // Lock the page behind the mobile panel.
   useEffect(() => {
-    const sections = NAV_LINKS.filter((l) => l.href.startsWith('#'))
-      .map((l) => document.querySelector(l.href))
-      .filter(Boolean) as HTMLElement[];
+    document.documentElement.style.overflow = mobileOpen ? 'hidden' : '';
+    return () => {
+      document.documentElement.style.overflow = '';
+    };
+  }, [mobileOpen]);
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActive(`#${entry.target.id}`);
-        });
-      },
-      { rootMargin: '-45% 0px -50% 0px', threshold: 0 }
-    );
-    sections.forEach((s) => observer.observe(s));
-    return () => observer.disconnect();
-  }, []);
-
-  const go = (href: string) => {
-    setMenuOpen(false);
-    scrollToSection(href);
+  const closeAll = () => {
+    setOpenGroup(null);
+    setMobileOpen(false);
+    setMobileGroup(null);
   };
 
   return (
-    <>
-      <header
-        className={`fixed inset-x-0 top-[calc(34px+env(safe-area-inset-top))] z-50 transition-all duration-700 ease-lux ${
-          scrolled
-            ? 'border-b border-charcoal/5 bg-ivory/70 backdrop-blur-glass py-3.5 md:py-4'
-            : 'border-b border-transparent py-5 md:py-7'
-        }`}
+    <header
+      ref={headerRef}
+      className="fixed inset-x-0 top-[calc(var(--bar-h)+env(safe-area-inset-top))] z-50 border-b border-[color:var(--border-soft)] bg-white"
+    >
+      {/* 64px tall with 24px gutters on mobile, 90px with 56px gutters from
+          desktop — the reference header's own metrics. */}
+      <nav
+        aria-label="Primary"
+        className="container-header flex h-[var(--header-h)] items-center justify-between gap-md"
       >
-        <nav className="container-wide flex items-center justify-between">
+        {/* Left: menu toggle (below desktop), the brand, then menu groups */}
+        <div className="flex items-center gap-sm desktop:gap-xl">
           <button
-            onClick={() => go('#home')}
-            className={`transition-colors duration-500 ${
-              scrolled ? 'text-charcoal' : 'text-ivory'
-            }`}
-            aria-label="Lumivex home"
+            type="button"
+            data-touch-target
+            onClick={() => setMobileOpen((v) => !v)}
+            aria-expanded={mobileOpen}
+            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+            className="-ml-sm inline-flex h-9 w-9 items-center justify-center text-black desktop:hidden"
           >
-            <Logo />
+            {mobileOpen ? <MenuIconClose /> : <MenuIcon />}
           </button>
 
-          <ul className="hidden items-center gap-9 lg:flex">
-            {NAV_LINKS.map((link) => (
-              <li key={link.href}>
-                {link.href.startsWith('#') ? (
-                  <button
-                    onClick={() => go(link.href)}
-                    className={`link-underline text-[13px] font-medium tracking-wide transition-colors duration-500 ${
-                      active === link.href ? 'is-active' : ''
-                    } ${scrolled ? 'text-charcoal/80 hover:text-charcoal' : 'text-ivory/80 hover:text-ivory'}`}
-                  >
-                    {link.label}
-                  </button>
-                ) : (
-                  <Link
-                    href={link.href}
-                    onClick={() => setMenuOpen(false)}
-                    className={`link-underline text-[13px] font-medium tracking-wide transition-colors duration-500 ${
-                      scrolled ? 'text-charcoal/80 hover:text-charcoal' : 'text-ivory/80 hover:text-ivory'
+          <Link
+            href="/"
+            onClick={closeAll}
+            className="text-green"
+            aria-label="Lumivex — home"
+          >
+            <Logo />
+          </Link>
+
+          {/* Desktop groups — 20px labels, 12px inner padding, 8px apart */}
+          <ul className="hidden items-center gap-sm desktop:flex">
+            {MENU.map((group) => (
+              <li key={group.label}>
+                <button
+                  type="button"
+                  onClick={() =>
+                    setOpenGroup((g) => (g === group.label ? null : group.label))
+                  }
+                  aria-expanded={openGroup === group.label}
+                  className={`inline-flex items-center gap-xs px-smd text-lg leading-7 transition-colors duration-200 ease-ag ${
+                    openGroup === group.label
+                      ? 'text-green'
+                      : 'text-black hover:text-green'
+                  }`}
+                >
+                  {group.label}
+                  <ChevronDown
+                    size={16}
+                    className={`transition-transform duration-200 ease-ag ${
+                      openGroup === group.label ? 'rotate-180' : ''
                     }`}
-                  >
-                    {link.label}
-                  </Link>
-                )}
+                  />
+                </button>
               </li>
             ))}
           </ul>
-
-          <div className="hidden items-center gap-3 lg:flex">
-            <AccountMenu dark={scrolled} />
-            <CartButton dark={scrolled} />
-            <Magnetic strength={0.4} className="inline-block">
-              <Link
-                href="/shop"
-                className={`inline-block rounded-full px-6 py-2.5 text-[13px] font-medium transition-all duration-500 ${
-                  scrolled
-                    ? 'bg-charcoal text-ivory hover:bg-gold'
-                    : 'border border-ivory/40 text-ivory hover:bg-ivory hover:text-charcoal'
-                }`}
-              >
-                Shop Now
-              </Link>
-            </Magnetic>
-          </div>
-
-          {/* Mobile: cart + toggle */}
-          <div className="flex items-center gap-1 lg:hidden">
-            <CartButton dark={scrolled || menuOpen} />
-            <button
-              onClick={() => setMenuOpen((v) => !v)}
-              className="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-[5px]"
-              aria-label="Toggle menu"
-            >
-            <span
-              className={`h-[1.5px] w-6 transition-all duration-300 ${
-                menuOpen ? 'translate-y-[6.5px] rotate-45 bg-charcoal' : scrolled ? 'bg-charcoal' : 'bg-ivory'
-              }`}
-            />
-            <span
-              className={`h-[1.5px] w-6 transition-all duration-300 ${
-                menuOpen ? 'opacity-0' : scrolled ? 'bg-charcoal' : 'bg-ivory'
-              }`}
-            />
-            <span
-              className={`h-[1.5px] w-6 transition-all duration-300 ${
-                menuOpen ? '-translate-y-[6.5px] -rotate-45 bg-charcoal' : scrolled ? 'bg-charcoal' : 'bg-ivory'
-              }`}
-            />
-            </button>
-          </div>
-        </nav>
-      </header>
-
-      {/* Mobile overlay */}
-      <div
-        className={`safe-pt safe-pb safe-px fixed inset-0 z-40 flex flex-col justify-center bg-ivory/95 px-8 backdrop-blur-glass transition-all duration-700 ease-lux lg:hidden ${
-          menuOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
-        }`}
-      >
-        <ul className="flex flex-col gap-1">
-          {NAV_LINKS.map((link, i) => (
-            <li key={link.href}>
-              {link.href.startsWith('#') ? (
-                <button
-                  data-touch-target
-                  onClick={() => go(link.href)}
-                  className="block w-full py-2 text-left text-[clamp(2rem,11vw,2.75rem)] font-light tracking-tightest text-charcoal transition-colors hover:text-gold"
-                  style={{
-                    transitionDelay: menuOpen ? `${i * 60}ms` : '0ms',
-                    transform: menuOpen ? 'translateY(0)' : 'translateY(20px)',
-                    opacity: menuOpen ? 1 : 0,
-                    transitionProperty: 'transform, opacity, color',
-                    transitionDuration: '600ms',
-                  }}
-                >
-                  {link.label}
-                </button>
-              ) : (
-                <Link
-                  data-touch-target
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="block w-full py-2 text-left text-[clamp(2rem,11vw,2.75rem)] font-light tracking-tightest text-charcoal transition-colors hover:text-gold"
-                  style={{
-                    transitionDelay: menuOpen ? `${i * 60}ms` : '0ms',
-                    transform: menuOpen ? 'translateY(0)' : 'translateY(20px)',
-                    opacity: menuOpen ? 1 : 0,
-                    transitionProperty: 'transform, opacity, color',
-                    transitionDuration: '600ms',
-                  }}
-                >
-                  {link.label}
-                </Link>
-              )}
-            </li>
-          ))}
-        </ul>
-        <div
-          className="mt-10 flex flex-wrap items-center gap-3"
-          style={{
-            transitionDelay: menuOpen ? `${NAV_LINKS.length * 60}ms` : '0ms',
-            transform: menuOpen ? 'translateY(0)' : 'translateY(20px)',
-            opacity: menuOpen ? 1 : 0,
-            transitionProperty: 'transform, opacity',
-            transitionDuration: '600ms',
-          }}
-        >
-          <Link
-            data-touch-target
-            href="/shop"
-            onClick={() => setMenuOpen(false)}
-            className="rounded-full bg-charcoal px-8 py-4 text-sm font-medium text-ivory transition-colors hover:bg-gold"
-          >
-            Shop Now
-          </Link>
-          <Link
-            data-touch-target
-            href="/cart"
-            onClick={() => setMenuOpen(false)}
-            className="inline-flex items-center rounded-full border border-charcoal/15 px-8 py-4 text-sm font-medium text-charcoal transition-colors hover:border-charcoal/40"
-          >
-            View Cart
-          </Link>
-          {user ? (
-            <>
-              <Link
-                data-touch-target
-                href="/account/orders"
-                onClick={() => setMenuOpen(false)}
-                className="inline-flex items-center rounded-full border border-charcoal/15 px-8 py-4 text-sm font-medium text-charcoal transition-colors hover:border-charcoal/40"
-              >
-                My Orders
-              </Link>
-              <Link
-                data-touch-target
-                href="/account/track"
-                onClick={() => setMenuOpen(false)}
-                className="inline-flex items-center rounded-full border border-charcoal/15 px-8 py-4 text-sm font-medium text-charcoal transition-colors hover:border-charcoal/40"
-              >
-                Track
-              </Link>
-              <button
-                data-touch-target
-                onClick={() => {
-                  setMenuOpen(false);
-                  logout();
-                }}
-                className="inline-flex items-center rounded-full border border-charcoal/15 px-8 py-4 text-sm font-medium text-charcoal transition-colors hover:border-charcoal/40"
-              >
-                Logout
-              </button>
-            </>
-          ) : (
-            <Link
-              data-touch-target
-              href="/login"
-              onClick={() => setMenuOpen(false)}
-              className="inline-flex items-center rounded-full border border-charcoal/15 px-8 py-4 text-sm font-medium text-charcoal transition-colors hover:border-charcoal/40"
-            >
-              Sign In
-            </Link>
-          )}
         </div>
-      </div>
-    </>
+
+        {/* Right: cart and account */}
+        <div className="flex items-center gap-smd desktop:gap-lg">
+          <CartButton />
+          <div className="hidden desktop:block">
+            <AccountMenu />
+          </div>
+        </div>
+      </nav>
+
+      {/* Desktop mega panel */}
+      {openGroup && (
+        <div className="absolute inset-x-0 top-full hidden border-b border-[color:var(--border-soft)] bg-white shadow-menu desktop:block">
+          <div className="container-header grid grid-cols-3 gap-x-xl gap-y-lg py-xl">
+            {MENU.find((g) => g.label === openGroup)?.items.map((item) => (
+              <Link
+                key={item.href + item.label}
+                href={item.href}
+                onClick={closeAll}
+                className="group rounded-card p-smd transition-colors duration-200 ease-ag hover:bg-grey-25"
+              >
+                <span className="block text-md text-black transition-colors duration-200 ease-ag group-hover:text-green">
+                  {item.label}
+                </span>
+                <span className="mt-xxs block max-w-[34ch] text-sm text-grey-500">
+                  {item.description}
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Mobile panel */}
+      {mobileOpen && (
+        <div className="safe-pb fixed inset-x-0 bottom-0 top-[calc(var(--bar-h)+var(--header-h)+env(safe-area-inset-top))] z-40 overflow-y-auto bg-white desktop:hidden">
+          <div className="container-header py-lg">
+            <ul className="border-t border-[color:var(--border-hair)]">
+              {MENU.map((group) => {
+                const isOpen = mobileGroup === group.label;
+                return (
+                  <li
+                    key={group.label}
+                    className="border-b border-[color:var(--border-hair)]"
+                  >
+                    <button
+                      type="button"
+                      data-touch-target
+                      onClick={() => setMobileGroup(isOpen ? null : group.label)}
+                      aria-expanded={isOpen}
+                      className="flex w-full items-center justify-between py-md text-left text-lg text-black"
+                    >
+                      {group.label}
+                      <ChevronDown
+                        className={`text-green transition-transform duration-200 ease-ag ${
+                          isOpen ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </button>
+                    <div className="collapse-grid" data-open={isOpen}>
+                      <div>
+                        <ul className="pb-md">
+                          {group.items.map((item) => (
+                            <li key={item.href + item.label}>
+                              <Link
+                                href={item.href}
+                                data-touch-target
+                                onClick={closeAll}
+                                className="flex flex-col py-sm"
+                              >
+                                <span className="text-base text-black">
+                                  {item.label}
+                                </span>
+                                <span className="text-sm text-grey-500">
+                                  {item.description}
+                                </span>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+
+            <div className="mt-lg flex flex-col gap-sm">
+              <ButtonLink href="/shop" full onClick={closeAll} arrow>
+                Shop now
+              </ButtonLink>
+              <ButtonLink href="/cart" variant="outline" full onClick={closeAll}>
+                View cart
+              </ButtonLink>
+              <ButtonLink
+                href="/account/track"
+                variant="ghost"
+                full
+                onClick={closeAll}
+              >
+                Track an order
+              </ButtonLink>
+            </div>
+
+            <div className="mt-lg border-t border-[color:var(--border-hair)] pt-lg">
+              <AccountMenu />
+            </div>
+          </div>
+        </div>
+      )}
+    </header>
   );
+}
+
+function MenuIconClose() {
+  return <Close />;
 }

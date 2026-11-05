@@ -1,0 +1,129 @@
+- generic [active] [ref=f75e1]:
+  - paragraph [ref=f75e3]: Third-party tested by Janoshik Analytical
+  - banner [ref=f75e4]:
+    - navigation "Primary" [ref=f75e5]:
+      - link "Lumivex — home" [ref=f75e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f75e7]:
+          - text: Lumivex
+          - generic [aria-hidden] [ref=f75e8]: ®
+      - list [ref=f75e9]:
+        - listitem [ref=f75e10]:
+          - button "Shop" [ref=f75e11] [cursor=pointer]
+        - listitem [ref=f75e14]:
+          - button "Standards" [ref=f75e15] [cursor=pointer]
+        - listitem [ref=f75e18]:
+          - button "Explore" [ref=f75e19] [cursor=pointer]
+      - generic [ref=f75e22]:
+        - link "Cart, 0 items" [ref=f75e23] [cursor=pointer]:
+          - /url: /cart
+        - button "Account menu" [ref=f75e30]:
+          - generic [ref=f75e34]: Sign in
+        - link "Shop now" [ref=f75e35] [cursor=pointer]:
+          - /url: /shop
+  - main [ref=f75e37]:
+    - generic [ref=f75e38]:
+      - heading "Nothing to check out" [level=1] [ref=f75e39]
+      - paragraph [ref=f75e40]: Your cart is empty. Add a research compound to continue.
+      - link "Browse the catalogue" [ref=f75e41] [cursor=pointer]:
+        - /url: /#products
+  - contentinfo [ref=f75e42]:
+    - generic [ref=f75e43]:
+      - generic [ref=f75e44]:
+        - navigation "Shop" [ref=f75e45]:
+          - heading "Shop" [level=2] [ref=f75e46]
+          - list [ref=f75e47]:
+            - listitem [ref=f75e48]:
+              - link "All compounds" [ref=f75e49] [cursor=pointer]:
+                - /url: /shop
+            - listitem [ref=f75e50]:
+              - link "Metabolic" [ref=f75e51] [cursor=pointer]:
+                - /url: /shop?category=metabolic
+            - listitem [ref=f75e52]:
+              - link "Recovery" [ref=f75e53] [cursor=pointer]:
+                - /url: /shop?category=recovery
+            - listitem [ref=f75e54]:
+              - link "Longevity" [ref=f75e55] [cursor=pointer]:
+                - /url: /shop?category=longevity
+            - listitem [ref=f75e56]:
+              - link "Blends" [ref=f75e57] [cursor=pointer]:
+                - /url: /shop?category=blend
+        - navigation "Standards" [ref=f75e58]:
+          - heading "Standards" [level=2] [ref=f75e59]
+          - list [ref=f75e60]:
+            - listitem [ref=f75e61]:
+              - link "How we test" [ref=f75e62] [cursor=pointer]:
+                - /url: /#standards
+            - listitem [ref=f75e63]:
+              - link "Quality commitments" [ref=f75e64] [cursor=pointer]:
+                - /url: /#why-us
+            - listitem [ref=f75e65]:
+              - link "Cold-chain handling" [ref=f75e66] [cursor=pointer]:
+                - /url: /shipping-policy
+            - listitem [ref=f75e67]:
+              - link "Press release" [ref=f75e68] [cursor=pointer]:
+                - /url: /press-release
+        - navigation "Account" [ref=f75e69]:
+          - heading "Account" [level=2] [ref=f75e70]
+          - list [ref=f75e71]:
+            - listitem [ref=f75e72]:
+              - link "Sign in" [ref=f75e73] [cursor=pointer]:
+                - /url: /login
+            - listitem [ref=f75e74]:
+              - link "My orders" [ref=f75e75] [cursor=pointer]:
+                - /url: /account/orders
+            - listitem [ref=f75e76]:
+              - link "Track an order" [ref=f75e77] [cursor=pointer]:
+                - /url: /account/track
+            - listitem [ref=f75e78]:
+              - link "Wallet" [ref=f75e79] [cursor=pointer]:
+                - /url: /account/wallet
+        - navigation "Support" [ref=f75e80]:
+          - heading "Support" [level=2] [ref=f75e81]
+          - list [ref=f75e82]:
+            - listitem [ref=f75e83]:
+              - link "Questions" [ref=f75e84] [cursor=pointer]:
+                - /url: /#faq
+            - listitem [ref=f75e85]:
+              - link "Contact" [ref=f75e86] [cursor=pointer]:
+                - /url: /#contact
+            - listitem [ref=f75e87]:
+              - link "Shipping policy" [ref=f75e88] [cursor=pointer]:
+                - /url: /shipping-policy
+            - listitem [ref=f75e89]:
+              - link "Refund policy" [ref=f75e90] [cursor=pointer]:
+                - /url: /refund-policy
+        - navigation "Legal" [ref=f75e91]:
+          - heading "Legal" [level=2] [ref=f75e92]
+          - list [ref=f75e93]:
+            - listitem [ref=f75e94]:
+              - link "Privacy policy" [ref=f75e95] [cursor=pointer]:
+                - /url: /privacy-policy
+            - listitem [ref=f75e96]:
+              - link "Terms of service" [ref=f75e97] [cursor=pointer]:
+                - /url: /terms-of-service
+        - generic [ref=f75e98]:
+          - heading "Newsletter" [level=2] [ref=f75e99]
+          - paragraph [ref=f75e100]: New batches and certificates, as they publish.
+          - generic [ref=f75e102]:
+            - generic [ref=f75e103]:
+              - generic [ref=f75e104]: Email address
+              - textbox "Email address" [ref=f75e105]:
+                - /placeholder: you@lab.com
+              - button "Subscribe" [disabled] [ref=f75e106]
+            - generic [ref=f75e109]:
+              - checkbox "I confirm I am a research professional and consent to catalogue and documentation updates." [ref=f75e110]
+              - generic [ref=f75e111]: I confirm I am a research professional and consent to catalogue and documentation updates.
+      - generic [ref=f75e112]:
+        - generic [ref=f75e114]:
+          - text: Lumivex
+          - generic [aria-hidden] [ref=f75e115]: ®
+        - generic [ref=f75e116]:
+          - paragraph [ref=f75e117]: FOR RESEARCH PURPOSES ONLY. Not intended for human or veterinary use. Not intended to diagnose, treat, cure, or prevent any disease. Products are supplied strictly for laboratory and analytical research conducted by qualified professionals.
+          - paragraph [ref=f75e118]: Lumivex has never operated on any social media platform. Our only official site is lumivex.store — treat any other seller using this name as unauthorised.
+          - paragraph [ref=f75e119]: Certificates of analysis are issued by Janoshik Analytical and are verifiable on the issuing laboratory’s own domain. Figures quoted on product pages refer to the batch stated on the label.
+      - generic [ref=f75e120]:
+        - paragraph [ref=f75e121]: © 2026 Lumivex. All rights reserved.
+        - paragraph [ref=f75e122]: Research use only — not for human or veterinary use
+  - button "Open assistant" [ref=f75e123] [cursor=pointer]
+  - button "Open Next.js Dev Tools" [ref=f75e131] [cursor=pointer]

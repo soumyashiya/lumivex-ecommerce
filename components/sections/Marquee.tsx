@@ -74,7 +74,7 @@ export default function Marquee() {
   return (
     <section
       aria-hidden
-      className="relative overflow-hidden border-y border-charcoal/10 bg-ivory py-10 md:py-14"
+      className="relative overflow-hidden border-y border-[color:var(--border-soft)] bg-white py-10 md:py-14"
     >
       <div
         ref={trackRef}
@@ -82,10 +82,10 @@ export default function Marquee() {
       >
         {items.map((word, i) => (
           <span key={i} className="flex items-center">
-            <span className="px-8 text-5xl font-extralight tracking-tightest text-charcoal md:px-12 md:text-7xl">
+            <span className="px-8 text-5xl tracking-tighter text-black md:px-12 md:text-7xl">
               {word}
             </span>
-            <span className="text-3xl text-gold md:text-4xl">✦</span>
+            <span className="text-3xl text-green md:text-4xl">✦</span>
           </span>
         ))}
       </div>

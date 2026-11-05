@@ -2,15 +2,13 @@
 
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
 import { useAuth } from '@/components/providers/AuthProvider';
+import { User } from '@/components/ui/Icons';
 
 /**
- * Replaces the plain "Sign in" text link with a user icon. Clicking it
- * always opens a small dropdown — signed out that's just a "Sign in" link,
- * signed in it's "My orders" (order history list), "Track" (single-order
- * status timeline), and sign-out. Mirrors CartButton's icon-button
- * shape/sizing so the two sit consistently in the header.
+ * Account entry point in the header. Signed out it offers a sign-in link;
+ * signed in it exposes order history, tracking and sign-out. Matches
+ * CartButton's icon-button footprint so the two sit level.
  */
 export default function AccountMenu({ dark = false }: { dark?: boolean }) {
   const { user, loading, logout } = useAuth();
@@ -35,18 +33,14 @@ export default function AccountMenu({ dark = false }: { dark?: boolean }) {
     };
   }, [open]);
 
-  const iconClasses = `relative inline-flex h-10 w-10 items-center justify-center rounded-full transition-colors duration-500 ${
-    dark ? 'text-charcoal/80 hover:text-charcoal' : 'text-ivory/85 hover:text-ivory'
-  }`;
-
   return (
     <div ref={rootRef} className="relative">
       <button
         type="button"
+        data-touch-target
         onClick={() => {
-          // Don't open until we know whether a stored token is actually
-          // valid — otherwise the menu briefly shows "Sign in" and then
-          // flips to the signed-in items once /auth/verify resolves.
+          // Hold off until a stored token has been verified — otherwise the
+          // menu flashes "Sign in" before flipping to the signed-in items.
           if (loading) return;
           setOpen((v) => !v);
         }}
@@ -54,54 +48,62 @@ export default function AccountMenu({ dark = false }: { dark?: boolean }) {
         aria-expanded={open}
         aria-label="Account menu"
         aria-busy={loading}
-        className={`${iconClasses} ${loading ? 'cursor-wait opacity-60' : ''}`}
+        className={`inline-flex h-10 items-center gap-xs rounded-pill px-sm transition-colors duration-200 ease-ag ${
+          dark ? 'text-white hover:text-white/70' : 'text-black hover:text-green'
+        } ${loading ? 'cursor-wait opacity-60' : ''}`}
       >
-        <UserIcon />
+        <User size={22} />
+        <span className="text-base">{user ? 'Account' : 'Sign in'}</span>
       </button>
 
-      <AnimatePresence>
-        {open && !loading && (
-          <motion.div
-            initial={{ opacity: 0, y: -6, scale: 0.97 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -6, scale: 0.97 }}
-            transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
-            role="menu"
-            className="absolute right-0 top-full z-50 mt-2 w-52 overflow-hidden rounded-[8px] bg-ivory p-1.5 text-charcoal shadow-[0_20px_60px_-15px_rgba(28,26,23,0.3)] ring-1 ring-charcoal/[0.08]"
-          >
-            {user ? (
-              <>
-                <p className="truncate px-3 pb-2 pt-2 text-[11px] font-light text-charcoal/45">
-                  {user.email}
-                </p>
-                <div className="border-t border-charcoal/[0.08] pt-1">
-                  <MenuLink href="/account/orders" onNavigate={() => setOpen(false)}>
-                    My orders
-                  </MenuLink>
-                  <MenuLink href="/account/track" onNavigate={() => setOpen(false)}>
-                    Track
-                  </MenuLink>
-                  <button
-                    type="button"
-                    role="menuitem"
-                    onClick={() => {
-                      setOpen(false);
-                      logout();
-                    }}
-                    className="block w-full rounded-[5px] px-3 py-2.5 text-left text-[13px] font-medium text-charcoal/70 transition-colors duration-200 hover:bg-cream hover:text-charcoal"
-                  >
-                    Logout
-                  </button>
-                </div>
-              </>
-            ) : (
+      {open && !loading && (
+        <div
+          role="menu"
+          className="absolute right-0 top-full z-50 mt-sm w-56 animate-fade-up overflow-hidden rounded-card border border-[color:var(--border-soft)] bg-white p-xs text-black shadow-menu"
+        >
+          {user ? (
+            <>
+              <p className="truncate px-smd pb-sm pt-sm text-xs text-grey-500">
+                {user.email}
+              </p>
+              <div className="border-t border-[color:var(--border-soft)] pt-xs">
+                <MenuLink href="/account/orders" onNavigate={() => setOpen(false)}>
+                  My orders
+                </MenuLink>
+                <MenuLink href="/account/track" onNavigate={() => setOpen(false)}>
+                  Track an order
+                </MenuLink>
+                <MenuLink href="/account/wallet" onNavigate={() => setOpen(false)}>
+                  Wallet
+                </MenuLink>
+                <button
+                  type="button"
+                  role="menuitem"
+                  onClick={() => {
+                    setOpen(false);
+                    logout();
+                  }}
+                  className="block w-full rounded-smd px-smd py-sm text-left text-base text-grey-700 transition-colors duration-200 ease-ag hover:bg-grey-25 hover:text-black"
+                >
+                  Sign out
+                </button>
+              </div>
+            </>
+          ) : (
+            <>
               <MenuLink href="/login" onNavigate={() => setOpen(false)}>
                 Sign in
               </MenuLink>
-            )}
-          </motion.div>
-        )}
-      </AnimatePresence>
+              <MenuLink href="/register" onNavigate={() => setOpen(false)}>
+                Create an account
+              </MenuLink>
+              <MenuLink href="/account/track" onNavigate={() => setOpen(false)}>
+                Track an order
+              </MenuLink>
+            </>
+          )}
+        </div>
+      )}
     </div>
   );
 }
@@ -120,27 +122,9 @@ function MenuLink({
       href={href}
       role="menuitem"
       onClick={onNavigate}
-      className="block rounded-[5px] px-3 py-2.5 text-[13px] font-medium text-charcoal/70 transition-colors duration-200 hover:bg-cream hover:text-charcoal"
+      className="block rounded-smd px-smd py-sm text-base text-grey-700 transition-colors duration-200 ease-ag hover:bg-grey-25 hover:text-black"
     >
       {children}
     </Link>
-  );
-}
-
-function UserIcon() {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      className="h-[21px] w-[21px]"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.4"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden
-    >
-      <circle cx="12" cy="8" r="3.5" />
-      <path d="M4.5 20c1.4-3.6 4.4-5.5 7.5-5.5s6.1 1.9 7.5 5.5" />
-    </svg>
   );
 }

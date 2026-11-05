@@ -1,0 +1,60 @@
+[     124ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[     287ms] [LOG] [Fast Refresh] done in 265ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[     434ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[     492ms] [LOG] [HMR] connected @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[    2850ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[    3090ms] [LOG] [Fast Refresh] done in 338ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[    3198ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[    3398ms] [LOG] [Fast Refresh] done in 305ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[    3543ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[    3665ms] [LOG] [Fast Refresh] done in 226ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[    3796ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[    3931ms] [LOG] [Fast Refresh] done in 238ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[    5140ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[    5678ms] [LOG] [Fast Refresh] done in 652ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[   82578ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[   82654ms] [LOG] [Fast Refresh] done in 183ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  241283ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  241397ms] [LOG] [Fast Refresh] done in 230ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  589039ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  590019ms] [LOG] [Fast Refresh] done in 1014ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  590136ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  590226ms] [LOG] [Fast Refresh] done in 194ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  590406ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  590478ms] [LOG] [Fast Refresh] done in 173ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  590604ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  591093ms] [LOG] [Fast Refresh] done in 595ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  591695ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  591714ms] [LOG] [Fast Refresh] done in 133ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  591821ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  592141ms] [LOG] [Fast Refresh] done in 421ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  592776ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  592803ms] [LOG] [Fast Refresh] done in 141ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  593010ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  593015ms] [LOG] [Fast Refresh] done in 111ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  593438ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  593449ms] [LOG] [Fast Refresh] done in 115ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  593863ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  593868ms] [LOG] [Fast Refresh] done in 117ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  594250ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  594259ms] [LOG] [Fast Refresh] done in 115ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  594375ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  594377ms] [LOG] [Fast Refresh] done in 115ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  602589ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  603245ms] [ERROR] An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:3318
+[  603260ms] [ERROR] Image is missing required "src" property: JSHandle@node @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:3318
+[  603268ms] [ERROR] Image is missing required "src" property: JSHandle@node @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:3318
+[  603273ms] [WARNING] Image with src "" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height. @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  603306ms] [LOG] [Fast Refresh] done in 744ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  603421ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  603804ms] [LOG] [Fast Refresh] done in 494ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  603915ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  604070ms] [LOG] [Fast Refresh] done in 266ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  604187ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  604191ms] [LOG] [Fast Refresh] done in 118ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  604303ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  604427ms] [LOG] [Fast Refresh] done in 223ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  606919ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  607164ms] [LOG] [Fast Refresh] done in 345ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  607283ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[  607434ms] [LOG] [Fast Refresh] done in 268ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477

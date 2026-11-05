@@ -1,235 +1,64 @@
-'use client';
+import { ButtonLink } from '@/components/ui/Button';
+import HeroVideo from '@/components/sections/HeroVideo';
 
-import { useEffect, useRef } from 'react';
-import Image from 'next/image';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import SplitType from 'split-type';
-import { scrollToSection } from '@/lib/lenis';
-import Magnetic from '@/components/ui/Magnetic';
-
+/**
+ * Full-bleed video hero: footage fills the frame below the header, with the
+ * copy anchored left. The scrim is kept deliberately light — a soft left-hand
+ * shade behind the copy and a gentle floor — so the footage itself stays the
+ * focus. On mobile a bottom-weighted shade carries the copy instead.
+ */
 export default function Hero() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const imageRef = useRef<HTMLDivElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    const image = imageRef.current;
-    const content = contentRef.current;
-    const title = titleRef.current;
-    if (!section || !image || !content || !title) return;
-
-    const prefersReduced = window.matchMedia(
-      '(prefers-reduced-motion: reduce)'
-    ).matches;
-
-    gsap.registerPlugin(ScrollTrigger);
-
-    const ctx = gsap.context(() => {
-      // Intro animation
-      const split = new SplitType(title, { types: 'lines,chars', lineClass: 'split-line' });
-      const tl = gsap.timeline({ delay: 0.35 });
-
-      if (!prefersReduced) {
-        gsap.set(title, { autoAlpha: 1 });
-        tl.from(split.chars, {
-          yPercent: 120,
-          opacity: 0,
-          filter: 'blur(10px)',
-          duration: 1.4,
-          ease: 'power4.out',
-          stagger: 0.025,
-        });
-        tl.from(
-          '[data-hero-fade]',
-          {
-            y: 30,
-            opacity: 0,
-            duration: 1.1,
-            ease: 'power3.out',
-            stagger: 0.12,
-          },
-          '-=0.9'
-        );
-
-        // Scroll: the hero image lags behind the page (premium floating
-        // effect) plus a subtle scale. The image starts flush with the
-        // viewport — all drift headroom comes from the scale, never from an
-        // initial offset, so the subject is never cropped at rest.
-        //
-        // Invariant: scale grows the box by 50 * (scale - 1) on each edge,
-        // so `50 * (scaleEnd - 1) >= yEnd` keeps the top edge covered for the
-        // whole scrub. Drift is richer on desktop, gentler on small screens.
-        const vw = window.innerWidth;
-        const factor = vw < 640 ? 0.55 : vw < 1024 ? 0.78 : 1;
-        gsap.fromTo(
-          image,
-          { yPercent: 0, scale: 1 },
-          {
-            yPercent: 8 * factor,
-            scale: 1 + 0.2 * factor,
-            ease: 'none',
-            scrollTrigger: {
-              trigger: section,
-              start: 'top top',
-              end: 'bottom top',
-              scrub: true,
-            },
-          }
-        );
-        gsap.to(content, {
-          yPercent: -22,
-          opacity: 0,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: section,
-            start: 'top top',
-            end: 'bottom top',
-            scrub: true,
-          },
-        });
-      } else {
-        gsap.set(title, { autoAlpha: 1 });
-      }
-    }, section);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
     <section
       id="home"
-      ref={sectionRef}
-      className="relative flex h-[100svh] min-h-[640px] items-center justify-center overflow-hidden"
+      className="relative h-[calc(100svh-var(--chrome-h))] min-h-[560px] overflow-hidden bg-green-deep desktop:max-h-[860px] desktop:min-h-[640px]"
     >
-      {/* Background — the subject fills nearly the full height of the source
-          frame, so the box sits flush with the viewport and the crop is
-          anchored high: any overflow is taken from the floor at the bottom
-          (hidden behind the CTAs and gradient) rather than the pen and face. */}
-      <div
-        ref={imageRef}
-        className="absolute inset-0 will-change-transform"
-      >
-        <Image
-          src="/images/hero-seo-new.webp"
-          alt="Lumivex Labs research laboratory"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-[80%_50%] sm:object-[62%_25%] md:object-[50%_15%]"
-        />
-      </div>
+      <HeroVideo className="absolute inset-0 h-full w-full object-cover" />
 
-      {/* Legibility wash — a sibling of the parallax box, not a child, so it
-          stays pinned while the image drifts and scales beneath it. Weighted
-          to the left, where the copy sits over the near-white table top, and
-          fading out before the subject on the right. Narrow screens crop in
-          toward her, so the copy needs cover across the full width there.
-
-          Olive-gold rather than neutral black: it shares the ~37deg hue of the
-          gold token, so the shade reads as part of the shot's warmth. It is
-          taken well below the token's lightness though — ivory on gold itself
-          is only 2.5:1, while this holds ~10:1. Stops end on a matching hue at
-          /0, not `transparent` (= transparent black), which fades through grey. */}
+      {/* Mobile: shade rises from the bottom where the copy sits. */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#332E18]/88 via-[#4A4226]/62 to-[#4A4226]/28 md:from-[#332E18]/72 md:via-[#3E3820]/34 md:to-[#4A4226]/0"
+        className="absolute inset-0 bg-[linear-gradient(0deg,rgba(0,0,0,0.62)_0%,rgba(0,0,0,0.28)_45%,rgba(0,0,0,0)_75%)] desktop:hidden"
       />
-
-      {/* Gold edge vignette, echoing the framing of the reference art */}
+      {/* Desktop: soft shade on the copy side only, clear on the right. */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-y-0 right-0 hidden w-[16%] bg-gradient-to-l from-gold/32 to-gold/0 md:block"
+        className="absolute inset-0 hidden bg-[linear-gradient(90deg,rgba(0,0,0,0.45)_0%,rgba(0,0,0,0.22)_35%,rgba(0,0,0,0)_60%)] desktop:block"
       />
 
-      {/* Foot wash — the shot's near-white table top lands under the body copy,
-          the CTAs and the scroll cue at every width, and the horizontal wash
-          above is at its weakest by then, leaving ivory type on near-white.
-          This lifts the bottom band back to a readable contrast: heaviest on
-          portrait, where the table occupies the most height. */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-[45%] bg-gradient-to-t from-[#2A2413]/90 via-[#332E18]/55 to-[#332E18]/0 md:h-[40%] md:from-[#2A2413]/72 md:via-[#332E18]/34"
-      />
+      <div className="container-header relative flex h-full items-end pb-3xl desktop:items-center desktop:pb-0">
+        {/* Type and column measured off drinkag1.com: title 32 → 44 → 72px
+            at 0.95 line height, normal tracking, weight 400, 16px below;
+            subtitle 16/24 → 20/30; copy column 444px on desktop, 628px wide. */}
+        <div className="max-w-full desktop:max-w-[444px] min-[1440px]:max-w-[628px]">
+          <h1 className="pb-md font-serif text-[32px] font-normal leading-[0.95] tracking-normal text-white [text-shadow:0_1px_24px_rgba(0,0,0,0.18)] tablet:text-[44px] desktop:text-[72px]">
+            <span className="block">Every batch tested.</span>
+            <span className="block">Every result published.</span>
+          </h1>
+          <p className="mb-md text-[16px] leading-[24px] text-white desktop:mb-lg desktop:text-[20px] desktop:leading-[30px]">
+            Research-grade peptides for UK and EU laboratories, independently
+            assayed and shipped cold with the certificate for your batch.
+          </p>
 
-      {/* Content */}
-      <div
-        ref={contentRef}
-        className="container-wide relative z-10 flex flex-col items-start text-left will-change-transform"
-      >
-        {/* Gold on the subject's skin tone is ~1.2:1 at the mobile crop, so the
-            eyebrow runs ivory there and only picks up gold once the crop moves
-            the copy back over the gradient at md. */}
-        <span
-          data-hero-fade
-          className="eyebrow mb-8 text-ivory/90 md:text-gold-light"
-        >
-          Engineered for precision · Verified by third-party analysis
-        </span>
-        <h1
-          ref={titleRef}
-          className="text-hero-d font-extralight text-ivory"
-          style={{ visibility: 'hidden' }}
-        >
-          Premium<br />Research.
-        </h1>
-        <p
-          data-hero-fade
-          className="text-pretty mt-8 max-w-xl text-[15px] font-light leading-relaxed text-ivory/75 sm:mt-10 sm:text-base md:text-lg"
-        >
-          Supplying leading laboratories across the UK & EU with high-purity
-          research compounds  manufactured in-house, batch tested, and fully
-          traceable for R&amp;D applications. Research use only  not for human
-          or veterinary use.
-        </p>
-        <div
-          data-hero-fade
-          className="mt-10 flex w-full flex-col items-stretch gap-3 sm:mt-12 sm:w-auto sm:flex-row sm:items-center sm:gap-4"
-        >
-          <Magnetic strength={0.5} className="w-full sm:w-auto">
-            <button
-              data-touch-target
-              onClick={() => scrollToSection('#products')}
-              className="w-full rounded-full bg-ivory px-9 py-4 text-sm font-medium text-charcoal transition-colors duration-500 hover:bg-gold hover:text-ivory sm:w-auto"
+          <div className="flex flex-wrap items-center gap-smd">
+            <ButtonLink
+              href="/shop"
+              variant="bright"
+              size="lg"
+              arrow
             >
-              Browse the Catalogue
-            </button>
-          </Magnetic>
-          <button
-            data-touch-target
-            onClick={() => scrollToSection('#about')}
-            className="link-underline rounded-full px-4 py-4 text-sm font-medium text-ivory/90"
-          >
-            About Lumivex
-          </button>
+              Shop now
+            </ButtonLink>
+            <ButtonLink href="/#standards" variant="outline-light" size="lg">
+              How we test
+            </ButtonLink>
+          </div>
+
+          <p className="mt-lg font-mono text-xs uppercase tracking-label text-white/75">
+            For research use only — not for human or veterinary use
+          </p>
         </div>
       </div>
-
-      {/* Scroll indicator */}
-      <div
-        data-hero-fade
-        className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-3"
-      >
-        <span className="text-[10px] uppercase tracking-eyebrow text-ivory/60">
-          Scroll
-        </span>
-        <span className="relative h-12 w-px overflow-hidden bg-ivory/20">
-          <span className="absolute left-0 top-0 h-1/2 w-full animate-[scrollLine_2s_ease-in-out_infinite] bg-gold" />
-        </span>
-      </div>
-
-      <style jsx>{`
-        @keyframes scrollLine {
-          0% {
-            transform: translateY(-100%);
-          }
-          100% {
-            transform: translateY(200%);
-          }
-        }
-      `}</style>
     </section>
   );
 }

@@ -1,0 +1,69 @@
+[ 1318407ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1318551ms] [LOG] [Fast Refresh] done in 245ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1328214ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1329191ms] [WARNING] [HMR] Invalid message: {"isTrusted":true}
+TypeError: Cannot convert undefined or null to object
+    at Object.keys (<anonymous>)
+    at extractModulesFromTurbopackMessage (http://localhost:4100/_next/static/chunks/0h6k_next_dist_client_1tp6nh_._.js:13754:39)
+    at TurbopackHmr.onTurbopackMessage (http://localhost:4100/_next/static/chunks/0h6k_next_dist_client_1tp6nh_._.js:13701:32)
+    at processMessage (http://localhost:4100/_next/static/chunks/0h6k_next_dist_client_1tp6nh_._.js:14059:30)
+    at WebSocket.handleMessage (http://localhost:4100/_next/static/chunks/0h6k_next_dist_client_1tp6nh_._.js:13458:52) @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1329193ms] [LOG] [Fast Refresh] done in 1079ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1329304ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1329345ms] [LOG] [Fast Refresh] done in 150ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1329462ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1329668ms] [LOG] [Fast Refresh] done in 314ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1329977ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1330217ms] [LOG] [Fast Refresh] done in 370ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1330539ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1330666ms] [LOG] [Fast Refresh] done in 230ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1330731ms] ReferenceError: HeroVideo is not defined
+    at Hero (about://React/Server/C:%5CAlluvi%5Cmy%20projects%5Cgit-update%5Cnew-update-websites%5Cecommerce-alluvi%5Clumivex-new%5C.next%5Cdev%5Cserver%5Cchunks%5Cssr%5C%5Broot-of-the-server%5D__0z_5c_k._.js?696:536:324)
+    at resolveErrorDev (http://localhost:4100/_next/static/chunks/0h6k_next_dist_compiled_react-server-dom-turbopack_0o7xfyw._.js:1919:150)
+    at processFullStringRow (http://localhost:4100/_next/static/chunks/0h6k_next_dist_compiled_react-server-dom-turbopack_0o7xfyw._.js:2434:29)
+    at processFullBinaryRow (http://localhost:4100/_next/static/chunks/0h6k_next_dist_compiled_react-server-dom-turbopack_0o7xfyw._.js:2393:9)
+    at processBinaryChunk (http://localhost:4100/_next/static/chunks/0h6k_next_dist_compiled_react-server-dom-turbopack_0o7xfyw._.js:2502:221)
+    at progress (http://localhost:4100/_next/static/chunks/0h6k_next_dist_compiled_react-server-dom-turbopack_0o7xfyw._.js:2689:13)
+[ 1333249ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1333973ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1333979ms] [LOG] [Fast Refresh] done in 822ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1334088ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1335391ms] [LOG] [Fast Refresh] done in 1407ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1335851ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1335968ms] [LOG] [HMR] connected @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1357444ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1357623ms] [LOG] [Fast Refresh] done in 291ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1737920ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1738183ms] [LOG] [Fast Refresh] done in 368ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1738300ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1738414ms] [LOG] [Fast Refresh] done in 229ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1778039ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1778234ms] [LOG] [Fast Refresh] done in 299ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1780961ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1781188ms] [LOG] [Fast Refresh] done in 327ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1781305ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1781467ms] [LOG] [Fast Refresh] done in 277ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1885059ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1885691ms] [LOG] [Fast Refresh] done in 727ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1885804ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1886000ms] [LOG] [Fast Refresh] done in 305ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1886121ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1886158ms] [LOG] [Fast Refresh] done in 147ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1886328ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1886579ms] [LOG] [Fast Refresh] done in 356ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1887012ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1887076ms] [LOG] [Fast Refresh] done in 185ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1911996ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1912638ms] [LOG] [Fast Refresh] done in 743ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1912744ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1912898ms] [LOG] [Fast Refresh] done in 255ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1913165ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1913269ms] [LOG] [Fast Refresh] done in 241ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1913383ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1913555ms] [LOG] [Fast Refresh] done in 274ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1964268ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 1965237ms] [LOG] [Fast Refresh] done in 1083ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 2019202ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 2019268ms] [LOG] [Fast Refresh] done in 173ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 2136160ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477
+[ 2136271ms] [LOG] [Fast Refresh] done in 217ms @ http://localhost:4100/_next/static/chunks/0h6k_next_dist_1h5745v._.js:2477

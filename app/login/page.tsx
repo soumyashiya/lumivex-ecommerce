@@ -42,19 +42,19 @@ function LoginForm() {
   };
 
   return (
-    <div className="container-wide flex min-h-[80vh] items-center justify-center py-24">
+    <div className="container-ag flex min-h-[60vh] items-center justify-center section-y">
       <div className="w-full max-w-md">
-        <span className="eyebrow">Account</span>
-        <h1 className="mt-3 text-display font-extralight tracking-tightest text-charcoal">
+        
+        <h1 className="text-h2 text-black">
           Sign in
         </h1>
-        <p className="mt-3 text-sm font-light text-charcoal/55">
+        <p className="mt-3 text-sm text-grey-500">
           Sign in to track your orders.
         </p>
 
         <form onSubmit={onSubmit} className="mt-8 space-y-5">
           <label className="flex flex-col gap-2">
-            <span className="text-[12px] font-medium text-charcoal/55">
+            <span className="label-mono">
               Email address
             </span>
             <input
@@ -63,11 +63,11 @@ function LoginForm() {
               autoComplete="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="rounded-[4px] border border-charcoal/15 bg-ivory px-4 py-3 text-sm font-light text-charcoal outline-none focus:border-gold"
+              className="field"
             />
           </label>
           <label className="flex flex-col gap-2">
-            <span className="text-[12px] font-medium text-charcoal/55">
+            <span className="label-mono">
               Password
             </span>
             <input
@@ -76,12 +76,12 @@ function LoginForm() {
               autoComplete="current-password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="rounded-[4px] border border-charcoal/15 bg-ivory px-4 py-3 text-sm font-light text-charcoal outline-none focus:border-gold"
+              className="field"
             />
           </label>
 
           {error && (
-            <p className="rounded-[4px] border border-red-600/20 bg-red-600/5 px-4 py-3 text-[13px] font-light text-red-600/90">
+            <p className="rounded-card border border-danger/30 bg-danger-bg px-md py-smd text-sm text-black">
               {error}
             </p>
           )}
@@ -89,17 +89,17 @@ function LoginForm() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full rounded-full bg-charcoal py-4 text-sm font-medium text-ivory transition-colors duration-500 hover:bg-gold disabled:cursor-not-allowed disabled:opacity-70"
+            className="btn btn-primary btn-lg w-full"
           >
             {loading ? 'Signing in…' : 'Sign in'}
           </button>
         </form>
 
-        <p className="mt-6 text-center text-[13px] font-light text-charcoal/55">
+        <p className="mt-6 text-center text-[13px] text-grey-500">
           No account?{' '}
           <Link
             href={`/register?next=${encodeURIComponent(next)}`}
-            className="link-underline font-medium text-charcoal"
+            className="underline-offset-4 hover:underline font-medium text-black"
           >
             Create one
           </Link>

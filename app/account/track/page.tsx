@@ -69,55 +69,55 @@ function TrackView() {
 
   if (authLoading || loadingList) {
     return (
-      <div className="container-wide flex min-h-[60vh] items-center justify-center py-24">
-        <span className="h-6 w-6 animate-spin rounded-full border-2 border-charcoal/20 border-t-charcoal" />
+      <div className="container-ag flex min-h-[60vh] items-center justify-center py-24">
+        <span className="h-6 w-6 animate-spin rounded-pill border-2 border-grey-100 border-t-green" />
       </div>
     );
   }
 
   return (
-    <div className="container-wide py-16 md:py-24">
+    <div className="container-ag py-16 md:py-24">
       <div className="mb-10 flex items-end justify-between gap-4">
         <div>
-          <span className="eyebrow">Account</span>
-          <h1 className="mt-3 text-display font-extralight tracking-tightest text-charcoal">
+          <span className="label-mono">Account</span>
+          <h1 className="mt-3 text-h2 tracking-tighter text-black">
             Track
           </h1>
           {user && (
-            <p className="mt-2 text-sm font-light text-charcoal/55">
+            <p className="mt-2 text-sm text-grey-500">
               Signed in as {user.email}
             </p>
           )}
         </div>
         <button
           onClick={logout}
-          className="link-underline text-[13px] font-medium text-charcoal/55 hover:text-charcoal"
+          className="underline-offset-4 hover:underline text-[13px] font-medium text-grey-500 hover:text-black"
         >
           Sign out
         </button>
       </div>
 
       {error && (
-        <p className="mb-6 rounded-[4px] border border-red-600/20 bg-red-600/5 px-4 py-3 text-[13px] font-light text-red-600/90">
+        <p className="mb-6 rounded-sm border border-red-600/20 bg-red-600/5 px-4 py-3 text-[13px] text-red-600/90">
           {error}
         </p>
       )}
 
       {summaries.length === 0 ? (
-        <p className="text-sm font-light text-charcoal/55">
+        <p className="text-sm text-grey-500">
           You haven&apos;t placed any orders yet — nothing to track.
         </p>
       ) : (
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <label htmlFor="order-select" className="text-[11px] uppercase tracking-eyebrow text-charcoal/40">
+            <label htmlFor="order-select" className="text-[11px] uppercase tracking-label text-grey-500">
               Order
             </label>
             <select
               id="order-select"
               value={selected}
               onChange={(e) => setSelected(e.target.value)}
-              className="mt-3 w-full rounded-[4px] border border-charcoal/15 bg-ivory px-4 py-3 text-sm font-light text-charcoal outline-none focus:border-gold"
+              className="mt-3 w-full rounded-sm border border-[color:var(--border-soft)] bg-white px-4 py-3 text-sm text-black outline-none focus:border-green"
             >
               {summaries.map((row) => {
                 const num = String(row.order_number ?? '');
@@ -133,7 +133,7 @@ function TrackView() {
           <div className="lg:col-span-8">
             {loadingDetail || !detail ? (
               <div className="flex min-h-[200px] items-center justify-center">
-                <span className="h-5 w-5 animate-spin rounded-full border-2 border-charcoal/20 border-t-charcoal" />
+                <span className="h-5 w-5 animate-spin rounded-pill border-2 border-grey-100 border-t-green" />
               </div>
             ) : (
               <TrackDetail detail={detail} step={step} rejected={rejected} />
@@ -175,11 +175,11 @@ function TrackDetail({
 
   return (
     <div>
-      <div className="flex flex-wrap items-baseline justify-between gap-3 border-b border-charcoal/10 pb-6">
-        <p className="font-mono text-[15px] font-medium tracking-wide text-charcoal">
+      <div className="flex flex-wrap items-baseline justify-between gap-3 border-b border-[color:var(--border-soft)] pb-6">
+        <p className="font-mono text-[15px] font-medium tracking-wide text-black">
           {String(order.order_number ?? '')}
         </p>
-        <p className="text-[13px] font-light text-charcoal/45">
+        <p className="text-[13px] text-grey-500">
           {createdAt && !isNaN(createdAt.getTime())
             ? createdAt.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
             : ''}
@@ -196,19 +196,19 @@ function TrackDetail({
             <li key={s.key} className={`flex items-start ${isLast ? 'flex-none' : 'flex-1'}`}>
               <div className="flex flex-col items-start gap-3">
                 <span
-                  className={`flex h-6 w-6 items-center justify-center rounded-full text-[11px] font-medium ${
+                  className={`flex h-6 w-6 items-center justify-center rounded-pill text-[11px] font-medium ${
                     failed
                       ? 'bg-red-600/10 text-red-600'
                       : done
-                        ? 'bg-gold text-ivory'
-                        : 'bg-charcoal/8 text-charcoal/35'
+                        ? 'bg-green text-white'
+                        : 'bg-green-deep text-grey-500'
                   }`}
                 >
                   {failed ? '✕' : done ? '✓' : i + 1}
                 </span>
                 <span
                   className={`max-w-[8rem] text-[11px] font-medium uppercase tracking-wider ${
-                    failed ? 'text-red-600' : done ? 'text-charcoal' : 'text-charcoal/35'
+                    failed ? 'text-red-600' : done ? 'text-black' : 'text-grey-500'
                   }`}
                 >
                   {s.label}
@@ -217,7 +217,7 @@ function TrackDetail({
               {!isLast && (
                 <div
                   className={`mx-3 mt-[11px] h-px flex-1 sm:mx-5 ${
-                    i < activeIndex && !rejected ? 'bg-gold' : 'bg-charcoal/10'
+                    i < activeIndex && !rejected ? 'bg-green' : 'bg-green-deep'
                   }`}
                 />
               )}
@@ -228,22 +228,22 @@ function TrackDetail({
 
       {/* Items */}
       <div className="mt-10">
-        <span className="eyebrow">Items</span>
-        <ul className="mt-4 divide-y divide-charcoal/10 border-t border-charcoal/10">
+        <span className="label-mono">Items</span>
+        <ul className="mt-4 divide-y divide-[color:var(--border-soft)] border-t border-[color:var(--border-soft)]">
           {items.map((item, i) => (
             <li key={i} className="flex items-center justify-between gap-4 py-3">
-              <span className="text-[13px] font-light text-charcoal/70">
+              <span className="text-[13px] text-grey-700">
                 {String(item.name ?? '')} × {Number(item.quantity ?? 1)}
               </span>
-              <span className="text-[13px] font-medium text-charcoal">
+              <span className="text-[13px] font-medium text-black">
                 {formatPrice(Number(item.unit_price ?? 0) * Number(item.quantity ?? 1))}
               </span>
             </li>
           ))}
         </ul>
-        <div className="mt-4 flex items-center justify-between border-t border-charcoal/10 pt-4">
-          <span className="text-[13px] font-medium text-charcoal">Total</span>
-          <span className="text-lg font-light text-charcoal">{formatPrice(total)}</span>
+        <div className="mt-4 flex items-center justify-between border-t border-[color:var(--border-soft)] pt-4">
+          <span className="text-[13px] font-medium text-black">Total</span>
+          <span className="text-lg text-black">{formatPrice(total)}</span>
         </div>
       </div>
     </div>

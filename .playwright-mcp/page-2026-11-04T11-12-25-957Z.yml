@@ -1,0 +1,290 @@
+- generic [active] [ref=f71e1]:
+  - paragraph [ref=f71e3]: Third-party tested by Janoshik Analytical
+  - banner [ref=f71e4]:
+    - navigation "Primary" [ref=f71e5]:
+      - link "Lumivex — home" [ref=f71e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f71e7]:
+          - text: Lumivex
+          - generic [aria-hidden] [ref=f71e8]: ®
+      - list [ref=f71e9]:
+        - listitem [ref=f71e10]:
+          - button "Shop" [ref=f71e11] [cursor=pointer]
+        - listitem [ref=f71e14]:
+          - button "Standards" [ref=f71e15] [cursor=pointer]
+        - listitem [ref=f71e18]:
+          - button "Explore" [ref=f71e19] [cursor=pointer]
+      - generic [ref=f71e22]:
+        - link "Cart, 0 items" [ref=f71e23] [cursor=pointer]:
+          - /url: /cart
+        - button "Account menu" [ref=f71e30]:
+          - generic [ref=f71e34]: Sign in
+        - link "Shop now" [ref=f71e35] [cursor=pointer]:
+          - /url: /shop
+  - main [ref=f71e37]:
+    - generic [ref=f71e39]:
+      - navigation "Breadcrumb" [ref=f71e40]:
+        - list [ref=f71e41]:
+          - listitem [ref=f71e42]:
+            - link "Home" [ref=f71e43] [cursor=pointer]:
+              - /url: /
+          - listitem [aria-hidden] [ref=f71e44]: /
+          - listitem [ref=f71e45]:
+            - link "Catalogue" [ref=f71e46] [cursor=pointer]:
+              - /url: /shop
+          - listitem [aria-hidden] [ref=f71e47]: /
+          - listitem [ref=f71e48]: Retatrutide 40mg
+      - generic [ref=f71e49]:
+        - generic [ref=f71e51]:
+          - img "Retatrutide 40mg" [ref=f71e53]
+          - list [ref=f71e54]:
+            - listitem [ref=f71e55]:
+              - button "View image 1 of 4" [ref=f71e56] [cursor=pointer]
+            - listitem [ref=f71e57]:
+              - button "View image 2 of 4" [ref=f71e58] [cursor=pointer]
+            - listitem [ref=f71e59]:
+              - button "View image 3 of 4" [ref=f71e60] [cursor=pointer]
+            - listitem [ref=f71e61]:
+              - button "View image 4 of 4" [ref=f71e62] [cursor=pointer]
+        - generic [ref=f71e63]:
+          - paragraph [ref=f71e64]: Triple Agonist Research
+          - heading "Retatrutide 40mg" [level=1] [ref=f71e65]
+          - generic [ref=f71e66]:
+            - generic [ref=f71e67]: $180
+            - generic [ref=f71e68]: USD
+            - generic [ref=f71e69]: 99.269% assayed
+          - paragraph [ref=f71e70]: A 40mg Retatrutide formulation supplied in a pre-filled research device, provided exclusively for controlled laboratory R&D applications. Delivered in sealed format to support compound stability analysis, formulation studies, and delivery mechanism evaluation.
+          - generic [ref=f71e71]:
+            - generic [ref=f71e72]:
+              - button "Decrease quantity" [disabled] [ref=f71e73]
+              - generic [ref=f71e75]: "1"
+              - button "Increase quantity" [ref=f71e76] [cursor=pointer]
+            - button "Add to cart" [ref=f71e79] [cursor=pointer]
+          - generic [ref=f71e82]:
+            - paragraph [ref=f71e83]: $153.00 per delivery on a standing order
+            - paragraph [ref=f71e84]: 15% off each of 3 monthly deliveries, cold-chain shipping included, cancel any time.
+            - link "How the programme works" [ref=f71e85] [cursor=pointer]:
+              - /url: /#programme
+          - paragraph [ref=f71e88]: Research use only — not for human or veterinary use
+          - generic [ref=f71e89]:
+            - heading "Third-party assay, this batch" [level=2] [ref=f71e90]
+            - paragraph [ref=f71e91]: Measured by Janoshik Analytical and published as issued.
+            - generic [ref=f71e92]:
+              - generic [ref=f71e93]:
+                - term [ref=f71e94]: Batch number
+                - definition [ref=f71e95]: AR1739JAT
+              - generic [ref=f71e96]:
+                - term [ref=f71e97]: Fill volume
+                - definition [ref=f71e98]: 2.4 mL
+              - generic [ref=f71e99]:
+                - term [ref=f71e100]: Purity
+                - definition [ref=f71e101]: 99.269%
+            - table [ref=f71e102]:
+              - rowgroup [ref=f71e103]:
+                - row [ref=f71e104]:
+                  - columnheader "Compound" [ref=f71e105]
+                  - columnheader "Concentration" [ref=f71e106]
+                  - columnheader "Measured content" [ref=f71e107]
+              - rowgroup [ref=f71e108]:
+                - row [ref=f71e109]:
+                  - cell "Retatrutide" [ref=f71e110]
+                  - cell "18.22 mg/mL" [ref=f71e111]
+                  - cell "43.72 mg" [ref=f71e112]
+            - button "Open the full report" [ref=f71e113] [cursor=pointer]
+          - generic [ref=f71e116]:
+            - generic [ref=f71e117]:
+              - heading [level=3] [ref=f71e118]:
+                - button "What is in the kit" [ref=f71e119] [cursor=pointer]
+              - region "What is in the kit":
+                - paragraph [ref=f71e125]: "Each Retatrutide 40mg Research kit includes: Pre-filled Research pen (40mg Retatrutide) Research information sheet"
+            - generic [ref=f71e126]:
+              - heading [level=3] [ref=f71e127]:
+                - button "Storage and handling" [ref=f71e128] [cursor=pointer]
+              - region "Storage and handling":
+                - paragraph [ref=f71e134]: Store refrigerated (2–8°C). Do not freeze. Supplied in fixed-volume sealed format for laboratory analysis.
+            - generic [ref=f71e135]:
+              - heading [level=3] [ref=f71e136]:
+                - button "Research specifications" [ref=f71e137] [cursor=pointer]
+              - region "Research specifications":
+                - generic [ref=f71e143]:
+                  - generic [ref=f71e144]:
+                    - term [ref=f71e145]: CAS Number
+                    - definition [ref=f71e146]: 2381089-83-2
+                  - generic [ref=f71e147]:
+                    - term [ref=f71e148]: Molecular Formula
+                    - definition [ref=f71e149]: C₂₂₁H₃₄₂N₄₆O₆₈
+                  - generic [ref=f71e150]:
+                    - term [ref=f71e151]: Quantity
+                    - definition [ref=f71e152]: 40mg per research pen
+                  - generic [ref=f71e153]:
+                    - term [ref=f71e154]: Fill Volume
+                    - definition [ref=f71e155]: 2.4 mL
+                  - generic [ref=f71e156]:
+                    - term [ref=f71e157]: Batch Number
+                    - definition [ref=f71e158]: AR1739JAT
+                  - generic [ref=f71e159]:
+                    - term [ref=f71e160]: Form
+                    - definition [ref=f71e161]: Pre-filled research pen
+                  - generic [ref=f71e162]:
+                    - term [ref=f71e163]: Storage
+                    - definition [ref=f71e164]: 2–8°C refrigerated (do not freeze)
+            - generic [ref=f71e165]:
+              - heading [level=3] [ref=f71e166]:
+                - button "Shipping and cold chain" [ref=f71e167] [cursor=pointer]
+              - region "Shipping and cold chain":
+                - paragraph [ref=f71e173]: Dispatched at 2–8°C in validated insulated packaging rated for 48 hours in transit. Refrigerate on arrival and do not freeze. Shipped across the UK and EU with customs documentation where required.
+      - generic [ref=f71e174]:
+        - generic [ref=f71e175]:
+          - heading "Related compounds" [level=2] [ref=f71e176]
+          - link "View all" [ref=f71e177] [cursor=pointer]:
+            - /url: /shop
+        - list [ref=f71e180]:
+          - listitem [ref=f71e181]:
+            - article [ref=f71e182]:
+              - generic [ref=f71e183]:
+                - link "View Retatrutide 20mg" [ref=f71e184] [cursor=pointer]:
+                  - /url: /product/retatrutide-20mg
+                - button "Add Retatrutide 20mg to cart" [ref=f71e185] [cursor=pointer]: Quick add
+              - generic [ref=f71e188]:
+                - generic [ref=f71e189]:
+                  - heading [level=3] [ref=f71e190]:
+                    - link "Retatrutide 20mg" [ref=f71e191] [cursor=pointer]:
+                      - /url: /product/retatrutide-20mg
+                  - generic [ref=f71e192]: $100
+                - paragraph [ref=f71e193]: Triple Agonist Research
+                - generic [ref=f71e194]:
+                  - generic [ref=f71e195]: 99.21% assayed
+                  - generic [ref=f71e196]: Save $15 on standing order
+          - listitem [ref=f71e197]:
+            - article [ref=f71e198]:
+              - generic [ref=f71e199]:
+                - link "View Tirzepatide 40mg" [ref=f71e200] [cursor=pointer]:
+                  - /url: /product/tirzepatide-40mg
+                - button "Add Tirzepatide 40mg to cart" [ref=f71e201] [cursor=pointer]: Quick add
+              - generic [ref=f71e204]:
+                - generic [ref=f71e205]:
+                  - heading [level=3] [ref=f71e206]:
+                    - link "Tirzepatide 40mg" [ref=f71e207] [cursor=pointer]:
+                      - /url: /product/tirzepatide-40mg
+                  - generic [ref=f71e208]: $100
+                - paragraph [ref=f71e209]: GIP / GLP-1 Research
+                - generic [ref=f71e210]:
+                  - generic [ref=f71e211]: 99.85% assayed
+                  - generic [ref=f71e212]: Save $15 on standing order
+          - listitem [ref=f71e213]:
+            - article [ref=f71e214]:
+              - generic [ref=f71e215]:
+                - link "View Glow 70mg" [ref=f71e216] [cursor=pointer]:
+                  - /url: /product/glow-70mg
+                - button "Add Glow 70mg to cart" [ref=f71e217] [cursor=pointer]: Quick add
+              - generic [ref=f71e220]:
+                - generic [ref=f71e221]:
+                  - heading [level=3] [ref=f71e222]:
+                    - link "Glow 70mg" [ref=f71e223] [cursor=pointer]:
+                      - /url: /product/glow-70mg
+                  - generic [ref=f71e224]: $100
+                - paragraph [ref=f71e225]: Multi-Compound Research Blend
+                - generic [ref=f71e226]:
+                  - generic [ref=f71e227]: Batch tested
+                  - generic [ref=f71e228]: Save $15 on standing order
+      - paragraph [ref=f71e230]: FOR RESEARCH PURPOSES ONLY. Not intended for human or veterinary use. Not intended to diagnose, treat, cure, or prevent any disease. Products are supplied strictly for laboratory and analytical research conducted by qualified professionals.
+  - contentinfo [ref=f71e231]:
+    - generic [ref=f71e232]:
+      - generic [ref=f71e233]:
+        - navigation "Shop" [ref=f71e234]:
+          - heading "Shop" [level=2] [ref=f71e235]
+          - list [ref=f71e236]:
+            - listitem [ref=f71e237]:
+              - link "All compounds" [ref=f71e238] [cursor=pointer]:
+                - /url: /shop
+            - listitem [ref=f71e239]:
+              - link "Metabolic" [ref=f71e240] [cursor=pointer]:
+                - /url: /shop?category=metabolic
+            - listitem [ref=f71e241]:
+              - link "Recovery" [ref=f71e242] [cursor=pointer]:
+                - /url: /shop?category=recovery
+            - listitem [ref=f71e243]:
+              - link "Longevity" [ref=f71e244] [cursor=pointer]:
+                - /url: /shop?category=longevity
+            - listitem [ref=f71e245]:
+              - link "Blends" [ref=f71e246] [cursor=pointer]:
+                - /url: /shop?category=blend
+        - navigation "Standards" [ref=f71e247]:
+          - heading "Standards" [level=2] [ref=f71e248]
+          - list [ref=f71e249]:
+            - listitem [ref=f71e250]:
+              - link "How we test" [ref=f71e251] [cursor=pointer]:
+                - /url: /#standards
+            - listitem [ref=f71e252]:
+              - link "Quality commitments" [ref=f71e253] [cursor=pointer]:
+                - /url: /#why-us
+            - listitem [ref=f71e254]:
+              - link "Cold-chain handling" [ref=f71e255] [cursor=pointer]:
+                - /url: /shipping-policy
+            - listitem [ref=f71e256]:
+              - link "Press release" [ref=f71e257] [cursor=pointer]:
+                - /url: /press-release
+        - navigation "Account" [ref=f71e258]:
+          - heading "Account" [level=2] [ref=f71e259]
+          - list [ref=f71e260]:
+            - listitem [ref=f71e261]:
+              - link "Sign in" [ref=f71e262] [cursor=pointer]:
+                - /url: /login
+            - listitem [ref=f71e263]:
+              - link "My orders" [ref=f71e264] [cursor=pointer]:
+                - /url: /account/orders
+            - listitem [ref=f71e265]:
+              - link "Track an order" [ref=f71e266] [cursor=pointer]:
+                - /url: /account/track
+            - listitem [ref=f71e267]:
+              - link "Wallet" [ref=f71e268] [cursor=pointer]:
+                - /url: /account/wallet
+        - navigation "Support" [ref=f71e269]:
+          - heading "Support" [level=2] [ref=f71e270]
+          - list [ref=f71e271]:
+            - listitem [ref=f71e272]:
+              - link "Questions" [ref=f71e273] [cursor=pointer]:
+                - /url: /#faq
+            - listitem [ref=f71e274]:
+              - link "Contact" [ref=f71e275] [cursor=pointer]:
+                - /url: /#contact
+            - listitem [ref=f71e276]:
+              - link "Shipping policy" [ref=f71e277] [cursor=pointer]:
+                - /url: /shipping-policy
+            - listitem [ref=f71e278]:
+              - link "Refund policy" [ref=f71e279] [cursor=pointer]:
+                - /url: /refund-policy
+        - navigation "Legal" [ref=f71e280]:
+          - heading "Legal" [level=2] [ref=f71e281]
+          - list [ref=f71e282]:
+            - listitem [ref=f71e283]:
+              - link "Privacy policy" [ref=f71e284] [cursor=pointer]:
+                - /url: /privacy-policy
+            - listitem [ref=f71e285]:
+              - link "Terms of service" [ref=f71e286] [cursor=pointer]:
+                - /url: /terms-of-service
+        - generic [ref=f71e287]:
+          - heading "Newsletter" [level=2] [ref=f71e288]
+          - paragraph [ref=f71e289]: New batches and certificates, as they publish.
+          - generic [ref=f71e291]:
+            - generic [ref=f71e292]:
+              - generic [ref=f71e293]: Email address
+              - textbox "Email address" [ref=f71e294]:
+                - /placeholder: you@lab.com
+              - button "Subscribe" [disabled] [ref=f71e295]
+            - generic [ref=f71e298]:
+              - checkbox "I confirm I am a research professional and consent to catalogue and documentation updates." [ref=f71e299]
+              - generic [ref=f71e300]: I confirm I am a research professional and consent to catalogue and documentation updates.
+      - generic [ref=f71e301]:
+        - generic [ref=f71e303]:
+          - text: Lumivex
+          - generic [aria-hidden] [ref=f71e304]: ®
+        - generic [ref=f71e305]:
+          - paragraph [ref=f71e306]: FOR RESEARCH PURPOSES ONLY. Not intended for human or veterinary use. Not intended to diagnose, treat, cure, or prevent any disease. Products are supplied strictly for laboratory and analytical research conducted by qualified professionals.
+          - paragraph [ref=f71e307]: Lumivex has never operated on any social media platform. Our only official site is lumivex.store — treat any other seller using this name as unauthorised.
+          - paragraph [ref=f71e308]: Certificates of analysis are issued by Janoshik Analytical and are verifiable on the issuing laboratory’s own domain. Figures quoted on product pages refer to the batch stated on the label.
+      - generic [ref=f71e309]:
+        - paragraph [ref=f71e310]: © 2026 Lumivex. All rights reserved.
+        - paragraph [ref=f71e311]: Research use only — not for human or veterinary use
+  - button "Open assistant" [ref=f71e312] [cursor=pointer]
+  - button "Open Next.js Dev Tools" [ref=f71e320] [cursor=pointer]

@@ -1,197 +1,133 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import { AnimatePresence, motion } from 'framer-motion';
-import { TESTIMONIALS } from '@/lib/data';
-import RevealText from '@/components/animations/RevealText';
+import { EXPERTS, TESTIMONIALS } from '@/lib/data';
+import Rail from '@/components/ui/Rail';
 
-function initials(name: string) {
-  return name
-    .replace(/^Dr\.\s*/, '')
-    .split(' ')
-    .map((w) => w[0])
-    .slice(0, 2)
-    .join('')
-    .toUpperCase();
-}
+/**
+ * Supplier feedback as a single photo rail. Each card shows the reviewer's
+ * name over a bench photograph; hovering (or focusing) a card lifts a frosted
+ * panel with the full comment. Touch screens have no hover, so there the
+ * comment is always open.
+ *
+ * The photographs illustrate what each comment is about (paperwork, cold
+ * chain, storage…). They are not portraits of the reviewers.
+ *
+ * Compliance rule: comments may reference documentation, packaging,
+ * presentation and service only — never outcomes, effects or use.
+ */
+const REVIEWS = [
+  ...TESTIMONIALS.map((t) => ({
+    name: t.author,
+    role: t.role,
+    quote: t.quote,
+    image: t.image,
+  })),
+  ...EXPERTS.map((e) => ({
+    name: e.name,
+    role: e.role,
+    quote: e.quote,
+    image: e.image,
+  })),
+];
 
-const Chevron = ({ dir = 'right' }: { dir?: 'left' | 'right' }) => (
-  <svg
-    viewBox="0 0 24 24"
-    className="h-4 w-4"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth={1.6}
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    {dir === 'left' ? <path d="M15 6l-6 6 6 6" /> : <path d="M9 6l6 6-6 6" />}
-  </svg>
-);
+/** Long, soft ease for the reveal — slower than the 200ms colour fades. */
+const EASE = 'ease-[cubic-bezier(0.22,1,0.36,1)]';
 
 export default function Testimonials() {
-  const [index, setIndex] = useState(0);
-  const [dir, setDir] = useState(1);
-  const n = TESTIMONIALS.length;
-  const timer = useRef<ReturnType<typeof setInterval> | null>(null);
-
-  const start = () => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    stop();
-    timer.current = setInterval(() => {
-      setDir(1);
-      setIndex((p) => (p + 1) % n);
-    }, 6000);
-  };
-  const stop = () => {
-    if (timer.current) clearInterval(timer.current);
-  };
-
-  useEffect(() => {
-    start();
-    return stop;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [n]);
-
-  const go = (d: number) => {
-    setDir(d);
-    setIndex((p) => (p + d + n) % n);
-    start();
-  };
-  const jump = (i: number) => {
-    setDir(i > index ? 1 : -1);
-    setIndex(i);
-    start();
-  };
-
-  const t = TESTIMONIALS[index];
-
   return (
     <section
       id="testimonials"
-      className="relative overflow-hidden bg-charcoal py-section text-ivory"
-      onMouseEnter={stop}
-      onMouseLeave={start}
+      className="relative section-y bg-white"
     >
-      {/* ambient */}
-      <div
-        className="pointer-events-none absolute inset-0 opacity-70"
-        style={{
-          background:
-            'radial-gradient(820px circle at 80% 15%, rgba(184,150,90,0.12), transparent 55%)',
-        }}
-      />
-      <span
-        aria-hidden
-        className="pointer-events-none absolute -top-10 left-6 select-none font-serif text-[20rem] leading-none text-ivory/[0.04] md:left-16"
-      >
-        &ldquo;
-      </span>
-
-      <div className="container-wide relative z-10">
-        {/* header */}
-        <div className="mb-14 flex flex-col gap-6 md:mb-20 md:flex-row md:items-end md:justify-between">
-          <div>
-            <span className="eyebrow text-gold-light">Supply Standards</span>
-            <RevealText
-              as="h2"
-              split="lines"
-              className="mt-6 max-w-2xl text-display font-extralight text-ivory"
-            >
-              Trusted by those who measure everything.
-            </RevealText>
-          </div>
-          <span className="text-sm font-light text-ivory/55">
-            Feedback on documentation, packaging and service  never on use.
-          </span>
-        </div>
-
-        {/* featured quote */}
-        <div className="relative min-h-[280px] md:min-h-[240px]">
-          <AnimatePresence mode="wait" custom={dir}>
-            <motion.blockquote
-              key={index}
-              custom={dir}
-              initial={{ opacity: 0, y: dir > 0 ? 28 : -28 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: dir > 0 ? -24 : 24 }}
-              transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-              className="max-w-4xl"
-            >
-              <p className="text-2xl font-extralight leading-[1.35] tracking-tight text-ivory/90 md:text-[2.1rem]">
-                {t.quote}
-              </p>
-              <figcaption className="mt-10 flex items-center gap-4">
-                {t.image ? (
-                  <span className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full ring-1 ring-gold/40 ring-offset-2 ring-offset-charcoal">
-                    <Image
-                      src={t.image}
-                      alt={t.author}
-                      fill
-                      sizes="56px"
-                      className="object-cover"
-                    />
-                  </span>
-                ) : (
-                  <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-gold to-gold-light text-sm font-medium tracking-wide text-charcoal">
-                    {initials(t.author)}
-                  </span>
-                )}
-                <span>
-                  <span className="block text-base font-medium text-ivory">
-                    {t.author}
-                  </span>
-                  <span className="block text-sm font-light text-ivory/50">
-                    {t.role}
-                  </span>
-                </span>
-              </figcaption>
-            </motion.blockquote>
-          </AnimatePresence>
-        </div>
-
-        {/* controls */}
-        <div className="mt-12 flex items-center justify-between border-t border-ivory/10 pt-8">
-          <div className="flex items-center gap-4">
-            <span className="text-sm font-light tabular-nums text-ivory/70">
-              {String(index + 1).padStart(2, '0')}
-            </span>
-            <div className="flex items-center gap-2">
-              {TESTIMONIALS.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => jump(i)}
-                  aria-label={`Show testimonial ${i + 1}`}
-                  className={`h-1 rounded-full transition-all duration-500 ${
-                    i === index ? 'w-8 bg-gold' : 'w-3 bg-ivory/25 hover:bg-ivory/40'
-                  }`}
-                />
-              ))}
+      <div className="container-ag">
+        <Rail
+          label="Customer feedback"
+          controls="header"
+          itemClassName="w-[288px] tablet:w-[344px] desktop:w-[400px]"
+          header={
+            <div>
+              <p className="label-mono">Feedback</p>
+              <h2 className="mt-smd max-w-[22ch] text-h2 text-black">
+                What the labs we supply report back
+              </h2>
             </div>
-            <span className="text-sm font-light tabular-nums text-ivory/35">
-              {String(n).padStart(2, '0')}
-            </span>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => go(-1)}
-              aria-label="Previous testimonial"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-ivory/15 text-ivory/70 transition-colors duration-500 hover:border-gold/50 hover:text-gold"
-            >
-              <Chevron dir="left" />
-            </button>
-            <button
-              onClick={() => go(1)}
-              aria-label="Next testimonial"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-ivory/15 text-ivory/70 transition-colors duration-500 hover:border-gold/50 hover:text-gold"
-            >
-              <Chevron dir="right" />
-            </button>
-          </div>
-        </div>
+          }
+        >
+          {REVIEWS.map((review) => (
+            <ReviewCard key={review.name} {...review} />
+          ))}
+        </Rail>
       </div>
     </section>
+  );
+}
+
+function ReviewCard({
+  name,
+  role,
+  quote,
+  image,
+}: {
+  name: string;
+  role: string;
+  quote: string;
+  image: string;
+}) {
+  // Open by default (touch); collapsed only where a pointer can hover.
+  const reveal = [
+    'grid-rows-[1fr] opacity-100',
+    '[@media(hover:hover)]:grid-rows-[0fr] [@media(hover:hover)]:opacity-0',
+    '[@media(hover:hover)]:group-hover:grid-rows-[1fr] [@media(hover:hover)]:group-hover:opacity-100',
+    '[@media(hover:hover)]:group-focus-visible:grid-rows-[1fr] [@media(hover:hover)]:group-focus-visible:opacity-100',
+  ].join(' ');
+
+  return (
+    <figure
+      tabIndex={0}
+      className="group relative h-[440px] overflow-hidden rounded-card-round bg-cool-800 desktop:h-[560px]"
+    >
+      <Image
+        src={image}
+        alt=""
+        fill
+        sizes="(max-width: 767px) 288px, (max-width: 1023px) 344px, 400px"
+        className={`object-cover transition-transform duration-700 ${EASE} group-hover:scale-[1.04]`}
+      />
+
+      {/* Top scrim keeps the name legible on bright photographs. */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-black/45 to-transparent"
+      />
+      <p className="absolute left-lg top-lg font-mono text-sm uppercase tracking-label text-white">
+        {name}
+      </p>
+
+      <figcaption
+        className={`absolute inset-x-0 bottom-0 border-t border-white/15 bg-black/35 p-lg backdrop-blur-md transition-colors duration-500 ${EASE} group-hover:bg-black/45`}
+      >
+        <div className={`grid transition-[grid-template-rows,opacity] duration-500 ${EASE} ${reveal}`}>
+          <div className="overflow-hidden">
+            <blockquote className="pb-md text-base text-white">
+              &ldquo;{quote}&rdquo;
+            </blockquote>
+          </div>
+        </div>
+        <div className="flex items-center justify-between gap-md">
+          <p className="font-mono text-xs uppercase tracking-label text-white/80">
+            {role}
+          </p>
+          <span
+            aria-hidden
+            className={`hidden size-[28px] shrink-0 items-center justify-center rounded-pill border border-white/40 text-white transition-[transform,opacity] duration-500 ${EASE} group-hover:rotate-45 group-hover:opacity-0 [@media(hover:hover)]:flex`}
+          >
+            <svg width={12} height={12} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round">
+              <path d="M12 5v14M5 12h14" />
+            </svg>
+          </span>
+        </div>
+      </figcaption>
+    </figure>
   );
 }

@@ -1,0 +1,597 @@
+- generic [active] [ref=f4e1]:
+  - paragraph [ref=f4e3]: Third-party tested by Janoshik Analytical
+  - banner [ref=f4e4]:
+    - navigation "Primary" [ref=f4e5]:
+      - generic [ref=f4e6]:
+        - link "Lumivex — home" [ref=f4e10] [cursor=pointer]:
+          - /url: /
+          - generic [ref=f4e11]:
+            - text: Lumivex
+            - generic [aria-hidden] [ref=f4e12]: ®
+        - list [ref=f4e757]:
+          - listitem [ref=f4e758]:
+            - button "Shop" [ref=f4e759] [cursor=pointer]
+          - listitem [ref=f4e762]:
+            - button "Standards" [ref=f4e763] [cursor=pointer]
+          - listitem [ref=f4e766]:
+            - button "Explore" [ref=f4e767] [cursor=pointer]
+      - generic [ref=f4e13]:
+        - link "Cart, 2 items" [ref=f4e770] [cursor=pointer]:
+          - /url: /cart
+          - generic [ref=f4e771]: "2"
+        - button "Account menu" [ref=f4e774] [cursor=pointer]:
+          - generic [ref=f4e778]: Sign in
+  - main [ref=f4e19]:
+    - generic [ref=f4e24]:
+      - heading "Every batch tested. Every result published." [level=1] [ref=f4e25]:
+        - generic [ref=f4e780]: Every batch tested.
+        - generic [ref=f4e781]: Every result published.
+      - paragraph [ref=f4e26]: Research-grade peptides for UK and EU laboratories, independently assayed and shipped cold with the certificate for your batch.
+      - generic [ref=f4e27]:
+        - link "Shop now" [ref=f4e28] [cursor=pointer]:
+          - /url: /shop
+        - link "How we test" [ref=f4e31] [cursor=pointer]:
+          - /url: /#standards
+      - paragraph [ref=f4e32]: For research use only — not for human or veterinary use
+    - region "Why laboratories order from Lumivex" [ref=f4e33]:
+      - list [ref=f4e35]:
+        - listitem [ref=f4e36]:
+          - generic [ref=f4e39]:
+            - heading "Verified sourcing" [level=3] [ref=f4e40]
+            - paragraph [ref=f4e41]: Direct supply from our own synthesis facility. No intermediate resellers in the chain.
+        - listitem [ref=f4e42]:
+          - generic [ref=f4e45]:
+            - heading "Assayed purity" [level=3] [ref=f4e46]
+            - paragraph [ref=f4e47]: Every batch independently tested by Janoshik Analytical before it is listed.
+        - listitem [ref=f4e48]:
+          - generic [ref=f4e51]:
+            - heading "Sealed cold packaging" [level=3] [ref=f4e52]
+            - paragraph [ref=f4e53]: Cold-stored, tamper-sealed and accurately labelled before it leaves the shelf.
+        - listitem [ref=f4e54]:
+          - generic [ref=f4e57]:
+            - heading "A researcher on support" [level=3] [ref=f4e58]
+            - paragraph [ref=f4e59]: Replies from someone who knows the catalogue, usually within the working day.
+    - generic [ref=f4e61]:
+      - heading "Every line on the bench" [level=2] [ref=f4e62]
+      - generic [ref=f4e63]:
+        - paragraph [ref=f4e64]: Browse the catalogue by research line — every compound in a line ships sealed, cold and with the assay report for its own batch.
+        - link "View all lines" [ref=f4e65] [cursor=pointer]:
+          - /url: /shop
+      - generic [ref=f4e66]:
+        - group "Catalogue lines" [ref=f4e67]:
+          - link "Metabolic 3 compounds Shop the line" [ref=f4e69] [cursor=pointer]:
+            - /url: /shop?category=metabolic
+            - generic [ref=f4e70]:
+              - heading "Metabolic" [level=3] [ref=f4e71]
+              - paragraph [ref=f4e72]:
+                - generic [ref=f4e73]: 3 compounds
+                - generic [ref=f4e74]: Shop the line
+          - link "Recovery 1 compound Shop the line" [ref=f4e78] [cursor=pointer]:
+            - /url: /shop?category=recovery
+            - generic [ref=f4e79]:
+              - heading "Recovery" [level=3] [ref=f4e80]
+              - paragraph [ref=f4e81]:
+                - generic [ref=f4e82]: 1 compound
+                - generic [ref=f4e83]: Shop the line
+          - link "Skin & matrix 1 compound Shop the line" [ref=f4e87] [cursor=pointer]:
+            - /url: /shop?category=aesthetic
+            - generic [ref=f4e88]:
+              - heading "Skin & matrix" [level=3] [ref=f4e89]
+              - paragraph [ref=f4e90]:
+                - generic [ref=f4e91]: 1 compound
+                - generic [ref=f4e92]: Shop the line
+          - link "Longevity 1 compound Shop the line" [ref=f4e96] [cursor=pointer]:
+            - /url: /shop?category=longevity
+            - generic [ref=f4e97]:
+              - heading "Longevity" [level=3] [ref=f4e98]
+              - paragraph [ref=f4e99]:
+                - generic [ref=f4e100]: 1 compound
+                - generic [ref=f4e101]: Shop the line
+          - link "Blends 2 compounds Shop the line" [ref=f4e105] [cursor=pointer]:
+            - /url: /shop?category=blend
+            - generic [ref=f4e106]:
+              - heading "Blends" [level=3] [ref=f4e107]
+              - paragraph [ref=f4e108]:
+                - generic [ref=f4e109]: 2 compounds
+                - generic [ref=f4e110]: Shop the line
+        - generic [ref=f4e113]:
+          - button "Previous — Catalogue lines" [disabled] [ref=f4e114]
+          - button "Next — Catalogue lines" [ref=f4e117] [cursor=pointer]
+    - generic [ref=f4e121]:
+      - generic [ref=f4e122]:
+        - generic [ref=f4e123]:
+          - generic [ref=f4e124]:
+            - paragraph [ref=f4e125]: Most ordered
+            - heading "Ordered most by the labs we supply" [level=2] [ref=f4e126]
+            - link "Shop all compounds" [ref=f4e782] [cursor=pointer]:
+              - /url: /shop
+          - generic [ref=f4e785]:
+            - generic [aria-hidden] [ref=f4e786]: 01 / 06
+            - generic [ref=f4e787]:
+              - button "Previous — Best-selling compounds" [disabled]
+              - button "Next — Best-selling compounds" [ref=f4e788] [cursor=pointer]
+        - group "Best-selling compounds" [ref=f4e127]:
+          - article [ref=f4e129]:
+            - generic [ref=f4e130]:
+              - generic: Bestseller
+              - button "Add Tirzepatide 40mg to cart" [ref=f4e131] [cursor=pointer]
+            - generic [ref=f4e135]:
+              - heading [level=3] [ref=f4e136]:
+                - link "Tirzepatide 40mg" [ref=f4e137] [cursor=pointer]:
+                  - /url: /product/tirzepatide-40mg
+              - paragraph [ref=f4e138]: GIP / GLP-1 Research
+              - generic [ref=f4e139]:
+                - generic [ref=f4e140]: $100
+                - generic [ref=f4e141]: 99.85% assayed
+          - article [ref=f4e143]:
+            - generic [ref=f4e144]:
+              - generic: Bestseller
+              - button "Add Retatrutide 20mg to cart" [ref=f4e145] [cursor=pointer]
+            - generic [ref=f4e149]:
+              - heading [level=3] [ref=f4e150]:
+                - link "Retatrutide 20mg" [ref=f4e151] [cursor=pointer]:
+                  - /url: /product/retatrutide-20mg
+              - paragraph [ref=f4e152]: Triple Agonist Research
+              - generic [ref=f4e153]:
+                - generic [ref=f4e154]: $100
+                - generic [ref=f4e155]: 99.21% assayed
+          - article [ref=f4e157]:
+            - generic [ref=f4e158]:
+              - generic: New
+              - button "Add Retatrutide 40mg to cart" [ref=f4e159] [cursor=pointer]
+            - generic [ref=f4e163]:
+              - heading [level=3] [ref=f4e164]:
+                - link "Retatrutide 40mg" [ref=f4e165] [cursor=pointer]:
+                  - /url: /product/retatrutide-40mg
+              - paragraph [ref=f4e166]: Triple Agonist Research
+              - generic [ref=f4e167]:
+                - generic [ref=f4e168]: $180
+                - generic [ref=f4e169]: 99.269% assayed
+          - article [ref=f4e171]:
+            - generic [ref=f4e172]:
+              - generic: New
+              - button "Add Glow 70mg to cart" [ref=f4e173] [cursor=pointer]
+            - generic [ref=f4e177]:
+              - heading [level=3] [ref=f4e178]:
+                - link "Glow 70mg" [ref=f4e179] [cursor=pointer]:
+                  - /url: /product/glow-70mg
+              - paragraph [ref=f4e180]: Multi-Compound Research Blend
+              - generic [ref=f4e181]: $100
+          - article [ref=f4e184]:
+            - generic [ref=f4e185]:
+              - generic: Bestseller
+              - button "Add BPC-157 & TB-500 40mg to cart" [ref=f4e186] [cursor=pointer]
+            - generic [ref=f4e190]:
+              - heading [level=3] [ref=f4e191]:
+                - link "BPC-157 & TB-500 40mg" [ref=f4e192] [cursor=pointer]:
+                  - /url: /product/bpc-157-tb-500-40mg
+              - paragraph [ref=f4e193]: Peptide Blend — Research
+              - generic [ref=f4e194]: $130
+          - article [ref=f4e197]:
+            - generic [ref=f4e198]:
+              - generic: Limited
+              - button "Add NAD+ 1,000mg to cart" [ref=f4e199] [cursor=pointer]
+            - generic [ref=f4e203]:
+              - heading [level=3] [ref=f4e204]:
+                - link "NAD+ 1,000mg" [ref=f4e205] [cursor=pointer]:
+                  - /url: /product/nad-plus-1000mg
+              - paragraph [ref=f4e206]: Cellular Metabolism Research
+              - generic [ref=f4e207]: $140
+      - generic [ref=f4e212]:
+        - generic [ref=f4e213]:
+          - generic [ref=f4e214]: Tirzepatide 40mg
+          - heading "Documented from fill to bench" [level=2] [ref=f4e215]
+          - paragraph [ref=f4e216]: A dual GIP / GLP-1 receptor agonist supplied for in vitro research, with the assay, batch record and storage conditions a lab needs to file it.
+        - generic [ref=f4e226]:
+          - generic [ref=f4e227]:
+            - article [ref=f4e228]:
+              - heading "Third-party assayed" [level=3] [ref=f4e232]
+              - paragraph [ref=f4e233]: Purity measured at 99.85% by Janoshik on batch TR786PAOS. The full report is published and can be verified with the lab.
+            - article [ref=f4e234]:
+              - heading "Held at 2–8°C" [level=3] [ref=f4e239]
+              - paragraph [ref=f4e240]: Kept refrigerated from fill through dispatch and shipped in validated insulated packaging across the UK and EU.
+          - generic [ref=f4e241]:
+            - article [ref=f4e242]:
+              - heading "Measured, not calculated" [level=3] [ref=f4e247]
+              - paragraph [ref=f4e248]: Each device holds 3 mL, confirmed in the same report — stated content reflects what the pen actually contains.
+            - article [ref=f4e249]:
+              - heading "Traceable by batch" [level=3] [ref=f4e254]
+              - paragraph [ref=f4e255]: The batch number on the carton resolves to its own certificate, so the kit on your bench matches the paper on file.
+      - link "New Third-party assayed by Janoshik Retatrutide 40mg — a triple-agonist reference compound in a 40mg kit. The figures below are taken from the published third-party report for the current batch. Purity 99.269% Fill volume 2.4 mL Batch AR1739JAT Shop Retatrutide 40mg" [ref=f4e256] [cursor=pointer]:
+        - /url: /product/retatrutide-40mg
+        - generic [ref=f4e257]:
+          - generic [ref=f4e258]: New
+          - generic [ref=f4e259]:
+            - paragraph [ref=f4e260]: Third-party assayed by Janoshik
+            - paragraph [ref=f4e261]: Retatrutide 40mg — a triple-agonist reference compound in a 40mg kit. The figures below are taken from the published third-party report for the current batch.
+            - generic [ref=f4e262]:
+              - generic [ref=f4e263]:
+                - term [ref=f4e264]: Purity
+                - definition [ref=f4e265]: 99.269%
+              - generic [ref=f4e266]:
+                - term [ref=f4e267]: Fill volume
+                - definition [ref=f4e268]: 2.4 mL
+              - generic [ref=f4e269]:
+                - term [ref=f4e270]: Batch
+                - definition [ref=f4e271]: AR1739JAT
+            - generic [ref=f4e272]: Shop Retatrutide 40mg
+    - generic [ref=f4e276]:
+      - img "Retatrutide 20mg" [ref=f4e278]
+      - generic [ref=f4e279]:
+        - heading "Put your supply on a standing order" [level=2] [ref=f4e280]
+        - paragraph [ref=f4e281]: Enrol any compound for 3 monthly deliveries. Each one is allocated from a verified batch and arrives with its own certificate.
+        - generic [ref=f4e282]:
+          - generic [ref=f4e283]:
+            - term [ref=f4e284]: Retatrutide 20mg
+            - definition [ref=f4e285]:
+              - text: $100
+              - generic [ref=f4e286]: $85.00
+          - paragraph [ref=f4e287]: Every standing order includes
+          - generic [ref=f4e289]:
+            - term [ref=f4e290]: 15% off every delivery
+            - definition [ref=f4e291]: Enrol any compound for three monthly deliveries and save on each one.
+          - generic [ref=f4e293]:
+            - term [ref=f4e294]: Cold-chain included
+            - definition [ref=f4e295]: Insulated shipping on every order containing a standing-order line, no minimum.
+          - generic [ref=f4e297]:
+            - term [ref=f4e298]: Priority batch allocation
+            - definition [ref=f4e299]: Allocated from each verified batch 48 hours before it is listed publicly.
+          - generic [ref=f4e301]:
+            - term [ref=f4e302]: Certificates on dispatch
+            - definition [ref=f4e303]: The batch-specific certificate of analysis is emailed the moment your order ships.
+          - generic [ref=f4e304]:
+            - term [ref=f4e305]: Saved per delivery
+            - definition [ref=f4e306]: $15.00
+        - link "Start a standing order" [ref=f4e307] [cursor=pointer]:
+          - /url: /product/retatrutide-20mg
+        - list [ref=f4e310]:
+          - listitem [ref=f4e311]: Cold-chain shipping included
+          - listitem [ref=f4e314]: Pause or cancel any time
+          - listitem [ref=f4e317]: Certificate emailed on dispatch
+    - generic [ref=f4e321]:
+      - heading "Nothing on the label we have not measured" [level=2] [ref=f4e322]
+      - tablist "Testing standards" [ref=f4e323]:
+        - tab "Purity" [selected] [ref=f4e324] [cursor=pointer]
+        - tab "Concentration" [ref=f4e325] [cursor=pointer]
+        - tab "Cold chain" [ref=f4e326] [cursor=pointer]
+        - tab "Traceability" [ref=f4e327] [cursor=pointer]
+      - tabpanel "Purity" [ref=f4e328]:
+        - generic [ref=f4e329]:
+          - paragraph [ref=f4e330]: Every batch is assayed by an independent laboratory before a single unit is listed for sale.
+          - paragraph [ref=f4e331]: "ASSAYED BY HPLC-UV AGAINST A CERTIFIED REFERENCE STANDARD. LOWEST RECORDED BATCH PURITY ACROSS THE CATALOGUE: 99.21%."
+          - link "See every certificate" [ref=f4e332] [cursor=pointer]:
+            - /url: /shop
+    - generic [ref=f4e338]:
+      - generic [ref=f4e339]:
+        - heading "6 research lines, one verified source" [level=2] [ref=f4e340]
+        - table [ref=f4e341]:
+          - caption [ref=f4e342]: Every Lumivex line, whether its batch carries a published Janoshik report, the content that report verified, and the price.
+          - rowgroup [ref=f4e343]:
+            - row [ref=f4e344]:
+              - columnheader "Research line" [ref=f4e345]
+              - columnheader "Lumivex Janoshik assayed" [ref=f4e346]:
+                - generic [ref=f4e347]:
+                  - text: Lumivex
+                  - generic [aria-hidden] [ref=f4e348]: ®
+                - generic [ref=f4e349]: Janoshik assayed
+              - columnheader "Verified content" [ref=f4e350]: Verifiedcontent
+              - columnheader "Price" [ref=f4e351]
+          - rowgroup [ref=f4e352]:
+            - row [ref=f4e353]:
+              - cell "Tirzepatide 40mg" [ref=f4e354]
+              - cell [ref=f4e355]
+              - cell "40.05 mg" [ref=f4e359]
+              - cell "$100" [ref=f4e360]
+            - row [ref=f4e361]:
+              - cell "Retatrutide 20mg" [ref=f4e362]
+              - cell [ref=f4e363]
+              - cell "22.96 mg" [ref=f4e367]
+              - cell "$100" [ref=f4e368]
+            - row [ref=f4e369]:
+              - cell "Retatrutide 40mg" [ref=f4e370]
+              - cell [ref=f4e371]
+              - cell "43.72 mg" [ref=f4e375]
+              - cell "$180" [ref=f4e376]
+            - row [ref=f4e377]:
+              - cell "Glow 70mg" [ref=f4e378]
+              - cell [ref=f4e379]
+              - cell "40.69 mg" [ref=f4e383]
+              - cell "$100" [ref=f4e384]
+            - row [ref=f4e385]:
+              - cell "BPC-157 & TB-500 40mg" [ref=f4e386]
+              - cell [ref=f4e387]
+              - cell "41.58 mg" [ref=f4e391]
+              - cell "$130" [ref=f4e392]
+            - row [ref=f4e393]:
+              - cell "NAD+ 1,000mg" [ref=f4e394]
+              - cell "No published report" [ref=f4e395]: —
+              - cell "—" [ref=f4e396]
+              - cell "$140" [ref=f4e397]
+          - rowgroup [ref=f4e398]:
+            - row [ref=f4e399]:
+              - rowheader "Lines with a published report" [ref=f4e400]
+              - cell "5 of 6" [ref=f4e401]
+              - cell [ref=f4e402]
+              - cell "From $100" [ref=f4e403]
+        - paragraph [ref=f4e404]: Verified content is the total assayed mass reported by Janoshik Analytical for the listed batch. For research use only.
+      - img "Sealed ALLUVI Retatrutide 20 mg carton with its pre-filled research pen" [ref=f4e406]
+    - generic [ref=f4e409]:
+      - heading "Independently tested, so your records hold up" [level=2] [ref=f4e410]
+      - paragraph [ref=f4e411]: Purity, concentration, cold chain and custody are documented for every batch we release. Where a figure appears on a label, there is a measurement behind it and a certificate you can check.
+      - generic [ref=f4e412]:
+        - generic [ref=f4e413]:
+          - heading [level=3] [ref=f4e414]:
+            - button "Independently assayed, never self-reported" [ref=f4e415] [cursor=pointer]
+          - region "Independently assayed, never self-reported":
+            - generic: Purity and concentration are measured by Janoshik Analytical, a laboratory with no commercial interest in the result. We publish the report as issued.
+        - generic [ref=f4e423]:
+          - heading [level=3] [ref=f4e424]:
+            - button "Certificate matched to your batch number" [ref=f4e425] [cursor=pointer]
+          - region "Certificate matched to your batch number":
+            - generic: The certificate you receive corresponds to the exact batch in your consignment — not a representative sample from an earlier run.
+        - generic [ref=f4e433]:
+          - heading [level=3] [ref=f4e434]:
+            - button "Fill volume measured, not estimated" [ref=f4e435] [cursor=pointer]
+          - region "Fill volume measured, not estimated":
+            - generic: Stated content is derived from the measured fill of the sealed device, so the figure on the label is the figure in the pen.
+        - generic [ref=f4e443]:
+          - heading [level=3] [ref=f4e444]:
+            - button "Validated cold-chain packaging" [ref=f4e445] [cursor=pointer]
+          - region "Validated cold-chain packaging":
+            - generic: Insulated shippers are qualified for 48 hours in transit at ambient temperatures, with cold-chain integrity checked on dispatch.
+        - generic [ref=f4e453]:
+          - heading [level=3] [ref=f4e454]:
+            - button "Documented chain of custody" [ref=f4e455] [cursor=pointer]
+          - region "Documented chain of custody":
+            - generic: Synthesis, fill, assay and release are logged against the batch record, so procurement teams can reconstruct the full history.
+    - generic [ref=f4e465]:
+      - generic [ref=f4e466]:
+        - heading "Purity verified. Paperwork included." [level=2] [ref=f4e467]
+        - generic [ref=f4e468]:
+          - paragraph [ref=f4e469]: "Lumivex supplies laboratories across the UK and EU with research-grade peptides and reference compounds. We built the company around being unremarkable about the basics: synthesise in-house, test independently, document everything, and answer the phone."
+          - paragraph [ref=f4e470]: Every compound is produced under controlled clean-room conditions, assayed by a third-party laboratory, and released with a certificate tied to its own batch number. Supplied strictly for in vitro research.
+      - generic [ref=f4e471]:
+        - generic [ref=f4e472]:
+          - term [ref=f4e473]: Research formulations catalogued
+          - definition [ref=f4e474]:
+            - generic [ref=f4e475]: "6"
+            - generic [ref=f4e476]: Research formulations catalogued
+        - generic [ref=f4e477]:
+          - term [ref=f4e478]: Batches supplied with a COA
+          - definition [ref=f4e479]:
+            - generic [ref=f4e480]: 100%
+            - generic [ref=f4e481]: Batches supplied with a COA
+        - generic [ref=f4e482]:
+          - term [ref=f4e483]: Lowest assayed batch purity
+          - definition [ref=f4e484]:
+            - generic [ref=f4e485]: 99.2%+
+            - generic [ref=f4e486]: Lowest assayed batch purity
+      - list [ref=f4e487]:
+        - listitem [ref=f4e488]:
+          - generic [ref=f4e489]: Step 01
+          - heading "Synthesise" [level=3] [ref=f4e490]
+          - paragraph [ref=f4e491]: APIs are produced in our own facility under controlled clean-room conditions, with no third-party resellers in the chain.
+        - listitem [ref=f4e492]:
+          - generic [ref=f4e493]: Step 02
+          - heading "Verify" [level=3] [ref=f4e494]
+          - paragraph [ref=f4e495]: Independent purity and concentration testing on every batch before a single unit is allocated to an order.
+        - listitem [ref=f4e496]:
+          - generic [ref=f4e497]: Step 03
+          - heading "Seal" [level=3] [ref=f4e498]
+          - paragraph [ref=f4e499]: Cold-stored and tamper-sealed, with accurate labelling and a batch number that resolves to its certificate.
+    - generic [ref=f4e502]:
+      - generic [ref=f4e503]:
+        - generic [ref=f4e504]:
+          - paragraph [ref=f4e505]: Feedback
+          - heading "What the labs we supply report back" [level=2] [ref=f4e506]
+        - generic [ref=f4e792]:
+          - generic [aria-hidden] [ref=f4e793]: 01 / 07
+          - generic [ref=f4e794]:
+            - button "Previous — Customer feedback" [disabled]
+            - button "Next — Customer feedback" [ref=f4e795] [cursor=pointer]
+      - group "Customer feedback" [ref=f4e507]:
+        - figure [ref=f4e509]:
+          - paragraph [ref=f4e510]: Dr. Helena Voss
+          - generic [ref=f4e511]:
+            - blockquote [ref=f4e512]: “Every consignment arrives with its batch documentation and a matching third-party certificate. The paperwork is the most complete we have received from a UK supplier.”
+            - paragraph [ref=f4e514]: Principal Investigator, Zürich
+        - figure [ref=f4e519]:
+          - paragraph [ref=f4e520]: Marcus Lindgren
+          - generic [ref=f4e521]:
+            - blockquote [ref=f4e522]: “Sealed packaging, intact cold-chain, accurate order contents and traceable batch numbers throughout. Procurement and record-keeping are straightforward as a result.”
+            - paragraph [ref=f4e524]: Laboratory Director, Stockholm
+        - figure [ref=f4e529]:
+          - paragraph [ref=f4e530]: Dr. Amara Okafor
+          - generic [ref=f4e531]:
+            - blockquote [ref=f4e532]: “Certificates are published per batch and verifiable against the issuing laboratory. Presentation and labelling are consistent across every order we have placed.”
+            - paragraph [ref=f4e534]: Research Lead, London
+        - figure [ref=f4e539]:
+          - paragraph [ref=f4e540]: Dr. Tomas Heller
+          - generic [ref=f4e541]:
+            - blockquote [ref=f4e542]: “Fill volumes match the stated figures within our own measurement tolerance. For method development that consistency matters more than a headline purity number.”
+            - paragraph [ref=f4e544]: Analytical Chemist, Rotterdam
+        - figure [ref=f4e549]:
+          - paragraph [ref=f4e550]: Priya Raman
+          - generic [ref=f4e551]:
+            - blockquote [ref=f4e552]: “Batch numbers on the devices match the numbers on the certificates every time. Reconciling a delivery against the paperwork takes minutes rather than an afternoon.”
+            - paragraph [ref=f4e554]: Procurement Lead, Manchester
+        - figure [ref=f4e559]:
+          - paragraph [ref=f4e560]: Dr. Jonas Weber
+          - generic [ref=f4e561]:
+            - blockquote [ref=f4e562]: “Cold packs were still solid on arrival after two days in transit. The insulated packaging is specified properly rather than treated as an afterthought.”
+            - paragraph [ref=f4e564]: Group Leader, Vienna
+        - figure [ref=f4e569]:
+          - paragraph [ref=f4e570]: Elif Demir
+          - generic [ref=f4e571]:
+            - blockquote [ref=f4e572]: “Questions about storage and handling get answered by someone who has read the batch record, not a script. That is unusual at this end of the market.”
+            - paragraph [ref=f4e574]: Laboratory Manager, Copenhagen
+    - generic [ref=f4e579]:
+      - generic [ref=f4e580]:
+        - heading "Questions, answered" [level=2] [ref=f4e581]
+        - paragraph [ref=f4e582]: Anything not covered here, message us and a researcher will reply — usually within the working day.
+        - link "Contact the lab" [ref=f4e583] [cursor=pointer]:
+          - /url: /#contact
+      - generic [ref=f4e584]:
+        - generic [ref=f4e585]:
+          - heading [level=3] [ref=f4e586]:
+            - button "What does \"research use only\" actually mean?" [expanded] [ref=f4e587] [cursor=pointer]
+          - region "What does \"research use only\" actually mean?" [ref=f4e591]:
+            - generic [ref=f4e592]: Every compound we supply is intended solely for in vitro laboratory research by qualified professionals. It may not be used in clinical trials involving humans, administered to humans or animals, or supplied onward for investigational use. Ordering confirms you accept these terms.
+        - generic [ref=f4e594]:
+          - heading [level=3] [ref=f4e595]:
+            - button "Who carries out the testing?" [ref=f4e596] [cursor=pointer]
+          - region "Who carries out the testing?":
+            - generic: Janoshik Analytical, an independent laboratory with no commercial interest in the outcome. Each batch is assayed for purity and compound concentration, and the report is published as issued — we do not edit or summarise it.
+        - generic [ref=f4e602]:
+          - heading [level=3] [ref=f4e603]:
+            - button "How do I verify the batch I received?" [ref=f4e604] [cursor=pointer]
+          - region "How do I verify the batch I received?":
+            - generic: Each product page lists its batch number and links directly to the certificate on the issuing laboratory’s own domain. Compare the batch number on your device label with the one in the report.
+        - generic [ref=f4e610]:
+          - heading [level=3] [ref=f4e611]:
+            - button "How are orders shipped and stored?" [ref=f4e612] [cursor=pointer]
+          - region "How are orders shipped and stored?":
+            - generic: Compounds are held at 2–8°C and dispatched in validated insulated packaging rated for 48 hours in transit. Store refrigerated on arrival and do not freeze.
+        - generic [ref=f4e618]:
+          - heading [level=3] [ref=f4e619]:
+            - button "Which countries do you supply?" [ref=f4e620] [cursor=pointer]
+          - region "Which countries do you supply?":
+            - generic: We supply laboratories and research organisations across the UK and EU. Orders are shipped from within the UK with full customs documentation where required.
+        - generic [ref=f4e626]:
+          - heading [level=3] [ref=f4e627]:
+            - button "Can I order without an account?" [ref=f4e628] [cursor=pointer]
+          - region "Can I order without an account?":
+            - generic: Yes. Checkout works without signing in, though an account lets you track orders, re-order from your history and access certificates for every batch you have received.
+    - generic [ref=f4e635]:
+      - generic [ref=f4e636]:
+        - heading "Talk to someone who knows the catalogue" [level=2] [ref=f4e637]
+        - paragraph [ref=f4e638]: For laboratories and institutions sourcing research-grade peptides with full documentation and batch traceability. We reply within one working day.
+        - generic [ref=f4e639]:
+          - generic [ref=f4e640]:
+            - term [ref=f4e641]: Email
+            - definition [ref=f4e642]:
+              - link "research@lumivex.store" [ref=f4e643] [cursor=pointer]:
+                - /url: mailto:research@lumivex.store
+          - generic [ref=f4e644]:
+            - term [ref=f4e645]: Supply region
+            - definition [ref=f4e646]: United Kingdom and European Union
+          - generic [ref=f4e647]:
+            - term [ref=f4e648]: Compliance
+            - definition [ref=f4e649]: Research use only — not for human or veterinary use.
+      - generic [ref=f4e650]:
+        - generic [ref=f4e651]:
+          - generic [ref=f4e652]:
+            - text: Full name
+            - textbox "Full name" [ref=f4e653]
+          - generic [ref=f4e654]:
+            - text: Institution
+            - textbox "Institution" [ref=f4e655]
+        - generic [ref=f4e656]:
+          - text: Email address
+          - textbox "Email address" [ref=f4e657]
+        - generic [ref=f4e658]:
+          - text: Your enquiry
+          - textbox "Your enquiry" [ref=f4e659]
+        - button "Send enquiry" [ref=f4e660] [cursor=pointer]
+        - status [ref=f4e663]
+  - contentinfo [ref=f4e664]:
+    - generic [ref=f4e665]:
+      - generic [ref=f4e666]:
+        - navigation "Shop" [ref=f4e667]:
+          - heading "Shop" [level=2] [ref=f4e668]
+          - list [ref=f4e669]:
+            - listitem [ref=f4e670]:
+              - link "All compounds" [ref=f4e671] [cursor=pointer]:
+                - /url: /shop
+            - listitem [ref=f4e672]:
+              - link "Metabolic" [ref=f4e673] [cursor=pointer]:
+                - /url: /shop?category=metabolic
+            - listitem [ref=f4e674]:
+              - link "Recovery" [ref=f4e675] [cursor=pointer]:
+                - /url: /shop?category=recovery
+            - listitem [ref=f4e676]:
+              - link "Longevity" [ref=f4e677] [cursor=pointer]:
+                - /url: /shop?category=longevity
+            - listitem [ref=f4e678]:
+              - link "Blends" [ref=f4e679] [cursor=pointer]:
+                - /url: /shop?category=blend
+        - navigation "Standards" [ref=f4e680]:
+          - heading "Standards" [level=2] [ref=f4e681]
+          - list [ref=f4e682]:
+            - listitem [ref=f4e683]:
+              - link "How we test" [ref=f4e684] [cursor=pointer]:
+                - /url: /#standards
+            - listitem [ref=f4e685]:
+              - link "Quality commitments" [ref=f4e686] [cursor=pointer]:
+                - /url: /#why-us
+            - listitem [ref=f4e687]:
+              - link "Cold-chain handling" [ref=f4e688] [cursor=pointer]:
+                - /url: /shipping-policy
+            - listitem [ref=f4e689]:
+              - link "Press release" [ref=f4e690] [cursor=pointer]:
+                - /url: /press-release
+        - navigation "Account" [ref=f4e691]:
+          - heading "Account" [level=2] [ref=f4e692]
+          - list [ref=f4e693]:
+            - listitem [ref=f4e694]:
+              - link "Sign in" [ref=f4e695] [cursor=pointer]:
+                - /url: /login
+            - listitem [ref=f4e696]:
+              - link "My orders" [ref=f4e697] [cursor=pointer]:
+                - /url: /account/orders
+            - listitem [ref=f4e698]:
+              - link "Track an order" [ref=f4e699] [cursor=pointer]:
+                - /url: /account/track
+            - listitem [ref=f4e700]:
+              - link "Wallet" [ref=f4e701] [cursor=pointer]:
+                - /url: /account/wallet
+        - navigation "Support" [ref=f4e702]:
+          - heading "Support" [level=2] [ref=f4e703]
+          - list [ref=f4e704]:
+            - listitem [ref=f4e705]:
+              - link "Questions" [ref=f4e706] [cursor=pointer]:
+                - /url: /#faq
+            - listitem [ref=f4e707]:
+              - link "Contact" [ref=f4e708] [cursor=pointer]:
+                - /url: /#contact
+            - listitem [ref=f4e709]:
+              - link "Shipping policy" [ref=f4e710] [cursor=pointer]:
+                - /url: /shipping-policy
+            - listitem [ref=f4e711]:
+              - link "Refund policy" [ref=f4e712] [cursor=pointer]:
+                - /url: /refund-policy
+        - navigation "Legal" [ref=f4e713]:
+          - heading "Legal" [level=2] [ref=f4e714]
+          - list [ref=f4e715]:
+            - listitem [ref=f4e716]:
+              - link "Privacy policy" [ref=f4e717] [cursor=pointer]:
+                - /url: /privacy-policy
+            - listitem [ref=f4e718]:
+              - link "Terms of service" [ref=f4e719] [cursor=pointer]:
+                - /url: /terms-of-service
+        - generic [ref=f4e720]:
+          - heading "Newsletter" [level=2] [ref=f4e721]
+          - paragraph [ref=f4e722]: New batches and certificates, as they publish.
+          - generic [ref=f4e724]:
+            - generic [ref=f4e725]:
+              - generic [ref=f4e726]: Email address
+              - textbox "Email address" [ref=f4e727]:
+                - /placeholder: you@lab.com
+              - button "Subscribe" [disabled] [ref=f4e728]
+            - generic [ref=f4e731]:
+              - checkbox "I confirm I am a research professional and consent to catalogue and documentation updates." [ref=f4e732]
+              - generic [ref=f4e733]: I confirm I am a research professional and consent to catalogue and documentation updates.
+      - generic [ref=f4e734]:
+        - generic [ref=f4e736]:
+          - text: Lumivex
+          - generic [aria-hidden] [ref=f4e737]: ®
+        - generic [ref=f4e738]:
+          - paragraph [ref=f4e739]: FOR RESEARCH PURPOSES ONLY. Not intended for human or veterinary use. Not intended to diagnose, treat, cure, or prevent any disease. Products are supplied strictly for laboratory and analytical research conducted by qualified professionals.
+          - paragraph [ref=f4e740]: Lumivex has never operated on any social media platform. Our only official site is lumivex.store — treat any other seller using this name as unauthorised.
+          - paragraph [ref=f4e741]: Certificates of analysis are issued by Janoshik Analytical and are verifiable on the issuing laboratory’s own domain. Figures quoted on product pages refer to the batch stated on the label.
+      - generic [ref=f4e742]:
+        - paragraph [ref=f4e743]: © 2026 Lumivex. All rights reserved.
+        - paragraph [ref=f4e744]: Research use only — not for human or veterinary use
+  - button "Open assistant" [ref=f4e745] [cursor=pointer]
+  - button "Open Next.js Dev Tools" [ref=f4e753] [cursor=pointer]
+  - alert [ref=f4e798]

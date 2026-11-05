@@ -154,7 +154,7 @@ export default function CurtainImage({
       {curtain && (
         <div
           ref={maskRef}
-          className="pointer-events-none absolute inset-0 z-10 bg-ivory"
+          className="pointer-events-none absolute inset-0 z-10 bg-white"
         />
       )}
     </div>

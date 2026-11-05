@@ -1,0 +1,1055 @@
+- generic [active] [ref=f37e1]:
+  - generic [ref=f37e2]:
+    - link [ref=f37e3] [cursor=pointer]:
+      - /url: /en-eu/products/greens-powder-pouch
+      - paragraph [ref=f37e6]:
+        - strong [ref=f37e7]: "Black Friday Deal: Our Best Price Ever - Save 47% plus FREE Welcome Kit"
+    - banner [ref=f37e8]:
+      - generic [ref=f37e9]:
+        - link "Home" [ref=f37e10] [cursor=pointer]:
+          - /url: /en-eu
+        - navigation [ref=f37e12]:
+          - list [ref=f37e13]:
+            - listitem [ref=f37e14]:
+              - button "Shop" [ref=f37e15] [cursor=pointer]
+              - menu:
+                - generic:
+                  - generic:
+                    - paragraph: Shop AG1
+                    - list:
+                      - listitem:
+                        - link "AG1 Best Seller Our daily core supplement blend.":
+                          - /url: /en-eu/products/greens-powder-pouch
+                          - generic:
+                            - generic:
+                              - generic: AG1
+                              - generic: Best Seller
+                            - paragraph: Our daily core supplement blend.
+                      - listitem:
+                        - link "AG1 Travel Packs Our core supplement blend in convenient single servings.":
+                          - /url: /en-eu/products/greens-powder-travelpack
+                          - generic:
+                            - generic: AG1 Travel Packs
+                            - paragraph: Our core supplement blend in convenient single servings.
+            - listitem [ref=f37e17]:
+              - button "Science" [ref=f37e18] [cursor=pointer]
+              - menu:
+                - generic:
+                  - generic:
+                    - list:
+                      - listitem:
+                        - link "Research & Testing Clinical research and peer-reviewed science, explained.":
+                          - /url: /en-eu/learn/research/scientific-research
+                          - generic:
+                            - generic: Research & Testing
+                            - paragraph: Clinical research and peer-reviewed science, explained.
+                      - listitem:
+                        - link "Ingredients Understanding our science-backed ingredients.":
+                          - /url: /en-eu/about-ag1/ingredients
+                          - generic:
+                            - generic: Ingredients
+                            - paragraph: Understanding our science-backed ingredients.
+                      - listitem:
+                        - link "Quality Standards The rigorous testing behind every batch.":
+                          - /url: /en-eu/about-ag1/quality-standards
+                          - generic:
+                            - generic: Quality Standards
+                            - paragraph: The rigorous testing behind every batch.
+            - listitem [ref=f37e20]:
+              - button "Explore" [ref=f37e21] [cursor=pointer]
+              - menu:
+                - generic:
+                  - generic:
+                    - list:
+                      - listitem:
+                        - link "What is AG1? Learn what makes AG1 unique.":
+                          - /url: /en-eu/what-is-ag1
+                          - generic:
+                            - generic: What is AG1?
+                            - paragraph: Learn what makes AG1 unique.
+                      - listitem:
+                        - link "Benefits Discover the everyday benefits of making AG1 part of your routine.":
+                          - /url: /en-eu/about-ag1/benefits
+                          - generic:
+                            - generic: Benefits
+                            - paragraph: Discover the everyday benefits of making AG1 part of your routine.
+                      - listitem:
+                        - link "Blog The latest from our team on health, science, and wellness.":
+                          - /url: /en-eu/blog
+                          - generic:
+                            - generic: Blog
+                            - paragraph: The latest from our team on health, science, and wellness.
+                      - listitem:
+                        - link "Find AG1 Near You Search for AG1 in retailers near you.":
+                          - /url: /en-eu/retail-locations
+                          - generic:
+                            - generic: Find AG1 Near You
+                            - paragraph: Search for AG1 in retailers near you.
+        - generic [ref=f37e23]:
+          - button "Cart" [ref=f37e25] [cursor=pointer]
+          - link "Sign In" [ref=f37e30] [cursor=pointer]:
+            - /url: /en-eu/members
+  - main [ref=f37e35]:
+    - generic [ref=f37e37]:
+      - generic [ref=f37e38]:
+        - generic [ref=f37e40]:
+          - generic [ref=f37e41]: "Black Friday Deal: 3 months of AG1 for €168"
+          - generic [ref=f37e42]: AG1 is your daily core supplement blend, designed to support your energy levels, immune system and digestion in one daily scoop.◊
+          - link [ref=f37e44] [cursor=pointer]:
+            - /url: /en-eu/products/greens-powder-pouch
+            - paragraph [ref=f37e46]: Shop Now
+        - generic [ref=f37e50]:
+          - generic [ref=f37e51]: Better Mornings, No Matter Hugh You Are.
+          - generic [ref=f37e52]: Since 2021, AG1 has been the morning ritual that keeps Hugh Jackman at the top of his game.
+          - generic [ref=f37e53]:
+            - link [ref=f37e54] [cursor=pointer]:
+              - /url: /en-eu/products/greens-powder-pouch
+              - paragraph [ref=f37e56]: Shop Now
+            - link [ref=f37e60] [cursor=pointer]:
+              - /url: https://drinkag1.com/en-eu/what-is-ag1
+              - paragraph [ref=f37e62]: Learn More
+        - generic [ref=f37e67]:
+          - generic [ref=f37e68]: Your Daily Core Supplement Blend
+          - generic [ref=f37e69]: AG1 is designed to support your energy levels, immune system and digestion in one daily scoop
+          - link [ref=f37e71] [cursor=pointer]:
+            - /url: /en-eu/products/greens-powder-pouch
+            - paragraph [ref=f37e73]: Shop Now
+      - generic [ref=f37e79]:
+        - button "Previous Slide" [ref=f37e80] [cursor=pointer]
+        - button "Next Slide" [ref=f37e84] [cursor=pointer]
+    - generic [ref=f37e93]:
+      - generic [ref=f37e94]:
+        - generic [ref=f37e95]:
+          - paragraph [ref=f37e96]: Fuel your day with a routine that works
+          - paragraph [ref=f37e97]: With a broad range of vitamins, minerals and bacterial cultures for your gut, AG1 delivers the combined effect of 15 supplements in one. So you can feel your best, every day.⬥
+        - button [ref=f37e99] [cursor=pointer]:
+          - paragraph [ref=f37e104]: View Supplement Facts
+      - generic [ref=f37e105]:
+        - generic [ref=f37e106]:
+          - generic [ref=f37e107]:
+            - paragraph [ref=f37e110]
+            - generic [ref=f37e111]:
+              - paragraph [ref=f37e112]: Sustained energy
+              - paragraph [ref=f37e113]: B vitamins support energy and focus without the caffeine crash.◊
+          - generic [ref=f37e114]:
+            - paragraph [ref=f37e117]
+            - generic [ref=f37e118]:
+              - paragraph [ref=f37e119]: Immune defence
+              - paragraph [ref=f37e120]: Vitamin C from citrus fruits and minerals like zinc support your immune function.◊
+          - generic [ref=f37e121]:
+            - paragraph [ref=f37e124]
+            - generic [ref=f37e125]:
+              - paragraph [ref=f37e126]: Digestion
+              - paragraph [ref=f37e127]: Calcium supports digestive enzymes, biotin helps maintain the gut lining.◊
+          - generic [ref=f37e128]:
+            - paragraph [ref=f37e131]
+            - generic [ref=f37e132]:
+              - paragraph [ref=f37e133]: Stress management
+              - paragraph [ref=f37e134]: B vitamins support stress management, resilience and the nervous system.◊
+          - generic [ref=f37e135]:
+            - paragraph [ref=f37e138]
+            - generic [ref=f37e139]:
+              - paragraph [ref=f37e140]: Athletic performance
+              - paragraph [ref=f37e141]: Calcium and magnesium support muscle function and recovery.◊
+          - generic [ref=f37e142]:
+            - paragraph [ref=f37e145]
+            - generic [ref=f37e146]:
+              - paragraph [ref=f37e147]: Skin, hair & nails
+              - paragraph [ref=f37e148]: Antioxidants support hair, nails and skin, including the production of collagen.◊
+        - generic [ref=f37e149]:
+          - button "Previous Slide" [disabled] [ref=f37e150]
+          - button "Next Slide" [ref=f37e153]
+    - generic [ref=f37e157]:
+      - generic [ref=f37e158]:
+        - heading "The ingredients that power AG1" [level=2] [ref=f37e159]
+        - paragraph [ref=f37e162]: AG1 is a daily core supplement blend of vitamins, minerals and more, each ingredient carefully sourced for absorption, potency and nutrient density.
+      - generic [ref=f37e163]:
+        - generic [ref=f37e164]:
+          - button "Vitamins" [ref=f37e165] [cursor=pointer]
+          - img "Vitamins" [ref=f37e167]
+          - generic [ref=f37e168]: Vitamins
+        - generic [ref=f37e171]:
+          - button "Minerals" [ref=f37e172] [cursor=pointer]
+          - img "Minerals" [ref=f37e174]
+          - generic [ref=f37e175]: Minerals
+        - generic [ref=f37e178]:
+          - button "Good bacteria" [ref=f37e179] [cursor=pointer]
+          - img "Good bacteria" [ref=f37e181]
+          - generic [ref=f37e182]: Good bacteria
+        - generic [ref=f37e185]:
+          - button "Plant compounds & mushrooms" [ref=f37e186] [cursor=pointer]
+          - img "Plant compounds & mushrooms" [ref=f37e188]
+          - generic [ref=f37e189]: Plant compounds & mushrooms
+        - generic [ref=f37e192]:
+          - button "Natural compounds" [ref=f37e193] [cursor=pointer]
+          - img "Natural compounds" [ref=f37e195]
+          - generic [ref=f37e196]: Natural compounds
+        - generic [ref=f37e199]:
+          - button "Fibre" [ref=f37e200] [cursor=pointer]
+          - img "Fibre" [ref=f37e202]
+          - generic [ref=f37e203]: Fibre
+    - generic [ref=f37e206]:
+      - paragraph [ref=f37e209]: Recommended by athletes, experts and high-performers around the world
+      - generic [ref=f37e210]:
+        - generic [ref=f37e211]:
+          - generic [ref=f37e212]:
+            - paragraph [ref=f37e215]: SIR LEWIS HAMILTON
+            - generic [ref=f37e216]:
+              - paragraph [ref=f37e217]: "\"I’ve been drinking AG1 every single day for a few years now, and it’s become an essential part of my routine. It’s my daily source of energy◊ – it tastes great, it’s easy to take on the go, and it supports my health body and mind in a truly holistic way.◊ I love how AG1 makes it easy to take care of what matters.\""
+              - paragraph [ref=f37e218]: SEVEN-TIME FORMULA 1 WORLD CHAMPION
+          - generic [ref=f37e219]:
+            - paragraph [ref=f37e222]: HUGH JACKMAN
+            - generic [ref=f37e223]:
+              - paragraph [ref=f37e224]: “I was first introduced to AG1 five or six years ago by my nutritionist. He knew how hard I worked, and I've used it every day since. It's one scoop in water first thing in the morning and you know you're getting what you need for the day. It gives me peace of mind to have something that's simple and trusted.”
+              - paragraph [ref=f37e225]: ACTOR, SINGER, PERFORMER, AG1 DRINKER SINCE 2021
+          - generic [ref=f37e226]:
+            - paragraph [ref=f37e229]: LAURA PHILIPP
+            - generic [ref=f37e230]:
+              - paragraph [ref=f37e231]: "\"With AG1, I can be confident that I’m covering a broad spectrum of nutrients. It helps me fuel my body with the right building blocks every day – supporting my recovery and helping me show up at my best.◊\""
+              - paragraph [ref=f37e232]: 2024 IRONMAN WORLD CHAMPION & 2025 CHALLENGE ROTH CHAMPION
+          - generic [ref=f37e233]:
+            - paragraph [ref=f37e236]: NICKI LANGE
+            - generic [ref=f37e237]:
+              - paragraph [ref=f37e238]: “AG1 is part of my everyday life as practical support in a demanding routine that balances entrepreneurship with long hours of training. For me, it’s an easy way to give my body the nutrients it needs for steady energy, clear focus and good recovery.◊ I value how reliably AG1 works and how effortlessly it fits into my lifestyle.”
+              - paragraph [ref=f37e239]: ENTREPRENEUR AND ULTRA-MARATHON RUNNER
+          - generic [ref=f37e240]:
+            - paragraph [ref=f37e243]: ROSA KLÖSER
+            - generic [ref=f37e244]:
+              - paragraph [ref=f37e245]: “AG1 is a staple in my morning routine. It gives me peace of mind that I’m getting key nutrients and supporting recovery – especially during busy weeks and heavier training blocks.◊”
+              - paragraph [ref=f37e246]: 2024 UNBOUND CHAMPION & 2025 GERMAN GRAVEL NATIONAL CHAMPION
+          - generic [ref=f37e247]:
+            - paragraph [ref=f37e250]: DR. RANGAN CHATTERJEE
+            - generic [ref=f37e251]:
+              - paragraph [ref=f37e252]: “I'm really particular about what I put inside my own body. And I'm very particular with what I recommend to the public. The list of things I tend to recommend is actually pretty short, but AG1 is absolutely on it.”
+              - paragraph [ref=f37e253]: PROFESSOR, BROADCASTER AND AUTHOR
+        - generic [ref=f37e254]:
+          - button "Previous Slide" [ref=f37e255]
+          - button "Next Slide" [ref=f37e258]
+    - generic [ref=f37e267]:
+      - heading "Get started with AG1 today" [level=2] [ref=f37e269]
+      - generic [ref=f37e270]:
+        - generic [ref=f37e271]:
+          - generic [ref=f37e272]: 3 AG1 Pouches (90 servings)
+          - generic [ref=f37e273]:
+            - generic [ref=f37e274]: €168
+            - generic [ref=f37e275]:
+              - text: €227
+              - superscript [ref=f37e276]: †
+        - generic [ref=f37e277]: "FIRST TIME PURCHASE INCLUDES:"
+        - generic [ref=f37e278]:
+          - generic [ref=f37e279]: Welcome Kit
+          - generic [ref=f37e280]: AG1 shaker, scoop, and stainless steel canister
+          - generic [ref=f37e281]:
+            - generic [ref=f37e282]: free
+            - generic [ref=f37e283]: €28
+        - generic [ref=f37e284]:
+          - generic [ref=f37e285]: Vitamin D3+K2
+          - generic [ref=f37e286]: 1 bottle – separate for optimal absorption and flexible dosing
+          - generic [ref=f37e287]:
+            - generic [ref=f37e288]: free
+            - generic [ref=f37e289]: €24
+        - generic [ref=f37e290]:
+          - generic [ref=f37e291]: 5 Travel Packs
+          - generic [ref=f37e292]: Single-serve daily portions for on the go
+          - generic [ref=f37e293]:
+            - generic [ref=f37e294]: free
+            - generic [ref=f37e295]: €17
+        - generic [ref=f37e296]:
+          - generic [ref=f37e297]: Total
+          - generic [ref=f37e298]:
+            - generic [ref=f37e299]: €168
+            - generic [ref=f37e300]: €296
+      - button [ref=f37e302] [cursor=pointer]:
+        - paragraph [ref=f37e304]: Try AG1 Now
+      - generic [ref=f37e308]:
+        - generic [ref=f37e309]: Free delivery**
+        - generic [ref=f37e314]: Flexible subscription
+        - generic [ref=f37e319]: 30 days money-back guarantee
+    - generic [ref=f37e325]:
+      - link "Opens in a new tab" [ref=f37e326] [cursor=pointer]:
+        - /url: https://drinkag1.com/en-eu/is-ag1-third-party-tested-informed-sport
+      - link "Opens in a new tab" [ref=f37e328] [cursor=pointer]:
+        - /url: https://drinkag1.com/en-eu/is-ag1-third-party-tested-informed-sport
+      - link "Opens in a new tab" [ref=f37e330] [cursor=pointer]:
+        - /url: https://www.goodhousekeeping.com/uk/product-reviews/health-leisure/a62987964/athletic-greens-review/
+      - link "Opens in a new tab" [ref=f37e332] [cursor=pointer]:
+        - /url: https://www.independent.co.uk/extras/indybest/food-drink/best-greens-powder-uk-b2550096.html
+    - generic [ref=f37e336]:
+      - heading "15 years of research in every scoop" [level=2] [ref=f37e340]
+      - navigation "hero-quotes-tab" [ref=f37e341]:
+        - list [ref=f37e342]:
+          - listitem [ref=f37e343]:
+            - button "Why clinical trials?" [ref=f37e344]
+          - listitem [ref=f37e346]:
+            - button "Microbiome" [ref=f37e347]
+          - listitem [ref=f37e349]:
+            - button "Nutrient levels" [ref=f37e350]
+          - listitem [ref=f37e352]:
+            - button "Bioavailability" [ref=f37e353]
+      - generic [ref=f37e356]:
+        - generic [ref=f37e359]:
+          - blockquote [ref=f37e362]: We invest in clinical trials because it’s the only way to show that AG1 truly works. In the supplement industry, this level of research is rare – for us, it’s the standard.
+          - generic [ref=f37e364]:
+            - paragraph [ref=f37e365]: "AG1 has been studied in four gold-standard clinical trials: randomised, placebo-controlled, and double-blinded.ᵃ⁻ᵈ"
+            - paragraph [ref=f37e366]:
+              - link "See all studies →" [ref=f37e367] [cursor=pointer]:
+                - /url: https://drinkag1.com/en-eu/learn/research/scientific-research
+        - generic [ref=f37e372]:
+          - blockquote [ref=f37e375]: AG1 is clinically shown to enrich the gut microbiome.ᵃ⁻ᶜ
+          - generic [ref=f37e377]:
+            - paragraph [ref=f37e378]: "We tested whether the bacterial cultures in AG1 could survive the gastrointestinal tract – only then can they become part of the microbiome. The result: they reach the gut alive and contribute to microbial diversity."
+            - paragraph [ref=f37e379]:
+              - link "See all studies →" [ref=f37e380] [cursor=pointer]:
+                - /url: https://drinkag1.com/en-eu/learn/research/scientific-research
+        - generic [ref=f37e385]:
+          - blockquote [ref=f37e388]: AG1 helps improve key nutrient levels within 3 months.ᵃ
+          - generic [ref=f37e390]:
+            - paragraph [ref=f37e391]: "In a clinical trial, we examined whether the nutrients in AG1 are not just absorbed but also effectively utilised. The result: AG1 made a measurable difference compared to diet alone."
+            - paragraph [ref=f37e392]:
+              - link "See all studies →" [ref=f37e393] [cursor=pointer]:
+                - /url: https://drinkag1.com/en-eu/learn/research/scientific-research
+        - generic [ref=f37e398]:
+          - blockquote [ref=f37e401]: Key nutrients in AG1 were shown to be quickly and easily absorbed into the body.ᵈ
+          - generic [ref=f37e403]:
+            - paragraph [ref=f37e404]: "Nutrients only work if your body can take them up. Our clinical research confirms: AG1 delivers essential nutrients in a form the body absorbs and uses effectively."
+            - paragraph [ref=f37e405]:
+              - link "See all studies →" [ref=f37e406] [cursor=pointer]:
+                - /url: https://drinkag1.com/en-eu/learn/research/scientific-research
+    - generic [ref=f37e414]:
+      - heading "Replace up to 9 supplements with AG1" [level=2] [ref=f37e418]
+      - table [ref=f37e422]:
+        - rowgroup [ref=f37e423]:
+          - row [ref=f37e424]:
+            - columnheader [ref=f37e425]:
+              - paragraph [ref=f37e429]: AG1 can replace
+            - columnheader [ref=f37e430]
+            - columnheader [ref=f37e432]:
+              - paragraph [ref=f37e436]:
+                - text: Price per month
+                - superscript [ref=f37e437]: ⬥
+        - rowgroup [ref=f37e438]:
+          - row [ref=f37e439]:
+            - cell [ref=f37e440]:
+              - paragraph [ref=f37e444]: Vitamin B12
+            - cell [ref=f37e445]
+            - cell [ref=f37e447]:
+              - paragraph [ref=f37e451]: €2
+          - row [ref=f37e452]:
+            - cell [ref=f37e453]:
+              - paragraph [ref=f37e457]: Folate (Methylfolate)
+            - cell [ref=f37e458]
+            - cell [ref=f37e460]:
+              - paragraph [ref=f37e464]: €7
+          - row [ref=f37e465]:
+            - cell [ref=f37e466]:
+              - paragraph [ref=f37e470]: Vitamin C
+            - cell [ref=f37e471]
+            - cell [ref=f37e473]:
+              - paragraph [ref=f37e477]: €12
+          - row [ref=f37e478]:
+            - cell [ref=f37e479]:
+              - paragraph [ref=f37e483]: Vitamin E
+            - cell [ref=f37e484]
+            - cell [ref=f37e486]:
+              - paragraph [ref=f37e490]: €2
+          - row [ref=f37e491]:
+            - cell [ref=f37e492]:
+              - paragraph [ref=f37e496]: Bacterial cultures
+            - cell [ref=f37e497]
+            - cell [ref=f37e499]:
+              - paragraph [ref=f37e503]: €53
+          - row [ref=f37e504]:
+            - cell [ref=f37e505]:
+              - paragraph [ref=f37e509]: Zinc
+            - cell [ref=f37e510]
+            - cell [ref=f37e512]:
+              - paragraph [ref=f37e516]: €5
+          - row [ref=f37e517]:
+            - cell [ref=f37e518]:
+              - paragraph [ref=f37e522]: Coenzyme Q10
+            - cell [ref=f37e523]
+            - cell [ref=f37e525]:
+              - paragraph [ref=f37e529]: €15
+          - row [ref=f37e530]:
+            - cell [ref=f37e531]:
+              - paragraph [ref=f37e535]: Greens powder
+            - cell [ref=f37e536]
+            - cell [ref=f37e538]:
+              - paragraph [ref=f37e542]: €34
+          - row [ref=f37e543]:
+            - cell [ref=f37e544]:
+              - paragraph [ref=f37e548]: Fibre
+            - cell [ref=f37e549]
+            - cell [ref=f37e551]:
+              - paragraph [ref=f37e555]: €10
+          - row [ref=f37e556]:
+            - cell [ref=f37e557]:
+              - paragraph [ref=f37e561]:
+                - strong [ref=f37e562]: Total per month (30 servings)
+            - cell [ref=f37e563]:
+              - paragraph [ref=f37e567]:
+                - strong [ref=f37e568]:
+                  - text: €87
+                  - superscript [ref=f37e569]: ◆
+            - cell [ref=f37e570]:
+              - paragraph [ref=f37e574]:
+                - strong [ref=f37e575]: €140
+    - generic [ref=f37e585]:
+      - heading "Independently tested. For your peace of mind." [level=2] [ref=f37e586]
+      - paragraph [ref=f37e587]: We set the bar for quality – and keep raising it. From research and formulation to sourcing, manufacturing, and testing, every scoop of AG1 is backed by rigorous protocols to ensure it’s safe, effective, and consistently high quality.
+      - separator [ref=f37e588]
+      - generic [ref=f37e589]:
+        - heading [level=3] [ref=f37e595]:
+          - button [ref=f37e596] [cursor=pointer]:
+            - paragraph [ref=f37e599]:
+              - strong [ref=f37e600]: Driven by science, backed by research
+        - heading [level=3] [ref=f37e607]:
+          - button [ref=f37e608] [cursor=pointer]:
+            - paragraph [ref=f37e611]:
+              - strong [ref=f37e612]: Certified safe for elite performance
+        - heading [level=3] [ref=f37e619]:
+          - button [ref=f37e620] [cursor=pointer]:
+            - paragraph [ref=f37e623]:
+              - strong [ref=f37e624]: Tested for what matters
+        - heading [level=3] [ref=f37e631]:
+          - button [ref=f37e632] [cursor=pointer]:
+            - paragraph [ref=f37e635]:
+              - strong [ref=f37e636]: Ingredients your body recognises
+        - heading [level=3] [ref=f37e643]:
+          - button [ref=f37e644] [cursor=pointer]:
+            - paragraph [ref=f37e647]:
+              - strong [ref=f37e648]: Great taste, naturally
+    - article [ref=f37e652]:
+      - generic [ref=f37e654]:
+        - heading "AG1 is trusted by experts in health and nutrition" [level=2] [ref=f37e656]
+        - generic [ref=f37e658]:
+          - button "Previous slide" [disabled] [ref=f37e659]:
+            - img "Previous" [ref=f37e660]
+          - button "Next slide" [disabled] [ref=f37e662]:
+            - img "Next" [ref=f37e663]
+      - generic [ref=f37e666]:
+        - article [ref=f37e668]:
+          - generic [ref=f37e671]:
+            - heading "Dr. Victoria Nicholas" [level=3] [ref=f37e672]
+            - paragraph [ref=f37e673]: Gastroenterologist
+            - paragraph [ref=f37e676]: “AG1 is particularly well suited to people with busy lifestyles, or anyone looking for a simple way to complement a balanced diet and build a consistent, positive habit at the start of the day.”
+        - article [ref=f37e678]:
+          - generic [ref=f37e681]:
+            - heading "Georg Abel, PhD" [level=3] [ref=f37e682]
+            - paragraph [ref=f37e683]: Nutritional scientist & sports nutritionist
+            - paragraph [ref=f37e686]: “I see AG1 as a practical and meaningful addition to support daily nutrient intake, especially in real-life situations where nutrition is not always perfectly optimised.”
+        - article [ref=f37e688]:
+          - generic [ref=f37e691]:
+            - heading "Jamie Wright, MSc" [level=3] [ref=f37e692]
+            - paragraph [ref=f37e693]: Nutritionist
+            - paragraph [ref=f37e696]: “AG1 is one of the few supplements I would feel entirely comfortable in recommending with real confidence, largely because it's one of the few products in the category that has invested in third party testing, counterfeit protection procedures and proper clinical evidence for its finished formula.”
+        - article [ref=f37e698]:
+          - generic [ref=f37e701]:
+            - heading "Charlie Watson, MSc" [level=3] [ref=f37e702]
+            - paragraph [ref=f37e703]: Registered Dietitian & Sports Nutritionist
+            - paragraph [ref=f37e706]: “Supplements are such a minefield and unregulated market with wildly varying quality and quantity – 3rd party testing and Informed Sport means it is what it says it is. It's safe, it's reliable and it's verified. I wouldn't use or recommend anything that wasn't.”
+        - article [ref=f37e708]:
+          - generic [ref=f37e711]:
+            - heading "Adriano Dos Santos, MSc" [level=3] [ref=f37e712]
+            - paragraph [ref=f37e713]: Nutritionist & Circadian Researcher
+            - paragraph [ref=f37e716]: "“What AG1 brings to the table, from my perspective, is convenience, formulation coherence, and critically a level of clinical investment that is unusual in this category: third-party testing, Informed Sport and Cologne List approval, and four RCTs on the formula rather than on isolated ingredients.\""
+    - article [ref=f37e719]:
+      - generic [ref=f37e721]:
+        - generic [ref=f37e722]:
+          - heading "Built on research, lived by real people" [level=2] [ref=f37e723]
+          - paragraph [ref=f37e724]: Hear from our community how AG1 has impacted their everyday.
+        - generic [ref=f37e726]:
+          - button "Previous slide" [disabled] [ref=f37e727]:
+            - img "Previous" [ref=f37e728]
+          - button "Next slide" [ref=f37e730] [cursor=pointer]:
+            - img "Next" [ref=f37e731]
+      - generic [ref=f37e734]:
+        - article [ref=f37e736]:
+          - generic [ref=f37e739]:
+            - heading "Florian" [level=3] [ref=f37e740]
+            - paragraph [ref=f37e741]: AG1 MEMBER SINCE 2024
+            - paragraph [ref=f37e744]: "“I’ve been drinking AG1 since 2024 and already noticed more focus⁴ in the first days – I even swapped my morning espresso for it. For me, AG1 gives a sense of security: I know my body and immune system are supported, and when I get on the bike, I can switch off completely.◊”"
+        - article [ref=f37e746]:
+          - generic [ref=f37e749]:
+            - heading "Patrizia" [level=3] [ref=f37e750]
+            - paragraph [ref=f37e751]: AG1 MEMBER SINCE 2024
+            - paragraph [ref=f37e754]: “My daily ritual is swimming 1,000 metres – I’ve completely reshaped my nutrition for it, and AG1 is a big part of that. Since then, I feel fit, energised, and I know my body is consistently supported.◊”
+        - article [ref=f37e756]:
+          - generic [ref=f37e759]:
+            - heading "Sanja" [level=3] [ref=f37e760]
+            - paragraph [ref=f37e761]: AG1 MEMBER SINCE 2022
+            - paragraph [ref=f37e764]: “I’ve been starting my mornings with AG1 for three years – always with lemon and ice. This ritual gives me focus and clarity for the day, my nails are strong, and I stay fit, even in stressful times.◊”
+        - article [ref=f37e766]:
+          - generic [ref=f37e769]:
+            - heading "Witold" [level=3] [ref=f37e770]
+            - paragraph [ref=f37e771]: SURVEY FEEDBACK↡
+            - paragraph [ref=f37e774]: "\"Seems promising, but it's been only a few days since I am taking it.◊\""
+        - article [ref=f37e776]:
+          - generic [ref=f37e779]:
+            - heading "Harry" [level=3] [ref=f37e780]
+            - paragraph [ref=f37e781]: SURVEY FEEDBACK↡
+            - paragraph [ref=f37e784]: "\"First positive effects: I no longer feel tired during the day and I feel focused and concentrated.◊\""
+        - article [ref=f37e786]:
+          - generic [ref=f37e789]:
+            - heading "Annapurna" [level=3] [ref=f37e790]
+            - paragraph [ref=f37e791]: SURVEY FEEDBACK↡
+            - paragraph [ref=f37e794]: "\"I see a change in my energy, my mood, focus, amount of food needed.◊\""
+        - article [ref=f37e796]:
+          - generic [ref=f37e799]:
+            - heading "Mina" [level=3] [ref=f37e800]
+            - paragraph [ref=f37e801]: SURVEY FEEDBACK↡
+            - paragraph [ref=f37e804]: "\"I feel good and feel that I’m starting my day with a better and healthier habit.◊\""
+        - article [ref=f37e806]:
+          - generic [ref=f37e809]:
+            - heading "Robert" [level=3] [ref=f37e810]
+            - paragraph [ref=f37e811]: SURVEY FEEDBACK↡
+            - paragraph [ref=f37e814]: "\"Good in bowel movements, energetic.◊\""
+        - article [ref=f37e816]:
+          - generic [ref=f37e819]:
+            - heading "Liane" [level=3] [ref=f37e820]
+            - paragraph [ref=f37e821]: SURVEY FEEDBACK↡
+            - paragraph [ref=f37e824]: "\"I feel slightly more motivated. Less cravings and when I binged the other day I felt really sick, my body didn't enjoy it at all.◊\""
+        - article [ref=f37e826]:
+          - generic [ref=f37e829]:
+            - heading "Stefanie" [level=3] [ref=f37e830]
+            - paragraph [ref=f37e831]: SURVEY FEEDBACK↡
+            - paragraph [ref=f37e834]: "\"I no longer have a constant feeling of being bloated, it's completely gone.◊\""
+        - article [ref=f37e836]:
+          - generic [ref=f37e839]:
+            - heading "Rike" [level=3] [ref=f37e840]
+            - paragraph [ref=f37e841]: SURVEY FEEDBACK↡
+            - paragraph [ref=f37e844]: "\"My skin has fewer impurities.◊\""
+    - generic [ref=f37e848]:
+      - generic [ref=f37e851]:
+        - paragraph [ref=f37e854]: Morning People
+        - paragraph [ref=f37e857]: The secret to being a morning person? Finding out what works for you. Go behind the scenes with these Amazing Humans to see how starting the day with a routine you feel good about makes all the difference.
+      - generic [ref=f37e859]:
+        - generic [ref=f37e861]:
+          - generic [ref=f37e863]:
+            - button "Preview" [ref=f37e864] [cursor=pointer]
+            - paragraph [ref=f37e877]: Alison Roman
+          - generic [ref=f37e879]:
+            - button "Preview" [ref=f37e880] [cursor=pointer]
+            - paragraph [ref=f37e893]: Bobbi Brown
+          - generic [ref=f37e895]:
+            - button "Preview" [ref=f37e896] [cursor=pointer]
+            - paragraph [ref=f37e909]: Timothy O'Donnell
+        - generic [ref=f37e910]:
+          - button "Previous" [disabled] [ref=f37e911]:
+            - img "Previous" [ref=f37e912]
+          - button "Next" [ref=f37e914] [cursor=pointer]:
+            - img "Next" [ref=f37e915]
+    - generic [ref=f37e918]:
+      - heading "Questions? We've got answers." [level=2] [ref=f37e920]
+      - generic [ref=f37e923]:
+        - generic [ref=f37e924]:
+          - heading [level=3] [ref=f37e925]:
+            - button "What is AG1?" [expanded] [ref=f37e926] [cursor=pointer]
+          - group "What is AG1?" [ref=f37e930]:
+            - paragraph [ref=f37e933]:
+              - text: AG1 is a daily core supplement blend formulated to support your energy levels, immune system and digestion.◊ It’s formulated by experts, backed by science, and trusted by high performers worldwide. AG1 makes it easy to support your body and mind, no matter where life takes you. Read more about AG1
+              - link "here" [ref=f37e934] [cursor=pointer]:
+                - /url: https://drinkag1.com/en-eu/what-is-ag1
+              - text: .
+        - heading [level=3] [ref=f37e936]:
+          - button "Which ingredients are in AG1?" [ref=f37e937] [cursor=pointer]
+        - heading [level=3] [ref=f37e942]:
+          - button "How do I know if AG1 is right for me?" [ref=f37e943] [cursor=pointer]
+        - heading [level=3] [ref=f37e948]:
+          - button "What products does AG1 replace?" [ref=f37e949] [cursor=pointer]
+        - heading [level=3] [ref=f37e954]:
+          - button "How does AG1 taste?" [ref=f37e955] [cursor=pointer]
+    - generic [ref=f37e960]:
+      - region [ref=f37e961]:
+        - paragraph [ref=f37e963]:
+          - strong [ref=f37e964]: "Serving Size:"
+          - text: 1 scoop (13 g ≈ 1 heaped tablespoon or one Travel Pack)
+        - paragraph [ref=f37e966]:
+          - strong [ref=f37e967]: "Servings Per Container:"
+          - text: "30"
+      - region [ref=f37e968]:
+        - heading [level=2] [ref=f37e969]: Nutrition Facts
+        - table [ref=f37e970]:
+          - rowgroup [ref=f37e971]:
+            - row [ref=f37e972]:
+              - rowheader [ref=f37e973]
+              - cell [ref=f37e974]: Per 100g
+              - cell [ref=f37e975]: Per Daily Serving (13g)
+            - row [ref=f37e976]:
+              - rowheader [ref=f37e977]: Energy Value
+              - cell [ref=f37e978]: 1314 kJ / 313 kcal
+              - cell [ref=f37e979]: 172 kJ / 41 kcal
+            - row [ref=f37e980]:
+              - rowheader [ref=f37e981]: Fat
+              - cell [ref=f37e982]: 6.6 g
+              - cell [ref=f37e983]: 0.9 g
+            - row [ref=f37e984]:
+              - rowheader [ref=f37e985]: of which saturates
+              - cell [ref=f37e986]: 1.9 g
+              - cell [ref=f37e987]: 0.3 g
+            - row [ref=f37e988]:
+              - rowheader [ref=f37e989]: Carbohydrate
+              - cell [ref=f37e990]: 34 g
+              - cell [ref=f37e991]: 4.4 g
+            - row [ref=f37e992]:
+              - rowheader [ref=f37e993]: of which sugars
+              - cell [ref=f37e994]: 8.9 g
+              - cell [ref=f37e995]: 1.2 g
+            - row [ref=f37e996]:
+              - rowheader [ref=f37e997]: Protein
+              - cell [ref=f37e998]: 20 g
+              - cell [ref=f37e999]: 2.6 g
+            - row [ref=f37e1000]:
+              - rowheader [ref=f37e1001]: Salt
+              - cell [ref=f37e1002]: 0.8 g
+              - cell [ref=f37e1003]: 0.1 g
+            - row [ref=f37e1004]:
+              - rowheader [ref=f37e1005]: VITAMINS AND MINERALS
+              - cell [ref=f37e1006]: Per Daily Serving (13g)
+              - cell [ref=f37e1007]: "% NVR*"
+            - row [ref=f37e1008]:
+              - rowheader [ref=f37e1009]: Vitamin A (from beta-carotene, alfalfa leaf powder, papaya fruit powder, carrot root powder, chlorella powder, rosemary leaf extract)
+              - cell [ref=f37e1010]: 250 μg RE
+              - cell [ref=f37e1011]: 31%
+            - row [ref=f37e1012]:
+              - rowheader [ref=f37e1013]: Vitamin C (from L-ascorbic acid, citrus flavonoids, barley leaf powder, wheatgrass powder, hawthorn berry extract, lycium berry fruit extract, acerola fruit extract, pineapple fruit powder, bilberry fruit extract, rose hip fruit extract)
+              - cell [ref=f37e1014]: 420 mg
+              - cell [ref=f37e1015]: 525%
+            - row [ref=f37e1016]:
+              - rowheader [ref=f37e1017]: Vitamin E
+              - cell [ref=f37e1018]: 32 mg α-TE
+              - cell [ref=f37e1019]: 267%
+            - row [ref=f37e1020]:
+              - rowheader [ref=f37e1021]: Thiamine (Vitamin B1)
+              - cell [ref=f37e1022]: 3.0 mg
+              - cell [ref=f37e1023]: 273%
+            - row [ref=f37e1024]:
+              - rowheader [ref=f37e1025]: Riboflavin (Vitamin B2)
+              - cell [ref=f37e1026]: 2.0 mg
+              - cell [ref=f37e1027]: 143%
+            - row [ref=f37e1028]:
+              - rowheader [ref=f37e1029]: Niacin (Vitamin B3)
+              - cell [ref=f37e1030]: 16 mg NE
+              - cell [ref=f37e1031]: 100%
+            - row [ref=f37e1032]:
+              - rowheader [ref=f37e1033]: Pantothenic acid (Vitamin B5)
+              - cell [ref=f37e1034]: 5.0 mg
+              - cell [ref=f37e1035]: 83%
+            - row [ref=f37e1036]:
+              - rowheader [ref=f37e1037]: Vitamin B6 (pyridoxal 5'-phosphate)
+              - cell [ref=f37e1038]: 5.0 mg
+              - cell [ref=f37e1039]: 357%
+            - row [ref=f37e1040]:
+              - rowheader [ref=f37e1041]: Folic acid (as calcium-L-methylfolate)
+              - cell [ref=f37e1042]: 300 μg
+              - cell [ref=f37e1043]: 150%
+            - row [ref=f37e1044]:
+              - rowheader [ref=f37e1045]: Vitamin B12 (as methylcobalamin)
+              - cell [ref=f37e1046]: 50 μg
+              - cell [ref=f37e1047]: 2000%
+            - row [ref=f37e1048]:
+              - rowheader [ref=f37e1049]: Biotin
+              - cell [ref=f37e1050]: 330 μg
+              - cell [ref=f37e1051]: 660%
+            - row [ref=f37e1052]:
+              - rowheader [ref=f37e1053]: Calcium (from calcium salts of citric acid, calcium salts of or- thophosphoric acid, calcium D-pantothenate, spirulina powder, fucoidan extract from seaweed Fucus vesiculosus, eleuthero root extract, dandelion extract, milk thistle seed extract, reishi mushroom powder, spinach leaf powder, shiitake mushroom powder, bromelain)
+              - cell [ref=f37e1054]: 120 mg
+              - cell [ref=f37e1055]: 15%
+            - row [ref=f37e1056]:
+              - rowheader [ref=f37e1057]: Phosphorus (from lecithin (soy), potassium salts of orthophosphoric acid, grape seed extract, broccoli powder, calcium salts of orthophosphoric acid, beet root powder)
+              - cell [ref=f37e1058]: 125 mg
+              - cell [ref=f37e1059]: 18%
+            - row [ref=f37e1060]:
+              - rowheader [ref=f37e1061]: Magnesium
+              - cell [ref=f37e1062]: 57 mg
+              - cell [ref=f37e1063]: 15%
+            - row [ref=f37e1064]:
+              - rowheader [ref=f37e1065]: Selenium
+              - cell [ref=f37e1066]: 22 μg
+              - cell [ref=f37e1067]: 40%
+            - row [ref=f37e1068]:
+              - rowheader [ref=f37e1069]: Copper
+              - cell [ref=f37e1070]: 0.2 mg
+              - cell [ref=f37e1071]: 20%
+            - row [ref=f37e1072]:
+              - rowheader [ref=f37e1073]: Manganese
+              - cell [ref=f37e1074]: 0.4 mg
+              - cell [ref=f37e1075]: 20%
+            - row [ref=f37e1076]:
+              - rowheader [ref=f37e1077]: Chromium
+              - cell [ref=f37e1078]: 25 μg
+              - cell [ref=f37e1079]: 63%
+            - row [ref=f37e1080]:
+              - rowheader [ref=f37e1081]: Molybdenum
+              - cell [ref=f37e1082]: 45 μg
+              - cell [ref=f37e1083]: 90%
+            - row [ref=f37e1084]:
+              - rowheader [ref=f37e1085]: Zinc
+              - cell [ref=f37e1086]: 10 mg
+              - cell [ref=f37e1087]: 100%
+            - row [ref=f37e1088]:
+              - rowheader [ref=f37e1089]: OTHER SUBSTANCES
+              - cell [ref=f37e1090]: Per Daily Serving (13 g)
+              - cell [ref=f37e1091]
+            - row [ref=f37e1092]:
+              - rowheader [ref=f37e1093]: Fibre (from artichoke leaf extract, slippery elm bark powder, astragalus root extract, burdock root extract, cocoa powder, inulin, apple powder, ginger root powder, licorice root powder)
+              - cell [ref=f37e1094]: 2.5 g
+              - cell [ref=f37e1095]
+            - row [ref=f37e1096]:
+              - rowheader [ref=f37e1097]: Alpha lipoic acid
+              - cell [ref=f37e1098]: 42 mg
+              - cell [ref=f37e1099]
+            - row [ref=f37e1100]:
+              - rowheader [ref=f37e1101]: Coenzyme Q10 (as Ubiquinone)
+              - cell [ref=f37e1102]: 50 mg
+              - cell [ref=f37e1103]
+            - row [ref=f37e1104]:
+              - rowheader [ref=f37e1105]: Choline
+              - cell [ref=f37e1106]: 20 mg
+              - cell [ref=f37e1107]
+            - row [ref=f37e1108]:
+              - rowheader [ref=f37e1109]: Inositol
+              - cell [ref=f37e1110]: 100 mg
+              - cell [ref=f37e1111]
+            - row [ref=f37e1112]:
+              - rowheader [ref=f37e1113]: Rutin
+              - cell [ref=f37e1114]: 20 mg
+              - cell [ref=f37e1115]
+            - row [ref=f37e1116]:
+              - rowheader [ref=f37e1117]: Lactobacillus rhamnosus GG (at the time of manufacture)
+              - cell [ref=f37e1118]: 3 bn CFU
+              - cell [ref=f37e1119]
+            - row [ref=f37e1120]:
+              - rowheader [ref=f37e1121]: Lactobacillus acidophilus NCFM (at the time of manufacture)
+              - cell [ref=f37e1122]: 2 bn CFU
+              - cell [ref=f37e1123]
+            - row [ref=f37e1124]:
+              - rowheader [ref=f37e1125]: Bifidobacterium lactis HNO19 (at the time of manufacture)
+              - cell [ref=f37e1126]: 2 bn CFU
+              - cell [ref=f37e1127]
+            - row [ref=f37e1128]:
+              - rowheader [ref=f37e1129]: Lactobacillus casei LC-11 (at the time of manufacture)
+              - cell [ref=f37e1130]: 2 bn CFU
+              - cell [ref=f37e1131]
+            - row [ref=f37e1132]:
+              - rowheader [ref=f37e1133]: Lactobacillus plantarum LP-115 (at the time of manufacture)
+              - cell [ref=f37e1134]: 1 bn CFU
+              - cell [ref=f37e1135]
+      - region [ref=f37e1136]:
+        - heading [level=2] [ref=f37e1137]: Additional Nutritional Details
+        - table [ref=f37e1138]:
+          - rowgroup [ref=f37e1139]:
+            - row [ref=f37e1140]:
+              - rowheader [ref=f37e1141]: "** % Nutrient reference values according to (EU) regulation No 1169/2011"
+          - rowgroup [ref=f37e1143]:
+            - row [ref=f37e1144]:
+              - rowheader [ref=f37e1145]: Ingredients
+            - strong [ref=f37e1146]: May contain traces of celery.
+          - rowgroup [ref=f37e1148]:
+            - row [ref=f37e1149]:
+              - rowheader [ref=f37e1150]: Directions
+          - rowgroup [ref=f37e1152]:
+            - row [ref=f37e1153]:
+              - rowheader [ref=f37e1154]: Storage
+          - rowgroup [ref=f37e1156]:
+            - row [ref=f37e1157]:
+              - rowheader [ref=f37e1158]: CAUTION
+  - contentinfo [ref=f37e1160]:
+    - generic [ref=f37e1161]:
+      - generic [ref=f37e1162]:
+        - generic [ref=f37e1164]:
+          - generic [ref=f37e1165]:
+            - heading "SHOP" [level=3] [ref=f37e1166]
+            - group "SHOP" [ref=f37e1167]:
+              - list [ref=f37e1168]:
+                - listitem [ref=f37e1169]:
+                  - link "The Pouch" [ref=f37e1170] [cursor=pointer]:
+                    - /url: /en-eu/products/greens-powder-pouch
+                - listitem [ref=f37e1171]:
+                  - link "Travel Packs" [ref=f37e1172] [cursor=pointer]:
+                    - /url: /en-eu/products/greens-powder-travelpack
+          - generic [ref=f37e1173]:
+            - heading "REVIEWS" [level=3] [ref=f37e1174]
+            - group "REVIEWS" [ref=f37e1175]:
+              - list [ref=f37e1176]:
+                - listitem [ref=f37e1177]:
+                  - link "AG1 Reviews on Trustpilot" [ref=f37e1178] [cursor=pointer]:
+                    - /url: https://uk.trustpilot.com/review/drinkag1.com
+                - listitem [ref=f37e1179]:
+                  - link "Third-Party Testing" [ref=f37e1180] [cursor=pointer]:
+                    - /url: https://drinkag1.com/en-eu/is-ag1-third-party-tested-informed-sport
+                - listitem [ref=f37e1181]:
+                  - link "Informed Sport" [ref=f37e1182] [cursor=pointer]:
+                    - /url: https://sport.wetestyoutrust.com/supplement-search/ag1/ag1-eu
+                - listitem [ref=f37e1183]:
+                  - link "Cologne List" [ref=f37e1184] [cursor=pointer]:
+                    - /url: https://www.koelnerliste.com/en/product/ag1-neutral
+          - generic [ref=f37e1185]:
+            - heading "LEARN MORE" [level=3] [ref=f37e1186]
+            - group "LEARN MORE" [ref=f37e1187]:
+              - list [ref=f37e1188]:
+                - listitem [ref=f37e1189]:
+                  - link "AG1 Reviews" [ref=f37e1190] [cursor=pointer]:
+                    - /url: /en-eu/about-ag1/reviews/ctr
+                - listitem [ref=f37e1191]:
+                  - link "Ingredients" [ref=f37e1192] [cursor=pointer]:
+                    - /url: /en-eu/about-ag1/ingredients/ctr
+                - listitem [ref=f37e1193]:
+                  - link "Benefits" [ref=f37e1194] [cursor=pointer]:
+                    - /url: https://drinkag1.com/en-eu/about-ag1/benefits
+                - listitem [ref=f37e1195]:
+                  - link "FAQs" [ref=f37e1196] [cursor=pointer]:
+                    - /url: /en-eu/about-ag1/faq
+          - generic [ref=f37e1197]:
+            - heading "ABOUT" [level=3] [ref=f37e1198]
+            - group "ABOUT" [ref=f37e1199]:
+              - list [ref=f37e1200]:
+                - listitem [ref=f37e1201]:
+                  - link "About Us" [ref=f37e1202] [cursor=pointer]:
+                    - /url: /en-eu/about-us
+                - listitem [ref=f37e1203]:
+                  - link "Refer Friends" [ref=f37e1204] [cursor=pointer]:
+                    - /url: /en-eu/campaign/refer-a-friend
+                - listitem [ref=f37e1205]:
+                  - link "Partners" [ref=f37e1206] [cursor=pointer]:
+                    - /url: /en-eu/partners
+                - listitem [ref=f37e1207]:
+                  - link "Impact Report" [ref=f37e1208] [cursor=pointer]:
+                    - /url: /en-eu/impact-report
+                - listitem [ref=f37e1209]:
+                  - link "Accessibility Statement" [ref=f37e1210] [cursor=pointer]:
+                    - /url: /en-eu/accessibility
+          - generic [ref=f37e1211]:
+            - heading "CONTACT" [level=3] [ref=f37e1212]
+            - group "CONTACT" [ref=f37e1213]:
+              - list [ref=f37e1214]:
+                - listitem [ref=f37e1215]:
+                  - link "My Account" [ref=f37e1216] [cursor=pointer]:
+                    - /url: https://drinkag1.com/en-eu/members/login
+                - listitem [ref=f37e1217]:
+                  - link "Track My Order" [ref=f37e1218] [cursor=pointer]:
+                    - /url: https://drinkag1.com/en-eu/contact-us/customer-service#76ba638c897a
+                - listitem [ref=f37e1219]:
+                  - link "Help" [ref=f37e1220] [cursor=pointer]:
+                    - /url: /en-eu/contact-us/customer-service
+                - listitem [ref=f37e1221]:
+                  - link "Careers" [ref=f37e1222] [cursor=pointer]:
+                    - /url: /en-eu/careers
+        - generic [ref=f37e1224]:
+          - generic [ref=f37e1225]:
+            - heading "Connect" [level=2] [ref=f37e1226]
+            - paragraph [ref=f37e1227]: Join Our Newsletter
+          - generic [ref=f37e1231]:
+            - textbox "Email" [ref=f37e1232]:
+              - /placeholder: Your Email
+            - button "Sign Up" [ref=f37e1233]
+          - list [ref=f37e1236]:
+            - listitem [ref=f37e1237]:
+              - link "instagram (opens in new tab)" [ref=f37e1238] [cursor=pointer]:
+                - /url: https://www.instagram.com/drinkag1
+            - listitem [ref=f37e1241]:
+              - link "facebook (opens in new tab)" [ref=f37e1242] [cursor=pointer]:
+                - /url: https://www.facebook.com/drinkAG1
+            - listitem [ref=f37e1245]:
+              - link "twitter (opens in new tab)" [ref=f37e1246] [cursor=pointer]:
+                - /url: https://twitter.com/drink_AG1
+            - listitem [ref=f37e1249]:
+              - link "tiktok (opens in new tab)" [ref=f37e1250] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@drinkag1
+      - separator [ref=f37e1253]
+      - generic [ref=f37e1254]:
+        - generic [ref=f37e1255]:
+          - link "AG1 Homepage" [ref=f37e1258] [cursor=pointer]:
+            - /url: /en-eu
+          - generic [ref=f37e1262]:
+            - button "English € Euro (EUR)" [ref=f37e1264] [cursor=pointer]:
+              - generic [ref=f37e1280]: English
+              - generic [aria-hidden] [ref=f37e1281]: "|"
+              - generic [ref=f37e1282]: € Euro (EUR)
+            - link "Trustpilot" [ref=f37e1284] [cursor=pointer]:
+              - /url: https://uk.trustpilot.com/review/drinkag1.com
+          - generic [ref=f37e1285]:
+            - paragraph [ref=f37e1288]: Food supplements are not a substitute for a balanced and varied diet and a healthy lifestyle. Do not exceed the indicated daily intake. Keep out of reach of children. Please inform and consult your doctor before consuming this product. Not suitable for children and adolescents under 18 years, pregnant or breastfeeding women. Refrain from taking other food supplements containing zinc. Persons taking anticoagulant medication should seek medical advice before consuming vitamin K-containing supplements.
+            - generic [ref=f37e1291]:
+              - paragraph [ref=f37e1292]:
+                - text: "*"
+                - link "Genuine reviews" [ref=f37e1293] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/about-ag1/reviews/ctr
+                - text: from customers who received a review link after purchase.
+              - paragraph [ref=f37e1294]: "**Offer valid for new customers only when signing up for a 3-month AG1 subscription with upfront payment. Regular price €227. Welcome Kit and gifts are one-time only. Subscription renews automatically unless cancelled beforehand."
+              - paragraph [ref=f37e1295]: ↡ Ongoing survey of 3,000+ AG1 customers after 12+ days of use.
+              - paragraph [ref=f37e1296]: § In a third-party, observational study conducted on 35 healthy adults ages 25-48 assessing the self-perceived efficacy of AG1 over the course of 3 months. The study was conducted on a similar version of AG1's continually evolving formulation. The study results are transferable because of comparable ingredients and amounts.
+              - paragraph [ref=f37e1297]: ○ Ongoing survey of customers from 12 European countries who have been taking AG1 for an average of 9 days.
+              - paragraph [ref=f37e1298]:
+                - text: ⬥ AG1 single subscriptions price and dose-matched average aggregated prices in 9 individual nutritional supplement categories with comparable ingredients. The prices of the individual supplements are the average prices of three individual products available online for each compared category, each with comparable ingredients. To ensure a fair basis for comparison, where the comparison products have different dosages, the prices were mathematically adjusted to correspond to the dosage contained in AG1. The 9 compared categories are
+                - link "vitamin B12" [ref=f37e1299] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/vitamin-b-komplex
+                - text: ", folate (Methylfolate), vitamin C,"
+                - link "vitamin E" [ref=f37e1300] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/vitamin-e
+                - text: ","
+                - link "bacterial cultures" [ref=f37e1301] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/probiotische-lebensmittel
+                - text: ", zinc,"
+                - link "coenzyme Q10" [ref=f37e1302] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/coenzym-q10
+                - text: ", greens powder and"
+                - link "fibre" [ref=f37e1303] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/how-much-fibre-per-day
+                - text: .
+              - paragraph [ref=f37e1304]:
+                - text: Research Studiesa. In a triple-blind, randomised, placebo-controlled parallel-designed
+                - link "clinical trial" [ref=f37e1305] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/clinical-studies
+                - text: evaluating nutrient biomarkers and
+                - link "microbiome" [ref=f37e1306] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/gut-bacteria
+                - text: shifts in 105 healthy adults ages 20-59 over the course of 12 weeks.b. In a double-blind, randomised, placebo-controlled 2-week cross-over clinical trial assessing microbiome shifts in 20 active adults ages 19-37.c. In a double-blind, randomised, placebo-controlled 2-week cross-over clinical trial assessing microbiome shifts of 24 healthy adults with occasional GI distress ages 26-59.d. In a double-blind, randomised, placebo-controlled cross-over clinical trial assessing
+                - link "bioavailability" [ref=f37e1307] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/bioavailability-nutrients
+                - text: in 16 healthy adults ages 18-42 over the course of 8 hours.The studies were conducted on a similar version of AG1's continually evolving formulation. The transferability of the study results is ensured because of comparable ingredients and amounts.
+              - paragraph [ref=f37e1308]: "◊ Key health benefits:"
+              - paragraph [ref=f37e1309]:
+                - text: "(1) Immune system: With vitamins A, C, B6 and B12 as well as"
+                - link "folate" [ref=f37e1310] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/folat
+                - text: ","
+                - link "zinc" [ref=f37e1311] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/zink
+                - text: ","
+                - link "copper" [ref=f37e1312] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/kupfer
+                - text: and
+                - link "selenium" [ref=f37e1313] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/selen
+                - text: ", AG1 contributes to the normal function of the"
+                - link "immune system" [ref=f37e1314] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/how-to-boost-your-immune-system
+                - text: .
+                - link "Vitamin C" [ref=f37e1315] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/vitamin-c
+                - text: contributes to maintain the normal function of the immune system during and after intense physical exercise. 200 mg Vitamin C taken daily in addition to the recommended daily dose (80 mg) contributes to the normal function of the immune system during and after intensive physical activity.
+              - paragraph [ref=f37e1316]:
+                - text: "(2) Energy levels: Vitamins C, B6, B12,"
+                - link "riboflavin" [ref=f37e1317] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/riboflavin-vitamin-b2
+                - text: ","
+                - link "niacin" [ref=f37e1318] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/niacin
+                - text: ","
+                - link "pantothenic acid" [ref=f37e1319] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/pantothensaeure
+                - text: and
+                - link "magnesium" [ref=f37e1320] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/magnesium
+                - text: contribute to normal
+                - link "energy-yielding metabolism" [ref=f37e1321] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/optimal-energy-metabolism-micronutrients
+                - text: and to the reduction of
+                - link "tiredness and fatigue" [ref=f37e1322] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/vitamins-for-energy
+                - text: . Magnesium contributes to
+                - link "electrolyte balance" [ref=f37e1323] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/elektrolyte
+                - text: .
+                - link "Biotin" [ref=f37e1324] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/biotin
+                - text: ", zinc and"
+                - link "chromium" [ref=f37e1325] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/chrom
+                - text: contribute to normal
+                - link "macronutrient" [ref=f37e1326] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/makronaehrstoffe
+                - text: metabolism.
+              - paragraph [ref=f37e1327]:
+                - text: "(3) Digestion:"
+                - link "Calcium" [ref=f37e1328] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/calcium
+                - text: contributes to the normal function of
+                - link "digestive enzymes" [ref=f37e1329] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/verdauungsenzyme
+                - text: . With
+                - link "vitamin A" [ref=f37e1330] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/vitamin-a-retinol
+                - text: ", biotin, riboflavin and niacin, AG1 contributes to the maintenance of normal mucous membranes (e.g."
+                - link "intestinal mucosa" [ref=f37e1331] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/how-to-improve-gut-health
+                - text: ).
+              - paragraph [ref=f37e1332]:
+                - text: "(4) Focus; Mental performance; Psychological function; Nervous system: With pantothenic acid, AG1 contributes to normal"
+                - link "mental performance" [ref=f37e1333] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/how-to-improve-concentration
+                - text: . Zinc contributes to normal
+                - link "cognitive function" [ref=f37e1334] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/brain-fog-nutrients
+                - text: . With vitamins C, B6, B12, B1, B3 and B7 AG1 contributes to normal psychological function and to normal functioning of the
+                - link "nervous system" [ref=f37e1335] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/regulate-nervous-system-diet
+                - text: . Calcium contributes to normal
+                - link "neurotransmission" [ref=f37e1336] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/nervenzellen-neuronen
+                - text: .
+              - paragraph [ref=f37e1337]: "‡ Additional health benefits:"
+              - paragraph [ref=f37e1338]:
+                - text: "(5) Muscles: With calcium and magnesium, AG1 contributes to normal"
+                - link "muscle function" [ref=f37e1339] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/muskelwachstum-naehrstoffe-muskelaufbau
+                - text: .
+              - paragraph [ref=f37e1340]:
+                - text: (6)
+                - link "Cell Protection" [ref=f37e1341] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/zellschutz
+                - text: ": With vitamins E and C as well as riboflavin, zinc, copper and selenium, AG1 contributes to the protection of cells from"
+                - link "oxidative stress" [ref=f37e1342] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/oxidativer-stress
+                - text: .
+                - link "Phosphorus" [ref=f37e1343] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/phosphor
+                - text: contributes to normal function of cell membranes. Folate,
+                - link "Vitamin B6" [ref=f37e1344] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/vitamin-b6
+                - text: and B12 contribute to normal homocysteine metabolism.
+              - paragraph [ref=f37e1345]:
+                - text: "(7) Skin, hair & nails: With vitamins A, as well as riboflavin, niacin, biotin and zinc, AG1 contributes to the maintenance of"
+                - link "normal skin" [ref=f37e1346] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/gesunde-haut
+                - text: . Vitamin C contributes to normal
+                - link "collagen formation" [ref=f37e1347] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/kollagen
+                - text: for the normal function of skin. Copper contributes to normal
+                - link "connective tissue" [ref=f37e1348] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/bindegewebe-staerken
+                - text: . Vitamin B7, zinc and selenium contribute to the maintenance of normal hair. Zinc and selenium contribute to the maintenance of normal nails.
+              - paragraph [ref=f37e1349]:
+                - text: "(8) Hormonal system: With vitamin B6, AG1 contributes to the regulation of"
+                - link "hormonal activity" [ref=f37e1350] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/mikronaehrstoffe-hormonhaushalt
+                - text: . Zinc contributes to the maintenance of normal
+                - link "testosterone" [ref=f37e1351] [cursor=pointer]:
+                  - /url: https://drinkag1.com/en-eu/blog/post/fruchtbarkeit-testosteron-ernaehrung
+                - text: levels in the blood. Selenium contributes to the normal thyroid function. With chromium, AG1 contributes to the maintenance of normal blood glucose levels.
+            - generic [ref=f37e1352]:
+              - paragraph [ref=f37e1353]: "Your privacy is our priority. Learn more:"
+              - button "Your Privacy Choices" [ref=f37e1354] [cursor=pointer]
+        - generic [ref=f37e1362]:
+          - list [ref=f37e1365]:
+            - listitem [ref=f37e1366]:
+              - link "Privacy" [ref=f37e1367] [cursor=pointer]:
+                - /url: /en-eu/privacy
+            - listitem [ref=f37e1368]:
+              - link "Terms & Conditions" [ref=f37e1369] [cursor=pointer]:
+                - /url: /en-eu/about-us/terms-and-conditions
+            - listitem [ref=f37e1370]:
+              - link "Legal Notices" [ref=f37e1371] [cursor=pointer]:
+                - /url: https://drinkag1.com/impressum
+            - listitem [ref=f37e1372]:
+              - button "Accessibility" [ref=f37e1373] [cursor=pointer]
+          - generic [ref=f37e1379]: © 2026 AG1
+  - generic [ref=f37e1381]:
+    - paragraph [ref=f37e1383]: "We think you're in: United Arab Emirates. Confirm your location."
+    - generic [ref=f37e1384]:
+      - generic [ref=f37e1385]:
+        - button "United Arab Emirates" [ref=f37e1386] [cursor=pointer]
+        - button "Europe" [ref=f37e1387] [cursor=pointer]
+      - button "Close" [ref=f37e1388] [cursor=pointer]
+  - alert [ref=f37e1392]

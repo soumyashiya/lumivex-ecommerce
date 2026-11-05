@@ -35,23 +35,23 @@ export default function AffiliatePage() {
 
   if (authLoading || loading) {
     return (
-      <div className="container-wide flex min-h-[60vh] items-center justify-center py-24">
-        <span className="h-6 w-6 animate-spin rounded-full border-2 border-charcoal/20 border-t-charcoal" />
+      <div className="container-ag flex min-h-[60vh] items-center justify-center py-24">
+        <span className="h-6 w-6 animate-spin rounded-pill border-2 border-grey-100 border-t-green" />
       </div>
     );
   }
 
   return (
-    <div className="container-wide py-16 md:py-24">
+    <div className="container-ag py-16 md:py-24">
       <div className="mb-10">
-        <span className="eyebrow">Account</span>
-        <h1 className="mt-3 text-display font-extralight tracking-tightest text-charcoal">
+        <span className="label-mono">Account</span>
+        <h1 className="mt-3 text-h2 tracking-tighter text-black">
           Affiliate program
         </h1>
       </div>
 
       {error && (
-        <p className="mb-6 rounded-[4px] border border-red-600/20 bg-red-600/5 px-4 py-3 text-[13px] font-light text-red-600/90">
+        <p className="mb-6 rounded-sm border border-red-600/20 bg-red-600/5 px-4 py-3 text-[13px] text-red-600/90">
           {error}
         </p>
       )}
@@ -90,7 +90,7 @@ function AffiliateRequest({ onJoined }: { onJoined: () => void }) {
 
   return (
     <div className="max-w-xl">
-      <p className="text-sm font-light text-charcoal/65">
+      <p className="text-sm text-grey-700">
         Apply for an affiliate code. Approval is automatic — you’ll receive a
         promo code that earns wallet credit on every referred order.
       </p>
@@ -100,7 +100,7 @@ function AffiliateRequest({ onJoined }: { onJoined: () => void }) {
         <Input label="TikTok handle or link" value={form.tiktok_link} onChange={onChange('tiktok_link')} required maxLength={255} placeholder="@yourhandle" />
 
         {error && (
-          <p className="rounded-[4px] border border-red-600/20 bg-red-600/5 px-4 py-3 text-[13px] font-light text-red-600/90">
+          <p className="rounded-sm border border-red-600/20 bg-red-600/5 px-4 py-3 text-[13px] text-red-600/90">
             {error}
           </p>
         )}
@@ -108,7 +108,7 @@ function AffiliateRequest({ onJoined }: { onJoined: () => void }) {
         <button
           type="submit"
           disabled={loading}
-          className="w-full rounded-full bg-charcoal py-4 text-sm font-medium text-ivory transition-colors duration-500 hover:bg-gold disabled:cursor-not-allowed disabled:opacity-70"
+          className="w-full rounded-pill bg-green py-4 text-sm font-medium text-white transition-colors duration-200 hover:bg-green-hover disabled:cursor-not-allowed disabled:opacity-70"
         >
           {loading ? 'Submitting…' : 'Apply for affiliate'}
         </button>
@@ -125,14 +125,14 @@ function AffiliateDashboard({
   return (
     <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
       <div className="lg:col-span-4 space-y-6">
-        <div className="rounded-[6px] bg-cream p-8">
-          <p className="text-[11px] uppercase tracking-eyebrow text-charcoal/40">
+        <div className="rounded-smd bg-off-white p-8">
+          <p className="text-[11px] uppercase tracking-label text-grey-500">
             Your promo code
           </p>
-          <p className="mt-3 font-mono text-3xl tracking-wide text-charcoal">
+          <p className="mt-3 font-mono text-3xl tracking-wide text-black">
             {data.promo_code}
           </p>
-          <p className="mt-2 text-sm font-light text-charcoal/55">
+          <p className="mt-2 text-sm text-grey-500">
             {data.promo_percent}% off for customers · {formatPrice(data.reward_amount)} per order to you
           </p>
         </div>
@@ -146,26 +146,26 @@ function AffiliateDashboard({
       </div>
 
       <div className="lg:col-span-8">
-        <h2 className="text-[11px] uppercase tracking-eyebrow text-charcoal/40">
+        <h2 className="text-[11px] uppercase tracking-label text-grey-500">
           Recent redemptions
         </h2>
         {data.recent_redemptions.length === 0 ? (
-          <p className="mt-6 text-sm font-light text-charcoal/55">
+          <p className="mt-6 text-sm text-grey-500">
             No redemptions yet.
           </p>
         ) : (
-          <ul className="mt-6 divide-y divide-charcoal/10">
+          <ul className="mt-6 divide-y divide-[color:var(--border-soft)]">
             {data.recent_redemptions.map((r) => (
               <li key={r.order_number} className="flex items-center justify-between gap-4 py-4">
                 <div className="min-w-0">
-                  <p className="truncate text-[13px] font-medium text-charcoal">
+                  <p className="truncate text-[13px] font-medium text-black">
                     {r.order_number}
                   </p>
-                  <p className="text-[12px] font-light text-charcoal/45">
+                  <p className="text-[12px] text-grey-500">
                     {r.customer_email_masked} · {new Date(r.created_at).toLocaleDateString('en-GB')}
                   </p>
                 </div>
-                <span className="text-[14px] font-medium text-gold">
+                <span className="text-[14px] font-medium text-green">
                   +{formatPrice(r.reward_amount)}
                 </span>
               </li>
@@ -179,9 +179,9 @@ function AffiliateDashboard({
 
 function Stat({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-[6px] border border-charcoal/10 px-4 py-3">
-      <p className="text-[10px] uppercase tracking-wider text-charcoal/40">{label}</p>
-      <p className="mt-1 text-base font-medium text-charcoal">{value}</p>
+    <div className="rounded-smd border border-[color:var(--border-soft)] px-4 py-3">
+      <p className="text-[10px] uppercase tracking-wider text-grey-500">{label}</p>
+      <p className="mt-1 text-base font-medium text-black">{value}</p>
     </div>
   );
 }
@@ -192,10 +192,10 @@ function Input({
 }: { label: string } & React.InputHTMLAttributes<HTMLInputElement>) {
   return (
     <label className="flex flex-col gap-2">
-      <span className="text-[12px] font-medium text-charcoal/55">{label}</span>
+      <span className="text-[12px] font-medium text-grey-500">{label}</span>
       <input
         {...props}
-        className="rounded-[4px] border border-charcoal/15 bg-ivory px-4 py-3 text-sm font-light text-charcoal outline-none focus:border-gold"
+        className="rounded-sm border border-[color:var(--border-soft)] bg-white px-4 py-3 text-sm text-black outline-none focus:border-green"
       />
     </label>
   );

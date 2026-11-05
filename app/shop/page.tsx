@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import { PRODUCTS, RESEARCH_DISCLAIMER } from '@/lib/data';
 import ShopHeader from '@/components/shop/ShopHeader';
 import ShopGrid from '@/components/shop/ShopGrid';
@@ -36,24 +37,32 @@ export default function ShopPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <ShopHeader />
-      <main className="bg-ivory">
-        {/* Catalogue */}
-        <section className="py-14 md:py-20">
-          <div className="container-wide">
-            <div className="mb-10 md:mb-14">
-              <span className="eyebrow">The Catalogue</span>
-              <h1 className="mt-4 text-section font-extralight text-charcoal">
-                Research Compounds
-              </h1>
+      <main className="bg-white">
+        <section className="section-y">
+          <div className="container-ag">
+            <h1 className="max-w-[16ch] text-h2 text-black">
+              The catalogue
+            </h1>
+            <p className="mt-lg max-w-[62ch] text-base text-grey-700 tablet:text-md">
+              Six research formulations, each supplied in a sealed fixed-volume
+              device with the assay report for its own batch.
+            </p>
+
+            <div className="mt-lg tablet:mt-xl">
+              <Suspense
+                fallback={
+                  <p className="label-mono">Loading the catalogue…</p>
+                }
+              >
+                <ShopGrid />
+              </Suspense>
             </div>
-            <ShopGrid />
           </div>
         </section>
 
-        {/* Disclaimer */}
-        <section className="border-t border-charcoal/10 bg-cream/60 py-10">
-          <div className="container-wide">
-            <p className="max-w-3xl text-[12px] font-light leading-relaxed text-charcoal/50">
+        <section className="border-t border-[color:var(--border-soft)] bg-off-white section-y-sm">
+          <div className="container-ag">
+            <p className="max-w-prose font-mono text-xs uppercase leading-5 tracking-label text-grey-500">
               {RESEARCH_DISCLAIMER}
             </p>
           </div>

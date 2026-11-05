@@ -1,111 +1,75 @@
-'use client';
-
 import Link from 'next/link';
-import { FOOTER_LINKS } from '@/lib/data';
-import { scrollToSection } from '@/lib/lenis';
-import RevealText from '@/components/animations/RevealText';
-import FadeIn from '@/components/animations/FadeIn';
+import { FOOTER_COLUMNS, RESEARCH_DISCLAIMER } from '@/lib/data';
 import Newsletter from '@/components/sections/Newsletter';
+import Logo from '@/components/ui/Logo';
 
+/**
+ * Footer on the deepest green in the palette. Link columns first, then the
+ * oversized wordmark set against the legal copy — the reference system's
+ * closing arrangement, where the compliance text is given real space rather
+ * than shrunk into a single line.
+ */
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-charcoal pt-section text-ivory">
-      <div className="container-wide">
-        <div className="grid grid-cols-1 gap-12 pb-20 lg:grid-cols-12">
-          <div className="lg:col-span-6">
-            <FadeIn>
-              <p className="eyebrow text-gold-light">Lumivex</p>
-            </FadeIn>
-            <RevealText
-              as="p"
-              split="lines"
-              className="mt-6 max-w-md text-2xl font-extralight leading-snug text-ivory/80 md:text-3xl"
-            >
-              Premium research compounds  engineered for precision, validated by
-              science.
-            </RevealText>
-            <FadeIn>
-              <p className="mt-8 max-w-sm text-[12px] font-light leading-relaxed text-ivory/40">
-                Lumivex has never operated on any social media platforms. Our
-                official site is lumivex.store  please beware of scam sites.
-              </p>
-            </FadeIn>
-
-            <FadeIn>
-              <div className="mt-10 max-w-sm rounded-[6px] bg-ivory p-5 text-charcoal">
-                <p className="text-[11px] uppercase tracking-eyebrow text-charcoal/45">
-                  Newsletter
-                </p>
-                <p className="mt-1 text-[13px] font-light text-charcoal/65">
-                  Subscribe for catalogue updates and new certificate-of-analysis
-                  releases.
-                </p>
-                <div className="mt-4">
-                  <Newsletter />
-                </div>
-              </div>
-            </FadeIn>
-          </div>
-
-          <div className="lg:col-span-3 lg:col-start-8">
-            <p className="text-[11px] uppercase tracking-wider text-ivory/40">
-              Navigate
-            </p>
-            <ul className="mt-6 space-y-3">
-              {FOOTER_LINKS.navigate.map((link) =>
-                link.href.startsWith('#') ? (
-                  <li key={link.href}>
-                    <button
-                      onClick={() => scrollToSection(link.href)}
-                      className="link-underline text-sm font-light text-ivory/70 hover:text-ivory"
-                    >
-                      {link.label}
-                    </button>
-                  </li>
-                ) : (
-                  <li key={link.href}>
+    <footer className="bg-green-deep text-white" data-dark>
+      <div className="container-ag py-2xl tablet:py-5xl">
+        <div className="grid grid-cols-2 gap-x-lg gap-y-xl tablet:grid-cols-3 desktop:grid-cols-6">
+          {FOOTER_COLUMNS.map((col) => (
+            <nav key={col.heading} aria-label={col.heading}>
+              <h2 className="text-md font-medium text-white">{col.heading}</h2>
+              <ul className="mt-smd space-y-sm">
+                {col.links.map((link) => (
+                  <li key={link.href + link.label}>
                     <Link
                       href={link.href}
-                      className="link-underline text-sm font-light text-ivory/70 hover:text-ivory"
+                      className="text-base text-white/80 transition-colors duration-200 ease-ag hover:text-white"
                     >
                       {link.label}
                     </Link>
                   </li>
-                )
-              )}
-            </ul>
-          </div>
+                ))}
+              </ul>
+            </nav>
+          ))}
 
-          <div className="lg:col-span-2">
-            <p className="text-[11px] uppercase tracking-wider text-ivory/40">
-              Legal
+          <div className="col-span-2 tablet:col-span-3 desktop:col-span-1">
+            <h2 className="text-md font-medium text-white">Newsletter</h2>
+            <p className="mt-smd text-base text-white/80">
+              New batches and certificates, as they publish.
             </p>
-            <ul className="mt-6 space-y-3">
-              {FOOTER_LINKS.legal.map((s) => (
-                <li key={s.href}>
-                  <Link
-                    href={s.href}
-                    className="link-underline text-sm font-light text-ivory/70 hover:text-ivory"
-                  >
-                    {s.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <div className="mt-smd">
+              <Newsletter tone="dark" source="footer" />
+            </div>
           </div>
         </div>
 
-        {/* Oversized brand wordmark */}
-        <div className="border-t border-ivory/10 pt-10">
-          <h2 className="select-none text-center text-[22vw] font-extralight leading-none tracking-tightest text-ivory/[0.06] md:text-[17vw]">
-            LUMIVEX
-          </h2>
+        {/* Wordmark beside the compliance copy */}
+        <div className="mt-2xl grid grid-cols-1 gap-xl border-t border-white/20 pt-xl desktop:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] desktop:gap-4xl desktop:pt-2xl">
+          <div className="text-white/90">
+            <Logo size="lg" />
+          </div>
+
+          <div className="space-y-md">
+            <p className="rounded-sm border border-white/35 p-md text-sm leading-5 text-white/90">
+              {RESEARCH_DISCLAIMER}
+            </p>
+            <p className="text-sm leading-5 text-white/70">
+              Lumivex has never operated on any social media platform. Our only
+              official site is lumivex.store — treat any other seller using this
+              name as unauthorised.
+            </p>
+            <p className="text-sm leading-5 text-white/70">
+              Certificates of analysis are issued by Janoshik Analytical and
+              are verifiable on the issuing laboratory’s own domain. Figures
+              quoted on product pages refer to the batch stated on the label.
+            </p>
+          </div>
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-ivory/10 py-8 text-[12px] font-light text-ivory/40 md:flex-row">
-          <p>© {2026} Lumivex. All rights reserved.</p>
-          <p className="uppercase tracking-wider text-ivory/35">
-            Research use only — not for human consumption
+        <div className="mt-xl flex flex-col gap-sm border-t border-white/20 pt-md text-sm text-white/60 tablet:flex-row tablet:items-center tablet:justify-between">
+          <p>© 2026 Lumivex. All rights reserved.</p>
+          <p className="font-mono text-xs uppercase tracking-label">
+            Research use only — not for human or veterinary use
           </p>
         </div>
       </div>

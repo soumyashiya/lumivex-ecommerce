@@ -175,16 +175,16 @@ export default function CheckoutView() {
 
   if (count === 0 && status !== 'done') {
     return (
-      <div className="container-wide flex min-h-[60vh] flex-col items-center justify-center py-24 text-center">
-        <h1 className="text-section font-extralight tracking-tightest text-charcoal">
+      <div className="container-ag flex min-h-[60vh] flex-col items-center justify-center py-24 text-center">
+        <h1 className="text-h2 tracking-tighter text-black">
           Nothing to check out
         </h1>
-        <p className="mt-4 max-w-sm text-base font-light text-charcoal/55">
+        <p className="mt-4 max-w-sm text-base text-grey-500">
           Your cart is empty. Add a research compound to continue.
         </p>
         <Link
           href="/#products"
-          className="mt-9 rounded-full bg-charcoal px-8 py-4 text-sm font-medium text-ivory transition-colors duration-500 hover:bg-gold"
+          className="mt-9 rounded-pill bg-green px-8 py-4 text-sm font-medium text-white transition-colors duration-200 hover:bg-green-hover"
         >
           Browse the catalogue
         </Link>
@@ -194,18 +194,16 @@ export default function CheckoutView() {
 
   return (
     <>
-      <div className="container-wide py-10 md:py-16">
-      <div className="mb-10">
+      <div className="container-ag section-y">
+      <div className="mb-lg tablet:mb-xl">
         <button
+          type="button"
           onClick={() => router.push('/cart')}
-          className="link-underline mb-6 text-[13px] font-medium text-charcoal/55 hover:text-charcoal"
+          className="block font-mono text-xs uppercase tracking-label text-grey-500 transition-colors duration-200 ease-ag hover:text-green"
         >
           ← Back to cart
         </button>
-        <span className="eyebrow">Final step</span>
-        <h1 className="mt-4 text-display font-extralight tracking-tightest text-charcoal">
-          Checkout
-        </h1>
+        <h1 className="mt-smd text-h2 text-black">Checkout</h1>
       </div>
 
       <form
@@ -261,15 +259,15 @@ export default function CheckoutView() {
 
         {/* Summary */}
         <div className="lg:col-span-5">
-          <div className="rounded-[6px] bg-cream p-8 md:p-10 lg:sticky lg:top-24">
-            <h2 className="text-[11px] uppercase tracking-eyebrow text-charcoal/40">
+          <div className="rounded-smd bg-off-white p-8 md:p-10 lg:sticky lg:top-24">
+            <h2 className="text-[11px] uppercase tracking-label text-grey-500">
               Order Summary
             </h2>
 
-            <ul className="mt-6 space-y-4 border-b border-charcoal/10 pb-6">
+            <ul className="mt-6 space-y-4 border-b border-[color:var(--border-soft)] pb-6">
               {items.map((item) => (
                 <li key={item.id} className="flex items-center gap-4">
-                  <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-[4px] bg-[#eef1f4]">
+                  <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-sm bg-[#eef1f4]">
                     <Image
                       src={item.image}
                       alt={item.name}
@@ -277,14 +275,14 @@ export default function CheckoutView() {
                       sizes="56px"
                       className="object-cover"
                     />
-                    <span className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-charcoal px-1 text-[10px] font-semibold text-ivory">
+                    <span className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-pill bg-green px-1 text-[10px] font-semibold text-white">
                       {item.qty}
                     </span>
                   </div>
-                  <span className="flex-1 text-[13px] font-light text-charcoal/70">
+                  <span className="flex-1 text-[13px] text-grey-700">
                     {item.name}
                   </span>
-                  <span className="text-[13px] font-medium text-charcoal">
+                  <span className="text-[13px] font-medium text-black">
                     {formatPrice(item.price * item.qty)}
                   </span>
                 </li>
@@ -292,13 +290,13 @@ export default function CheckoutView() {
             </ul>
 
             {/* Promo code */}
-            <div className="mt-6 border-b border-charcoal/10 pb-6">
+            <div className="mt-6 border-b border-[color:var(--border-soft)] pb-6">
               {appliedPromo ? (
-                <div className="flex items-center justify-between gap-3 rounded-[4px] border border-gold/40 bg-gold/10 px-4 py-3">
-                  <span className="flex items-center gap-2 text-[13px] font-medium text-charcoal">
+                <div className="flex items-center justify-between gap-3 rounded-sm border border-green bg-mint px-4 py-3">
+                  <span className="flex items-center gap-2 text-[13px] font-medium text-black">
                     <svg
                       viewBox="0 0 24 24"
-                      className="h-4 w-4 text-gold"
+                      className="h-4 w-4 text-green"
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="1.6"
@@ -313,7 +311,7 @@ export default function CheckoutView() {
                   <button
                     type="button"
                     onClick={removePromo}
-                    className="link-underline text-[12px] font-medium text-charcoal/50 hover:text-charcoal"
+                    className="underline-offset-4 hover:underline text-[12px] font-medium text-grey-500 hover:text-black"
                   >
                     Remove
                   </button>
@@ -335,19 +333,19 @@ export default function CheckoutView() {
                       }}
                       placeholder="Promo code"
                       aria-label="Promo code"
-                      className="min-w-0 flex-1 rounded-[4px] border border-charcoal/15 bg-ivory px-4 py-3 text-sm font-light uppercase tracking-wide text-charcoal outline-none transition-colors placeholder:normal-case placeholder:tracking-normal placeholder:text-charcoal/30 focus:border-gold"
+                      className="min-w-0 flex-1 rounded-sm border border-[color:var(--border-soft)] bg-white px-4 py-3 text-sm uppercase tracking-wide text-black outline-none transition-colors placeholder:normal-case placeholder:tracking-normal placeholder:text-grey-500 focus:border-green"
                     />
                     <button
                       type="button"
                       onClick={applyPromo}
                       disabled={promoValidating}
-                      className="shrink-0 rounded-[4px] border border-charcoal/20 px-5 text-[13px] font-medium text-charcoal transition-colors hover:border-charcoal/50 disabled:cursor-not-allowed disabled:opacity-60"
+                      className="shrink-0 rounded-sm border border-grey-100 px-5 text-[13px] font-medium text-black transition-colors hover:border-grey-100 disabled:cursor-not-allowed disabled:opacity-60"
                     >
                       {promoValidating ? 'Checking…' : 'Apply'}
                     </button>
                   </div>
                   {promoError && (
-                    <p className="mt-2 text-[12px] font-light text-red-600/80">
+                    <p className="mt-2 text-[12px] text-red-600/80">
                       {promoError}
                     </p>
                   )}
@@ -356,39 +354,39 @@ export default function CheckoutView() {
             </div>
 
             <div className="mt-6 space-y-3">
-              <div className="flex justify-between text-sm font-light text-charcoal/55">
+              <div className="flex justify-between text-sm text-grey-500">
                 <span>Subtotal</span>
-                <span className="font-medium text-charcoal">
+                <span className="font-medium text-black">
                   {formatPrice(subtotal)}
                 </span>
               </div>
               {discount > 0 && (
-                <div className="flex justify-between text-sm font-light text-gold">
+                <div className="flex justify-between text-sm text-green">
                   <span>Discount ({appliedPromo?.code})</span>
                   <span className="font-medium">−{formatPrice(discount)}</span>
                 </div>
               )}
-              <div className="flex items-baseline justify-between border-t border-charcoal/10 pt-4">
-                <span className="text-base font-medium text-charcoal">
+              <div className="flex items-baseline justify-between border-t border-[color:var(--border-soft)] pt-4">
+                <span className="text-base font-medium text-black">
                   Total
                 </span>
-                <span className="text-2xl font-light text-charcoal">
+                <span className="text-2xl text-black">
                   {formatPrice(total)}
                 </span>
               </div>
             </div>
 
             {/* Research-use compliance notice + blocking attestation */}
-            <div className="mt-7 rounded-[4px] border-l-2 border-gold bg-ivory px-4 py-4">
-              <p className="text-[11.5px] font-light leading-relaxed text-charcoal/60">
+            <div className="mt-7 rounded-sm border-l-2 border-green bg-white px-4 py-4">
+              <p className="text-[11.5px] leading-relaxed text-grey-700">
                 {CHECKOUT_ACKNOWLEDGEMENT}
               </p>
-              <label className="mt-3 flex items-start gap-2.5 text-[12px] font-light leading-relaxed text-charcoal/70">
+              <label className="mt-3 flex items-start gap-2.5 text-[12px] leading-relaxed text-grey-700">
                 <input
                   type="checkbox"
                   checked={attested}
                   onChange={(e) => setAttested(e.target.checked)}
-                  className="mt-0.5 shrink-0 accent-gold"
+                  className="mt-0.5 shrink-0 accent-green"
                 />
                 <span>
                   I confirm I am 18 or older, am acquiring these materials for
@@ -400,7 +398,7 @@ export default function CheckoutView() {
             </div>
 
             {submitError && (
-              <p className="mt-5 rounded-[4px] border border-red-600/20 bg-red-600/5 px-4 py-3 text-[13px] font-light text-red-600/90">
+              <p className="mt-5 rounded-sm border border-red-600/20 bg-red-600/5 px-4 py-3 text-[13px] text-red-600/90">
                 {submitError}
               </p>
             )}
@@ -409,11 +407,11 @@ export default function CheckoutView() {
               type="submit"
               data-touch-target
               disabled={status === 'processing' || !attested}
-              className="mt-8 flex w-full items-center justify-center gap-2 rounded-full bg-charcoal py-4 text-sm font-medium text-ivory transition-colors duration-500 hover:bg-gold disabled:cursor-not-allowed disabled:opacity-70"
+              className="mt-8 flex w-full items-center justify-center gap-2 rounded-pill bg-green py-4 text-sm font-medium text-white transition-colors duration-200 hover:bg-green-hover disabled:cursor-not-allowed disabled:opacity-70"
             >
               {status === 'processing' ? (
                 <>
-                  <span className="h-4 w-4 animate-spin rounded-full border-2 border-ivory/30 border-t-ivory" />
+                  <span className="h-4 w-4 animate-spin rounded-pill border-2 border-white/20 border-t-white" />
                   Processing…
                 </>
               ) : (
@@ -421,7 +419,7 @@ export default function CheckoutView() {
               )}
             </button>
 
-            <p className="mt-5 text-center text-[12px] font-light text-charcoal/45">
+            <p className="mt-5 text-center text-[12px] text-grey-500">
               Payment by bank transfer. We’ll email you secure payment
               instructions and a capture link for your screenshot.
             </p>
@@ -444,7 +442,7 @@ export default function CheckoutView() {
             aria-labelledby="order-placed-title"
           >
             {/* Backdrop */}
-            <div className="absolute inset-0 bg-charcoal/45 backdrop-blur-sm" />
+            <div className="absolute inset-0 bg-green-deep backdrop-blur-sm" />
 
             {/* Card */}
             <motion.div
@@ -452,13 +450,13 @@ export default function CheckoutView() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.96, y: 10 }}
               transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-              className="relative w-full max-w-md overflow-hidden rounded-[14px] bg-ivory p-8 text-center shadow-[0_40px_120px_-30px_rgba(28,26,23,0.6)] md:p-10"
+              className="relative w-full max-w-md overflow-hidden rounded-[14px] bg-white p-8 text-center shadow-[0_40px_120px_-30px_rgba(28,26,23,0.6)] md:p-10"
             >
               <motion.div
                 initial={{ scale: 0.5, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.15, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gold/15 text-gold"
+                className="mx-auto flex h-16 w-16 items-center justify-center rounded-pill bg-mint text-green"
               >
                 <svg
                   viewBox="0 0 24 24"
@@ -476,30 +474,30 @@ export default function CheckoutView() {
 
               <h2
                 id="order-placed-title"
-                className="mt-6 text-3xl font-extralight tracking-tightest text-charcoal"
+                className="mt-6 text-3xl tracking-tighter text-black"
               >
                 Order placed
               </h2>
-              <p className="mt-3 text-sm font-light leading-relaxed text-charcoal/60">
+              <p className="mt-3 text-sm leading-relaxed text-grey-700">
                 Thank you. Check your inbox  we’ve sent payment instructions
                 and a secure capture link for you to upload your bank-transfer
                 screenshot.
               </p>
 
-              <div className="mt-6 flex items-center justify-between gap-4 rounded-[8px] bg-cream px-5 py-4 text-left">
+              <div className="mt-6 flex items-center justify-between gap-4 rounded-card bg-off-white px-5 py-4 text-left">
                 <div>
-                  <p className="text-[10px] uppercase tracking-wider text-charcoal/40">
+                  <p className="text-[10px] uppercase tracking-wider text-grey-500">
                     Order reference
                   </p>
-                  <p className="mt-0.5 font-medium tracking-wide text-charcoal">
+                  <p className="mt-0.5 font-medium tracking-wide text-black">
                     {orderRef}
                   </p>
                 </div>
                 <div className="text-right">
-                  <p className="text-[10px] uppercase tracking-wider text-charcoal/40">
+                  <p className="text-[10px] uppercase tracking-wider text-grey-500">
                     Total
                   </p>
-                  <p className="mt-0.5 text-lg font-light text-charcoal">
+                  <p className="mt-0.5 text-lg text-black">
                     {formatPrice(orderTotal)}
                   </p>
                 </div>
@@ -508,13 +506,13 @@ export default function CheckoutView() {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="/#products"
-                  className="flex-1 rounded-full bg-charcoal px-6 py-3.5 text-sm font-medium text-ivory transition-colors duration-500 hover:bg-gold"
+                  className="flex-1 rounded-pill bg-green px-6 py-3.5 text-sm font-medium text-white transition-colors duration-200 hover:bg-green-hover"
                 >
                   Continue shopping
                 </Link>
                 <Link
                   href="/"
-                  className="flex-1 rounded-full border border-charcoal/15 px-6 py-3.5 text-sm font-medium text-charcoal transition-colors duration-500 hover:border-charcoal/40"
+                  className="flex-1 rounded-pill border border-[color:var(--border-soft)] px-6 py-3.5 text-sm font-medium text-black transition-colors duration-200 hover:border-grey-100"
                 >
                   Back to home
                 </Link>
@@ -536,7 +534,7 @@ function Fieldset({
 }) {
   return (
     <fieldset className="mb-10">
-      <legend className="mb-5 text-[11px] uppercase tracking-eyebrow text-charcoal/40">
+      <legend className="mb-5 text-[11px] uppercase tracking-label text-grey-500">
         {title}
       </legend>
       <div className="grid grid-cols-1 gap-x-6 gap-y-5 sm:grid-cols-2">
@@ -563,10 +561,10 @@ function Field({
 }) {
   return (
     <label className={`flex flex-col gap-2 ${full ? 'sm:col-span-2' : ''}`}>
-      <span className="text-[12px] font-medium text-charcoal/55">
+      <span className="text-[12px] font-medium text-grey-500">
         {label}
         {optional && (
-          <span className="ml-1 font-light text-charcoal/35">(optional)</span>
+          <span className="ml-1 text-grey-500">(optional)</span>
         )}
       </span>
       <input
@@ -574,7 +572,7 @@ function Field({
         type={type}
         placeholder={placeholder}
         required={!optional}
-        className="rounded-[4px] border border-charcoal/15 bg-ivory px-4 py-3 text-sm font-light text-charcoal outline-none transition-colors placeholder:text-charcoal/30 focus:border-gold"
+        className="rounded-sm border border-[color:var(--border-soft)] bg-white px-4 py-3 text-sm text-black outline-none transition-colors placeholder:text-grey-500 focus:border-green"
       />
     </label>
   );

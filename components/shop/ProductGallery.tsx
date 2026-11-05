@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import Image from 'next/image';
@@ -10,7 +10,7 @@ import Image from 'next/image';
 const CONTEXT_SHOTS = [
   '/images/inhouse-image1-seo.webp',
   '/images/inhouse-image2-seo.webp',
-  '/images/whyus1-seo.webp',
+  '/images/whyus11-seo.webp',
 ];
 
 export default function ProductGallery({
@@ -28,8 +28,9 @@ export default function ProductGallery({
 
   return (
     <div>
-      {/* Main image — transparent, blends with the page */}
-      <div className="relative aspect-[4/3] overflow-hidden rounded-[8px]">
+      {/* Product sits contained on the stone field, as on the reference
+          product pages — never cropped to fill. */}
+      <div className="relative aspect-[4/3] overflow-hidden rounded-card bg-stone">
         <Image
           key={images[active]}
           src={images[active]}
@@ -38,33 +39,35 @@ export default function ProductGallery({
           sizes="(max-width: 1023px) 100vw, 50vw"
           priority
           quality={90}
-          className="animate-[fadeIn_0.4s_ease] object-contain p-8"
+          className="animate-[fade-up_0.3s_cubic-bezier(0,0,0.2,1)] object-contain p-lg"
         />
       </div>
 
-      {/* Thumbnails — centered row, active one ringed in gold */}
-      <div className="mt-4 flex flex-wrap justify-center gap-3">
+      <ul className="mt-smd flex flex-wrap gap-sm">
         {images.map((src, i) => (
-          <button
-            key={src + i}
-            onClick={() => setActive(i)}
-            aria-label={`View image ${i + 1}`}
-            className={`relative aspect-square w-[68px] shrink-0 overflow-hidden rounded-[6px] bg-ivory transition-all duration-300 ${
-              active === i
-                ? 'ring-2 ring-gold ring-offset-2 ring-offset-ivory'
-                : 'border border-charcoal/10 opacity-70 hover:opacity-100'
-            }`}
-          >
-            <Image
-              src={src}
-              alt={`${alt} thumbnail ${i + 1}`}
-              fill
-              sizes="68px"
-              className="object-cover"
-            />
-          </button>
+          <li key={src + i}>
+            <button
+              type="button"
+              onClick={() => setActive(i)}
+              aria-label={`View image ${i + 1} of ${images.length}`}
+              aria-current={active === i}
+              className={`relative aspect-square w-[72px] shrink-0 overflow-hidden rounded-smd bg-stone transition-colors duration-200 ease-ag ${
+                active === i
+                  ? 'ring-2 ring-green'
+                  : 'ring-1 ring-[color:var(--border-soft)] hover:ring-grey-100'
+              }`}
+            >
+              <Image
+                src={src}
+                alt=""
+                fill
+                sizes="72px"
+                className="object-cover"
+              />
+            </button>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }

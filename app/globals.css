@@ -2,45 +2,93 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ---------------------------------------------------------------------------
+   Design tokens — mirrored from the AG1 (drinkag1.com) system.
+   Typefaces stand in for the licensed originals:
+     Switzer         ↔ ABC Diatype       (neo-grotesque, all UI + headings)
+     Instrument Serif ↔ AG Items         (hero display only)
+     DM Mono         ↔ ABC Diatype Mono  (uppercase labels, meta, legal refs)
+--------------------------------------------------------------------------- */
 :root {
-  --font-general-sans: 'General Sans', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Switzer', 'Helvetica Neue', Arial, sans-serif;
+  --font-serif: 'Instrument Serif', 'Times New Roman', Times, serif;
+  --font-mono: 'DM Mono', ui-monospace, Menlo, Consolas, monospace;
+
+  --green: #023d3d;
+  --green-deep: #0f2e2f;
+  --green-light: #105c5c;
+  --green-hover: #001c0f;
+  --earth: #806b47;
+  --off-white: #f6f5f1;
+  --cream: #f4f1ea;
+  --stone: #edebe4;
+
+  --border-soft: rgba(0, 28, 15, 0.08);
+  --border-hair: rgba(0, 28, 15, 0.14);
+
+  --ease-ag: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Fixed chrome — notice bar + header, measured off the reference site.
+     Mobile: 52 + 64. Desktop: 34 + 90. Anchored sections clear it. */
+  --bar-h: 52px;
+  --header-h: 64px;
+  --chrome-h: calc(var(--bar-h) + var(--header-h));
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --bar-h: 34px;
+    --header-h: 90px;
+  }
 }
 
 @layer base {
   html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-    /* Keep iOS from auto-inflating text in landscape */
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
-    /* Fixed header (announce bar + nav) height — anchored sections clear it */
-    scroll-padding-top: 110px;
+    scroll-padding-top: var(--chrome-h);
   }
 
   body {
-    background-color: #F6F2EB;
-    color: #1C1A17;
-    font-family: var(--font-general-sans);
+    background-color: #ffffff;
+    color: #000000;
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    /* Both stop sideways overflow, but `hidden` makes the body a scroll
+       container, and that silently kills every `position: sticky`
+       descendant — the body never actually scrolls (html does), so a
+       sticky box has no scrollport to hold against. `clip` stops the
+       overflow without creating one. The `hidden` line stays first as the
+       fallback for browsers that don't support `clip`. */
     overflow-x: hidden;
-    /* Quieter tap flashes on touch devices */
+    overflow-x: clip;
     -webkit-tap-highlight-color: transparent;
   }
 
-  /* Anchored sections stop below the fixed announce bar + navigation */
-  section[id] {
-    scroll-margin-top: 110px;
+  /* AG1 sets every heading at weight 400 with tight tracking — the size
+     carries the hierarchy, never the weight. */
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: 400;
+    letter-spacing: -0.03em;
   }
 
-  /* Media never breaks its box or distorts on small screens */
+  section[id] {
+    scroll-margin-top: var(--chrome-h);
+  }
+
   img,
   video,
   svg {
     max-width: 100%;
   }
 
-  /* Comfortable minimum touch targets for primary controls (opt-in, so
-     intentionally small controls like pagination dots stay untouched) */
   @media (hover: none) and (pointer: coarse) {
     [data-touch-target] {
       min-height: 48px;
@@ -48,8 +96,19 @@
   }
 
   ::selection {
-    background-color: #B8965A;
-    color: #F6F2EB;
+    background-color: var(--green);
+    color: #ffffff;
+  }
+
+  /* Visible keyboard focus everywhere, never on mouse clicks */
+  :focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  .on-dark :focus-visible,
+  [data-dark] :focus-visible {
+    outline-color: #ffffff;
   }
 
   /* Lenis */
@@ -69,17 +128,208 @@
 }
 
 @layer components {
-  .container-lux {
-    @apply mx-auto w-full max-w-container px-6 md:px-10 lg:px-16;
+  /* --- Layout -------------------------------------------------------- */
+  /* One edge-anchored gutter for the whole page — header, hero and every
+     section — measured off the reference header: no max-width, 24px mobile,
+     56px from tablet, 120px from 1680px. The logo, the hero headline and
+     each section heading start on the same vertical line. Rails that bleed
+     to the viewport edge (Rail, ShopGrid) mirror these values. */
+  .container-ag {
+    @apply w-full px-lg tablet:px-[56px] min-[1680px]:px-[120px];
   }
-  .container-wide {
-    @apply mx-auto w-full max-w-wide px-6 md:px-10 lg:px-16;
+  .container-header {
+    @apply w-full px-lg tablet:px-[56px] min-[1680px]:px-[120px];
   }
-  .eyebrow {
-    @apply text-[11px] uppercase tracking-eyebrow font-medium text-gold;
+  .container-narrow {
+    @apply mx-auto w-full max-w-container px-lg tablet:px-[56px] desktop:px-[64px];
   }
 
-  /* Safe-area helpers for fixed/edge elements on notched devices */
+  /* Section rhythm. Standard runs 64 → 96 → 136px; the emphasis variant used
+     for the evidence and endorsement blocks runs 80 → 120 → 168px. */
+  .section-y {
+    @apply py-[64px] tablet:py-[96px] desktop:py-[136px];
+  }
+  .section-y-lg {
+    @apply py-[80px] tablet:py-[120px] desktop:py-[168px];
+  }
+  .section-y-sm {
+    @apply py-[40px] tablet:py-[56px] desktop:py-[80px];
+  }
+
+  /* Two neighbouring sections on the same ground get a hairline between
+     them, so one block never reads as running into the next. */
+  main > section.bg-white + section.bg-white,
+  main > section.bg-off-white + section.bg-off-white {
+    border-top: 1px solid var(--border-soft);
+  }
+
+  /* --- Type ---------------------------------------------------------- */
+
+  /* Small uppercase label — mono, the one place AG1 uses letter-spacing */
+  .label-mono {
+    @apply font-mono text-xs uppercase tracking-label text-grey-500;
+  }
+  .label-mono-light {
+    @apply font-mono text-xs uppercase tracking-label text-white/70;
+  }
+
+  /* --- Buttons ------------------------------------------------------- */
+  /* Reference measurements: radius 32px everywhere, weight 400, and only
+     colour transitions — never transform or shadow.
+       default   10px 20px / 16px      → 44px tall
+       lg        10px 20px / 16px on mobile, 16px 24px / 20px from tablet
+                                       → 44px → 60px tall
+       outline   14px 20px / 18px      → 54px tall at every width
+       sm        8px 16px / 14px       → 36px tall  */
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-sm rounded-round
+           px-mdl py-smd text-base font-normal leading-6 no-underline;
+    transition:
+      background-color 0.2s var(--ease-ag),
+      color 0.2s var(--ease-ag),
+      border-color 0.2s var(--ease-ag);
+  }
+  .btn-lg {
+    @apply px-mdl py-smd text-base leading-6 tablet:px-lg tablet:py-md tablet:text-lg tablet:leading-7;
+  }
+  .btn-sm {
+    @apply px-md py-sm text-sm leading-5;
+  }
+
+  .btn-primary {
+    @apply bg-green text-white hover:bg-green-hover;
+  }
+  /* Hero call to action only — the reference's bright green pill. */
+  .btn-bright {
+    @apply bg-bright text-green-deep hover:bg-[#36c936];
+  }
+  .btn-light {
+    @apply bg-white text-green hover:bg-grey-25;
+  }
+  /* The outline pair keeps its own 14px 20px / 18px metrics at every width,
+     matching the reference site's secondary control. */
+  .btn-outline {
+    @apply border border-green bg-transparent px-mdl py-[14px] text-md leading-6
+           text-green hover:bg-green hover:text-white;
+  }
+  .btn-outline-light {
+    @apply border border-white bg-transparent px-mdl py-[14px] text-md leading-6
+           text-white hover:bg-white hover:text-green;
+  }
+  .btn-ghost {
+    @apply bg-transparent text-green hover:bg-grey-25;
+  }
+
+  .btn:disabled,
+  .btn[aria-disabled='true'] {
+    @apply cursor-not-allowed bg-grey-100 text-grey-300 hover:bg-grey-100;
+  }
+
+  /* --- Surfaces ------------------------------------------------------ */
+
+  .card {
+    @apply rounded-card border border-[color:var(--border-soft)] bg-white;
+  }
+  .card-flat {
+    @apply overflow-hidden rounded-card bg-stone;
+  }
+
+  .hairline {
+    @apply border-[color:var(--border-hair)];
+  }
+
+  /* --- Form controls ------------------------------------------------- */
+
+  .field {
+    @apply w-full rounded-smd border border-grey-100 bg-white px-md py-smd
+           text-base text-black placeholder:text-grey-500;
+    transition:
+      border-color 0.2s var(--ease-ag),
+      background-color 0.2s var(--ease-ag);
+  }
+  .field:hover {
+    @apply bg-grey-25;
+  }
+  .field:focus {
+    @apply border-grey-500 bg-white outline-none;
+  }
+  .field-error {
+    @apply border-danger bg-danger-bg;
+  }
+
+  .field-pill-dark {
+    @apply w-full rounded-round border border-white/40 bg-transparent px-mdl py-smd
+           text-base text-white placeholder:text-white/60 focus:border-white focus:outline-none;
+    transition: border-color 0.2s var(--ease-ag);
+  }
+
+  /* --- Stacked sections ----------------------------------------------- */
+
+  /* AG1's layered scroll: this section parks under the fixed chrome and the
+     next one rides up over it.
+     It must be `top`, not `bottom` — sticky-bottom holds a box as you scroll
+     *up* toward it, so it does nothing on the way down, which is the
+     direction this effect lives in.
+     The section that follows must carry `.stack-over`: sticky makes this one
+     a positioned box, so a later static sibling would paint *under* it,
+     which is the opposite of the effect. That section also needs an opaque
+     background, or the parked one shows through. */
+
+  .stack-pin {
+    position: sticky;
+    top: var(--chrome-h);
+    z-index: 0;
+  }
+
+  .stack-over {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Park only when there is genuinely room for it. Below desktop, and on a
+     short viewport, a pinned section would hold with its own last rows
+     under the fold — better to let it scroll normally than to park
+     something the reader cannot finish. A reader who asked for less motion
+     should not have sections sliding over one another at all. */
+  @media (max-width: 1023px), (max-height: 899px), (prefers-reduced-motion: reduce) {
+    .stack-pin {
+      position: static;
+    }
+  }
+
+  /* --- Floating stage ------------------------------------------------ */
+
+  /* The spotlight kit lifts off the page on a slow bob. The tilt is what
+     sells it as a solid object rather than a flat image sliding up and
+     down, so the parent supplies the perspective and the child does the
+     moving. Deliberately slow and small — this is the one piece of
+     decorative motion on the page. The global prefers-reduced-motion rule
+     collapses the duration, so it holds still when asked. */
+
+  .stage-3d {
+    perspective: 1200px;
+    perspective-origin: 50% 45%;
+  }
+
+  .float-3d {
+    transform-style: preserve-3d;
+    will-change: transform;
+    animation: float-3d 7s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  }
+
+  @keyframes float-3d {
+    0%,
+    100% {
+      transform: translate3d(0, -9px, 0) rotateX(2.5deg) rotateZ(-0.5deg);
+    }
+    50% {
+      transform: translate3d(0, 11px, 0) rotateX(-2deg) rotateZ(0.5deg);
+    }
+  }
+
+  /* --- Safe areas ---------------------------------------------------- */
+
   .safe-pt {
     padding-top: env(safe-area-inset-top);
   }
@@ -90,50 +340,8 @@
     padding-left: max(0px, env(safe-area-inset-left));
     padding-right: max(0px, env(safe-area-inset-right));
   }
-
-  /* Image curtain reveal */
-  .curtain {
-    position: relative;
-    overflow: hidden;
-  }
-  .curtain__inner {
-    will-change: transform, filter;
-  }
-
-  /* Animated underline link */
-  .link-underline {
-    position: relative;
-  }
-  .link-underline::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 100%;
-    height: 1px;
-    background: currentColor;
-    transform: scaleX(0);
-    transform-origin: right center;
-    transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  .link-underline:hover::after,
-  .link-underline.is-active::after {
-    transform: scaleX(1);
-    transform-origin: left center;
-  }
 }
 
-/* Prevent flash of unstyled split text. SplitType stamps `text-align: center`
-   onto the line wrappers it generates, which re-centres every line inside the
-   widest one — a left-aligned heading ends up with its short lines indented.
-   Inheriting instead keeps each line on its heading's own alignment. */
-.split-line {
-  overflow: hidden;
-  text-align: inherit;
-}
-
-/* Balanced wrapping keeps large headings from leaving orphan words, and
-   pretty wrapping improves long body copy on narrow screens */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -141,52 +349,39 @@
   .text-pretty {
     text-wrap: pretty;
   }
-}
 
-/* Product gallery — fade the main image when a thumbnail is selected */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+  /* Horizontal card rails — AG1's primary carousel mechanic */
+  .rail {
+    @apply flex snap-x snap-mandatory overflow-x-auto scroll-smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Custom cursor */
-.cursor-dot {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #1C1A17;
-  pointer-events: none;
-  z-index: 9999;
-  mix-blend-mode: difference;
-  transform: translate(-50%, -50%);
-  will-change: transform;
-}
-.cursor-ring {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1px solid rgba(184, 150, 90, 0.6);
-  pointer-events: none;
-  z-index: 9998;
-  transform: translate(-50%, -50%);
-  will-change: transform, width, height;
-  transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
-}
-
-@media (hover: none), (pointer: coarse) {
-  .cursor-dot,
-  .cursor-ring {
+  .rail::-webkit-scrollbar {
     display: none;
+  }
+  .rail > * {
+    @apply shrink-0 snap-start;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Accordion body — animates height without a fixed max-height */
+  .collapse-grid {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s var(--ease-ag);
+  }
+  .collapse-grid[data-open='true'] {
+    grid-template-rows: 1fr;
+  }
+  .collapse-grid > * {
+    overflow: hidden;
   }
 }
 
@@ -199,13 +394,4 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
-
-/* Hide scrollbar on marquee elements */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 }

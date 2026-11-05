@@ -3,7 +3,6 @@ import './globals.css';
 import SmoothScroll from '@/components/providers/SmoothScroll';
 import CartProvider from '@/components/providers/CartProvider';
 import AuthProvider from '@/components/providers/AuthProvider';
-import Cursor from '@/components/ui/Cursor';
 import ChatWidget from '@/components/ui/ChatWidget';
 
 export const metadata: Metadata = {
@@ -34,7 +33,7 @@ export const viewport: Viewport = {
   maximumScale: 5,
   // Draw edge-to-edge under notches; safe-area insets are handled in CSS.
   viewportFit: 'cover',
-  themeColor: '#1C1A17',
+  themeColor: '#023d3d',
 };
 
 export default function RootLayout({
@@ -49,13 +48,26 @@ export default function RootLayout({
           href="https://cdn.fontshare.com"
           crossOrigin="anonymous"
         />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
-          href="https://api.fontshare.com/v2/css?f[]=general-sans@200,300,400,500,600&display=swap"
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        {/* Switzer stands in for ABC Diatype — the grotesque carrying all UI
+            and section headings at weight 400. */}
+        <link
+          href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600,700&display=swap"
+          rel="stylesheet"
+        />
+        {/* Instrument Serif ↔ AG Items (hero display);
+            DM Mono ↔ ABC Diatype Mono (uppercase labels and meta). */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@400;500&display=swap"
           rel="stylesheet"
         />
       </head>
       <body>
-        <Cursor />
         <AuthProvider>
           <CartProvider>
             <SmoothScroll>{children}</SmoothScroll>

@@ -41,7 +41,7 @@ export default function CertificateModal({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-charcoal/70 px-4 py-8 backdrop-blur-sm"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-green-deep px-4 py-8 backdrop-blur-sm"
           onClick={onClose}
           role="dialog"
           aria-modal="true"
@@ -52,24 +52,24 @@ export default function CertificateModal({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.98 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="relative flex max-h-[90vh] w-full max-w-4xl flex-col overflow-hidden rounded-[8px] bg-ivory shadow-[0_40px_80px_-20px_rgba(28,26,23,0.5)]"
+            className="relative flex max-h-[90vh] w-full max-w-4xl flex-col overflow-hidden rounded-card bg-white shadow-[0_40px_80px_-20px_rgba(28,26,23,0.5)]"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
-            <div className="flex items-start justify-between gap-4 border-b border-charcoal/10 bg-cream px-6 py-5 sm:px-8">
+            <div className="flex items-start justify-between gap-4 border-b border-[color:var(--border-soft)] bg-off-white px-6 py-5 sm:px-8">
               <div>
-                <span className="eyebrow">Janoshik Analytical</span>
-                <h2 className="mt-2 text-xl font-light tracking-tight text-charcoal sm:text-2xl">
+                <span className="label-mono">Janoshik Analytical</span>
+                <h2 className="mt-2 text-xl tracking-tight text-black sm:text-2xl">
                   Certificate of Analysis
                 </h2>
-                <p className="mt-1 text-[12px] font-light text-charcoal/55">
+                <p className="mt-1 text-[12px] text-grey-500">
                   Third-party independent lab report — {data.productName}
                 </p>
               </div>
               <button
                 onClick={onClose}
                 aria-label="Close certificate"
-                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-charcoal/15 text-charcoal/70 transition-colors hover:border-charcoal hover:text-charcoal"
+                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-pill border border-[color:var(--border-soft)] text-grey-700 transition-colors hover:border-grey-100 hover:text-black"
               >
                 <svg
                   width="14"
@@ -96,7 +96,7 @@ export default function CertificateModal({
                   {images.map((src, i) => (
                     <div
                       key={src + i}
-                      className="relative w-full overflow-hidden rounded-[6px] border border-charcoal/10 bg-cream"
+                      className="relative w-full overflow-hidden rounded-smd border border-[color:var(--border-soft)] bg-off-white"
                     >
                       <Image
                         src={src}
@@ -113,8 +113,8 @@ export default function CertificateModal({
             </div>
 
             {/* Footer actions */}
-            <div className="flex flex-col-reverse items-stretch gap-3 border-t border-charcoal/10 bg-cream px-6 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-8">
-              <p className="text-[11px] font-light text-charcoal/50">
+            <div className="flex flex-col-reverse items-stretch gap-3 border-t border-[color:var(--border-soft)] bg-off-white px-6 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+              <p className="text-[11px] text-grey-500">
                 Independently verified by Janoshik Analytical.
               </p>
               <div className="flex flex-col gap-2 sm:flex-row">
@@ -123,7 +123,7 @@ export default function CertificateModal({
                     href={data.verifyUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-full border border-charcoal/20 px-5 py-2.5 text-center text-[12px] font-medium text-charcoal transition-colors hover:border-charcoal hover:bg-charcoal hover:text-ivory"
+                    className="rounded-pill border border-grey-100 px-5 py-2.5 text-center text-[12px] font-medium text-black transition-colors hover:border-grey-100 hover:bg-green hover:text-white"
                   >
                     Verify on janoshik.com ↗
                   </a>

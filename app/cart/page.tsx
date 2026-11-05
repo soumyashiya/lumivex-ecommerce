@@ -12,7 +12,7 @@ export default function CartPage() {
   return (
     <>
       <ShopHeader />
-      <main className="min-h-[70vh] bg-ivory">
+      <main className="min-h-[70vh] bg-white">
         <CartView />
       </main>
       <Footer />

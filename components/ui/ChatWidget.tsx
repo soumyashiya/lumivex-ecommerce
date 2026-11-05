@@ -57,7 +57,7 @@ export default function ChatWidget() {
       <button
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? 'Close assistant' : 'Open assistant'}
-        className="fixed bottom-6 right-6 z-[60] flex h-14 w-14 items-center justify-center rounded-full bg-charcoal text-ivory shadow-[0_20px_50px_-15px_rgba(28,26,23,0.55)] transition-colors hover:bg-gold"
+        className="fixed bottom-6 right-6 z-[60] flex h-14 w-14 items-center justify-center rounded-pill bg-green text-white shadow-[0_20px_50px_-15px_rgba(28,26,23,0.55)] transition-colors hover:bg-green-hover"
       >
         {open ? (
           <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round">
@@ -77,16 +77,16 @@ export default function ChatWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 16, scale: 0.97 }}
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed bottom-24 right-6 z-[60] flex h-[560px] w-[min(380px,calc(100vw-2rem))] flex-col overflow-hidden rounded-[12px] border border-charcoal/10 bg-ivory shadow-[0_30px_80px_-20px_rgba(28,26,23,0.45)]"
+            className="fixed bottom-24 right-6 z-[60] flex h-[560px] w-[min(380px,calc(100vw-2rem))] flex-col overflow-hidden rounded-[12px] border border-[color:var(--border-soft)] bg-white shadow-[0_30px_80px_-20px_rgba(28,26,23,0.45)]"
           >
-            <div className="border-b border-charcoal/10 px-5 py-4">
-              <p className="text-[11px] uppercase tracking-eyebrow text-charcoal/45">
+            <div className="border-b border-[color:var(--border-soft)] px-5 py-4">
+              <p className="text-[11px] uppercase tracking-label text-grey-500">
                 Research assistant
               </p>
-              <p className="mt-0.5 text-[13px] font-medium text-charcoal">
+              <p className="mt-0.5 text-[13px] font-medium text-black">
                 Ask about product specifications, certificates, or orders
               </p>
-              <p className="mt-1.5 text-[11px] font-light leading-relaxed text-charcoal/45">
+              <p className="mt-1.5 text-[11px] leading-relaxed text-grey-500">
                 This assistant cannot advise on use, dosing or administration.
                 All products are research materials — not for human or
                 veterinary use.
@@ -96,14 +96,14 @@ export default function ChatWidget() {
             <div ref={scrollRef} className="flex-1 space-y-3 overflow-auto px-5 py-4">
               {messages.length === 0 && suggestions.length > 0 && (
                 <div className="space-y-2">
-                  <p className="text-[11px] uppercase tracking-wider text-charcoal/40">
+                  <p className="text-[11px] uppercase tracking-wider text-grey-500">
                     Try asking
                   </p>
                   {suggestions.map((s) => (
                     <button
                       key={s}
                       onClick={() => send(s)}
-                      className="block w-full rounded-[6px] border border-charcoal/10 bg-cream px-3 py-2 text-left text-[12px] font-light text-charcoal/75 hover:border-charcoal/30"
+                      className="block w-full rounded-smd border border-[color:var(--border-soft)] bg-off-white px-3 py-2 text-left text-[12px] text-grey-700 hover:border-grey-100"
                     >
                       {s}
                     </button>
@@ -119,8 +119,8 @@ export default function ChatWidget() {
                   <div
                     className={`max-w-[85%] rounded-[10px] px-3.5 py-2.5 text-[13px] leading-relaxed ${
                       m.role === 'user'
-                        ? 'bg-charcoal text-ivory'
-                        : 'bg-cream text-charcoal'
+                        ? 'bg-green text-white'
+                        : 'bg-off-white text-black'
                     }`}
                   >
                     {m.text}
@@ -129,7 +129,7 @@ export default function ChatWidget() {
               ))}
               {sending && (
                 <div className="flex justify-start">
-                  <div className="rounded-[10px] bg-cream px-3.5 py-2.5">
+                  <div className="rounded-[10px] bg-off-white px-3.5 py-2.5">
                     <span className="inline-flex gap-1">
                       <Dot delay="0s" />
                       <Dot delay="0.15s" />
@@ -145,7 +145,7 @@ export default function ChatWidget() {
                 e.preventDefault();
                 send(input);
               }}
-              className="border-t border-charcoal/10 p-3"
+              className="border-t border-[color:var(--border-soft)] p-3"
             >
               <div className="flex gap-2">
                 <input
@@ -153,12 +153,12 @@ export default function ChatWidget() {
                   onChange={(e) => setInput(e.target.value)}
                   maxLength={1000}
                   placeholder="Ask anything…"
-                  className="min-w-0 flex-1 rounded-full border border-charcoal/15 bg-ivory px-4 py-2.5 text-sm font-light text-charcoal outline-none focus:border-gold"
+                  className="min-w-0 flex-1 rounded-pill border border-[color:var(--border-soft)] bg-white px-4 py-2.5 text-sm text-black outline-none focus:border-green"
                 />
                 <button
                   type="submit"
                   disabled={!input.trim() || sending}
-                  className="shrink-0 rounded-full bg-charcoal px-4 text-[13px] font-medium text-ivory hover:bg-gold disabled:opacity-60"
+                  className="shrink-0 rounded-pill bg-green px-4 text-[13px] font-medium text-white hover:bg-green-hover disabled:opacity-60"
                 >
                   Send
                 </button>
@@ -174,7 +174,7 @@ export default function ChatWidget() {
 function Dot({ delay }: { delay: string }) {
   return (
     <span
-      className="inline-block h-1.5 w-1.5 animate-bounce rounded-full bg-charcoal/40"
+      className="inline-block h-1.5 w-1.5 animate-bounce rounded-pill bg-green-deep"
       style={{ animationDelay: delay }}
     />
   );
