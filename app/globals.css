@@ -157,9 +157,18 @@
   }
 
   /* Two neighbouring sections on the same ground get a hairline between
-     them, so one block never reads as running into the next. */
-  main > section.bg-white + section.bg-white,
-  main > section.bg-off-white + section.bg-off-white {
+     them, so one block never reads as running into the next.
+     Matched with [class~="…"] rather than a bare .bg-white. A plain utility
+     class name in a hand-written selector inside @layer components gets
+     rewritten by Tailwind against an unrelated generated candidate, splicing
+     that candidate's pseudo-class in ahead of the tag and emitting a selector
+     the CSS parser rejects. It latches onto whichever candidate happens to
+     sit nearby, so the two halves of this rule were corrupted differently and
+     neither parsed — meaning this hairline never rendered at all. The
+     attribute form is exactly equivalent (`~=` matches a whole
+     whitespace-separated token) and Tailwind leaves it alone. */
+  main > section[class~='bg-white'] + section[class~='bg-white'],
+  main > section[class~='bg-off-white'] + section[class~='bg-off-white'] {
     border-top: 1px solid var(--border-soft);
   }
 
@@ -264,6 +273,14 @@
     transition: border-color 0.2s var(--ease-ag);
   }
 
+  /* Light twin of the above, for the sign-up band: a white pill on a tinted
+     ground, so it reads as a control rather than a panel seam. */
+  .field-pill {
+    @apply w-full rounded-round border border-[color:var(--border-hair)] bg-white px-mdl py-smd
+           text-base text-black placeholder:text-grey-500 focus:border-green focus:outline-none;
+    transition: border-color 0.2s var(--ease-ag);
+  }
+
   /* --- Stacked sections ----------------------------------------------- */
 
   /* AG1's layered scroll: this section parks under the fixed chrome and the
@@ -295,6 +312,22 @@
   @media (max-width: 1023px), (max-height: 899px), (prefers-reduced-motion: reduce) {
     .stack-pin {
       position: static;
+    }
+  }
+
+  /* --- Hero stills ---------------------------------------------------- */
+
+  /* The hero stills are ~2.4:1 product shots. A portrait phone frame crops
+     away roughly three quarters of their width, so the desktop focal point
+     — pushed left to clear the copy column — would land on empty backdrop.
+     Each slide therefore carries two focal points, set as custom properties,
+     and this is the only place they're switched. */
+  .hero-still {
+    object-position: var(--focus-mobile, center);
+  }
+  @media (min-width: 1024px) {
+    .hero-still {
+      object-position: var(--focus-desktop, center);
     }
   }
 

@@ -19,7 +19,7 @@ export default function Faq() {
             usually within the working day.
           </p>
           <ButtonLink
-            href="/#contact"
+            href="/contact"
             variant="outline"
             size="lg"
             className="mt-lg"

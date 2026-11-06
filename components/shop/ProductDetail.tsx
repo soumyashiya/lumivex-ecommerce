@@ -12,7 +12,7 @@ import ProductGallery from '@/components/shop/ProductGallery';
 import CertificateModal from '@/components/shop/CertificateModal';
 import LabAnalysisModal from '@/components/shop/LabAnalysisModal';
 import ProductCard from '@/components/ui/ProductCard';
-import Button from '@/components/ui/Button';
+import Button, { ButtonLink } from '@/components/ui/Button';
 import Accordion from '@/components/ui/Accordion';
 import { ArrowRight, Check, Minus, Plus } from '@/components/ui/Icons';
 
@@ -139,7 +139,7 @@ export default function ProductDetail({
               <span className="text-[clamp(1.75rem,3vw,2.25rem)] leading-none tracking-tighter text-black">
                 {product.price}
               </span>
-              <span className="label-mono">USD</span>
+              {!product.enquiryOnly && <span className="label-mono">USD</span>}
               {product.purity && (
                 <span className="rounded-sm bg-success-bg px-sm py-xxs font-mono text-xxs uppercase tracking-label text-success">
                   {product.purity} assayed
@@ -151,7 +151,19 @@ export default function ProductDetail({
               {product.longDescription}
             </p>
 
-            {/* Quantity + add */}
+            {/* Quantity + add. A compound with no price has no cart line
+                either, so it offers the enquiry form instead. */}
+            {product.enquiryOnly ? (
+              <div className="mt-lg">
+                <ButtonLink href="/contact" size="lg" arrow>
+                  Enquire about this compound
+                </ButtonLink>
+                <p className="mt-smd max-w-prose text-sm text-grey-700">
+                  Pricing and availability for this line are quoted per
+                  order. We reply within one working day.
+                </p>
+              </div>
+            ) : (
             <div className="mt-lg flex flex-wrap items-center gap-smd">
               <div className="flex items-center rounded-round border border-grey-100">
                 <button
@@ -189,8 +201,11 @@ export default function ProductDetail({
                 )}
               </Button>
             </div>
+            )}
 
-            {/* Standing order offer */}
+            {/* Standing order offer — priced lines only; the saving is
+                derived from the price, so it says nothing without one. */}
+            {!product.enquiryOnly && (
             <div className="mt-lg rounded-card bg-mint p-md">
               <p className="text-base font-medium text-green-deep">
                 ${perDelivery.toFixed(2)} per delivery on a standing order
@@ -208,6 +223,7 @@ export default function ProductDetail({
                 <ArrowRight size={16} />
               </Link>
             </div>
+            )}
 
             <p className="mt-md font-mono text-xs uppercase tracking-label text-grey-500">
               Research use only — not for human or veterinary use

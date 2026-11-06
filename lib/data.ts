@@ -18,6 +18,67 @@ export const IMAGES = {
 };
 
 /**
+ * Hero carousel. Slide one is the footage; the rest are stills. Each slide
+ * carries its own headline (one entry per line), so the two-line rhythm of
+ * the reference hero survives at every width.
+ *
+ * Copy stays within the research-supply frame — what is measured, documented
+ * and shipped. No claim about what a compound does.
+ */
+export type HeroSlide = {
+  kind: 'video' | 'image';
+  /** Video source, or the still shown for an image slide. */
+  src: string;
+  /** Headline, one array entry per rendered line. */
+  title: string[];
+  body: string;
+  /** Seconds held before advancing. */
+  hold: number;
+  /**
+   * Focal points for the still, as `object-position`. Desktop is pushed left
+   * so the products clear the copy column; a phone crops most of the width
+   * away, so it needs its own, centred on the product.
+   */
+  position?: string;
+  positionMobile?: string;
+  /**
+   * Shade behind the copy. The product stills are bright and busy on the
+   * left, so white type needs more cover there than it does over the footage.
+   */
+  scrim?: 'light' | 'heavy';
+};
+
+export const HERO_SLIDES: HeroSlide[] = [
+  {
+    kind: 'video',
+    src: '/videos/hero-update-h264.mp4',
+    title: ['Every batch tested.', 'Every result published.'],
+    body: 'Research-grade peptides for UK and EU laboratories, independently assayed and shipped cold with the certificate for your batch.',
+    hold: 8,
+  },
+  {
+    kind: 'image',
+    src: '/images/hero-new2.png',
+    title: ['CJC-1295 and MOTS-C.', 'Assayed before listing.'],
+    body: 'Reference compounds in sealed pre-filled devices, each batch measured for purity and concentration by an independent laboratory.',
+    hold: 8,
+    position: '0% 60%',
+    positionMobile: '46% 42%',
+    scrim: 'heavy',
+  },
+  {
+    kind: 'image',
+    src: '/images/her3.png',
+    title: ['Six research lines.', 'One verified source.'],
+    body: 'Synthesised in-house and released against a batch record, so the kit on your bench matches the paperwork on file.',
+    hold: 8,
+    position: '12% 55%',
+    positionMobile: '52% 45%',
+    scrim: 'heavy',
+  },
+];
+
+/**
  * Single source of truth for the research-only disclaimer. Rendered on every
  * product page and in the checkout flow — never edit in one place only.
  */
@@ -36,90 +97,108 @@ export const ANNOUNCEMENTS = [
 
 export const NAV_LINKS = [
   { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
+  { label: 'About', href: '/about' },
   { label: 'Why Us', href: '#why-us' },
   { label: 'Standards', href: '#testimonials' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 /**
  * Primary navigation. Mirrors AG1's three-group mega menu (Shop / Science /
- * Explore), each group opening a panel of titled links with one-line
- * descriptions.
+ * Explore): each group opens a panel with a small mono eyebrow and a column
+ * of links, each with a thumbnail, a title and a one-line description.
+ * `contain` marks product cut-outs (shown whole on the stone well) rather
+ * than photographs (cropped to fill).
  */
+export type MenuItem = {
+  label: string;
+  href: string;
+  description: string;
+  image: string;
+  contain?: boolean;
+  badge?: string;
+};
 export type MenuGroup = {
   label: string;
-  items: { label: string; href: string; description: string }[];
+  eyebrow: string;
+  items: MenuItem[];
 };
 
 export const MENU: MenuGroup[] = [
   {
     label: 'Shop',
+    eyebrow: 'Shop Lumivex',
     items: [
       {
         label: 'All compounds',
         href: '/shop',
         description: 'The full catalogue, every batch verified before listing.',
+        image: '/products/products/tiles/retatrutide-40.webp',
+        contain: true,
       },
       {
         label: 'Metabolic research',
         href: '/shop?category=metabolic',
         description: 'GLP-1, GIP and triple-agonist reference material.',
+        image: '/products/products/tiles/tirzepatide.webp',
+        contain: true,
+        badge: 'Best seller',
       },
       {
         label: 'Recovery research',
         href: '/shop?category=recovery',
         description: 'Pentadecapeptide and actin-regulating blends.',
+        image: '/products/products/tiles/bpc-157-tb-500.webp',
+        contain: true,
       },
       {
         label: 'Cellular & longevity',
         href: '/shop?category=longevity',
         description: 'NAD+ and cellular metabolism reference compounds.',
+        image: '/products/products/tiles/nad.webp',
+        contain: true,
       },
     ],
   },
   {
     label: 'Standards',
+    eyebrow: 'How batches are verified',
     items: [
       {
         label: 'How we test',
-        href: '/#standards',
+        href: '/#why-us',
         description: 'The assay process behind every batch number.',
+        image: '/images/reviews/analytical.jpg',
       },
       {
         label: 'Certificates of analysis',
-        href: '/#standards',
+        href: '/#why-us',
         description: 'Batch-level purity and concentration reports.',
+        image: '/images/reviews/certificates.jpg',
       },
       {
         label: 'Cold-chain handling',
         href: '/shipping-policy',
         description: 'How compounds are stored, sealed and shipped.',
+        image: '/images/reviews/cold-chain.jpg',
       },
     ],
   },
   {
     label: 'Explore',
+    eyebrow: 'About Lumivex',
     items: [
       {
         label: 'About Lumivex',
-        href: '/#about',
+        href: '/about',
         description: 'Who we supply and why we document everything.',
+        image: '/images/story/make.jpg',
       },
       {
-        label: 'Supply programme',
-        href: '/#programme',
-        description: 'Recurring delivery for ongoing research protocols.',
-      },
-      {
-        label: 'Questions',
-        href: '/#faq',
-        description: 'Ordering, documentation, storage and returns.',
-      },
-      {
-        label: 'Press release',
-        href: '/press-release',
-        description: 'Announcements and company statements.',
+        label: 'Contact',
+        href: '/contact',
+        description: 'Sourcing questions, order help and batch documents.',
+        image: '/images/reviews/support.jpg',
       },
     ],
   },
@@ -150,31 +229,37 @@ export const PRODUCT_LINES = [
   {
     label: 'Metabolic',
     slug: 'metabolic',
-    image: '/images/collage3.jpg',
+    image: '/images/shop/retatrutide-40.webp',
     count: 3,
   },
   {
     label: 'Recovery',
     slug: 'recovery',
-    image: '/images/whyus3new-seo.webp',
+    image: '/images/shop/bpc-157-tb-500.webp',
     count: 1,
   },
   {
-    label: 'Skin & matrix',
+    label: 'Skin & hair',
     slug: 'aesthetic',
-    image: '/images/collage4.jpg',
+    image: '/images/shop/skin-and-hair.webp',
     count: 1,
+  },
+  {
+    label: 'Growth factor',
+    slug: 'growth',
+    image: '/images/shop/tesamorelin.webp',
+    count: 2,
   },
   {
     label: 'Longevity',
     slug: 'longevity',
-    image: '/images/hero.jpg',
-    count: 1,
+    image: '/images/shop/nad.webp',
+    count: 2,
   },
   {
     label: 'Blends',
     slug: 'blend',
-    image: '/images/about-seo.webp',
+    image: '/images/shop/bpc-157-tb-500.webp',
     count: 2,
   },
 ];
@@ -187,6 +272,9 @@ export const PRODUCT_LINE_MAP: Record<string, string[]> = {
   'glow-70mg': ['aesthetic', 'blend'],
   'bpc-157-tb-500-40mg': ['recovery', 'blend'],
   'nad-plus-1000mg': ['longevity'],
+  'cjc-1295-10mg': ['growth'],
+  'tesamorelin-20mg': ['growth'],
+  'mots-c-40mg': ['longevity'],
 };
 
 /**
@@ -306,20 +394,103 @@ export const EXPERTS = [
 ];
 
 /** Three-step process strip. A genuine sequence, so it carries step numbers. */
+/**
+ * Bench-to-pen process. Each step names the record it leaves behind, so the
+ * homepage section can show what a lab can actually ask to see.
+ */
+export const PROCESS = {
+  eyebrow: 'From bench to sealed pen',
+  heading: 'How each pen is prepared',
+  intro:
+    'Three steps between the lab bench and the sealed pen. Each one leaves a record you can ask to see, so nothing about a batch rests on our word alone.',
+};
+
 export const PROCESS_STEPS = [
   {
     title: 'Synthesise',
     text: 'APIs are produced in our own facility under controlled clean-room conditions, with no third-party resellers in the chain.',
+    record: 'Batch record',
+    image: '/images/process/synthesise.jpg',
   },
   {
     title: 'Verify',
     text: 'Independent purity and concentration testing on every batch before a single unit is allocated to an order.',
+    record: 'Janoshik certificate',
+    image: '/images/process/verify.jpg',
   },
   {
     title: 'Seal',
     text: 'Cold-stored and tamper-sealed, with accurate labelling and a batch number that resolves to its certificate.',
+    record: 'Batch number on the label',
+    image: '/images/process/seal.jpg',
   },
 ];
+
+/**
+ * Homepage "Our story" rail. Each chapter is one plain habit the company is
+ * built on; hotspots sit over the photograph at x/y percentages and name
+ * the thing in frame that the habit depends on.
+ */
+export const STORY = {
+  eyebrow: 'Our story',
+  heading: 'Built on getting the basics right.',
+  intro:
+    'Lumivex supplies laboratories across the UK and EU with research-grade peptides. We built the company around four plain habits: make it ourselves, have someone else check it, document everything, and answer the phone.',
+  dragHint: 'Drag to follow the story',
+  chapters: [
+    {
+      title: 'We make it ourselves',
+      text: 'Synthesised in-house under controlled clean-room conditions, with no resellers in the chain.',
+      image: '/images/story/make.jpg',
+      size: 'wide',
+      hotspots: [
+        { x: 22, y: 42, label: 'Laminar-flow hood' },
+        { x: 46, y: 56, label: 'Controlled fill bench' },
+        { x: 88, y: 60, label: 'Calibrated instruments' },
+      ],
+    },
+    {
+      title: 'Paperwork that matches',
+      text: 'Every batch is released with a certificate tied to its own batch number.',
+      image: '/images/story/paperwork.jpg',
+      size: 'narrow',
+      hotspots: [
+        { x: 30, y: 55, label: 'Certificate per batch' },
+        { x: 66, y: 57, label: 'Batch number on the carton' },
+      ],
+    },
+    {
+      title: 'Someone else checks it',
+      text: 'Purity and concentration are measured by Janoshik Analytical, an independent laboratory.',
+      image: '/images/story/check.jpg',
+      size: 'wide',
+      hotspots: [
+        { x: 32, y: 51, label: 'Purity assay' },
+        { x: 59, y: 30, label: 'Chromatogram per batch' },
+        { x: 74, y: 52, label: 'Concentration measured' },
+      ],
+    },
+    {
+      title: 'Shipped cold, answered by people',
+      text: 'Held at 2–8°C, packed in insulated shippers, and questions answered by someone who has read the batch record.',
+      image: '/images/story/ship.jpg',
+      size: 'wide',
+      hotspots: [
+        { x: 41, y: 50, label: 'Insulated shippers' },
+        { x: 75, y: 42, label: 'Held at 2–8°C' },
+      ],
+    },
+  ],
+} as const;
+
+/** Closing call to action above the FAQ. */
+export const ORDER_CTA = {
+  eyebrow: 'Ready when your lab is',
+  heading: 'Order the compound. The paperwork comes with it.',
+  body: 'Browse the catalogue, check the batch data on each listing, and place your order with the documentation already in hand.',
+  cta: 'Browse the catalogue',
+  href: '/shop',
+};
 
 export const FAQS = [
   {
@@ -359,6 +530,12 @@ export type Product = {
   price: string;
   /** Numeric price in USD, used for cart maths. */
   priceValue: number;
+  /**
+   * Listed but not yet purchasable — no price set, and no line for it on the
+   * backend. The card and detail page show "Price on enquiry" and point at
+   * the contact form instead of the cart.
+   */
+  enquiryOnly?: boolean;
   /** Assayed purity — set only where a third-party report states one. */
   purity?: string;
   image: string;
@@ -405,7 +582,7 @@ export const PRODUCTS: Product[] = [
     price: '$100',
     priceValue: 100,
     purity: '99.85%',
-    image: '/products/tirzepatide.jpg',
+    image: '/images/shop/tirzepatide.webp',
     tile: {
       src: '/products/products/tiles/tirzepatide.webp',
       hover: '/products/products/tiles/tirzepatide-hover.webp',
@@ -470,7 +647,7 @@ export const PRODUCTS: Product[] = [
     price: '$100',
     priceValue: 100,
     purity: '99.21%',
-    image: '/products/retatrutide-20.jpg',
+    image: '/images/shop/retatrutide-20.webp',
     tile: {
       src: '/products/products/tiles/retatrutide.webp',
       hover: '/products/products/tiles/retatrutide-hover.webp',
@@ -534,7 +711,7 @@ export const PRODUCTS: Product[] = [
     price: '$180',
     priceValue: 180,
     purity: '99.269%',
-    image: '/products/retatrutide-40.jpg',
+    image: '/images/shop/retatrutide-40.webp',
     tile: {
       src: '/products/products/tiles/retatrutide-40.webp',
       hover: '/products/products/tiles/retatrutide-40-hover.webp',
@@ -597,7 +774,7 @@ export const PRODUCTS: Product[] = [
       'A 70mg three-compound reference blend of GHK-Cu, BPC-157 and TB-500 supplied in a sealed pre-filled research device for controlled laboratory R&D applications.',
     price: '$100',
     priceValue: 100,
-    image: '/products/glow.jpg',
+    image: '/images/shop/glow.webp',
     tile: {
       src: '/products/products/tiles/glow-pro.webp',
       hover: '/products/products/tiles/glow-hover.webp',
@@ -655,7 +832,7 @@ export const PRODUCTS: Product[] = [
       'A combined pentadecapeptide and actin-regulating peptide reference blend supplied for in vitro cell-signalling and angiogenesis assay work.',
     price: '$130',
     priceValue: 130,
-    image: '/products/bpc.jpg',
+    image: '/images/shop/bpc-157-tb-500.webp',
     tile: { src: '/products/products/tiles/bpc-157-tb-500.webp' },
     gallery: [
       '/images/bpc/bpcfrontnew.jpg',
@@ -710,7 +887,7 @@ export const PRODUCTS: Product[] = [
       'Nicotinamide adenine dinucleotide supplied as a reference material for in vitro cellular metabolism and mitochondrial research.',
     price: '$140',
     priceValue: 140,
-    image: '/products/nad.jpg',
+    image: '/images/shop/nad.webp',
     tile: {
       src: '/products/products/tiles/nad.webp',
       hover: '/products/products/tiles/nad-hover.webp',
@@ -738,6 +915,120 @@ export const PRODUCTS: Product[] = [
     details: {
       contents:
         'Each NAD+ 1,000mg kit includes:\n2 × Pre-filled NAD+ pens (500mg each)\nResearch information sheet',
+      storage: 'Store refrigerated (2–8°C). Do not freeze.',
+    },
+  },
+  /* The three below are listed from their cartons only. No Janoshik report
+     has been issued for them yet, so they carry no purity, fill volume or
+     batch number, and `enquiryOnly` keeps them out of the cart until a price
+     is set against the backend. Remove that flag and add `price` /
+     `priceValue` once both exist. */
+  {
+    id: 'cjc-1295-10',
+    slug: 'cjc-1295-10mg',
+    name: 'CJC-1295 10mg',
+    tag: 'R&D Only',
+    category: 'Growth Factor Research',
+    description:
+      'CJC-1295 without DAC, supplied as a reference peptide for in vitro growth-factor and receptor-signalling research.',
+    price: 'Price on enquiry',
+    priceValue: 0,
+    enquiryOnly: true,
+    image: '/images/shop/cjc-1295.webp',
+    tile: { src: '/products/products/tiles/cjc-1295.webp' },
+    gallery: [
+      '/images/shop/cjc-1295.webp',
+      '/products/products/detail/cjc-1295-box.webp',
+      '/products/products/tiles/cjc-1295.webp',
+    ],
+    longDescription:
+      'CJC-1295 (without DAC) reference peptide supplied for laboratory analysis and in vitro study only. Provided in a fixed-volume sealed pre-filled device for controlled laboratory R&D applications.',
+    specs: [
+      { label: 'Variant', value: 'Without DAC' },
+      { label: 'Total Contents', value: '10mg — 25 doses of 400 mcg' },
+      { label: 'Form', value: 'Pre-filled research pen' },
+      { label: 'Storage', value: '2–8°C refrigerated (do not freeze)' },
+    ],
+    highlights: [
+      'Validated cold-chain handling',
+      'Sealed, tamper-evident device',
+      'Secure procurement logs',
+    ],
+    details: {
+      contents:
+        'Each CJC-1295 10mg kit includes:\n1 × Pre-filled CJC-1295 research pen (25 doses of 400 mcg)\nResearch information sheet',
+      storage: 'Store refrigerated (2–8°C). Do not freeze.',
+    },
+  },
+  {
+    id: 'mots-c-40',
+    slug: 'mots-c-40mg',
+    name: 'MOTS-C 40mg',
+    tag: 'R&D Only',
+    category: 'Cellular Metabolism Research',
+    description:
+      'Mitochondrial-derived peptide supplied as a reference material for in vitro cellular metabolism research.',
+    price: 'Price on enquiry',
+    priceValue: 0,
+    enquiryOnly: true,
+    image: '/images/shop/mots-c.webp',
+    tile: { src: '/products/products/tiles/mots-c.webp' },
+    gallery: [
+      '/images/shop/mots-c.webp',
+      '/products/products/detail/mots-c-box.webp',
+      '/products/products/tiles/mots-c.webp',
+    ],
+    longDescription:
+      'MOTS-C reference peptide supplied for laboratory analysis and in vitro study only. Provided in a fixed-volume sealed pre-filled device for controlled laboratory R&D applications.',
+    specs: [
+      { label: 'Total Contents', value: '40mg — 4 doses of 10mg' },
+      { label: 'Form', value: 'Pre-filled research pen' },
+      { label: 'Storage', value: '2–8°C refrigerated (do not freeze)' },
+    ],
+    highlights: [
+      'Validated cold-chain handling',
+      'Sealed, tamper-evident device',
+      'Secure procurement logs',
+    ],
+    details: {
+      contents:
+        'Each MOTS-C 40mg kit includes:\n1 × Pre-filled MOTS-C research pen (4 doses of 10mg)\nResearch information sheet',
+      storage: 'Store refrigerated (2–8°C). Do not freeze.',
+    },
+  },
+  {
+    id: 'tesamorelin-20',
+    slug: 'tesamorelin-20mg',
+    name: 'Tesamorelin 20mg',
+    tag: 'R&D Only',
+    category: 'Growth Factor Research',
+    description:
+      'Growth-hormone-releasing factor analogue supplied as a reference peptide for in vitro endocrine research.',
+    price: 'Price on enquiry',
+    priceValue: 0,
+    enquiryOnly: true,
+    image: '/images/shop/tesamorelin.webp',
+    tile: { src: '/products/products/tiles/tesamorelin.webp' },
+    gallery: [
+      '/images/shop/tesamorelin.webp',
+      '/products/products/detail/tesamorelin-box.webp',
+      '/products/products/tiles/tesamorelin.webp',
+    ],
+    longDescription:
+      'Tesamorelin reference peptide supplied for laboratory analysis and in vitro study only. Provided in a fixed-volume sealed pre-filled device for controlled laboratory R&D applications.',
+    specs: [
+      { label: 'Total Contents', value: '20mg — 10 doses of 2mg' },
+      { label: 'Form', value: 'Pre-filled research pen' },
+      { label: 'Storage', value: '2–8°C refrigerated (do not freeze)' },
+    ],
+    highlights: [
+      'Validated cold-chain handling',
+      'Sealed, tamper-evident device',
+      'Secure procurement logs',
+    ],
+    details: {
+      contents:
+        'Each Tesamorelin 20mg kit includes:\n1 × Pre-filled Tesamorelin research pen (10 doses of 2mg)\nResearch information sheet',
       storage: 'Store refrigerated (2–8°C). Do not freeze.',
     },
   },
@@ -904,7 +1195,7 @@ export const FOOTER_COLUMNS = [
   {
     heading: 'Standards',
     links: [
-      { label: 'How we test', href: '/#standards' },
+      { label: 'How we test', href: '/#why-us' },
       { label: 'Quality commitments', href: '/#why-us' },
       { label: 'Cold-chain handling', href: '/shipping-policy' },
       { label: 'Press release', href: '/press-release' },
@@ -923,7 +1214,7 @@ export const FOOTER_COLUMNS = [
     heading: 'Support',
     links: [
       { label: 'Questions', href: '/#faq' },
-      { label: 'Contact', href: '/#contact' },
+      { label: 'Contact', href: '/contact' },
       { label: 'Shipping policy', href: '/shipping-policy' },
       { label: 'Refund policy', href: '/refund-policy' },
     ],
@@ -940,10 +1231,10 @@ export const FOOTER_COLUMNS = [
 /** Kept for any view still importing the previous two-group shape. */
 export const FOOTER_LINKS = {
   navigate: [
-    { label: 'About Us', href: '#about' },
+    { label: 'About Us', href: '/about' },
     { label: 'Shop', href: '/shop' },
     { label: 'Why Us', href: '#why-us' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Contact', href: '/contact' },
   ],
   legal: [
     { label: 'Press Release', href: '/press-release' },
@@ -952,4 +1243,109 @@ export const FOOTER_LINKS = {
     { label: 'Privacy Policy', href: '/privacy-policy' },
     { label: 'Terms of Service', href: '/terms-of-service' },
   ],
+};
+
+/**
+ * /about — "What is Lumivex?", laid out on drinkag1.com/what-is-ag1.
+ * Kit figures are not written here: the page reads them from the featured
+ * product's Janoshik report (`ABOUT.kit.slug`).
+ */
+export const ABOUT = {
+  title: 'What is Lumivex?',
+  intro:
+    'Lumivex is a UK and EU supplier of research-grade peptides and reference compounds — made in our own facility, assayed by an independent laboratory, and shipped with the certificate for the batch in the box.',
+  documented: {
+    heading: ['Less guesswork.', 'More documentation.'],
+    body: 'Sourcing a reference compound usually means taking someone’s word for it. Every Lumivex kit arrives with the evidence instead:',
+    checks: [
+      'Independent assay',
+      'Batch number on the pack',
+      'Certificate of analysis',
+      'Sealed cold packaging',
+    ],
+    image: '/products/products/Alluvi Tirzepatide Pen with Soft Shadow-13.png',
+  },
+  kit: {
+    heading: 'What’s in a kit?',
+    slug: 'tirzepatide-40mg',
+    body: 'Every figure below is read from the published Janoshik report for this batch — not from a label.',
+  },
+  not: {
+    heading: 'What Lumivex is not',
+    items: [
+      {
+        title: 'For human or veterinary use',
+        text: 'Every compound is supplied for in vitro laboratory research only, and sold only on that basis.',
+      },
+      {
+        title: 'A reseller',
+        text: 'We make what we sell in our own synthesis facility. Nothing passes through an intermediate supplier on its way to you.',
+      },
+      {
+        title: 'A medical supplier',
+        text: 'We do not supply pharmaceutical products and make no therapeutic or clinical claims about any compound.',
+      },
+    ],
+  },
+  compare: {
+    heading: 'How does Lumivex compare?',
+    columns: ['Reseller listing', 'Unlabelled vial'],
+    rows: [
+      { label: 'Made in our own facility', marks: [false, false] },
+      { label: 'Independent assay before listing', marks: [false, false] },
+      { label: 'Certificate tied to the batch number', marks: [false, false] },
+      { label: 'Batch number on the pack', marks: [true, false] },
+      { label: 'Fixed-volume sealed format', marks: [true, false] },
+      { label: 'Cold-chain dispatch', marks: [false, false] },
+      { label: 'Support from the catalogue team', marks: [false, false] },
+    ],
+    note: 'Other suppliers vary. An empty circle means the item is not routinely documented for that kind of listing.',
+  },
+  start: {
+    heading: 'Start with a verified batch',
+    eyebrow: 'Every order includes:',
+    image: '/images/hero-products.webp',
+    included: [
+      {
+        title: 'Certificate of analysis',
+        text: 'The Janoshik report for the batch you receive',
+      },
+      {
+        title: 'Research information sheet',
+        text: 'Contents, fill volume and storage for the kit',
+      },
+      {
+        title: 'Cold-chain shipping',
+        text: 'Sealed and cold-stored before dispatch across the UK & EU',
+      },
+    ],
+    cta: 'Browse the catalogue',
+    href: '/shop',
+    ticks: ['Third-party tested', 'Free UK & EU shipping', 'Researcher support'],
+  },
+};
+
+/** /contact — the one place enquiries come in. */
+export const CONTACT = {
+  title: 'Contact us',
+  intro:
+    'For laboratories and institutions sourcing research-grade peptides with full documentation and batch traceability. A researcher who knows the catalogue replies, usually within one working day.',
+  email: 'research@lumivex.store',
+  details: [
+    { label: 'Reply time', value: 'Within one working day' },
+    { label: 'Supply region', value: 'United Kingdom and European Union' },
+    { label: 'Compliance', value: 'Research use only — not for human or veterinary use' },
+  ],
+  shortcuts: [
+    { label: 'Track an order', href: '/account/track' },
+    { label: 'Common questions', href: '/#faq' },
+    { label: 'Shipping policy', href: '/shipping-policy' },
+    { label: 'Refund policy', href: '/refund-policy' },
+  ],
+  topics: ['Sourcing a compound', 'An existing order', 'Batch documentation', 'Something else'],
+  newsletter: {
+    eyebrow: 'The Lumivex batch list',
+    heading: 'New batch drops, assay reports and storage notes.',
+    body: 'Occasional email when a new lot is verified and listed. No spam.',
+  },
 };

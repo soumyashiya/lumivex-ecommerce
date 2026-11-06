@@ -2,15 +2,23 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+type Props = {
+  src: string;
+  className?: string;
+  /** False while the slide is off-screen, so idle slides don't decode. */
+  active?: boolean;
+};
+
 /**
  * The hero's still life, as a short silent loop.
  *
- * Playback is started from script rather than the `autoplay` attribute so the
- * clip can never move before we've read the visitor's motion preference. When
- * reduced motion is preferred it holds on its first frame and gains controls,
- * so the footage is still reachable without the hero animating unasked.
+ * Playback is driven from script rather than the `autoplay` attribute, so the
+ * clip can never move before we've read the visitor's motion preference or
+ * before its slide is the one on show. When reduced motion is preferred it
+ * holds on its first frame and gains controls, so the footage is still
+ * reachable without the hero animating unasked.
  */
-export default function HeroVideo({ className }: { className?: string }) {
+export default function HeroVideo({ src, className, active = true }: Props) {
   const ref = useRef<HTMLVideoElement>(null);
   const [reduced, setReduced] = useState(false);
 
@@ -22,9 +30,9 @@ export default function HeroVideo({ className }: { className?: string }) {
       setReduced(query.matches);
       if (!video) return;
 
-      if (query.matches) {
+      if (query.matches || !active) {
         video.pause();
-        video.currentTime = 0;
+        if (query.matches) video.currentTime = 0;
       } else {
         // Rejected play() just leaves the first frame showing, which is a fine
         // resting state — nothing to recover from.
@@ -35,7 +43,7 @@ export default function HeroVideo({ className }: { className?: string }) {
     apply();
     query.addEventListener('change', apply);
     return () => query.removeEventListener('change', apply);
-  }, []);
+  }, [active]);
 
   return (
     <video
@@ -45,14 +53,14 @@ export default function HeroVideo({ className }: { className?: string }) {
       loop
       playsInline
       preload="metadata"
-      controls={reduced}
-      aria-hidden={reduced ? undefined : true}
-      tabIndex={reduced ? undefined : -1}
+      controls={reduced && active}
+      aria-hidden={reduced && active ? undefined : true}
+      tabIndex={reduced && active ? undefined : -1}
     >
       {/* H.264 transcode of hero-update.mp4. The original is HEVC, which
           Firefox can't decode at all and Chrome only plays where the platform
           supplies a hardware decoder — so it must not be the source here. */}
-      <source src="/videos/hero-update-h264.mp4" type="video/mp4" />
+      <source src={src} type="video/mp4" />
     </video>
   );
 }

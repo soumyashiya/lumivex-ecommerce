@@ -111,7 +111,7 @@ export default function Comparison() {
 
           <div className="relative aspect-[4/3] overflow-hidden rounded-card bg-stone shadow-[0_30px_60px_-30px_rgba(15,46,47,0.45)]">
             <Image
-              src="/products/retatrutide-20.jpg"
+              src="/images/shop/retatrutide-20.webp"
               alt="Sealed ALLUVI Retatrutide 20 mg carton with its pre-filled research pen"
               fill
               sizes="(max-width: 1023px) 100vw, 46vw"

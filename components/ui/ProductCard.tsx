@@ -69,20 +69,24 @@ export default function ProductCard({
         )}
 
         {badge && (
-          <span className="pointer-events-none absolute left-md top-md rounded-sm bg-cool-300 px-sm py-xxs text-xs uppercase text-white">
+          <span className="pointer-events-none absolute left-md top-md rounded-sm bg-green px-sm py-xxs text-xs uppercase text-white">
             {badge}
           </span>
         )}
 
-        <button
-          type="button"
-          onClick={quickAdd}
-          aria-label={`Add ${product.name} to cart`}
-          data-touch-target
-          className="absolute right-md top-md z-10 flex size-[36px] items-center justify-center rounded-pill bg-white text-black transition-colors duration-200 ease-ag hover:bg-black hover:text-white"
-        >
-          {added ? <Check size={16} /> : <Plus size={16} />}
-        </button>
+        {/* Quick add is the only control on the card, so a product with no
+            price simply doesn't get one — the title link still opens it. */}
+        {!product.enquiryOnly && (
+          <button
+            type="button"
+            onClick={quickAdd}
+            aria-label={`Add ${product.name} to cart`}
+            data-touch-target
+            className="absolute right-md top-md z-10 flex size-[36px] items-center justify-center rounded-pill bg-white text-black transition-colors duration-200 ease-ag hover:bg-black hover:text-white"
+          >
+            {added ? <Check size={16} /> : <Plus size={16} />}
+          </button>
+        )}
         <span aria-live="polite" className="sr-only">
           {added ? `${product.name} added to cart` : ''}
         </span>

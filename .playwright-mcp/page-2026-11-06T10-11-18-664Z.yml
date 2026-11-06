@@ -1,0 +1,235 @@
+- generic [active] [ref=f8e1]:
+  - alert [ref=f8e2]
+  - generic [ref=f8e3]:
+    - link [ref=f8e4] [cursor=pointer]:
+      - /url: /
+      - img "Logo" [ref=f8e5]
+    - generic [ref=f8e6]:
+      - button "Produtos & Aplicações" [ref=f8e7] [cursor=pointer]
+      - link [ref=f8e8] [cursor=pointer]:
+        - /url: /documents
+        - button "Documentos Técnicos" [ref=f8e9]
+      - link [ref=f8e10] [cursor=pointer]:
+        - /url: /about-us
+        - button "Quem Somos" [ref=f8e11]
+      - link [ref=f8e12] [cursor=pointer]:
+        - /url: /resellers
+        - button "Onde Comprar" [ref=f8e13]
+    - generic [ref=f8e14]:
+      - link [ref=f8e15] [cursor=pointer]:
+        - /url: /contact
+        - button [ref=f8e16]:
+          - paragraph [ref=f8e17]: Contacto
+      - button [ref=f8e18] [cursor=pointer]
+      - button [ref=f8e20] [cursor=pointer]
+      - button [ref=f8e21] [cursor=pointer]
+  - generic [ref=f8e24]:
+    - main [ref=f8e25]:
+      - generic [ref=f8e26]:
+        - generic [ref=f8e28]:
+          - generic [ref=f8e29]:
+            - paragraph
+            - heading "O futuro da iluminação passa por nós." [level=1] [ref=f8e30]
+          - generic:
+            - img "Image 1"
+            - img "Image 2"
+            - img "Image 3"
+            - img "Image 4"
+            - img "Image 5"
+            - img "Image 6"
+        - generic [ref=f8e35]:
+          - generic [ref=f8e36]:
+            - heading "26" [level=1]
+            - generic [ref=f8e43]:
+              - button "Anterior" [disabled]:
+                - img "Anterior"
+              - paragraph [ref=f8e44]: 1 / 11
+              - button [ref=f8e45] [cursor=pointer]:
+                - img "Seguinte" [ref=f8e46]
+          - generic [ref=f8e47]:
+            - heading "25" [level=1]
+            - generic [ref=f8e48]:
+              - paragraph [ref=f8e50]: "2025"
+              - generic [ref=f8e54]:
+                - paragraph
+                - heading "Lançamento da NEXUS" [level=1] [ref=f8e55]
+                - paragraph [ref=f8e56]: "Apresentação da armadura linear modular NEXUS: multi-potência e dotada de tecnologia 3CCT, com um design inteligente que permite a conexão entre luminárias em diversos ângulos criando as mais diversas formas, para projetos versáteis e personalizados."
+              - generic [ref=f8e57]:
+                - button "Anterior" [disabled]:
+                  - img "Anterior"
+                - paragraph [ref=f8e58]: 1 / 11
+                - button [ref=f8e59] [cursor=pointer]:
+                  - img "Seguinte" [ref=f8e60]
+          - generic [ref=f8e61]:
+            - heading "24" [level=1]
+            - generic [ref=f8e62]:
+              - paragraph [ref=f8e64]: "2024"
+              - generic [ref=f8e68]:
+                - paragraph
+                - heading "10 Anos da LEDUP & Feira Elétrica" [level=1] [ref=f8e69]
+                - paragraph [ref=f8e70]: Celebramos uma década de inovação com um stand emblemático na Feira Elétrica. Um marco de afirmação e proximidade com o setor.
+              - generic [ref=f8e71]:
+                - button "Anterior" [disabled]:
+                  - img "Anterior"
+                - paragraph [ref=f8e72]: 1 / 11
+                - button [ref=f8e73] [cursor=pointer]:
+                  - img "Seguinte" [ref=f8e74]
+          - generic [ref=f8e75]:
+            - heading "24" [level=1]
+            - generic [ref=f8e76]:
+              - paragraph [ref=f8e78]: "2024"
+              - generic [ref=f8e82]:
+                - paragraph
+                - heading "Crescimento da Família LEDUP" [level=1] [ref=f8e83]
+                - paragraph [ref=f8e84]: Reforçámos a nossa equipa com novos talentos em diversas áreas. Uma aposta estratégica para apoiar o crescimento e a resposta mais ágil às exigências do mercado.
+              - generic [ref=f8e85]:
+                - button "Anterior" [disabled]:
+                  - img "Anterior"
+                - paragraph [ref=f8e86]: 1 / 11
+                - button [ref=f8e87] [cursor=pointer]:
+                  - img "Seguinte" [ref=f8e88]
+          - generic [ref=f8e89]:
+            - heading "21" [level=1]
+            - generic [ref=f8e90]:
+              - paragraph [ref=f8e92]: "2021"
+              - generic [ref=f8e96]:
+                - paragraph
+                - heading "Inauguração do Showroom em Lisboa" [level=1] [ref=f8e97]
+                - paragraph [ref=f8e98]: Um espaço pensado para apresentar soluções LEDUP ao vivo e criar ligações mais próximas com parceiros e profissionais.
+              - generic [ref=f8e99]:
+                - button "Anterior" [disabled]:
+                  - img "Anterior"
+                - paragraph [ref=f8e100]: 1 / 11
+                - button [ref=f8e101] [cursor=pointer]:
+                  - img "Seguinte" [ref=f8e102]
+          - generic [ref=f8e103]:
+            - heading "20" [level=1]
+            - generic [ref=f8e104]:
+              - paragraph [ref=f8e106]: "2020"
+              - generic [ref=f8e110]:
+                - paragraph
+                - heading "Lançamento da Gama SMART CONTROL" [level=1] [ref=f8e111]
+                - paragraph [ref=f8e112]: Introdução de sistemas inteligentes de controlo de iluminação. Uma aposta na conectividade, eficiência e futuro da iluminação.
+              - generic [ref=f8e113]:
+                - button "Anterior" [disabled]:
+                  - img "Anterior"
+                - paragraph [ref=f8e114]: 1 / 11
+                - button [ref=f8e115] [cursor=pointer]:
+                  - img "Seguinte" [ref=f8e116]
+          - generic [ref=f8e117]:
+            - heading "19" [level=1]
+            - generic [ref=f8e118]:
+              - paragraph [ref=f8e120]: "2019"
+              - generic [ref=f8e124]:
+                - paragraph
+                - heading "Expansão da Gama de Produtos" [level=1] [ref=f8e125]
+                - paragraph [ref=f8e126]: Reforço do portefólio com novas soluções técnicas e estéticas, ajustadas às necessidades dos diferentes setores de atuação.
+              - generic [ref=f8e127]:
+                - button "Anterior" [disabled]:
+                  - img "Anterior"
+                - paragraph [ref=f8e128]: 1 / 11
+                - button [ref=f8e129] [cursor=pointer]:
+                  - img "Seguinte" [ref=f8e130]
+          - generic [ref=f8e131]:
+            - heading "19" [level=1]
+            - generic [ref=f8e132]:
+              - paragraph [ref=f8e134]: "2019"
+              - generic [ref=f8e138]:
+                - paragraph
+                - heading "Novas Instalações" [level=1] [ref=f8e139]
+                - paragraph [ref=f8e140]: Mudança para instalações de maior dimensão, com melhores condições logísticas, administrativas e de armazenamento. Um passo essencial para sustentar o crescimento e a qualidade dos nossos serviços.
+              - generic [ref=f8e141]:
+                - button "Anterior" [disabled]:
+                  - img "Anterior"
+                - paragraph [ref=f8e142]: 1 / 11
+                - button [ref=f8e143] [cursor=pointer]:
+                  - img "Seguinte" [ref=f8e144]
+          - generic [ref=f8e145]:
+            - heading "18" [level=1]
+            - generic [ref=f8e146]:
+              - paragraph [ref=f8e148]: "2018"
+              - generic [ref=f8e152]:
+                - paragraph
+                - heading "Reconhecimento como Marca de Referência" [level=1] [ref=f8e153]
+                - paragraph [ref=f8e154]: LEDUP consolida-se no mercado português pela qualidade, inovação e fiabilidade dos seus produtos e soluções.
+              - generic [ref=f8e155]:
+                - button "Anterior" [disabled]:
+                  - img "Anterior"
+                - paragraph [ref=f8e156]: 1 / 11
+                - button [ref=f8e157] [cursor=pointer]:
+                  - img "Seguinte" [ref=f8e158]
+          - generic [ref=f8e159]:
+            - heading "16" [level=1]
+            - generic [ref=f8e160]:
+              - paragraph [ref=f8e162]: "2016"
+              - generic [ref=f8e166]:
+                - paragraph
+                - heading "Estratégia de Distribuição Nacional" [level=1] [ref=f8e167]
+                - paragraph [ref=f8e168]: Implementação de uma rede de revenda de norte a sul do país, garantindo maior presença e acesso aos produtos LEDUP.
+              - generic [ref=f8e169]:
+                - button "Anterior" [disabled]:
+                  - img "Anterior"
+                - paragraph [ref=f8e170]: 1 / 11
+                - button [ref=f8e171] [cursor=pointer]:
+                  - img "Seguinte" [ref=f8e172]
+          - generic [ref=f8e173]:
+            - heading "14" [level=1]
+            - generic [ref=f8e174]:
+              - paragraph [ref=f8e176]: "2014"
+              - generic [ref=f8e180]:
+                - paragraph
+                - heading "Nascimento da Marca LEDUP" [level=1] [ref=f8e181]
+                - paragraph [ref=f8e182]: Surge no setor da iluminação LED, com a missão de oferecer soluções eficientes, tecnológicas e sustentáveis.
+              - generic [ref=f8e183]:
+                - button "Anterior" [disabled]:
+                  - img "Anterior"
+                - paragraph [ref=f8e184]: 1 / 11
+                - button [ref=f8e185] [cursor=pointer]:
+                  - img "Seguinte" [ref=f8e186]
+    - generic [ref=f8e205]:
+      - heading "A confiança que ilumina os seus projetos." [level=1] [ref=f8e206]
+      - generic [ref=f8e207]:
+        - generic [ref=f8e208]:
+          - heading "Recursos" [level=4] [ref=f8e209]
+          - generic [ref=f8e210]:
+            - link "Novidades" [ref=f8e211] [cursor=pointer]:
+              - /url: /documents
+            - link "Brochuras" [ref=f8e212] [cursor=pointer]:
+              - /url: /documents
+            - link "Catálogo" [ref=f8e213] [cursor=pointer]:
+              - /url: /documents#catalogos
+            - link "Fichas Técnicas" [ref=f8e214] [cursor=pointer]:
+              - /url: /documents#fichas-tecnicas
+        - generic [ref=f8e215]:
+          - heading "Informações" [level=4] [ref=f8e216]
+          - generic [ref=f8e217]:
+            - link "Revendedores" [ref=f8e218] [cursor=pointer]:
+              - /url: /resellers
+            - link "Sobre Nós" [ref=f8e219] [cursor=pointer]:
+              - /url: /about-us
+        - generic [ref=f8e220]:
+          - heading "Categorias" [level=4] [ref=f8e221]
+          - generic [ref=f8e222]:
+            - link "Iluminação Interior" [ref=f8e223] [cursor=pointer]:
+              - /url: /products-list?parent_cat=iluminacao-interior
+            - link "Iluminação Exterior" [ref=f8e224] [cursor=pointer]:
+              - /url: /products-list?parent_cat=iluminacao-exterior
+            - link "LED & Neon" [ref=f8e225] [cursor=pointer]:
+              - /url: /products-list?parent_cat=fitas-led-neon
+            - link "Lâmpadas & Aros" [ref=f8e226] [cursor=pointer]:
+              - /url: /products-list?parent_cat=lampadas-e-aros
+            - link "Indústria & Emergência" [ref=f8e227] [cursor=pointer]:
+              - /url: /products-list?parent_cat=industria-e-emergencia
+            - link "Smart Control" [ref=f8e228] [cursor=pointer]:
+              - /url: /products-list?parent_cat=smart-control
+        - generic [ref=f8e230]:
+          - generic [ref=f8e231]: info@ledup.pt
+          - link "Facebook" [ref=f8e232] [cursor=pointer]:
+            - /url: https://www.facebook.com/ledup.iluminacao.led/
+      - generic [ref=f8e233]:
+        - generic [ref=f8e234]: LEDUP © 2026. Todos os direitos reservados.
+        - generic [ref=f8e235]:
+          - link "Termos e Condições" [ref=f8e236] [cursor=pointer]:
+            - /url: /terms-and-conditions
+          - link "Política de Privacidade" [ref=f8e237] [cursor=pointer]:
+            - /url: /privacy-policy

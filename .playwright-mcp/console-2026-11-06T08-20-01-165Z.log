@@ -1,0 +1,87 @@
+[  623739ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:4100/:0
+[  624409ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:4100/_next/static/chunks/node_modules_react-dom_0kla17-._.js:13920
+[  624506ms] Error: Failed to load external module @swc/helpers-c54ccd786ac384d2/_/_interop_require_default: Error: Cannot find module '@swc/helpers-c54ccd786ac384d2/_/_interop_require_default'
+Require stack:
+- C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\.next\dev\server\chunks\ssr\[root-of-the-server]__0j1t4yx._.js
+- C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\.next\dev\server\chunks\ssr\[turbopack]_runtime.js
+- C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\.next\dev\server\app\page.js
+- C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\node_modules\next\dist\server\require.js
+- C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\node_modules\next\dist\server\load-components.js
+- C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\node_modules\next\dist\build\utils.js
+- C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+- C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\node_modules\next\dist\server\lib\router-server.js
+- C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\node_modules\next\dist\server\lib\start-server.js
+    at Context.externalRequire [as x] (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\.next\dev\server\chunks\ssr\[turbopack]_runtime.js:624:15)
+    at module evaluation (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\.next\dev\server\chunks\ssr\[root-of-the-server]__0j1t4yx._.js:16:35)
+    at <unknown> (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\.next\dev\server\chunks\ssr\[turbopack]_runtime.js:1291:27)
+    at runWithHooks (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\.next\dev\server\chunks\ssr\[turbopack]_runtime.js:1554:9)
+    at instantiateModuleShared (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\.next\dev\server\chunks\ssr\[turbopack]_runtime.js:1289:9)
+    at instantiateModule (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\.next\dev\server\chunks\ssr\[turbopack]_runtime.js:1557:23)
+    at getOrInstantiateModuleFromParent (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\.next\dev\server\chunks\ssr\[turbopack]_runtime.js:1593:23)
+    at Context.commonJsRequire [as r] (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\.next\dev\server\chunks\ssr\[turbopack]_runtime.js:302:12)
+    at module evaluation (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\.next\dev\server\chunks\ssr\[root-of-the-server]__0j1t4yx._.js:240:56)
+    at <unknown> (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\.next\dev\server\chunks\ssr\[turbopack]_runtime.js:1291:27)
+    at runWithHooks (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\.next\dev\server\chunks\ssr\[turbopack]_runtime.js:1554:9)
+    at instantiateModuleShared (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\.next\dev\server\chunks\ssr\[turbopack]_runtime.js:1289:9)
+    at instantiateModule (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\.next\dev\server\chunks\ssr\[turbopack]_runtime.js:1557:23)
+    at getOrInstantiateModuleFromParent (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\.next\dev\server\chunks\ssr\[turbopack]_runtime.js:1593:23)
+    at Context.commonJsRequire [as r] (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\.next\dev\server\chunks\ssr\[turbopack]_runtime.js:302:12)
+    at module evaluation (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\.next\dev\server\chunks\ssr\[root-of-the-server]__0j1t4yx._.js:277:40)
+    at <unknown> (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\.next\dev\server\chunks\ssr\[turbopack]_runtime.js:1291:27)
+    at runWithHooks (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\.next\dev\server\chunks\ssr\[turbopack]_runtime.js:1554:9)
+    at instantiateModuleShared (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\.next\dev\server\chunks\ssr\[turbopack]_runtime.js:1289:9)
+    at instantiateModule (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\.next\dev\server\chunks\ssr\[turbopack]_runtime.js:1557:23)
+    at instantiateRuntimeModule (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\.next\dev\server\chunks\ssr\[turbopack]_runtime.js:1564:12)
+    at getOrInstantiateRuntimeModule (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\.next\dev\server\chunks\ssr\[turbopack]_runtime.js:1577:12)
+    at Object.m (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\.next\dev\server\chunks\ssr\[turbopack]_runtime.js:1599:18)
+    at Object.<anonymous> (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\.next\dev\server\pages\_app.js:3:3)
+    at Module._compile (node:internal/modules/cjs/loader:1830:14)
+    at Object..js (node:internal/modules/cjs/loader:1961:10)
+    at Module.load (node:internal/modules/cjs/loader:1553:32)
+    at Module._load (node:internal/modules/cjs/loader:1355:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1576:12)
+    at mod.require (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\node_modules\next\dist\server\require-hook.js:79:28)
+    at require (node:internal/modules/helpers:153:16)
+    at requirePage (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\node_modules\next\dist\server\require.js:105:80)
+    at loadComponentsImpl (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\node_modules\next\dist\server\load-components.js:89:38)
+    at DevServer.findPageComponentsImpl (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\node_modules\next\dist\server\next-server.js:837:77)
+    at <unknown> (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\node_modules\next\dist\server\next-server.js:819:21)
+    at <unknown> (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\node_modules\next\dist\server\lib\trace\tracer.js:195:36)
+    at NoopContextManager.with (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\node_modules\next\dist\compiled\@opentelemetry\api\index.js:1:7062)
+    at ContextAPI.with (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\node_modules\next\dist\compiled\@opentelemetry\api\index.js:1:518)
+    at NoopTracer.startActiveSpan (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\node_modules\next\dist\compiled\@opentelemetry\api\index.js:1:18093)
+    at ProxyTracer.startActiveSpan (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\node_modules\next\dist\compiled\@opentelemetry\api\index.js:1:18854)
+    at <unknown> (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\node_modules\next\dist\server\lib\trace\tracer.js:164:103)
+    at NoopContextManager.with (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\node_modules\next\dist\compiled\@opentelemetry\api\index.js:1:7062)
+    at ContextAPI.with (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\node_modules\next\dist\compiled\@opentelemetry\api\index.js:1:518)
+    at NextTracerImpl.trace (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\node_modules\next\dist\server\lib\trace\tracer.js:164:28)
+    at DevServer.findPageComponents (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\node_modules\next\dist\server\next-server.js:814:41)
+    at DevServer.findPageComponents (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\node_modules\next\dist\server\dev\next-dev-server.js:705:28)
+    at async DevServer.renderErrorToResponseImpl (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\node_modules\next\dist\server\base-server.js:1753:26)
+    at async pipe.req.req (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\node_modules\next\dist\server\base-server.js:1660:30)
+    at async DevServer.pipeImpl (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\node_modules\next\dist\server\base-server.js:1044:25)
+[  624505ms] [LOG] [HMR] connected @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  624623ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:4100/favicon.ico:0
+[  697046ms] [ERROR] WebSocket connection to 'ws://localhost:4100/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_client_16lnmlo._.js:2343
+[  698059ms] [ERROR] WebSocket connection to 'ws://localhost:4100/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_client_16lnmlo._.js:2343
+[  699081ms] [ERROR] WebSocket connection to 'ws://localhost:4100/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_client_16lnmlo._.js:2343
+[  700091ms] [ERROR] WebSocket connection to 'ws://localhost:4100/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_client_16lnmlo._.js:2343
+[  701106ms] [ERROR] WebSocket connection to 'ws://localhost:4100/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_client_16lnmlo._.js:2343
+[  708082ms] [LOG] [HMR] connected @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  716614ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  716742ms] [LOG] [HMR] connected @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  818501ms] [ERROR] WebSocket connection to 'ws://localhost:4100/_next/webpack-hmr?id=fRoxccWYUnjJfmPKO-Xkj' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_client_0r5nbpw._.js:13422
+[  819507ms] [ERROR] WebSocket connection to 'ws://localhost:4100/_next/webpack-hmr?id=fRoxccWYUnjJfmPKO-Xkj' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_client_0r5nbpw._.js:13422
+[  820515ms] [ERROR] WebSocket connection to 'ws://localhost:4100/_next/webpack-hmr?id=fRoxccWYUnjJfmPKO-Xkj' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_client_0r5nbpw._.js:13422
+[  821526ms] [ERROR] WebSocket connection to 'ws://localhost:4100/_next/webpack-hmr?id=fRoxccWYUnjJfmPKO-Xkj' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_client_0r5nbpw._.js:13422
+[  822540ms] [ERROR] WebSocket connection to 'ws://localhost:4100/_next/webpack-hmr?id=fRoxccWYUnjJfmPKO-Xkj' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_client_0r5nbpw._.js:13422
+[  827545ms] [ERROR] WebSocket connection to 'ws://localhost:4100/_next/webpack-hmr?id=fRoxccWYUnjJfmPKO-Xkj' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_client_0r5nbpw._.js:13422
+[  832566ms] [ERROR] WebSocket connection to 'ws://localhost:4100/_next/webpack-hmr?id=fRoxccWYUnjJfmPKO-Xkj' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_client_0r5nbpw._.js:13422
+[  837577ms] [ERROR] WebSocket connection to 'ws://localhost:4100/_next/webpack-hmr?id=fRoxccWYUnjJfmPKO-Xkj' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_client_0r5nbpw._.js:13422
+[  842585ms] [ERROR] WebSocket connection to 'ws://localhost:4100/_next/webpack-hmr?id=fRoxccWYUnjJfmPKO-Xkj' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_client_0r5nbpw._.js:13422
+[  848014ms] [LOG] [HMR] connected @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  848782ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  848833ms] [LOG] [HMR] connected @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  873043ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  873242ms] [LOG] [Fast Refresh] done in 306ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477

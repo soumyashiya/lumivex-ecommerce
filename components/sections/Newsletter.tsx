@@ -4,18 +4,26 @@ import { useState } from 'react';
 import { newsletter, ApiError } from '@/lib/api';
 import { ArrowRight } from '@/components/ui/Icons';
 
+type Tone = 'dark' | 'light' | 'band';
+
 /**
- * Newsletter sign-up. Renders against either the dark footer field or a
- * light page background; the submit control collapses into the input as an
- * arrow, as on the reference footer.
+ * Newsletter sign-up, in three dressings:
  *
- * Network behaviour is unchanged — this still posts through newsletter.subscribe.
+ *   dark / light  the footer field and its page-ground twin, where the submit
+ *                 control collapses into the input as an arrow.
+ *   band          the wide sign-up strip — field and a filled button side by
+ *                 side, with the consent line set small and uppercase beneath.
+ *
+ * Network behaviour is identical in all three: this posts through
+ * newsletter.subscribe, and consent is always an explicit tick. The band sets
+ * that tick small, but it is never pre-checked and never implied by submitting
+ * — these addresses are collected in the UK and EU.
  */
 export default function Newsletter({
   tone = 'dark',
   source = 'footer',
 }: {
-  tone?: 'dark' | 'light';
+  tone?: Tone;
   source?: string;
 }) {
   const [email, setEmail] = useState('');
@@ -27,6 +35,7 @@ export default function Newsletter({
   const [error, setError] = useState('');
 
   const dark = tone === 'dark';
+  const band = tone === 'band';
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -68,6 +77,76 @@ export default function Newsletter({
     );
   }
 
+  const honeypot = (
+    /* Present for bots, hidden from people and assistive tech */
+    <input
+      type="text"
+      name="website"
+      value={website}
+      onChange={(e) => setWebsite(e.target.value)}
+      tabIndex={-1}
+      autoComplete="off"
+      aria-hidden="true"
+      className="hidden"
+    />
+  );
+
+  if (band) {
+    return (
+      <form onSubmit={onSubmit} className="w-full">
+        <div className="flex flex-col gap-smd sm:flex-row sm:items-center">
+          <div className="flex-1">
+            <label htmlFor={`nl-email-${source}`} className="sr-only">
+              Email address
+            </label>
+            <input
+              id={`nl-email-${source}`}
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="you@laboratory.com"
+              className="field-pill"
+            />
+          </div>
+          {/* Only the in-flight state disables this. Gating it on the consent
+              tick as well leaves a dead grey button as the band's resting
+              state; the tick is `required`, so the browser blocks the submit
+              and points at the box itself — which says why. */}
+          <button
+            type="submit"
+            disabled={status === 'sending'}
+            className="btn btn-primary shrink-0 px-xl py-smd disabled:cursor-not-allowed disabled:opacity-40"
+          >
+            {status === 'sending' ? 'Joining…' : 'Join'}
+          </button>
+        </div>
+
+        {honeypot}
+
+        <label className="mt-smd flex items-start gap-sm font-mono text-xxs uppercase tracking-label text-grey-500">
+          <input
+            type="checkbox"
+            checked={consent}
+            onChange={(e) => setConsent(e.target.checked)}
+            className="mt-[1px] h-[14px] w-[14px] shrink-0 accent-green"
+            required
+          />
+          <span className="max-w-[52ch] leading-[1.5]">
+            I am a research professional. Use my address for batch and
+            documentation updates only — unsubscribe in one click.
+          </span>
+        </label>
+
+        {error && (
+          <p role="alert" className="mt-sm text-sm text-danger">
+            {error}
+          </p>
+        )}
+      </form>
+    );
+  }
+
   return (
     <form onSubmit={onSubmit} className="space-y-smd">
       <div className="relative">
@@ -97,17 +176,7 @@ export default function Newsletter({
         </button>
       </div>
 
-      {/* Honeypot — present for bots, hidden from people and assistive tech */}
-      <input
-        type="text"
-        name="website"
-        value={website}
-        onChange={(e) => setWebsite(e.target.value)}
-        tabIndex={-1}
-        autoComplete="off"
-        aria-hidden="true"
-        className="hidden"
-      />
+      {honeypot}
 
       <label
         className={`flex items-start gap-sm text-sm ${

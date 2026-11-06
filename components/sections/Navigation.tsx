@@ -1,8 +1,9 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
-import { MENU } from '@/lib/data';
+import { MENU, type MenuGroup, type MenuItem } from '@/lib/data';
 import Logo from '@/components/ui/Logo';
 import CartButton from '@/components/cart/CartButton';
 import AccountMenu from '@/components/ui/AccountMenu';
@@ -47,7 +48,22 @@ export default function Navigation() {
     };
   }, [mobileOpen]);
 
+  // Hover: open at once, close after a short grace period so the pointer can
+  // cross the gap between label and panel (or pass over a neighbour) without
+  // the panel flickering shut.
+  const closeTimer = useRef<number | undefined>(undefined);
+  const hoverOpen = (label: string) => {
+    window.clearTimeout(closeTimer.current);
+    setOpenGroup(label);
+  };
+  const hoverClose = () => {
+    window.clearTimeout(closeTimer.current);
+    closeTimer.current = window.setTimeout(() => setOpenGroup(null), 160);
+  };
+  useEffect(() => () => window.clearTimeout(closeTimer.current), []);
+
   const closeAll = () => {
+    window.clearTimeout(closeTimer.current);
     setOpenGroup(null);
     setMobileOpen(false);
     setMobileGroup(null);
@@ -86,32 +102,54 @@ export default function Navigation() {
             <Logo />
           </Link>
 
-          {/* Desktop groups — 20px labels, 12px inner padding, 8px apart */}
-          <ul className="hidden items-center gap-sm desktop:flex">
-            {MENU.map((group) => (
-              <li key={group.label}>
-                <button
-                  type="button"
-                  onClick={() =>
-                    setOpenGroup((g) => (g === group.label ? null : group.label))
-                  }
-                  aria-expanded={openGroup === group.label}
-                  className={`inline-flex items-center gap-xs px-smd text-lg leading-7 transition-colors duration-200 ease-ag ${
-                    openGroup === group.label
-                      ? 'text-green'
-                      : 'text-black hover:text-green'
-                  }`}
+          {/* Desktop groups — 20px labels, 12px inner padding, 8px apart.
+              Mouse users open a group by hovering it; a click (or Enter /
+              Space) toggles it for keyboard and touch. Each group's panel
+              drops from under its own label, as on the reference. */}
+          <ul className="hidden items-stretch gap-sm desktop:flex">
+            {MENU.map((group) => {
+              const isOpen = openGroup === group.label;
+              const panelId = `menu-${group.label.toLowerCase()}`;
+              return (
+                <li
+                  key={group.label}
+                  className="relative flex h-[var(--header-h)] items-center"
+                  onPointerEnter={(e) => e.pointerType === 'mouse' && hoverOpen(group.label)}
+                  onPointerLeave={(e) => e.pointerType === 'mouse' && hoverClose()}
                 >
-                  {group.label}
-                  <ChevronDown
-                    size={16}
-                    className={`transition-transform duration-200 ease-ag ${
-                      openGroup === group.label ? 'rotate-180' : ''
+                  <button
+                    type="button"
+                    onClick={() => setOpenGroup((g) => (g === group.label ? null : group.label))}
+                    aria-expanded={isOpen}
+                    aria-controls={panelId}
+                    className={`inline-flex items-center gap-xs px-smd text-lg leading-7 transition-colors duration-200 ease-ag ${
+                      isOpen ? 'text-green' : 'text-black hover:text-green'
+                    }`}
+                  >
+                    {group.label}
+                    <ChevronDown
+                      size={16}
+                      className={`transition-transform duration-200 ease-ag ${isOpen ? 'rotate-180' : ''}`}
+                    />
+                  </button>
+
+                  {/* Active marker: a short bar sitting on the header's edge */}
+                  <span
+                    aria-hidden
+                    className={`absolute inset-x-smd bottom-0 h-[4px] rounded-pill bg-green transition-opacity duration-200 ease-ag ${
+                      isOpen ? 'opacity-100' : 'opacity-0'
                     }`}
                   />
-                </button>
-              </li>
-            ))}
+
+                  <MenuPanel
+                    id={panelId}
+                    group={group}
+                    open={isOpen}
+                    onNavigate={closeAll}
+                  />
+                </li>
+              );
+            })}
           </ul>
         </div>
 
@@ -123,29 +161,6 @@ export default function Navigation() {
           </div>
         </div>
       </nav>
-
-      {/* Desktop mega panel */}
-      {openGroup && (
-        <div className="absolute inset-x-0 top-full hidden border-b border-[color:var(--border-soft)] bg-white shadow-menu desktop:block">
-          <div className="container-header grid grid-cols-3 gap-x-xl gap-y-lg py-xl">
-            {MENU.find((g) => g.label === openGroup)?.items.map((item) => (
-              <Link
-                key={item.href + item.label}
-                href={item.href}
-                onClick={closeAll}
-                className="group rounded-card p-smd transition-colors duration-200 ease-ag hover:bg-grey-25"
-              >
-                <span className="block text-md text-black transition-colors duration-200 ease-ag group-hover:text-green">
-                  {item.label}
-                </span>
-                <span className="mt-xxs block max-w-[34ch] text-sm text-grey-500">
-                  {item.description}
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      )}
 
       {/* Mobile panel */}
       {mobileOpen && (
@@ -182,13 +197,17 @@ export default function Navigation() {
                                 href={item.href}
                                 data-touch-target
                                 onClick={closeAll}
-                                className="flex flex-col py-sm"
+                                className="flex items-center gap-smd py-sm"
                               >
-                                <span className="text-base text-black">
-                                  {item.label}
-                                </span>
-                                <span className="text-sm text-grey-500">
-                                  {item.description}
+                                <MenuThumb item={item} className="size-[52px]" />
+                                <span className="flex min-w-0 flex-col">
+                                  <span className="flex flex-wrap items-center gap-sm text-base text-black">
+                                    {item.label}
+                                    {item.badge && <MenuBadge label={item.badge} />}
+                                  </span>
+                                  <span className="text-sm text-grey-500">
+                                    {item.description}
+                                  </span>
                                 </span>
                               </Link>
                             </li>
@@ -230,4 +249,78 @@ export default function Navigation() {
 
 function MenuIconClose() {
   return <Close />;
+}
+
+/**
+ * Desktop dropdown: a white card hanging from the header's lower edge under
+ * its own label — mono eyebrow, then one row per link with a thumbnail on a
+ * stone well, the title (plus an optional badge) and a one-line description.
+ * Always mounted so it can fade; `invisible` takes the closed panel's links
+ * out of the tab order.
+ */
+function MenuPanel({
+  id,
+  group,
+  open,
+  onNavigate,
+}: {
+  id: string;
+  group: MenuGroup;
+  open: boolean;
+  onNavigate: () => void;
+}) {
+  return (
+    <div
+      id={id}
+      className={`absolute -left-lg top-[calc(100%+1px)] w-[480px] rounded-b-xl border-x border-b border-[color:var(--border-soft)] bg-white px-lg pb-lg pt-xl shadow-menu transition-[opacity,visibility] duration-200 ease-ag ${
+        open ? 'visible opacity-100' : 'invisible opacity-0'
+      }`}
+    >
+      <p className="label-mono">{group.eyebrow}</p>
+      <ul className="mt-md flex flex-col gap-xs">
+        {group.items.map((item) => (
+          <li key={item.href + item.label}>
+            <Link
+              href={item.href}
+              onClick={onNavigate}
+              className="group/item -mx-smd flex items-center gap-md rounded-card px-smd py-sm transition-colors duration-200 ease-ag hover:bg-grey-25"
+            >
+              <MenuThumb item={item} className="size-[64px]" />
+              <span className="min-w-0">
+                <span className="flex flex-wrap items-center gap-sm text-md text-black transition-colors duration-200 ease-ag group-hover/item:text-green">
+                  {item.label}
+                  {item.badge && <MenuBadge label={item.badge} />}
+                </span>
+                <span className="mt-xxs block text-sm text-grey-700">
+                  {item.description}
+                </span>
+              </span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function MenuThumb({ item, className }: { item: MenuItem; className: string }) {
+  return (
+    <span className={`relative shrink-0 overflow-hidden rounded-card bg-stone ${className}`}>
+      <Image
+        src={item.image}
+        alt=""
+        fill
+        sizes="64px"
+        className={item.contain ? 'object-contain' : 'object-cover'}
+      />
+    </span>
+  );
+}
+
+function MenuBadge({ label }: { label: string }) {
+  return (
+    <span className="rounded-xs bg-green px-xs py-xxs font-mono text-xxs uppercase tracking-label text-white">
+      {label}
+    </span>
+  );
 }

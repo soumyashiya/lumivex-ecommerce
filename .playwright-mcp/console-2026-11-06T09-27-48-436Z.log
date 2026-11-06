@@ -1,0 +1,18 @@
+[     183ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ http://localhost:4100/_next/image?url=%2Fproducts%2Fretatrutide-20.jpg&w=750&q=75:0
+[  253349ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  253519ms] [LOG] [Fast Refresh] done in 117ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  253930ms] [WARNING] Image with src "/images/quality-pipette.jpg" has "fill" prop and "sizes" prop of "100vw", but image is not rendered at full viewport width. Please adjust "sizes" to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  278001ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  278266ms] [LOG] [Fast Refresh] done in 151ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  278369ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  278436ms] [LOG] [Fast Refresh] done in 167ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  317853ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  318133ms] [LOG] [Fast Refresh] done in 189ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  324206ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  324606ms] [LOG] [Fast Refresh] done in 456ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  324720ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  324763ms] [LOG] [Fast Refresh] done in 154ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  324883ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  324897ms] [LOG] [Fast Refresh] done in 123ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  325210ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  325306ms] [LOG] [Fast Refresh] done in 211ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477

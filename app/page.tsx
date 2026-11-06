@@ -5,12 +5,12 @@ import TrustStrip from '@/components/sections/TrustStrip';
 import ShopByLine from '@/components/sections/ShopByLine';
 import Products from '@/components/sections/Products';
 import Programme from '@/components/sections/Programme';
-import Standards from '@/components/sections/Standards';
 import Comparison from '@/components/sections/Comparison';
 import WhyUs from '@/components/sections/WhyUs';
+import Process from '@/components/sections/Process';
 import Testimonials from '@/components/sections/Testimonials';
+import OrderCta from '@/components/sections/OrderCta';
 import Faq from '@/components/sections/Faq';
-import Contact from '@/components/sections/Contact';
 import Footer from '@/components/sections/Footer';
 
 export default function Home() {
@@ -25,12 +25,12 @@ export default function Home() {
         <ShopByLine />
         <Products />
         <Programme />
-        <Standards />
         <Comparison />
         <WhyUs />
+        <Process />
         <Testimonials />
+        <OrderCta />
         <Faq />
-        <Contact />
       </main>
       <Footer />
     </>

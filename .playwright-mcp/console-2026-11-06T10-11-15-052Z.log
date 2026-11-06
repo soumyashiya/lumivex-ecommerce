@@ -1,0 +1,303 @@
+[    7411ms] [WARNING] The resource https://ledup.pt/_next/static/css/29cb9b543be7e630.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://ledup.pt/about-us:0
+[    7411ms] [WARNING] The resource https://ledup.pt/_next/static/css/8a7f587a4d6746c0.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://ledup.pt/about-us:0
+[    7411ms] [WARNING] The resource https://ledup.pt/_next/static/css/b33e4bc7901eff45.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://ledup.pt/about-us:0
+[   20822ms] [WARNING] The resource https://ledup.pt/_next/static/css/29cb9b543be7e630.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://ledup.pt/about-us:0
+[   20822ms] [WARNING] The resource https://ledup.pt/_next/static/css/8a7f587a4d6746c0.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://ledup.pt/about-us:0
+[   20822ms] [WARNING] The resource https://ledup.pt/_next/static/css/b33e4bc7901eff45.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://ledup.pt/about-us:0
+[   42281ms] [WARNING] The resource https://ledup.pt/_next/static/css/29cb9b543be7e630.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://ledup.pt/about-us:0
+[   42281ms] [WARNING] The resource https://ledup.pt/_next/static/css/8a7f587a4d6746c0.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://ledup.pt/about-us:0
+[   42281ms] [WARNING] The resource https://ledup.pt/_next/static/css/b33e4bc7901eff45.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://ledup.pt/about-us:0
+[   67283ms] [WARNING] The resource https://ledup.pt/_next/static/css/29cb9b543be7e630.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://ledup.pt/about-us:0
+[   67283ms] [WARNING] The resource https://ledup.pt/_next/static/css/8a7f587a4d6746c0.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://ledup.pt/about-us:0
+[   67283ms] [WARNING] The resource https://ledup.pt/_next/static/css/b33e4bc7901eff45.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://ledup.pt/about-us:0
+[  114875ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  114971ms] [LOG] [HMR] connected @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  139059ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  139167ms] [LOG] [Fast Refresh] done in 193ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  139286ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  139362ms] [LOG] [Fast Refresh] done in 184ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  148452ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  148641ms] [LOG] [Fast Refresh] done in 296ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  148845ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  148902ms] [LOG] [HMR] connected @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  419742ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  419943ms] [LOG] [Fast Refresh] done in 305ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  419965ms] [WARNING] Image with src "/images/reviews/documentation.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height. @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  419977ms] [WARNING] Image with src "/images/reviews/analytical.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height. @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  419982ms] [WARNING] Image with src "/images/process/synthesise.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height. @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  419988ms] [WARNING] Image with src "/images/process/verify.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height. @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  420045ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  420095ms] [LOG] [Fast Refresh] done in 151ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  430011ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  430194ms] [LOG] [Fast Refresh] done in 297ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  430402ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  430488ms] [LOG] [HMR] connected @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  459172ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  459275ms] [LOG] [Fast Refresh] done in 197ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  459573ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  459616ms] [LOG] [Fast Refresh] done in 144ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  465927ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  466111ms] [LOG] [Fast Refresh] done in 285ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  466282ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  466302ms] [LOG] [HMR] connected @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  785391ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  785750ms] [LOG] [Fast Refresh] done in 462ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  785853ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  786144ms] [LOG] [Fast Refresh] done in 393ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  786250ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  786343ms] [LOG] [Fast Refresh] done in 198ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  786488ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  786991ms] [LOG] [Fast Refresh] done in 607ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  787417ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  787463ms] [LOG] [Fast Refresh] done in 157ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  787591ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  787675ms] [LOG] [Fast Refresh] done in 194ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  796256ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  796506ms] [LOG] [Fast Refresh] done in 353ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  796699ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  796773ms] [LOG] [HMR] connected @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  827892ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  827970ms] [LOG] [Fast Refresh] done in 182ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  828077ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  828137ms] [LOG] [Fast Refresh] done in 167ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  830198ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  830393ms] [LOG] [Fast Refresh] done in 295ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  830577ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  830598ms] [LOG] [HMR] connected @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  832860ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  832868ms] [LOG] [Fast Refresh] done in 120ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  833192ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  833239ms] [LOG] [HMR] connected @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  915194ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  915344ms] [ERROR] ./components/sections/OrderCta.tsx:81:30
+Expression expected
+  79 |         const el = tileRefs.current[i];
+  80 |         if (!el) return;
+> 81 |         el.style.transform = ;
+     |                              ^
+  82 |         el.style.opacity = '1';
+  83 |       });
+  84 |       if (copyRef.current) {
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/sections/OrderCta.tsx
+    ./app/page.tsx @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:3318
+[  915408ms] [ERROR] ./components/sections/OrderCta.tsx:81:30
+Expression expected
+  79 |         const el = tileRefs.current[i];
+  80 |         if (!el) return;
+> 81 |         el.style.transform = ;
+     |                              ^
+  82 |         el.style.opacity = '1';
+  83 |       });
+  84 |       if (copyRef.current) {
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/sections/OrderCta.tsx
+    ./app/page.tsx @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:3318
+[  915445ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:4100/?_rsc=q3mOO9BClNZHexY7:0
+[  915454ms] [ERROR] ./components/sections/OrderCta.tsx:81:30
+Expression expected
+  79 |         const el = tileRefs.current[i];
+  80 |         if (!el) return;
+> 81 |         el.style.transform = ;
+     |                              ^
+  82 |         el.style.opacity = '1';
+  83 |       });
+  84 |       if (copyRef.current) {
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/sections/OrderCta.tsx
+    ./app/page.tsx @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:3318
+[  915526ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:4100/?_rsc=q3mOO9BClNZHexY7:0
+[  915558ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  915612ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:4100/:0
+[  915914ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:4100/_next/static/chunks/node_modules_react-dom_0kla17-._.js:13920
+[  916006ms] Error: ./components/sections/OrderCta.tsx:81:30
+Expression expected
+  79 |         const el = tileRefs.current[i];
+  80 |         if (!el) return;
+> 81 |         el.style.transform = ;
+     |                              ^
+  82 |         el.style.opacity = '1';
+  83 |       });
+  84 |       if (copyRef.current) {
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/sections/OrderCta.tsx
+    ./app/page.tsx
+
+
+    at <unknown> (Error: ./components/sections/OrderCta.tsx:81:30)
+    at Object.getCompilationErrors (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\node_modules\next\dist\server\dev\hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\node_modules\next\dist\server\lib\dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\node_modules\next\dist\server\dev\next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\node_modules\next\dist\server\dev\next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file://C:\Alluvi\my projects\git-update\new-update-websites\ecommerce-alluvi\lumivex-new\node_modules\next\dist\server\base-server.js:1753:26)
+[  916008ms] [LOG] [HMR] connected @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  916014ms] [ERROR] ./components/sections/OrderCta.tsx:81:30
+Expression expected
+  79 |         const el = tileRefs.current[i];
+  80 |         if (!el) return;
+> 81 |         el.style.transform = ;
+     |                              ^
+  82 |         el.style.opacity = '1';
+  83 |       });
+  84 |       if (copyRef.current) {
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/sections/OrderCta.tsx
+    ./app/page.tsx @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  916020ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:4100/favicon.ico:0
+[  916088ms] [ERROR] ./components/sections/OrderCta.tsx:81:30
+Expression expected
+  79 |         const el = tileRefs.current[i];
+  80 |         if (!el) return;
+> 81 |         el.style.transform = ;
+     |                              ^
+  82 |         el.style.opacity = '1';
+  83 |       });
+  84 |       if (copyRef.current) {
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/sections/OrderCta.tsx
+    ./app/page.tsx @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  916117ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  917120ms] [ERROR] ./components/sections/OrderCta.tsx:81:30
+Expression expected
+  79 |         const el = tileRefs.current[i];
+  80 |         if (!el) return;
+> 81 |         el.style.transform = ;
+     |                              ^
+  82 |         el.style.opacity = '1';
+  83 |       });
+  84 |       if (copyRef.current) {
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/sections/OrderCta.tsx
+    ./app/page.tsx @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  917182ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  928056ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  928154ms] [LOG] [Fast Refresh] done in 201ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  928295ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  929044ms] [LOG] [Fast Refresh] done in 864ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  929387ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  929496ms] [LOG] [HMR] connected @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  930214ms] [WARNING] Image with src "/images/quality-pipette.jpg" has "fill" prop and "sizes" prop of "100vw", but image is not rendered at full viewport width. Please adjust "sizes" to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  938050ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  938140ms] [LOG] [Fast Refresh] done in 194ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  942710ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  942863ms] [LOG] [Fast Refresh] done in 259ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  942977ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  943038ms] [LOG] [Fast Refresh] done in 175ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  943168ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  943530ms] [LOG] [Fast Refresh] done in 472ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  943852ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  943876ms] [LOG] [HMR] connected @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  944155ms] [WARNING] Image with src "/images/quality-pipette.jpg" has "fill" prop and "sizes" prop of "100vw", but image is not rendered at full viewport width. Please adjust "sizes" to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 1149231ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 1149421ms] [LOG] [Fast Refresh] done in 291ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 1149529ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 1149716ms] [LOG] [Fast Refresh] done in 287ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 1149821ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 1149877ms] [LOG] [Fast Refresh] done in 160ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 1149994ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 1150044ms] [LOG] [Fast Refresh] done in 152ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 1172591ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 1173019ms] [LOG] [Fast Refresh] done in 506ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 1186473ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 1186649ms] [LOG] [Fast Refresh] done in 266ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 1186758ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 1186884ms] [LOG] [Fast Refresh] done in 232ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 1241024ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 1241388ms] [LOG] [Fast Refresh] done in 457ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 1241492ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 1241732ms] [LOG] [Fast Refresh] done in 343ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 1241848ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 1241871ms] [LOG] [Fast Refresh] done in 135ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 1242049ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 1242070ms] [LOG] [Fast Refresh] done in 135ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 1248447ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 1248677ms] [LOG] [Fast Refresh] done in 333ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4689457ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4690150ms] [LOG] [Fast Refresh] done in 835ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4690253ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4690890ms] [LOG] [Fast Refresh] done in 739ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4690995ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4691022ms] [LOG] [Fast Refresh] done in 130ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4691145ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4691151ms] [LOG] [Fast Refresh] done in 126ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4691262ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4691822ms] [LOG] [Fast Refresh] done in 668ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4692723ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4692767ms] [LOG] [Fast Refresh] done in 150ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4692961ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4693091ms] [LOG] [Fast Refresh] done in 232ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4850158ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4850469ms] [LOG] [Fast Refresh] done in 297ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4850585ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4850664ms] [LOG] [Fast Refresh] done in 194ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4850809ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4850883ms] [LOG] [Fast Refresh] done in 187ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4851125ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4851505ms] [LOG] [Fast Refresh] done in 482ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4852126ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4852196ms] [LOG] [Fast Refresh] done in 183ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4880041ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4880103ms] [LOG] [Fast Refresh] done in 169ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4880247ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4880496ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4880500ms] [LOG] [Fast Refresh] done in 358ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4880605ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4880765ms] [LOG] [Fast Refresh] done in 261ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4880887ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4882060ms] [LOG] [Fast Refresh] done in 1277ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4882096ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4882305ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4882452ms] [LOG] [Fast Refresh] done in 241ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4882589ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:4100/:0
+[ 4883026ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4883061ms] [LOG] [HMR] connected @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4883513ms] TypeError: Failed to construct 'Image': Please use the 'new' operator, this DOM object constructor cannot be called as a function.
+    at Object.react_stack_bottom_frame (http://localhost:4100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:15037:24)
+    at renderWithHooks (http://localhost:4100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:4620:24)
+    at updateFunctionComponent (http://localhost:4100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:6081:21)
+    at beginWork (http://localhost:4100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:6691:24)
+    at runWithFiberInDEV (http://localhost:4100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:965:74)
+    at performUnitOfWork (http://localhost:4100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9555:97)
+    at workLoopSync (http://localhost:4100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9449:40)
+    at renderRootSync (http://localhost:4100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9433:13)
+    at performWorkOnRoot (http://localhost:4100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9098:47)
+    at performWorkOnRootViaSchedulerTask (http://localhost:4100/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (http://localhost:4100/_next/static/chunks/node_modules_next_dist_compiled_1amofcm._.js:2647:64)
+[ 4890095ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4890761ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4890767ms] [LOG] [Fast Refresh] done in 772ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4890885ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4891723ms] [LOG] [Fast Refresh] done in 945ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4891953ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4892192ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4892218ms] [LOG] [HMR] connected @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4898957ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[ 4899244ms] [LOG] [Fast Refresh] done in 398ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477

@@ -41,16 +41,31 @@ export default function ShopByLine() {
             <Link
               key={line.slug}
               href={`/shop?category=${line.slug}`}
-              className="group relative block h-[403px] overflow-hidden rounded-card bg-stone shadow-[0_18px_40px_-22px_rgba(15,46,47,0.45)] desktop:h-[560px]"
+              className="group relative flex h-[403px] flex-col overflow-hidden rounded-card bg-stone shadow-[0_18px_40px_-22px_rgba(15,46,47,0.45)] desktop:h-[560px]"
             >
+              {/* The line photos are 2:3 with the kit and pen in the lower
+                  half. Laid edge to edge under the frosted foot, the pen was
+                  hidden behind it — so the photo now fills only the space
+                  above the foot, framed on the kit, and a heavily blurred
+                  copy sits behind the foot to keep its glass tint. */}
               <Image
                 src={line.image}
                 alt=""
+                aria-hidden
                 fill
-                sizes="(max-width: 767px) 288px, (max-width: 1023px) 344px, 400px"
-                className="object-cover transition-transform duration-700 ease-ag group-hover:scale-[1.04]"
+                sizes="96px"
+                className="scale-125 object-cover object-bottom blur-2xl"
               />
-              <div className="absolute inset-x-0 bottom-0 border-t border-white/10 bg-[rgba(20,32,38,0.42)] px-md pb-md pt-md backdrop-blur-xl backdrop-saturate-150 desktop:px-lg desktop:pb-lg desktop:pt-lg">
+              <div className="relative min-h-0 flex-1 overflow-hidden">
+                <Image
+                  src={line.image}
+                  alt=""
+                  fill
+                  sizes="(max-width: 767px) 288px, (max-width: 1023px) 344px, 400px"
+                  className="object-cover object-[center_40%] transition-transform duration-700 ease-ag group-hover:scale-[1.04]"
+                />
+              </div>
+              <div className="relative border-t border-white/10 bg-[rgba(20,32,38,0.42)] px-md pb-md pt-md backdrop-blur-xl backdrop-saturate-150 desktop:px-lg desktop:pb-lg desktop:pt-lg">
                 <h3 className="text-[1.75rem] leading-[1.1] tracking-[-0.02em] text-white desktop:text-[2.25rem]">
                   {line.label}
                 </h3>

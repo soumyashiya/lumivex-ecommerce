@@ -8,6 +8,7 @@ import ProductCard from '@/components/ui/ProductCard';
 import { ButtonLink } from '@/components/ui/Button';
 import { ArrowRight } from '@/components/ui/Icons';
 import Spotlight from './Spotlight';
+import Story from './Story';
 
 export default function Products() {
   const feature = getProduct(BESTSELLERS.feature.slug);
@@ -52,6 +53,8 @@ export default function Products() {
         </div>
 
         <Spotlight className="pt-8xl tablet:pt-9xl" />
+
+        <Story className="pt-8xl tablet:pt-9xl" />
 
         {feature && <FeaturePanel product={feature} />}
       </div>

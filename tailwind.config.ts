@@ -218,6 +218,7 @@ const config: Config = {
 
       animation: {
         marquee: 'marquee 38s linear infinite',
+        'spin-slow': 'spin 24s linear infinite',
         'fade-up': 'fade-up 0.45s cubic-bezier(0, 0, 0.2, 1) both',
       },
     },
