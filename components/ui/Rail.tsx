@@ -17,6 +17,12 @@ type Props = {
    */
   controls?: 'below' | 'header' | 'none';
   label: string;
+  /**
+   * Marks the rail for the site-wide scroll reveal (globals.css +
+   * `providers/Reveal.tsx`). A prop rather than a passed-through
+   * `data-reveal`, so the attribute lands on the rail's own root.
+   */
+  reveal?: boolean;
 };
 
 /**
@@ -31,6 +37,7 @@ export default function Rail({
   itemClassName = '',
   controls = 'below',
   label,
+  reveal = false,
 }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const [atStart, setAtStart] = useState(true);
@@ -80,7 +87,7 @@ export default function Rail({
   const pad = (n: number) => String(n).padStart(2, '0');
 
   return (
-    <div className={className}>
+    <div className={className} data-reveal={reveal || undefined}>
       {controls === 'header' ? (
         <div className="mb-lg flex flex-wrap items-end justify-between gap-lg tablet:mb-xl">
           {header}

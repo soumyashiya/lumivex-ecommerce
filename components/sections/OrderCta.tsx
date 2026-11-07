@@ -30,12 +30,13 @@ import { ButtonLink } from '@/components/ui/Button';
  * measured off the reference at the end of its run (all off-screen).
  */
 const TILES = [
-  { src: '/images/story/make.jpg', dx: -46, dy: -94 },
-  { src: '/images/story/check.jpg', dx: 77, dy: -30 },
-  { src: '/images/reviews/documentation.jpg', dx: -77, dy: 0 },
-  { src: '/images/reviews/analytical.jpg', dx: -10, dy: 94 },
-  { src: '/images/process/synthesise.jpg', dx: 30, dy: 94 },
-  { src: '/images/process/verify.jpg', dx: 77, dy: 20 },
+  { src: '/images/ready to order/ALLUVI Carton and Pen Lifestyle Portrait-6.png', dx: -46, dy: -94 },
+  { src: '/images/ready to order/ALLUVI NAD+ Carton and Pen Portrait-7.png', dx: 77, dy: -30 },
+  { src: '/images/ready to order/ALLUVI GLOW GHK-CU Box and Pen-9.png', dx: -77, dy: 0 },
+  { src: '/images/ready to order/Premium fitness portrait with Alluvi product pairs-1.png', dx: -10, dy: 94 },
+  { src: '/images/tested.png', dx: 30, dy: 94 },
+  // Last in the DOM, so this is the tile on top of the stack before the burst.
+  { src: '/images/ready to order/Alluvi Glow and NAD+ pen set.png', dx: 77, dy: 20 },
 ] as const;
 
 /** Share of the run the stack holds still in the centre before spreading. */

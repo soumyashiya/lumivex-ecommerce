@@ -125,6 +125,34 @@
   .lenis.lenis-stopped {
     overflow: hidden;
   }
+
+  /* --- Scroll reveal --------------------------------------------------- */
+
+  /* Anything marked `data-reveal` fades and rises 16px the first time it
+     enters the viewport; `components/providers/Reveal.tsx` flips
+     `data-reveal-in` on it and never puts it back. Stagger a group by setting
+     `--reveal-delay` per element (Tailwind: `[--reveal-delay:80ms]`).
+
+     Two guards keep content readable when the animation can't or shouldn't
+     run, because a reveal that never fires would hide the page:
+       · the hidden state applies only under `html[data-reveal-ready]`, which
+         the inline script in layout.tsx sets before first paint — so without
+         JavaScript nothing is ever hidden;
+       · reduced-motion users skip the hidden state entirely and see the
+         finished layout (the global rule below also collapses the duration). */
+  @media (prefers-reduced-motion: no-preference) {
+    html[data-reveal-ready] [data-reveal]:not([data-reveal-in]) {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+  }
+
+  [data-reveal] {
+    transition:
+      opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
 }
 
 @layer components {

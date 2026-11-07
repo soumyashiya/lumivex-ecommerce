@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { PROCESS, PROCESS_STEPS } from '@/lib/data';
+import { revealDelay } from '@/components/ui/reveal';
 
 const pad = (n: number) => String(n).padStart(2, '0');
 
@@ -20,13 +21,16 @@ export default function Process() {
     <section id="process" className="section-y-lg bg-off-white">
       <div className="container-ag">
         <header className="grid gap-md desktop:grid-cols-2 desktop:items-end desktop:gap-4xl">
-          <div>
+          <div data-reveal>
             <p className="label-mono">{PROCESS.eyebrow}</p>
             <h2 className="mt-smd max-w-[14ch] text-h2 text-black">
               {PROCESS.heading}
             </h2>
           </div>
-          <p className="max-w-[48ch] text-base text-grey-700 tablet:text-md desktop:justify-self-end">
+          <p
+            data-reveal
+            className={`max-w-[48ch] text-base text-grey-700 tablet:text-md desktop:justify-self-end ${revealDelay(1)}`}
+          >
             {PROCESS.intro}
           </p>
         </header>
@@ -41,7 +45,8 @@ export default function Process() {
           {PROCESS_STEPS.map((step, i) => (
             <li
               key={step.title}
-              className="relative pl-3xl desktop:flex desktop:flex-col desktop:pl-0"
+              data-reveal
+              className={`relative pl-3xl desktop:flex desktop:flex-col desktop:pl-0 ${revealDelay(i)}`}
             >
               <div className="relative aspect-[4/3] overflow-hidden rounded-card-round bg-stone">
                 <Image

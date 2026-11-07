@@ -10,8 +10,8 @@ import Rail from '@/components/ui/Rail';
  * panel with the full comment. Touch screens have no hover, so there the
  * comment is always open.
  *
- * The photographs illustrate what each comment is about (paperwork, cold
- * chain, storage…). They are not portraits of the reviewers.
+ * The photographs are portraits shot against the same green wall, so the rail
+ * reads as one set.
  *
  * Compliance rule: comments may reference documentation, packaging,
  * presentation and service only — never outcomes, effects or use.
@@ -43,13 +43,14 @@ export default function Testimonials() {
       <div className="container-ag">
         <Rail
           label="Customer feedback"
+          reveal
           controls="header"
           itemClassName="w-[288px] tablet:w-[344px] desktop:w-[400px]"
           header={
             <div>
-              <p className="label-mono">Feedback</p>
+              <p className="label-mono">Reviews</p>
               <h2 className="mt-smd max-w-[22ch] text-h2 text-black">
-                What the labs we supply report back
+                What labs say about ordering from us
               </h2>
             </div>
           }

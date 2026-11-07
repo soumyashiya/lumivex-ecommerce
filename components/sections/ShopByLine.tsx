@@ -6,6 +6,7 @@ import { PRODUCT_LINES } from '@/lib/data';
 import Rail from '@/components/ui/Rail';
 import { ButtonLink } from '@/components/ui/Button';
 import { ArrowRight } from '@/components/ui/Icons';
+import { revealDelay } from '@/components/ui/reveal';
 
 /**
  * Catalogue lines: heading, intro and outlined CTA, then a rail of tall photo
@@ -16,17 +17,20 @@ export default function ShopByLine() {
   return (
     <section className="section-y bg-off-white">
       <div className="container-ag">
-        <h2 className="max-w-[18ch] text-h2 text-black">
-          Every line on the bench
+        <h2 data-reveal className="max-w-[18ch] text-h2 text-black">
+          Shop by research line
         </h2>
 
-        <div className="mt-lg flex flex-col gap-md tablet:flex-row tablet:items-start tablet:justify-between tablet:gap-xl">
+        <div
+          data-reveal
+          className={`mt-lg flex flex-col gap-md tablet:flex-row tablet:items-start tablet:justify-between tablet:gap-xl ${revealDelay(1)}`}
+        >
           <p className="max-w-[62ch] text-base text-grey-700 tablet:text-md">
-            Browse the catalogue by research line — every compound in a line
-            ships sealed, cold and with the assay report for its own batch.
+            Find kits by area of research. Every compound ships sealed, cold
+            and with the assay report for its own batch.
           </p>
           <ButtonLink href="/shop" variant="outline" size="lg" className="shrink-0">
-            View all lines
+            Shop all compounds
           </ButtonLink>
         </div>
 
@@ -34,7 +38,8 @@ export default function ShopByLine() {
             desktop, 8px radius. */}
         <Rail
           label="Catalogue lines"
-          className="mt-lg tablet:mt-xl"
+          reveal
+          className={`mt-lg tablet:mt-xl ${revealDelay(2)}`}
           itemClassName="w-[288px] tablet:w-[344px] desktop:w-[400px]"
         >
           {PRODUCT_LINES.map((line) => (

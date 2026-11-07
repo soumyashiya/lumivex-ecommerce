@@ -11,13 +11,12 @@ import Spotlight from './Spotlight';
 import Story from './Story';
 
 export default function Products() {
-  const feature = getProduct(BESTSELLERS.feature.slug);
-
   return (
     <section id="products" className="section-y bg-white">
       <div className="container-ag">
         <Rail
           label="Best-selling compounds"
+          reveal
           controls="header"
           itemClassName="w-[272px] tablet:w-[320px] desktop:w-[calc((100vw-208px)/4.2)] min-[1680px]:w-[calc((100vw-336px)/4.2)]"
           header={
@@ -56,43 +55,41 @@ export default function Products() {
 
         <Story className="pt-8xl tablet:pt-9xl" />
 
-        {feature && <FeaturePanel product={feature} />}
+        <FeaturePanel />
       </div>
     </section>
   );
 }
 
-function FeaturePanel({
-  product,
-}: {
-  product: NonNullable<ReturnType<typeof getProduct>>;
-}) {
-  const { badge, eyebrow, body } = BESTSELLERS.feature;
-  const report = product.janoshik;
-  const stats = [
-    { label: 'Purity', value: report?.purity },
-    { label: 'Fill volume', value: report?.fillVolume },
-    { label: 'Batch', value: report?.batchNumber },
-  ].filter((s) => s.value);
+function FeaturePanel() {
+  const { slugs, badge, eyebrow, title, body, cta, href } = BESTSELLERS.feature;
+  // Figures come only from each product's published report; a kit without
+  // one is left out rather than shown with hand-written numbers.
+  const kits = slugs
+    .map((slug) => getProduct(slug))
+    .filter((p): p is NonNullable<typeof p> => Boolean(p?.janoshik));
+  if (!kits.length) return null;
 
   return (
     <Link
-      href={`/product/${product.slug}`}
-      className="group relative mt-md grid overflow-hidden rounded-card-round bg-cool-800 text-white tablet:mt-xl desktop:grid-cols-[1.1fr_1fr]"
+      href={href}
+      data-reveal
+      className="group relative mt-md grid overflow-hidden rounded-card-round bg-[#2a2c2f] text-white tablet:mt-xl desktop:grid-cols-[1.1fr_1fr]"
     >
-      {/* Desaturated, softened bench photograph: the glassware reads as a
-          cool grey field behind the kit rather than as a scene. */}
-      <Image
-        src="/images/inhouse-image1-seo.webp"
-        alt=""
-        fill
-        sizes="100vw"
-        className="scale-110 object-cover object-[center_45%] opacity-70 blur-[3px] grayscale"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-cool-800/85 via-cool-800/45 to-cool-800/10"
-      />
+      {/* Third-party shot (Retatrutide and Tirzepatide kits with their pens
+          on a grey bench). It fills the right of the panel and fades into the
+          dark ground on the left, where the copy sits; on small screens it
+          sits on top and fades down instead. The kits are in the photograph,
+          so no separate cut-out is layered over it. */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-[240px] [mask-image:linear-gradient(to_bottom,black_55%,transparent)] tablet:h-[340px] desktop:inset-y-0 desktop:left-auto desktop:right-0 desktop:h-auto desktop:w-[64%] desktop:[mask-image:linear-gradient(to_right,transparent,black_36%)]">
+        <Image
+          src="/images/thirdparty.png"
+          alt=""
+          fill
+          sizes="(max-width: 1023px) 100vw, 70vw"
+          className="object-cover object-center desktop:object-[60%_center]"
+        />
+      </div>
 
       <div className="relative z-10 flex flex-col justify-between gap-lg p-lg pt-0 tablet:gap-2xl tablet:p-2xl tablet:pt-0 desktop:p-2xl">
         <span className="self-start rounded-sm bg-cool-600/80 px-sm py-xxs text-xs uppercase">
@@ -100,24 +97,36 @@ function FeaturePanel({
         </span>
 
         <div>
-          <p className="text-xs uppercase text-white">{eyebrow}</p>
-          <p className="mt-smd max-w-[34ch] text-lg text-white">
-            {product.name} — {body}
-          </p>
+          <p className="text-xs uppercase text-white/70">{eyebrow}</p>
+          <h3 className="mt-smd max-w-[18ch] text-2xl text-white desktop:text-3xl">{title}</h3>
+          <p className="mt-smd max-w-[40ch] text-base text-white/80">{body}</p>
 
-          {stats.length > 0 && (
-            <dl className="mt-lg flex flex-wrap gap-x-xl gap-y-sm">
-              {stats.map((s) => (
-                <div key={s.label}>
-                  <dt className="text-xs uppercase text-white/65">{s.label}</dt>
-                  <dd className="mt-xxs text-base">{s.value}</dd>
-                </div>
+          {/* One row per kit: name, then purity, fill and batch from the report, then price. */}
+          <table className="mt-lg w-full max-w-[440px] whitespace-nowrap text-left text-sm">
+            <thead>
+              <tr className="text-xs uppercase text-white/60">
+                <th scope="col" className="pb-xs font-normal">Kit</th>
+                <th scope="col" className="pb-xs font-normal">Purity</th>
+                <th scope="col" className="pb-xs font-normal">Fill</th>
+                <th scope="col" className="pb-xs pr-sm font-normal">Batch</th>
+                <th scope="col" className="pb-xs text-right font-normal">Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              {kits.map((k) => (
+                <tr key={k.slug} className="border-t border-white/15">
+                  <th scope="row" className="whitespace-normal py-sm pr-sm font-normal">{k.name}</th>
+                  <td className="py-sm pr-sm">{k.janoshik?.purity ?? '—'}</td>
+                  <td className="py-sm pr-sm">{k.janoshik?.fillVolume ?? '—'}</td>
+                  <td className="py-sm pr-sm">{k.janoshik?.batchNumber ?? '—'}</td>
+                  <td className="py-sm text-right">{k.priceValue > 0 ? k.price : 'On enquiry'}</td>
+                </tr>
               ))}
-            </dl>
-          )}
+            </tbody>
+          </table>
 
           <span className="mt-lg inline-flex items-center gap-smd text-xs uppercase text-white">
-            Shop {product.name}
+            {cta}
             <span
               aria-hidden
               className="size-[10px] rounded-pill bg-white transition-colors duration-200 ease-ag group-hover:bg-cool-300"
@@ -126,17 +135,8 @@ function FeaturePanel({
         </div>
       </div>
 
-      <div className="relative order-first min-h-[200px] tablet:min-h-[320px] desktop:order-none">
-        {product.tile && (
-          <Image
-            src={product.tile.src}
-            alt=""
-            fill
-            sizes="(max-width: 1023px) 100vw, 50vw"
-            className="object-contain p-xl desktop:p-3xl"
-          />
-        )}
-      </div>
+      {/* Spacer: holds the photograph's side of the grid open. */}
+      <div aria-hidden className="order-first min-h-[220px] tablet:min-h-[320px] desktop:order-none desktop:min-h-[460px]" />
     </Link>
   );
 }

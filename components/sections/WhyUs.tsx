@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import { QUALITY_CHECKS } from '@/lib/data';
 import Accordion from '@/components/ui/Accordion';
+import { revealDelay } from '@/components/ui/reveal';
 
-const IMAGE = '/images/quality-pipette.jpg';
+const IMAGE = '/images/testfirst.png';
 
 /**
  * Quality commitments: a ticked accordion on the left, a full-bleed image
@@ -24,25 +25,32 @@ export default function WhyUs() {
       <div className="flex flex-col desktop:min-h-[calc(100svh-var(--chrome-h))] desktop:flex-row">
         <div className="container-ag flex items-center py-3xl desktop:w-1/2 desktop:py-6xl desktop:pr-4xl">
           <div className="w-full max-w-[620px]">
-            <h2 className="text-h2 text-black">
-              Independently tested. Documented to the batch.
+            <h2 data-reveal className="text-h2 text-black">
+              Tested first. Then it goes on sale.
             </h2>
-            <p className="mt-lg text-base text-black tablet:text-md">
-              Purity, concentration, cold chain and custody are recorded for
-              every batch we release. Where a figure appears on a label, there
-              is a measurement behind it and a certificate you can check.
+            <p
+              data-reveal
+              className={`mt-lg text-base text-black tablet:text-md ${revealDelay(1)}`}
+            >
+              Nothing is listed until an independent lab has tested it. Purity,
+              content, cold chain and custody are recorded for every batch, so
+              every figure on a label has a certificate you can check.
             </p>
 
-            <Accordion
-              items={QUALITY_CHECKS.map((c) => ({ title: c.title, body: c.text }))}
-              checkmarks
-              className="mt-xl"
-            />
+            {/* Wrapper carries the reveal so the accordion keeps owning its
+                own open/close animation. The top margin moves here too — left
+                on the accordion it would collapse through the wrapper. */}
+            <div data-reveal className={`mt-xl ${revealDelay(2)}`}>
+              <Accordion
+                items={QUALITY_CHECKS.map((c) => ({ title: c.title, body: c.text }))}
+                checkmarks
+              />
+            </div>
           </div>
         </div>
 
         {/* Mobile / tablet: ordinary stacked image */}
-        <div className="relative aspect-[4/5] bg-stone desktop:hidden">
+        <div data-reveal className="relative aspect-[4/5] bg-stone desktop:hidden">
           <Image
             src={IMAGE}
             alt=""
@@ -63,7 +71,7 @@ export default function WhyUs() {
               alt=""
               fill
               sizes="50vw"
-              className="object-cover object-center"
+              className="object-cover object-[center_40%]"
             />
           </div>
         </div>

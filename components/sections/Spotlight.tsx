@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import type { ReactNode } from 'react';
 import { SPOTLIGHT, getProduct } from '@/lib/data';
+import { ButtonLink } from '@/components/ui/Button';
 
 type IconKey = (typeof SPOTLIGHT.points)[number]['icon'];
 
@@ -62,6 +63,15 @@ export default function Spotlight({ className = '' }: { className?: string }) {
           </span>
           <h2 className="mt-md text-h2 text-black">{SPOTLIGHT.heading}</h2>
           <p className="mt-md max-w-[48ch] text-base text-cool-600">{SPOTLIGHT.intro}</p>
+          {/* Shoppable: price and a direct route to the product page. */}
+          <div className="mt-lg flex flex-wrap items-center justify-center gap-md">
+            {product.priceValue > 0 && (
+              <span className="text-lg text-black">{product.price}</span>
+            )}
+            <ButtonLink href={`/product/${product.slug}`} size="lg" arrow>
+              Shop {product.name}
+            </ButtonLink>
+          </div>
         </header>
 
         <div className="relative mx-auto mt-xl max-w-[1200px] desktop:mt-lg">

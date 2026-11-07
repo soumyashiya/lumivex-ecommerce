@@ -1,5 +1,6 @@
 import { TRUST_POINTS } from '@/lib/data';
 import { Check } from '@/components/ui/Icons';
+import { revealDelay } from '@/components/ui/reveal';
 
 /**
  * Four reassurance points directly under the hero. Hairline dividers run
@@ -18,10 +19,11 @@ export default function TrustStrip() {
                      sm:grid-cols-2 sm:divide-x
                      desktop:grid-cols-4 desktop:divide-y-0"
         >
-          {TRUST_POINTS.map((point) => (
+          {TRUST_POINTS.map((point, i) => (
             <li
               key={point.title}
-              className="flex gap-smd py-md sm:px-lg sm:py-mdl sm:first:pl-0 desktop:py-lg desktop:first:pl-0 desktop:last:pr-0"
+              data-reveal
+              className={`flex gap-smd py-md sm:px-lg sm:py-mdl sm:first:pl-0 desktop:py-lg desktop:first:pl-0 desktop:last:pr-0 ${revealDelay(i)}`}
             >
               <Check size={20} className="mt-xxs shrink-0 text-green" />
               <div>

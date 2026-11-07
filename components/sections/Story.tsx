@@ -76,7 +76,7 @@ export default function Story({ className = '' }: { className?: string }) {
         <div className="flex flex-col justify-between gap-2xl">
           <DragBadge label={STORY.dragHint} className="hidden self-end desktop:block" />
 
-          <div>
+          <div data-reveal>
             <p className="label-mono">{STORY.eyebrow}</p>
             <h2 className="mt-smd max-w-[16ch] text-h2 text-black">
               {STORY.heading}

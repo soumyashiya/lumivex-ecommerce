@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { FOOTER_COLUMNS, RESEARCH_DISCLAIMER } from '@/lib/data';
 import Newsletter from '@/components/sections/Newsletter';
 import Logo from '@/components/ui/Logo';
+import { revealDelay } from '@/components/ui/reveal';
 
 /**
  * Footer on the deepest green in the palette. Link columns first, then the
@@ -14,8 +15,8 @@ export default function Footer() {
     <footer className="bg-green-deep text-white" data-dark>
       <div className="container-ag py-2xl tablet:py-5xl">
         <div className="grid grid-cols-2 gap-x-lg gap-y-xl tablet:grid-cols-3 desktop:grid-cols-6">
-          {FOOTER_COLUMNS.map((col) => (
-            <nav key={col.heading} aria-label={col.heading}>
+          {FOOTER_COLUMNS.map((col, i) => (
+            <nav key={col.heading} aria-label={col.heading} data-reveal className={revealDelay(i)}>
               <h2 className="text-md font-medium text-white">{col.heading}</h2>
               <ul className="mt-smd space-y-sm">
                 {col.links.map((link) => (
@@ -32,10 +33,13 @@ export default function Footer() {
             </nav>
           ))}
 
-          <div className="col-span-2 tablet:col-span-3 desktop:col-span-1">
+          <div
+            data-reveal
+            className={`col-span-2 tablet:col-span-3 desktop:col-span-1 ${revealDelay(4)}`}
+          >
             <h2 className="text-md font-medium text-white">Newsletter</h2>
             <p className="mt-smd text-base text-white/80">
-              New batches and certificates, as they publish.
+              New batches and their certificates, straight to your inbox.
             </p>
             <div className="mt-smd">
               <Newsletter tone="dark" source="footer" />

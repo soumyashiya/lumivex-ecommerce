@@ -13,49 +13,56 @@ import { Check } from '@/components/ui/Icons';
  * checkout API.
  */
 export default function Programme() {
-  const anchor = PRODUCTS.find((p) => p.slug === 'retatrutide-20mg') ?? PRODUCTS[0];
-  const perDelivery =
-    anchor.priceValue * (1 - PROGRAMME.discountPercent / 100);
-  const saving = anchor.priceValue - perDelivery;
+  const { heading, body, scope, cta, href, ticks, deliveries, discountPercent } = PROGRAMME;
 
   return (
     <section id="programme" className="bg-green-deep">
       <div className="desktop:grid desktop:grid-cols-2">
-        {/* Product side */}
-        <div className="relative aspect-[4/3] bg-stone desktop:aspect-auto">
+        {/* Product side — the studio photograph (Glow and NAD+ kits with
+            their pens on clear acrylic risers), full bleed to the panel's
+            edges like the reference offer block. */}
+        <div
+          data-reveal
+          className="relative aspect-square overflow-hidden bg-[#d4bebb] desktop:aspect-auto"
+        >
+          {/* Phones/tablets: a square version. Desktop: the half is taller
+              than it is wide, so a tall version is used — the same photo with
+              its own backdrop extended on every side (subscribe-tall-v4.webp),
+              so nothing is cropped and the products sit with room around them. */}
           <Image
-            src={anchor.gallery?.[0] ?? anchor.image}
-            alt={anchor.name}
+            src="/images/subscribe-square-v3.webp"
+            alt="Glow GHK-Cu and NAD+ research kits with their pre-filled pens on clear acrylic risers"
             fill
-            sizes="(max-width: 1023px) 100vw, 50vw"
-            className="object-cover desktop:object-contain desktop:p-7xl"
+            sizes="100vw"
+            className="object-cover desktop:hidden"
+          />
+          <Image
+            src="/images/subscribe-tall-v4.webp"
+            alt="Glow GHK-Cu and NAD+ research kits with their pre-filled pens on clear acrylic risers"
+            fill
+            sizes="50vw"
+            className="hidden object-cover desktop:block"
           />
         </div>
 
         {/* Terms side */}
-        <div className="px-lg py-2xl tablet:px-[56px] tablet:py-5xl desktop:px-7xl desktop:py-7xl">
-          <h2 className="max-w-[16ch] text-h2 text-white">
-            Put your supply on a standing order
-          </h2>
-          <p className="mt-lg max-w-[52ch] text-base text-white/75">
-            Enrol any compound for {PROGRAMME.deliveries} monthly deliveries.
-            Each one is allocated from a verified batch and arrives with its
-            own certificate.
-          </p>
+        <div
+          data-reveal
+          className="px-lg py-2xl [--reveal-delay:120ms] tablet:px-[56px] tablet:py-5xl desktop:px-7xl desktop:py-7xl"
+        >
+          <h2 className="max-w-[16ch] text-h2 text-white">{heading}</h2>
+          <p className="mt-lg max-w-[52ch] text-base text-white/75">{body}</p>
 
           <dl className="mt-xl border-t border-white/20">
-            <div className="flex items-baseline justify-between gap-md border-b border-white/20 py-smd">
-              <dt className="text-base font-medium text-white">
-                {anchor.name}
-              </dt>
-              <dd className="shrink-0 text-base text-white">
-                <span className="text-white/50 line-through">
-                  {anchor.price}
-                </span>{' '}
-                <span className="font-medium">
-                  ${perDelivery.toFixed(2)}
-                </span>
-              </dd>
+            {/* Scope first: the offer covers the catalogue, not one product. */}
+            <div className="flex items-center justify-between gap-md border-b border-white/20 py-md">
+              <div>
+                <dt className="text-base font-medium text-white">{scope.title}</dt>
+                <dd className="mt-xxs text-sm text-white/70">
+                  {PRODUCTS.length} research lines eligible · {scope.text.toLowerCase()}
+                </dd>
+              </div>
+              <dd className="shrink-0 text-xl text-white">{discountPercent}% off</dd>
             </div>
 
             <p className="pt-md font-mono text-xs uppercase tracking-label text-white/60">
@@ -63,52 +70,25 @@ export default function Programme() {
             </p>
 
             {PROGRAMME.perks.map((perk) => (
-              <div
-                key={perk.title}
-                className="flex items-start justify-between gap-md border-b border-white/20 py-smd"
-              >
-                <div>
-                  <dt className="text-base font-medium text-white">
-                    {perk.title}
-                  </dt>
-                  <dd className="mt-xxs max-w-[46ch] text-sm text-white/70">
-                    {perk.text}
-                  </dd>
-                </div>
+              <div key={perk.title} className="border-b border-white/20 py-smd">
+                <dt className="text-base font-medium text-white">{perk.title}</dt>
+                <dd className="mt-xxs max-w-[46ch] text-sm text-white/70">{perk.text}</dd>
               </div>
             ))}
 
             <div className="flex items-baseline justify-between gap-md py-md">
-              <dt className="text-base font-medium text-white">
-                Saved per delivery
-              </dt>
-              <dd className="text-base font-medium text-white">
-                ${saving.toFixed(2)}
-              </dd>
+              <dt className="text-base font-medium text-white">Deliveries</dt>
+              <dd className="text-base font-medium text-white">{deliveries} monthly</dd>
             </div>
           </dl>
 
-          <ButtonLink
-            href={`/product/${anchor.slug}`}
-            variant="light"
-            size="lg"
-            full
-            arrow
-            className="mt-lg"
-          >
-            Start a standing order
+          <ButtonLink href={href} variant="light" size="lg" full arrow className="mt-lg">
+            {cta}
           </ButtonLink>
 
           <ul className="mt-md flex flex-wrap items-center gap-x-lg gap-y-sm">
-            {[
-              'Cold-chain shipping included',
-              'Pause or cancel any time',
-              'Certificate emailed on dispatch',
-            ].map((item) => (
-              <li
-                key={item}
-                className="flex items-center gap-xs text-sm text-white/85"
-              >
+            {ticks.map((item) => (
+              <li key={item} className="flex items-center gap-xs text-sm text-white/85">
                 <Check size={16} className="shrink-0" />
                 {item}
               </li>

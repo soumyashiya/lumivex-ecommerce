@@ -24,15 +24,18 @@ const verifiedMg = (p: (typeof PRODUCTS)[number]) => {
 
 export default function Comparison() {
   const assayed = PRODUCTS.filter((p) => verifiedMg(p)).length;
-  const from = Math.min(...PRODUCTS.map((p) => p.priceValue));
+  // Enquiry-only lines carry priceValue 0, which would make this read "From $0".
+  const from = Math.min(
+    ...PRODUCTS.filter((p) => p.priceValue > 0).map((p) => p.priceValue),
+  );
 
   return (
     <section className="section-y bg-white">
       <div className="container-ag">
         <div className="grid grid-cols-1 items-center gap-xl desktop:grid-cols-2 desktop:gap-4xl">
-          <div>
+          <div data-reveal>
             <h2 className="max-w-[16ch] text-h2 text-black">
-              {PRODUCTS.length} research lines, one verified source
+              Compare every kit at a glance
             </h2>
 
             <table className="mt-xl w-full border-collapse text-left desktop:mt-2xl">
@@ -109,10 +112,15 @@ export default function Comparison() {
             </p>
           </div>
 
-          <div className="relative aspect-[4/3] overflow-hidden rounded-card bg-stone shadow-[0_30px_60px_-30px_rgba(15,46,47,0.45)]">
+          {/* Portrait shot, so the well is squarer than the 4:3 it replaced —
+              a landscape crop cut the kits out of the bottom of the frame. */}
+          <div
+            data-reveal
+            className="relative aspect-[4/5] overflow-hidden rounded-card bg-stone shadow-[0_30px_60px_-30px_rgba(15,46,47,0.45)] [--reveal-delay:120ms] desktop:aspect-[4/4.4]"
+          >
             <Image
-              src="/images/shop/retatrutide-20.webp"
-              alt="Sealed ALLUVI Retatrutide 20 mg carton with its pre-filled research pen"
+              src="/images/research-lines.webp"
+              alt="Sealed ALLUVI BPC-157 & TB-500 and Tesamorelin cartons with their pre-filled research pens"
               fill
               sizes="(max-width: 1023px) 100vw, 46vw"
               className="object-cover"

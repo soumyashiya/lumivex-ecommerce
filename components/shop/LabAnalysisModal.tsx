@@ -49,7 +49,7 @@ export default function LabAnalysisModal({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed inset-0 z-[110] flex items-center justify-center bg-green-deep px-4 py-8 backdrop-blur-sm"
+          className="fixed inset-0 z-[110] flex items-center justify-center bg-black/50 px-4 py-8 backdrop-blur-sm"
           onClick={onClose}
           role="dialog"
           aria-modal="true"
@@ -60,13 +60,13 @@ export default function LabAnalysisModal({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.98 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-[10px] bg-green px-6 py-9 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6)] sm:px-9"
+            className="relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-[10px] bg-white px-6 py-9 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6)] sm:px-9"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={onClose}
               aria-label="Close lab analysis"
-              className="absolute right-5 top-5 flex h-8 w-8 items-center justify-center rounded-pill border border-white/20 text-white/80 transition-colors hover:border-white hover:text-white"
+              className="absolute right-5 top-5 flex h-8 w-8 items-center justify-center rounded-pill border border-[color:var(--border-soft)] text-grey-700 transition-colors hover:border-grey-500 hover:text-black"
             >
               <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden>
                 <path
@@ -80,7 +80,7 @@ export default function LabAnalysisModal({
 
             {/* Header */}
             <div className="text-center">
-              <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-card bg-white text-white">
+              <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-card bg-mint text-green">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden>
                   <path
                     d="M8 1.667v4.86a2 2 0 01-.28 1.02l-4.1 6.95A2 2 0 005.34 17.5h9.32a2 2 0 001.72-2.99l-4.1-6.96a2 2 0 01-.28-1.02V1.667M6.25 1.667h7.5M5.6 12.5h8.8"
@@ -91,10 +91,10 @@ export default function LabAnalysisModal({
                   />
                 </svg>
               </span>
-              <h2 className="mt-5 text-lg font-semibold uppercase tracking-wider text-white sm:text-xl">
+              <h2 className="mt-5 text-lg font-semibold uppercase tracking-wider text-black sm:text-xl">
                 Janoshik Third-Party Lab Analysis
               </h2>
-              <p className="mt-3 text-[13px] text-white/80">
+              <p className="mt-3 text-[13px] text-grey-700">
                 Independently tested and verified by Janoshik Analytical.
               </p>
             </div>
@@ -109,14 +109,14 @@ export default function LabAnalysisModal({
                 {facts.map((f) => (
                   <div
                     key={f.label}
-                    className="rounded-smd border border-white/20 px-4 py-4 text-center"
+                    className="rounded-smd border border-[color:var(--border-soft)] px-4 py-4 text-center"
                   >
-                    <div className="text-[10px] uppercase tracking-wider text-white/80">
+                    <div className="text-[10px] uppercase tracking-wider text-grey-700">
                       {f.label}
                     </div>
                     <div
                       className={`mt-2 text-base font-semibold ${
-                        f.gold ? 'text-sage' : 'text-white'
+                        f.gold ? 'text-sage' : 'text-black'
                       }`}
                     >
                       {f.value}
@@ -129,9 +129,9 @@ export default function LabAnalysisModal({
             {/* Compound table */}
             {compounds.length > 0 && (
               <>
-                <div className="mt-4 overflow-hidden rounded-smd border border-white/20">
+                <div className="mt-4 overflow-hidden rounded-smd border border-[color:var(--border-soft)]">
                   <table className="w-full text-left text-[13px]">
-                    <thead className="bg-white[0.07] text-[10px] uppercase tracking-wider text-white/80">
+                    <thead className="bg-off-white text-[10px] uppercase tracking-wider text-grey-700">
                       <tr>
                         <th className="px-4 py-3 font-medium">Compound</th>
                         <th className="px-4 py-3 text-center font-medium">
@@ -142,16 +142,16 @@ export default function LabAnalysisModal({
                         </th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-white/20">
+                    <tbody className="divide-y divide-[color:var(--border-soft)]">
                       {compounds.map((c) => (
                         <tr key={c.name}>
-                          <td className="px-4 py-3 font-semibold text-white">
+                          <td className="px-4 py-3 font-semibold text-black">
                             {c.name}
                           </td>
-                          <td className="px-4 py-3 text-center text-white/80">
+                          <td className="px-4 py-3 text-center text-grey-700">
                             {c.concentration}
                           </td>
-                          <td className="px-4 py-3 text-center text-white/80">
+                          <td className="px-4 py-3 text-center text-grey-700">
                             {c.content}
                           </td>
                         </tr>
@@ -159,7 +159,7 @@ export default function LabAnalysisModal({
                     </tbody>
                   </table>
                 </div>
-                <p className="mt-4 text-center text-[11px] leading-relaxed text-white/80">
+                <p className="mt-4 text-center text-[11px] leading-relaxed text-grey-700">
                   Concentration is measured per mL; verified content reflects the
                   total assayed mass across the stated fill volume.
                 </p>
@@ -168,7 +168,7 @@ export default function LabAnalysisModal({
 
             <button
               onClick={onViewReport}
-              className="mt-7 w-full rounded-smd bg-off-white px-5 py-3.5 text-[13px] font-semibold text-black transition-colors hover:bg-green-hover hover:text-white"
+              className="mt-7 w-full rounded-smd bg-green px-5 py-3.5 text-[13px] font-semibold text-white transition-colors hover:bg-green-hover"
             >
               View Full Janoshik Report
             </button>

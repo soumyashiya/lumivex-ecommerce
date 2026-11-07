@@ -102,11 +102,32 @@ Use `components/ui/Button.tsx` (`Button`, `ButtonLink`) rather than hand-rolling
 
 ### Motion
 
-Restrained by design. The only motion is: 200ms colour fades, rail scrolling,
-tab switches, and accordion height via a `0fr → 1fr` grid row
-(`.collapse-grid`). There are **no** scroll-triggered reveals, split-text
-intros, parallax, or custom cursors — these were removed. `prefers-reduced-motion`
-is respected globally.
+Restrained by design. The motion budget is: 200ms colour fades, rail
+scrolling, tab switches, accordion height via a `0fr → 1fr` grid row
+(`.collapse-grid`), smooth scrolling (Lenis), and one scroll reveal.
+`prefers-reduced-motion` is respected globally.
+
+There are still **no** split-text intros, parallax, or custom cursors.
+
+**Scroll reveal.** Mark an element `data-reveal` and it fades in with a 16px
+rise the first time it enters the viewport — 600ms, once, never replayed.
+Stagger a group with `revealDelay(i)` from `components/ui/reveal.ts` (the
+delays are literal classes because Tailwind's JIT can't see computed ones).
+Three pieces:
+
+- `app/globals.css` — the hidden and transition states.
+- `components/providers/Reveal.tsx` — one IntersectionObserver, mounted in the
+  root layout; a MutationObserver catches elements added later.
+- an inline script in `app/layout.tsx` sets `data-reveal-ready` on `<html>`
+  before first paint, so there is no flash and no-JS renders fully visible.
+  That attribute is why `<html>` carries `suppressHydrationWarning`.
+
+Two places it must not go: **above the fold** (the hero is the LCP — animating
+it delays the metric), and **any ancestor of a `position: fixed` element** —
+a transform makes that ancestor the containing block and breaks it. The WhyUs
+desktop panel depends on this, which is why only its copy column is marked.
+Components that own their root (`Rail`) take a `reveal` prop rather than a
+passed-through attribute.
 
 ---
 

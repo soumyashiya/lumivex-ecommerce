@@ -28,9 +28,9 @@ export default function ProductGallery({
 
   return (
     <div>
-      {/* Product sits contained on the stone field, as on the reference
+      {/* Product sits contained on a white field, as on the reference
           product pages — never cropped to fill. */}
-      <div className="relative aspect-[4/3] overflow-hidden rounded-card bg-stone">
+      <div className="relative aspect-[4/3] overflow-hidden rounded-card bg-white">
         <Image
           key={images[active]}
           src={images[active]}
@@ -39,7 +39,7 @@ export default function ProductGallery({
           sizes="(max-width: 1023px) 100vw, 50vw"
           priority
           quality={90}
-          className="animate-[fade-up_0.3s_cubic-bezier(0,0,0.2,1)] object-contain p-lg"
+          className="animate-[fade-up_0.3s_cubic-bezier(0,0,0.2,1)] object-contain"
         />
       </div>
 
@@ -51,7 +51,7 @@ export default function ProductGallery({
               onClick={() => setActive(i)}
               aria-label={`View image ${i + 1} of ${images.length}`}
               aria-current={active === i}
-              className={`relative aspect-square w-[72px] shrink-0 overflow-hidden rounded-smd bg-stone transition-colors duration-200 ease-ag ${
+              className={`relative aspect-square w-[72px] shrink-0 overflow-hidden rounded-smd bg-white transition-colors duration-200 ease-ag ${
                 active === i
                   ? 'ring-2 ring-green'
                   : 'ring-1 ring-[color:var(--border-soft)] hover:ring-grey-100'

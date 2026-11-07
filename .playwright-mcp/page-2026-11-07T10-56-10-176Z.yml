@@ -1,0 +1,235 @@
+- generic [active] [ref=f30e1]:
+  - paragraph [ref=f30e3]: Free cold-chain shipping across the UK & EU
+  - banner [ref=f30e4]:
+    - navigation "Primary" [ref=f30e5]:
+      - generic [ref=f30e6]:
+        - link "Lumivex — home" [ref=f30e7] [cursor=pointer]:
+          - /url: /
+          - generic [ref=f30e8]:
+            - text: Lumivex
+            - generic [aria-hidden] [ref=f30e9]: ®
+        - list [ref=f30e10]:
+          - listitem [ref=f30e11]:
+            - button "Shop" [ref=f30e12] [cursor=pointer]
+          - listitem [ref=f30e16]:
+            - button "Standards" [ref=f30e17] [cursor=pointer]
+          - listitem [ref=f30e21]:
+            - button "Explore" [ref=f30e22] [cursor=pointer]
+      - generic [ref=f30e26]:
+        - link "Cart, 2 items" [ref=f30e27] [cursor=pointer]:
+          - /url: /cart
+          - generic [ref=f30e32]: "2"
+        - button "Account menu" [ref=f30e35] [cursor=pointer]:
+          - generic [ref=f30e39]: Sign in
+  - main [ref=f30e41]:
+    - generic [ref=f30e43]:
+      - heading "The catalogue" [level=1] [ref=f30e44]
+      - paragraph [ref=f30e45]: Six research formulations, each supplied in a sealed fixed-volume device with the assay report for its own batch.
+      - generic [ref=f30e47]:
+        - generic [ref=f30e48]:
+          - button "All compounds" [pressed] [ref=f30e49] [cursor=pointer]
+          - button "Metabolic" [ref=f30e50] [cursor=pointer]
+          - button "Recovery" [ref=f30e51] [cursor=pointer]
+          - button "Skin & hair" [ref=f30e52] [cursor=pointer]
+          - button "Growth factor" [ref=f30e53] [cursor=pointer]
+          - button "Longevity" [ref=f30e54] [cursor=pointer]
+          - button "Blends" [ref=f30e55] [cursor=pointer]
+        - generic [ref=f30e56]:
+          - generic [ref=f30e57]:
+            - generic [ref=f30e58]: Search the catalogue
+            - searchbox "Search the catalogue" [ref=f30e59]
+          - generic [ref=f30e60]:
+            - generic [ref=f30e61]: Sort
+            - combobox "Sort" [ref=f30e62]:
+              - option "Featured" [selected]
+              - 'option "Price: low to high"'
+              - 'option "Price: high to low"'
+              - 'option "Name: A–Z"'
+        - paragraph [ref=f30e63]: 9 compounds
+        - list [ref=f30e64]:
+          - listitem [ref=f30e65]:
+            - article [ref=f30e66]:
+              - button "Add Tirzepatide 40mg to cart" [ref=f30e68] [cursor=pointer]
+              - generic [ref=f30e72]:
+                - heading [level=3] [ref=f30e73]:
+                  - link "Tirzepatide 40mg" [ref=f30e74] [cursor=pointer]:
+                    - /url: /product/tirzepatide-40mg
+                - paragraph [ref=f30e75]: GIP / GLP-1 Research
+                - generic [ref=f30e76]:
+                  - generic [ref=f30e77]: $100
+                  - generic [ref=f30e78]: 99.85% assayed
+          - listitem [ref=f30e79]:
+            - article [ref=f30e80]:
+              - button "Add Retatrutide 20mg to cart" [ref=f30e82] [cursor=pointer]
+              - generic [ref=f30e86]:
+                - heading [level=3] [ref=f30e87]:
+                  - link "Retatrutide 20mg" [ref=f30e88] [cursor=pointer]:
+                    - /url: /product/retatrutide-20mg
+                - paragraph [ref=f30e89]: Triple Agonist Research
+                - generic [ref=f30e90]:
+                  - generic [ref=f30e91]: $100
+                  - generic [ref=f30e92]: 99.21% assayed
+          - listitem [ref=f30e93]:
+            - article [ref=f30e94]:
+              - button "Add Retatrutide 40mg to cart" [ref=f30e96] [cursor=pointer]
+              - generic [ref=f30e100]:
+                - heading [level=3] [ref=f30e101]:
+                  - link "Retatrutide 40mg" [ref=f30e102] [cursor=pointer]:
+                    - /url: /product/retatrutide-40mg
+                - paragraph [ref=f30e103]: Triple Agonist Research
+                - generic [ref=f30e104]:
+                  - generic [ref=f30e105]: $180
+                  - generic [ref=f30e106]: 99.269% assayed
+          - listitem [ref=f30e107]:
+            - article [ref=f30e108]:
+              - button "Add Glow 70mg to cart" [ref=f30e110] [cursor=pointer]
+              - generic [ref=f30e114]:
+                - heading [level=3] [ref=f30e115]:
+                  - link "Glow 70mg" [ref=f30e116] [cursor=pointer]:
+                    - /url: /product/glow-70mg
+                - paragraph [ref=f30e117]: Multi-Compound Research Blend
+                - generic [ref=f30e118]: $100
+          - listitem [ref=f30e120]:
+            - article [ref=f30e121]:
+              - button "Add BPC-157 & TB-500 40mg to cart" [ref=f30e123] [cursor=pointer]
+              - generic [ref=f30e127]:
+                - heading [level=3] [ref=f30e128]:
+                  - link "BPC-157 & TB-500 40mg" [ref=f30e129] [cursor=pointer]:
+                    - /url: /product/bpc-157-tb-500-40mg
+                - paragraph [ref=f30e130]: Peptide Blend — Research
+                - generic [ref=f30e131]: $130
+          - listitem [ref=f30e133]:
+            - article [ref=f30e134]:
+              - button "Add NAD+ 1,000mg to cart" [ref=f30e136] [cursor=pointer]
+              - generic [ref=f30e140]:
+                - heading [level=3] [ref=f30e141]:
+                  - link "NAD+ 1,000mg" [ref=f30e142] [cursor=pointer]:
+                    - /url: /product/nad-plus-1000mg
+                - paragraph [ref=f30e143]: Cellular Metabolism Research
+                - generic [ref=f30e144]: $140
+          - listitem [ref=f30e146]:
+            - article [ref=f30e147]:
+              - generic [ref=f30e150]:
+                - heading [level=3] [ref=f30e151]:
+                  - link "CJC-1295 10mg" [ref=f30e152] [cursor=pointer]:
+                    - /url: /product/cjc-1295-10mg
+                - paragraph [ref=f30e153]: Growth Factor Research
+                - generic [ref=f30e154]: Price on enquiry
+          - listitem [ref=f30e156]:
+            - article [ref=f30e157]:
+              - generic [ref=f30e160]:
+                - heading [level=3] [ref=f30e161]:
+                  - link "MOTS-C 40mg" [ref=f30e162] [cursor=pointer]:
+                    - /url: /product/mots-c-40mg
+                - paragraph [ref=f30e163]: Cellular Metabolism Research
+                - generic [ref=f30e164]: Price on enquiry
+          - listitem [ref=f30e166]:
+            - article [ref=f30e167]:
+              - generic [ref=f30e170]:
+                - heading [level=3] [ref=f30e171]:
+                  - link "Tesamorelin 20mg" [ref=f30e172] [cursor=pointer]:
+                    - /url: /product/tesamorelin-20mg
+                - paragraph [ref=f30e173]: Growth Factor Research
+                - generic [ref=f30e174]: Price on enquiry
+    - paragraph [ref=f30e178]: FOR RESEARCH PURPOSES ONLY. Not intended for human or veterinary use. Not intended to diagnose, treat, cure, or prevent any disease. Products are supplied strictly for laboratory and analytical research conducted by qualified professionals.
+  - contentinfo [ref=f30e179]:
+    - generic [ref=f30e180]:
+      - generic [ref=f30e181]:
+        - navigation "Shop" [ref=f30e182]:
+          - heading "Shop" [level=2] [ref=f30e183]
+          - list [ref=f30e184]:
+            - listitem [ref=f30e185]:
+              - link "All compounds" [ref=f30e186] [cursor=pointer]:
+                - /url: /shop
+            - listitem [ref=f30e187]:
+              - link "Metabolic" [ref=f30e188] [cursor=pointer]:
+                - /url: /shop?category=metabolic
+            - listitem [ref=f30e189]:
+              - link "Recovery" [ref=f30e190] [cursor=pointer]:
+                - /url: /shop?category=recovery
+            - listitem [ref=f30e191]:
+              - link "Longevity" [ref=f30e192] [cursor=pointer]:
+                - /url: /shop?category=longevity
+            - listitem [ref=f30e193]:
+              - link "Blends" [ref=f30e194] [cursor=pointer]:
+                - /url: /shop?category=blend
+        - navigation "Standards" [ref=f30e195]:
+          - heading "Standards" [level=2] [ref=f30e196]
+          - list [ref=f30e197]:
+            - listitem [ref=f30e198]:
+              - link "How we test" [ref=f30e199] [cursor=pointer]:
+                - /url: /#why-us
+            - listitem [ref=f30e200]:
+              - link "Quality commitments" [ref=f30e201] [cursor=pointer]:
+                - /url: /#why-us
+            - listitem [ref=f30e202]:
+              - link "Cold-chain handling" [ref=f30e203] [cursor=pointer]:
+                - /url: /shipping-policy
+            - listitem [ref=f30e204]:
+              - link "Press release" [ref=f30e205] [cursor=pointer]:
+                - /url: /press-release
+        - navigation "Account" [ref=f30e206]:
+          - heading "Account" [level=2] [ref=f30e207]
+          - list [ref=f30e208]:
+            - listitem [ref=f30e209]:
+              - link "Sign in" [ref=f30e210] [cursor=pointer]:
+                - /url: /login
+            - listitem [ref=f30e211]:
+              - link "My orders" [ref=f30e212] [cursor=pointer]:
+                - /url: /account/orders
+            - listitem [ref=f30e213]:
+              - link "Track an order" [ref=f30e214] [cursor=pointer]:
+                - /url: /account/track
+            - listitem [ref=f30e215]:
+              - link "Wallet" [ref=f30e216] [cursor=pointer]:
+                - /url: /account/wallet
+        - navigation "Support" [ref=f30e217]:
+          - heading "Support" [level=2] [ref=f30e218]
+          - list [ref=f30e219]:
+            - listitem [ref=f30e220]:
+              - link "Questions" [ref=f30e221] [cursor=pointer]:
+                - /url: /#faq
+            - listitem [ref=f30e222]:
+              - link "Contact" [ref=f30e223] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=f30e224]:
+              - link "Shipping policy" [ref=f30e225] [cursor=pointer]:
+                - /url: /shipping-policy
+            - listitem [ref=f30e226]:
+              - link "Refund policy" [ref=f30e227] [cursor=pointer]:
+                - /url: /refund-policy
+        - navigation "Legal" [ref=f30e228]:
+          - heading "Legal" [level=2] [ref=f30e229]
+          - list [ref=f30e230]:
+            - listitem [ref=f30e231]:
+              - link "Privacy policy" [ref=f30e232] [cursor=pointer]:
+                - /url: /privacy-policy
+            - listitem [ref=f30e233]:
+              - link "Terms of service" [ref=f30e234] [cursor=pointer]:
+                - /url: /terms-of-service
+        - generic [ref=f30e235]:
+          - heading "Newsletter" [level=2] [ref=f30e236]
+          - paragraph [ref=f30e237]: New batches and their certificates, straight to your inbox.
+          - generic [ref=f30e239]:
+            - generic [ref=f30e240]:
+              - generic [ref=f30e241]: Email address
+              - textbox "Email address" [ref=f30e242]:
+                - /placeholder: you@lab.com
+              - button "Subscribe" [disabled] [ref=f30e243]
+            - generic [ref=f30e246]:
+              - checkbox "I confirm I am a research professional and consent to catalogue and documentation updates." [ref=f30e247]
+              - generic [ref=f30e248]: I confirm I am a research professional and consent to catalogue and documentation updates.
+      - generic [ref=f30e249]:
+        - generic [ref=f30e251]:
+          - text: Lumivex
+          - generic [aria-hidden] [ref=f30e252]: ®
+        - generic [ref=f30e253]:
+          - paragraph [ref=f30e254]: FOR RESEARCH PURPOSES ONLY. Not intended for human or veterinary use. Not intended to diagnose, treat, cure, or prevent any disease. Products are supplied strictly for laboratory and analytical research conducted by qualified professionals.
+          - paragraph [ref=f30e255]: Lumivex has never operated on any social media platform. Our only official site is lumivex.store — treat any other seller using this name as unauthorised.
+          - paragraph [ref=f30e256]: Certificates of analysis are issued by Janoshik Analytical and are verifiable on the issuing laboratory’s own domain. Figures quoted on product pages refer to the batch stated on the label.
+      - generic [ref=f30e257]:
+        - paragraph [ref=f30e258]: © 2026 Lumivex. All rights reserved.
+        - paragraph [ref=f30e259]: Research use only — not for human or veterinary use
+  - button "Open assistant" [ref=f30e260] [cursor=pointer]
+  - button "Open Next.js Dev Tools" [ref=f30e268] [cursor=pointer]
+  - alert [ref=f30e272]

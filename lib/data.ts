@@ -51,16 +51,16 @@ export type HeroSlide = {
 export const HERO_SLIDES: HeroSlide[] = [
   {
     kind: 'video',
-    src: '/videos/hero-update-h264.mp4',
-    title: ['Every batch tested.', 'Every result published.'],
-    body: 'Research-grade peptides for UK and EU laboratories, independently assayed and shipped cold with the certificate for your batch.',
+    src: '/videos/hero-new2-uhq.mp4',
+    title: ['Lab-tested peptides,', 'delivered cold.'],
+    body: 'Research-grade peptides for UK and EU labs. Every batch third-party tested, with free cold-chain shipping and the certificate for your batch.',
     hold: 8,
   },
   {
     kind: 'image',
     src: '/images/hero-new2.png',
-    title: ['CJC-1295 and MOTS-C.', 'Assayed before listing.'],
-    body: 'Reference compounds in sealed pre-filled devices, each batch measured for purity and concentration by an independent laboratory.',
+    title: ['CJC-1295 and MOTS-c.', 'Tested before they ship.'],
+    body: 'Sealed pre-filled research kits, each batch measured for purity and content by an independent lab. Free UK & EU cold-chain shipping.',
     hold: 8,
     position: '0% 60%',
     positionMobile: '46% 42%',
@@ -69,8 +69,8 @@ export const HERO_SLIDES: HeroSlide[] = [
   {
     kind: 'image',
     src: '/images/her3.png',
-    title: ['Six research lines.', 'One verified source.'],
-    body: 'Synthesised in-house and released against a batch record, so the kit on your bench matches the paperwork on file.',
+    title: ['Nine research lines.', 'One trusted source.'],
+    body: 'Made in our own facility, priced per kit, and shipped with the paperwork your lab needs to file it.',
     hold: 8,
     position: '12% 55%',
     positionMobile: '52% 45%',
@@ -89,10 +89,10 @@ export const CHECKOUT_ACKNOWLEDGEMENT =
   'By proceeding with this purchase, you acknowledge that these products are intended solely for laboratory research purposes and are not intended for human or veterinary use. These products are not intended to diagnose, treat, cure, or prevent any disease.';
 
 export const ANNOUNCEMENTS = [
-  'Third-party tested by Janoshik Analytical',
-  'Sealed and cold-stored before dispatch',
-  'Research use only — not for human or veterinary use',
   'Free cold-chain shipping across the UK & EU',
+  'Save 15% on every delivery with a standing order',
+  'Every batch third-party tested by Janoshik Analytical',
+  'Research use only — not for human or veterinary use',
 ];
 
 export const NAV_LINKS = [
@@ -130,31 +130,45 @@ export const MENU: MenuGroup[] = [
     eyebrow: 'Shop Lumivex',
     items: [
       {
-        label: 'All compounds',
+        label: 'Shop all compounds',
         href: '/shop',
-        description: 'The full catalogue, every batch verified before listing.',
+        description: 'Every kit in the catalogue, tested before it ships.',
         image: '/products/products/tiles/retatrutide-40.webp',
         contain: true,
       },
       {
-        label: 'Metabolic research',
+        label: 'Metabolic',
         href: '/shop?category=metabolic',
-        description: 'GLP-1, GIP and triple-agonist reference material.',
+        description: 'Tirzepatide and Retatrutide kits.',
         image: '/products/products/tiles/tirzepatide.webp',
         contain: true,
         badge: 'Best seller',
       },
       {
-        label: 'Recovery research',
+        label: 'Recovery',
         href: '/shop?category=recovery',
-        description: 'Pentadecapeptide and actin-regulating blends.',
+        description: 'BPC-157 and TB-500 blend kits.',
         image: '/products/products/tiles/bpc-157-tb-500.webp',
         contain: true,
       },
       {
-        label: 'Cellular & longevity',
+        label: 'Skin & hair',
+        href: '/shop?category=aesthetic',
+        description: 'The Glow GHK-Cu blend kit.',
+        image: '/products/products/tiles/glow-pro.webp',
+        contain: true,
+      },
+      {
+        label: 'Growth factor',
+        href: '/shop?category=growth',
+        description: 'CJC-1295 and Tesamorelin kits.',
+        image: '/products/products/tiles/tesamorelin.webp',
+        contain: true,
+      },
+      {
+        label: 'Longevity',
         href: '/shop?category=longevity',
-        description: 'NAD+ and cellular metabolism reference compounds.',
+        description: 'NAD+ and MOTS-c kits.',
         image: '/products/products/tiles/nad.webp',
         contain: true,
       },
@@ -167,20 +181,20 @@ export const MENU: MenuGroup[] = [
       {
         label: 'How we test',
         href: '/#why-us',
-        description: 'The assay process behind every batch number.',
-        image: '/images/reviews/analytical.jpg',
+        description: 'See how every batch is checked before sale.',
+        image: '/images/reviews/v2/analytical.jpg',
       },
       {
         label: 'Certificates of analysis',
         href: '/#why-us',
-        description: 'Batch-level purity and concentration reports.',
-        image: '/images/reviews/certificates.jpg',
+        description: 'Purity and content reports for each batch.',
+        image: '/images/reviews/v2/certificates.jpg',
       },
       {
         label: 'Cold-chain handling',
         href: '/shipping-policy',
-        description: 'How compounds are stored, sealed and shipped.',
-        image: '/images/reviews/cold-chain.jpg',
+        description: 'How your order stays at 2–8°C in transit.',
+        image: '/images/reviews/v2/cold-chain.jpg',
       },
     ],
   },
@@ -191,14 +205,14 @@ export const MENU: MenuGroup[] = [
       {
         label: 'About Lumivex',
         href: '/about',
-        description: 'Who we supply and why we document everything.',
+        description: 'Who we are and how we work.',
         image: '/images/story/make.jpg',
       },
       {
         label: 'Contact',
         href: '/contact',
-        description: 'Sourcing questions, order help and batch documents.',
-        image: '/images/reviews/support.jpg',
+        description: 'Order help, sourcing questions and batch documents.',
+        image: '/images/reviews/v2/support.jpg',
       },
     ],
   },
@@ -207,20 +221,20 @@ export const MENU: MenuGroup[] = [
 /** Four-up reassurance strip directly below the hero. */
 export const TRUST_POINTS = [
   {
-    title: 'Verified sourcing',
-    text: 'Direct supply from our own synthesis facility. No intermediate resellers in the chain.',
+    title: 'Free cold-chain shipping',
+    text: 'Insulated 2–8°C packaging on every order across the UK and EU.',
   },
   {
-    title: 'Assayed purity',
-    text: 'Every batch independently tested by Janoshik Analytical before it is listed.',
+    title: 'Third-party tested',
+    text: 'Every batch assayed by Janoshik Analytical before it goes on sale.',
   },
   {
-    title: 'Sealed cold packaging',
-    text: 'Cold-stored, tamper-sealed and accurately labelled before it leaves the shelf.',
+    title: 'Certificate with your order',
+    text: 'The report for the exact batch you receive, matched by batch number.',
   },
   {
-    title: 'A researcher on support',
-    text: 'Replies from someone who knows the catalogue, usually within the working day.',
+    title: 'Real people on support',
+    text: 'Questions answered by our catalogue team, usually within the working day.',
   },
 ];
 
@@ -285,6 +299,12 @@ export const PROGRAMME = {
   name: 'Standing Order',
   discountPercent: 15,
   deliveries: 3,
+  heading: 'Subscribe and save 15% on every delivery',
+  body: 'Put any compound on a standing order and it arrives monthly — 15% off each delivery, free cold-chain shipping, and the certificate for every batch.',
+  scope: { title: 'Works with every compound', text: 'Add one line or several' },
+  cta: 'Start a standing order',
+  href: '/shop',
+  ticks: ['Free cold-chain shipping', 'Pause or cancel any time', 'Certificate emailed on dispatch'],
   perks: [
     {
       title: '15% off every delivery',
@@ -340,24 +360,24 @@ export const STANDARDS_TABS = [
 /** Checklist accordion — "Documented, batch by batch". */
 export const QUALITY_CHECKS = [
   {
-    title: 'Independently assayed, never self-reported',
-    text: 'Purity and concentration are measured by Janoshik Analytical, a laboratory with no commercial interest in the result. We publish the report as issued.',
+    title: 'Tested by an independent lab',
+    text: 'Purity and concentration are measured by Janoshik Analytical, which has no stake in the result. We publish the report exactly as issued.',
   },
   {
-    title: 'Certificate matched to your batch number',
-    text: 'The certificate you receive corresponds to the exact batch in your consignment — not a representative sample from an earlier run.',
+    title: 'A certificate for your exact batch',
+    text: 'The report you receive matches the batch number on your kit — not a sample from an earlier run.',
   },
   {
-    title: 'Fill volume measured, not estimated',
-    text: 'Stated content is derived from the measured fill of the sealed device, so the figure on the label is the figure in the pen.',
+    title: 'What the label says is what you get',
+    text: 'Stated content comes from the measured fill of the sealed pen, so the figure on the label is the figure in the kit.',
   },
   {
-    title: 'Validated cold-chain packaging',
-    text: 'Insulated shippers are qualified for 48 hours in transit at ambient temperatures, with cold-chain integrity checked on dispatch.',
+    title: 'Packed to stay cold for 48 hours',
+    text: 'Insulated shippers are rated for 48 hours in transit, and every order is checked before it leaves us.',
   },
   {
-    title: 'Documented chain of custody',
-    text: 'Synthesis, fill, assay and release are logged against the batch record, so procurement teams can reconstruct the full history.',
+    title: 'Traceable from synthesis to your door',
+    text: 'Synthesis, fill, testing and release are all logged against the batch record — ask and we will send it.',
   },
 ];
 
@@ -366,30 +386,23 @@ export const EXPERTS = [
   {
     name: 'Dr. Tomas Heller',
     role: 'Analytical Chemist, Rotterdam',
-    image: '/images/reviews/analytical.jpg',
+    image: '/images/review/Friendly Portrait Against a Green Wall-3.png',
     quote:
       'Fill volumes match the stated figures within our own measurement tolerance. For method development that consistency matters more than a headline purity number.',
   },
   {
     name: 'Priya Raman',
     role: 'Procurement Lead, Manchester',
-    image: '/images/reviews/goods-in.jpg',
+    image: '/images/review/Auburn portrait behind the stone counter-1.png',
     quote:
       'Batch numbers on the devices match the numbers on the certificates every time. Reconciling a delivery against the paperwork takes minutes rather than an afternoon.',
   },
   {
     name: 'Dr. Jonas Weber',
     role: 'Group Leader, Vienna',
-    image: '/images/reviews/storage.jpg',
+    image: '/images/review/Sage-green portrait behind limestone counter-4.png',
     quote:
       'Cold packs were still solid on arrival after two days in transit. The insulated packaging is specified properly rather than treated as an afterthought.',
-  },
-  {
-    name: 'Elif Demir',
-    role: 'Laboratory Manager, Copenhagen',
-    image: '/images/reviews/support.jpg',
-    quote:
-      'Questions about storage and handling get answered by someone who has read the batch record, not a script. That is unusual at this end of the market.',
   },
 ];
 
@@ -399,30 +412,30 @@ export const EXPERTS = [
  * homepage section can show what a lab can actually ask to see.
  */
 export const PROCESS = {
-  eyebrow: 'From bench to sealed pen',
-  heading: 'How each pen is prepared',
+  eyebrow: 'Before it reaches the shop',
+  heading: 'Three checks on every kit',
   intro:
-    'Three steps between the lab bench and the sealed pen. Each one leaves a record you can ask to see, so nothing about a batch rests on our word alone.',
+    'Every kit goes through the same three steps before it is listed for sale, and each one leaves a record you can ask to see.',
 };
 
 export const PROCESS_STEPS = [
   {
-    title: 'Synthesise',
-    text: 'APIs are produced in our own facility under controlled clean-room conditions, with no third-party resellers in the chain.',
+    title: 'Made in-house',
+    text: 'Produced in our own clean-room facility, so there is no reseller between us and your lab.',
     record: 'Batch record',
-    image: '/images/process/synthesise.jpg',
+    image: '/images/process/made-in-house.webp',
   },
   {
-    title: 'Verify',
-    text: 'Independent purity and concentration testing on every batch before a single unit is allocated to an order.',
+    title: 'Tested independently',
+    text: 'Every batch is tested for purity and concentration before a single kit is sold.',
     record: 'Janoshik certificate',
-    image: '/images/process/verify.jpg',
+    image: '/images/process/sealed.webp',
   },
   {
-    title: 'Seal',
-    text: 'Cold-stored and tamper-sealed, with accurate labelling and a batch number that resolves to its certificate.',
+    title: 'Sealed and labelled',
+    text: 'Cold-stored and tamper-sealed, with a batch number on the label that links to its certificate.',
     record: 'Batch number on the label',
-    image: '/images/process/seal.jpg',
+    image: '/images/process/tested-v2.webp',
   },
 ];
 
@@ -432,46 +445,44 @@ export const PROCESS_STEPS = [
  * the thing in frame that the habit depends on.
  */
 export const STORY = {
-  eyebrow: 'Our story',
-  heading: 'Built on getting the basics right.',
+  eyebrow: 'Why order from Lumivex',
+  heading: 'What comes with every order.',
   intro:
-    'Lumivex supplies laboratories across the UK and EU with research-grade peptides. We built the company around four plain habits: make it ourselves, have someone else check it, document everything, and answer the phone.',
+    'We make our own compounds, have every batch tested independently, document everything and answer the phone. Here is what that looks like when your order arrives.',
   dragHint: 'Drag to follow the story',
   chapters: [
     {
-      title: 'We make it ourselves',
+      title: 'Made by us, sold by us',
       text: 'Synthesised in-house under controlled clean-room conditions, with no resellers in the chain.',
-      image: '/images/story/make.jpg',
-      size: 'wide',
-      hotspots: [
-        { x: 22, y: 42, label: 'Laminar-flow hood' },
-        { x: 46, y: 56, label: 'Controlled fill bench' },
-        { x: 88, y: 60, label: 'Calibrated instruments' },
-      ],
-    },
-    {
-      title: 'Paperwork that matches',
-      text: 'Every batch is released with a certificate tied to its own batch number.',
-      image: '/images/story/paperwork.jpg',
+      image: '/images/made by us.png',
       size: 'narrow',
       hotspots: [
-        { x: 30, y: 55, label: 'Certificate per batch' },
-        { x: 66, y: 57, label: 'Batch number on the carton' },
+        { x: 52, y: 83, label: 'Fixed-volume pre-filled pen' },
+        { x: 35, y: 66, label: 'Tamper-sealed carton' },
       ],
     },
     {
-      title: 'Someone else checks it',
-      text: 'Purity and concentration are measured by Janoshik Analytical, an independent laboratory.',
-      image: '/images/story/check.jpg',
-      size: 'wide',
+      title: 'Paperwork that matches the pack',
+      text: 'Every batch is released with a certificate tied to its own batch number.',
+      image: '/images/paperwork-new.png',
+      size: 'narrow',
       hotspots: [
-        { x: 32, y: 51, label: 'Purity assay' },
-        { x: 59, y: 30, label: 'Chromatogram per batch' },
-        { x: 74, y: 52, label: 'Concentration measured' },
+        { x: 36, y: 66, label: 'Batch number on the pack' },
+        { x: 70, y: 71, label: 'Stated strength per kit' },
       ],
     },
     {
-      title: 'Shipped cold, answered by people',
+      title: 'Checked by an independent lab',
+      text: 'Purity and concentration are measured by Janoshik Analytical, an independent laboratory.',
+      image: '/images/independentlab.png',
+      size: 'narrow',
+      hotspots: [
+        { x: 38, y: 67, label: 'Sealed research carton' },
+        { x: 58, y: 83, label: 'Pre-filled research pen' },
+      ],
+    },
+    {
+      title: 'Shipped cold, supported by people',
       text: 'Held at 2–8°C, packed in insulated shippers, and questions answered by someone who has read the batch record.',
       image: '/images/story/ship.jpg',
       size: 'wide',
@@ -485,14 +496,22 @@ export const STORY = {
 
 /** Closing call to action above the FAQ. */
 export const ORDER_CTA = {
-  eyebrow: 'Ready when your lab is',
-  heading: 'Order the compound. The paperwork comes with it.',
-  body: 'Browse the catalogue, check the batch data on each listing, and place your order with the documentation already in hand.',
-  cta: 'Browse the catalogue',
+  eyebrow: 'Free UK & EU cold-chain shipping',
+  heading: 'Ready to order? Your certificate ships with it.',
+  body: 'Pick your compounds, check the batch data on each listing and check out in minutes — no account needed.',
+  cta: 'Shop all compounds',
   href: '/shop',
 };
 
 export const FAQS = [
+  {
+    q: 'How much is shipping?',
+    a: 'Cold-chain shipping is free on every order across the UK and EU. Compounds are packed at 2–8°C in insulated shippers rated for 48 hours in transit.',
+  },
+  {
+    q: 'Can I save on repeat orders?',
+    a: 'Yes. Put any compound on a standing order for three monthly deliveries and save 15% on each one, with cold-chain shipping included. You can pause or cancel at any time.',
+  },
   {
     q: 'What does "research use only" actually mean?',
     a: 'Every compound we supply is intended solely for in vitro laboratory research by qualified professionals. It may not be used in clinical trials involving humans, administered to humans or animals, or supplied onward for investigational use. Ordering confirms you accept these terms.',
@@ -1041,8 +1060,8 @@ export const PRODUCTS: Product[] = [
  * the product's `janoshik` block, never written here.
  */
 export const BESTSELLERS = {
-  eyebrow: 'Most ordered',
-  heading: 'Ordered most by the labs we supply',
+  eyebrow: 'Best sellers',
+  heading: 'Our most-ordered research kits',
   cta: 'Shop all compounds',
   badges: {
     'retatrutide-40mg': 'New',
@@ -1052,12 +1071,17 @@ export const BESTSELLERS = {
     'retatrutide-20mg': 'Bestseller',
     'bpc-157-tb-500-40mg': 'Bestseller',
   } as Record<string, string>,
+  /** Banner under the Story rail: the two 40mg metabolic kits in the photo. */
   feature: {
-    slug: 'retatrutide-40mg',
-    badge: 'New',
-    eyebrow: 'Third-party assayed by Janoshik',
-    body: 'a triple-agonist reference compound in a 40mg kit. The figures below are taken from the published third-party report for the current batch.',
+    slugs: ['retatrutide-40mg', 'tirzepatide-40mg'],
+    badge: 'Metabolic line',
+    eyebrow: 'Two kits · two published reports',
+    title: 'Retatrutide & Tirzepatide 40mg',
+    body: 'Our two 40mg metabolic kits, each sealed and pre-filled. Compare the latest purity and fill figures from Janoshik, then add either to your order.',
+    cta: 'Shop metabolic kits',
+    href: '/shop?category=metabolic',
   },
+
 };
 
 /**
@@ -1068,11 +1092,11 @@ export const BESTSELLERS = {
 export const SPOTLIGHT = {
   slug: 'tirzepatide-40mg',
   eyebrow: 'Tirzepatide 40mg',
-  heading: 'Documented from fill to bench',
+  heading: 'Know exactly what is in the kit',
   /** Transparent cut-out that carries its own ground — see Spotlight/Stage. */
   image: '/images/Documented.png',
   intro:
-    'A dual GIP / GLP-1 receptor agonist supplied for in vitro research, with the assay, batch record and storage conditions a lab needs to file it.',
+    'A dual GIP / GLP-1 receptor agonist for in vitro research — sold with the assay, batch record and storage details your lab needs to file it.',
   points: [
     {
       icon: 'assay',
@@ -1162,21 +1186,21 @@ export const TESTIMONIALS = [
       'Every consignment arrives with its batch documentation and a matching third-party certificate. The paperwork is the most complete we have received from a UK supplier.',
     author: 'Dr. Helena Voss',
     role: 'Principal Investigator, Zürich',
-    image: '/images/reviews/documentation.jpg',
+    image: '/images/review/Ivory Linen Portrait Against Forest Green-2.png',
   },
   {
     quote:
       'Sealed packaging, intact cold-chain, accurate order contents and traceable batch numbers throughout. Procurement and record-keeping are straightforward as a result.',
     author: 'Marcus Lindgren',
     role: 'Laboratory Director, Stockholm',
-    image: '/images/reviews/cold-chain.jpg',
+    image: '/images/review/GLOW GHK-CU Carton and Pen-4.png',
   },
   {
     quote:
       'Certificates are published per batch and verifiable against the issuing laboratory. Presentation and labelling are consistent across every order we have placed.',
     author: 'Dr. Amara Okafor',
     role: 'Research Lead, London',
-    image: '/images/reviews/certificates.jpg',
+    image: '/images/review/Candid smile behind a warm stone counter-5.png',
   },
 ];
 
