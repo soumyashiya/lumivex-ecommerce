@@ -51,7 +51,7 @@ export type HeroSlide = {
 export const HERO_SLIDES: HeroSlide[] = [
   {
     kind: 'video',
-    src: '/videos/hero-new2-uhq.mp4',
+    src: '/videos/new-hero-h264.mp4',
     title: ['Lab-tested peptides,', 'delivered cold.'],
     body: 'Research-grade peptides for UK and EU labs. Every batch third-party tested, with free cold-chain shipping and the certificate for your batch.',
     hold: 8,
@@ -607,10 +607,8 @@ export const PRODUCTS: Product[] = [
       hover: '/products/products/tiles/tirzepatide-hover.webp',
     },
     gallery: [
-      '/images/tirzepetide/Artboard2.jpg',
-      '/images/tirzepetide/Artboard2copy.jpg',
-      '/images/tirzepetide/trizyopen.jpg',
-      '/images/tirzepetide/trizyuv.jpg',
+      '/products/gallery/tirzepatide-carton.webp',
+      '/products/gallery/tirzepatide-pen.webp',
     ],
     longDescription:
       'A 40mg Tirzepatide formulation supplied in a pre-filled research device, provided exclusively for controlled laboratory R&D applications. Delivered in sealed format to support compound stability analysis, formulation studies, and delivery mechanism evaluation.',
@@ -672,10 +670,8 @@ export const PRODUCTS: Product[] = [
       hover: '/products/products/tiles/retatrutide-hover.webp',
     },
     gallery: [
-      '/images/retatwenty/retafront.jpeg',
-      '/images/retatwenty/Artboard4copy.jpg',
-      '/images/retatwenty/Artboard4copy3.jpg',
-      '/images/retatwenty/retatwentyuv.jpg',
+      '/products/gallery/retatrutide-20-carton.webp',
+      '/products/gallery/retatrutide-20-pen.webp',
     ],
     longDescription:
       'A 20mg Retatrutide formulation supplied in a pre-filled research device, provided exclusively for controlled laboratory R&D applications. Delivered in sealed format to support compound stability analysis, formulation studies, and delivery mechanism evaluation.',
@@ -736,10 +732,8 @@ export const PRODUCTS: Product[] = [
       hover: '/products/products/tiles/retatrutide-40-hover.webp',
     },
     gallery: [
-      '/images/retafourty/retafrontnew.jpg',
-      '/images/retafourty/retpen.jpg',
-      '/images/retafourty/retaopen.jpg',
-      '/images/retafourty/retauv.jpg',
+      '/products/gallery/retatrutide-40-carton.webp',
+      '/products/gallery/retatrutide-40-pen.webp',
     ],
     longDescription:
       'A 40mg Retatrutide formulation supplied in a pre-filled research device, provided exclusively for controlled laboratory R&D applications. Delivered in sealed format to support compound stability analysis, formulation studies, and delivery mechanism evaluation.',
@@ -799,10 +793,8 @@ export const PRODUCTS: Product[] = [
       hover: '/products/products/tiles/glow-hover.webp',
     },
     gallery: [
-      '/images/glow/glowfrontnew.jpg',
-      '/images/glow/glowpen.jpg',
-      '/images/glow/glowopen.jpg',
-      '/images/glow/glowuv.jpg',
+      '/products/gallery/glow-carton.webp',
+      '/products/gallery/glow-pen.webp',
     ],
     longDescription:
       'A 70mg three-compound reference blend supplied in a sealed pre-filled research device, provided exclusively for controlled laboratory R&D applications. Supplied in fixed-volume sealed format to support compound stability analysis, formulation studies, and analytical method development. This material is used solely for in vitro experiments and may not be (1) used in clinical trials involving humans, (2) administered to humans or animals as part of an experiment or investigation, or (3) supplied to another party for human investigational use.',
@@ -854,10 +846,8 @@ export const PRODUCTS: Product[] = [
     image: '/images/shop/bpc-157-tb-500.webp',
     tile: { src: '/products/products/tiles/bpc-157-tb-500.webp' },
     gallery: [
-      '/images/bpc/bpcfrontnew.jpg',
-      '/images/bpc/bpcpen.jpg',
-      '/images/bpc/bpcopen.jpg',
-      '/images/bpc/uvbpc.jpg',
+      '/products/gallery/bpc-157-tb-500-carton.webp',
+      '/products/gallery/bpc-157-tb-500-pen.webp',
     ],
     longDescription:
       'A 40mg BPC-157 & TB-500 reference formulation supplied in a sealed pre-filled research device, provided exclusively for controlled laboratory R&D applications. Supplied in fixed-volume sealed format to support compound stability analysis, formulation studies, and analytical method development.',
@@ -912,10 +902,8 @@ export const PRODUCTS: Product[] = [
       hover: '/products/products/tiles/nad-hover.webp',
     },
     gallery: [
-      '/images/nad/nadfront.jpg',
-      '/images/nad/pennad.jpg',
-      '/images/nad/opennad.jpg',
-      '/images/nad/uvnad.jpg',
+      '/products/gallery/nad-carton.webp',
+      '/products/gallery/nad-pen.webp',
     ],
     longDescription:
       'NAD+ (Nicotinamide Adenine Dinucleotide) reference formulation supplied for laboratory analysis and in vitro study only. Provided exclusively for controlled laboratory R&D applications in fixed-volume sealed format.',
@@ -956,9 +944,8 @@ export const PRODUCTS: Product[] = [
     image: '/images/shop/cjc-1295.webp',
     tile: { src: '/products/products/tiles/cjc-1295.webp' },
     gallery: [
-      '/images/shop/cjc-1295.webp',
-      '/products/products/detail/cjc-1295-box.webp',
-      '/products/products/tiles/cjc-1295.webp',
+      '/products/gallery/cjc-1295-carton.webp',
+      '/products/gallery/cjc-1295-pen.webp',
     ],
     longDescription:
       'CJC-1295 (without DAC) reference peptide supplied for laboratory analysis and in vitro study only. Provided in a fixed-volume sealed pre-filled device for controlled laboratory R&D applications.',
@@ -993,9 +980,8 @@ export const PRODUCTS: Product[] = [
     image: '/images/shop/mots-c.webp',
     tile: { src: '/products/products/tiles/mots-c.webp' },
     gallery: [
-      '/images/shop/mots-c.webp',
-      '/products/products/detail/mots-c-box.webp',
-      '/products/products/tiles/mots-c.webp',
+      '/products/gallery/mots-c-carton.webp',
+      '/products/gallery/mots-c-pen.webp',
     ],
     longDescription:
       'MOTS-C reference peptide supplied for laboratory analysis and in vitro study only. Provided in a fixed-volume sealed pre-filled device for controlled laboratory R&D applications.',
@@ -1029,9 +1015,8 @@ export const PRODUCTS: Product[] = [
     image: '/images/shop/tesamorelin.webp',
     tile: { src: '/products/products/tiles/tesamorelin.webp' },
     gallery: [
-      '/images/shop/tesamorelin.webp',
-      '/products/products/detail/tesamorelin-box.webp',
-      '/products/products/tiles/tesamorelin.webp',
+      '/products/gallery/tesamorelin-carton.webp',
+      '/products/gallery/tesamorelin-pen.webp',
     ],
     longDescription:
       'Tesamorelin reference peptide supplied for laboratory analysis and in vitro study only. Provided in a fixed-volume sealed pre-filled device for controlled laboratory R&D applications.',
@@ -1090,23 +1075,26 @@ export const BESTSELLERS = {
  * product's `janoshik` block at render time — never typed in here.
  */
 export const SPOTLIGHT = {
-  slug: 'tirzepatide-40mg',
-  eyebrow: 'Tirzepatide 40mg',
+  slug: 'nad-plus-1000mg',
+  eyebrow: 'NAD+ 1,000mg',
   heading: 'Know exactly what is in the kit',
   /** Transparent cut-out that carries its own ground — see Spotlight/Stage. */
   image: '/images/Documented.png',
   intro:
-    'A dual GIP / GLP-1 receptor agonist for in vitro research — sold with the assay, batch record and storage details your lab needs to file it.',
+    'Nicotinamide adenine dinucleotide for in vitro cellular metabolism and mitochondrial research — sold with the batch record and storage details your lab needs to file it.',
+  /* NAD+ has no Janoshik report on file yet, so these points carry no purity,
+     fill or batch figures. If one is published, figures go through
+     product.janoshik and the {purity} / {batch} / {fill} placeholders. */
   points: [
     {
       icon: 'assay',
-      title: 'Third-party assayed',
-      body: 'Purity measured at {purity} by Janoshik on batch {batch}. The full report is published and can be verified with the lab.',
+      title: 'Analytical reference material',
+      body: 'Supplied as a reference material for laboratory analysis and in vitro study only, in a fixed-volume sealed format.',
     },
     {
       icon: 'fill',
-      title: 'Measured, not calculated',
-      body: 'Each device holds {fill}, confirmed in the same report — stated content reflects what the pen actually contains.',
+      title: 'Two pens, 1,000mg in total',
+      body: 'Each kit holds two pre-filled 500mg pens and a research information sheet — nothing to reconstitute.',
     },
     {
       icon: 'cold',
@@ -1116,7 +1104,7 @@ export const SPOTLIGHT = {
     {
       icon: 'batch',
       title: 'Traceable by batch',
-      body: 'The batch number on the carton resolves to its own certificate, so the kit on your bench matches the paper on file.',
+      body: 'Every order is logged against the batch on the carton, so the kit on your bench matches the record on file.',
     },
   ] as const,
 };

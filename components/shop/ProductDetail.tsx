@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
 import {
   PROGRAMME,
@@ -28,6 +28,7 @@ export default function ProductDetail({
   const [added, setAdded] = useState(false);
   const [certOpen, setCertOpen] = useState(false);
   const [labOpen, setLabOpen] = useState(false);
+  const closeLab = useCallback(() => setLabOpen(false), []);
 
   const handleAdd = () => {
     addItem(product, qty);
@@ -43,17 +44,14 @@ export default function ProductDetail({
   const perDelivery =
     product.priceValue * (1 - PROGRAMME.discountPercent / 100);
 
-  // Surface each product's own lab analysis when its page opens — once per
-  // product per browser session, so browsing back to it isn't a nag.
+  // Show the product's lab analysis every time its page is opened.
   useEffect(() => {
     if (!hasCertificate) return;
-    const key = `lab-analysis-seen:${product.slug}`;
-    if (sessionStorage.getItem(key)) return;
-    const t = setTimeout(() => {
-      sessionStorage.setItem(key, '1');
-      setLabOpen(true);
-    }, 700);
-    return () => clearTimeout(t);
+    const t = setTimeout(() => setLabOpen(true), 700);
+    return () => {
+      clearTimeout(t);
+      setLabOpen(false);
+    };
   }, [hasCertificate, product.slug]);
 
   const detailItems = [
@@ -127,6 +125,11 @@ export default function ProductDetail({
               image={product.image}
               alt={product.name}
               gallery={product.gallery}
+              badge={
+                product.janoshik?.batchNumber
+                  ? `Batch ${product.janoshik.batchNumber}`
+                  : undefined
+              }
             />
           </div>
 
@@ -248,7 +251,8 @@ export default function ProductDetail({
           <>
             <LabAnalysisModal
               open={labOpen}
-              onClose={() => setLabOpen(false)}
+              onClose={closeLab}
+              productName={product.name}
               onViewReport={() => {
                 setLabOpen(false);
                 setCertOpen(true);

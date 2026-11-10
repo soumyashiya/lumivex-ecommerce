@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 import Lenis from 'lenis';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -11,6 +12,8 @@ export default function SmoothScroll({
   children: React.ReactNode;
 }) {
   const lenisRef = useRef<Lenis | null>(null);
+  const pathname = usePathname();
+  const firstPath = useRef(true);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -56,6 +59,19 @@ export default function SmoothScroll({
       delete (window as unknown as { __lenis?: Lenis }).__lenis;
     };
   }, []);
+
+  // Lenis owns the scroll position, so Next's scroll-to-top on a route
+  // change doesn't stick — a new page (e.g. a related product) opened at the
+  // old offset. Jump to the top whenever the path changes; hash links keep
+  // the same path and work as before.
+  useEffect(() => {
+    if (firstPath.current) {
+      firstPath.current = false;
+      return;
+    }
+    lenisRef.current?.scrollTo(0, { immediate: true, force: true });
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return <>{children}</>;
 }

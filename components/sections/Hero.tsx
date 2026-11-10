@@ -25,7 +25,7 @@ export default function Hero() {
         <HeroVideo
           src={slide.src}
           active
-          tintUntil={1.958}
+          tintUntil={1.583}
           className="h-full w-full object-cover"
         />
       </div>

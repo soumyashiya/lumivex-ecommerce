@@ -119,8 +119,8 @@ export default function Comparison() {
             className="relative aspect-[4/5] overflow-hidden rounded-card bg-stone shadow-[0_30px_60px_-30px_rgba(15,46,47,0.45)] [--reveal-delay:120ms] desktop:aspect-[4/4.4]"
           >
             <Image
-              src="/images/research-lines.webp"
-              alt="Sealed ALLUVI BPC-157 & TB-500 and Tesamorelin cartons with their pre-filled research pens"
+              src="/images/research-lines-new.webp"
+              alt="The nine ALLUVI research pens — one per line, from BPC-157 & TB-500 through to Tesamorelin — held fanned out"
               fill
               sizes="(max-width: 1023px) 100vw, 46vw"
               className="object-cover"
