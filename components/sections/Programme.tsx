@@ -18,27 +18,29 @@ export default function Programme() {
   return (
     <section id="programme" className="bg-green-deep">
       <div className="desktop:grid desktop:grid-cols-2">
-        {/* Product side — the studio photograph (Glow and NAD+ kits with
-            their pens on clear acrylic risers), full bleed to the panel's
-            edges like the reference offer block. */}
+        {/* Product side — the studio photograph (NAD+, Glow and Retatrutide
+            kits with their pens on a cream sweep), full bleed to the panel's
+            edges like the reference offer block. The background colour is the
+            photograph's own backdrop, so the panel never flashes a colour the
+            image doesn't carry. */}
         <div
           data-reveal
-          className="relative aspect-square overflow-hidden bg-[#d4bebb] desktop:aspect-auto"
+          className="relative aspect-square overflow-hidden bg-[#eae5dc] desktop:aspect-auto"
         >
           {/* Phones/tablets: a square version. Desktop: the half is taller
-              than it is wide, so a tall version is used — the same photo with
-              its own backdrop extended on every side (subscribe-tall-v4.webp),
+              than it is wide (713×1080, so 2:3), hence a tall version — the
+              same photo with its flat cream backdrop grown above and below,
               so nothing is cropped and the products sit with room around them. */}
           <Image
-            src="/images/subscribe-square-v3.webp"
-            alt="Glow GHK-Cu and NAD+ research kits with their pre-filled pens on clear acrylic risers"
+            src="/images/subscribe-new-square.webp"
+            alt="NAD+, Glow GHK-Cu and Retatrutide research kits with their pre-filled pens"
             fill
             sizes="100vw"
             className="object-cover desktop:hidden"
           />
           <Image
-            src="/images/subscribe-tall-v4.webp"
-            alt="Glow GHK-Cu and NAD+ research kits with their pre-filled pens on clear acrylic risers"
+            src="/images/subscribe-new-tall.webp"
+            alt="NAD+, Glow GHK-Cu and Retatrutide research kits with their pre-filled pens"
             fill
             sizes="50vw"
             className="hidden object-cover desktop:block"

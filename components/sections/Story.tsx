@@ -16,13 +16,12 @@ const pad = (n: number) => String(n).padStart(2, '0');
 
 /**
  * "Our story": copy on the left, a draggable rail of chapters on the right
- * that bleeds off the viewport edge. Each photograph carries hotspots naming
- * what is in frame; hover or focus a dot to read its label.
+ * that bleeds off the viewport edge.
  *
  * Dragging: mouse/pen users can grab the rail and pull it; touch users get
  * native horizontal scrolling. Snap is suspended while dragging so the rail
  * follows the pointer, and a click that ends a drag is swallowed so it
- * doesn't trigger a hotspot.
+ * doesn't act as a click.
  *
  * Rendered inside the "Most ordered" section, directly under the
  * "Documented from fill to bench" spotlight, so it has no section wrapper or
@@ -185,9 +184,6 @@ function StoryRail({ railRef: ref }: { railRef: RefObject<HTMLDivElement | null>
               sizes="(max-width: 767px) 300px, (max-width: 1023px) 460px, 600px"
               className="pointer-events-none object-cover"
             />
-            {chapter.hotspots.map((spot) => (
-              <Hotspot key={spot.label} {...spot} />
-            ))}
           </div>
 
           <figcaption className="mt-md flex gap-smd">
@@ -204,36 +200,6 @@ function StoryRail({ railRef: ref }: { railRef: RefObject<HTMLDivElement | null>
         </figure>
       ))}
     </div>
-  );
-}
-
-/**
- * White dot with a dark ring (as in the reference), a soft halo pulse for
- * motion-allowed users, and a label pill that rises in on hover / focus.
- */
-function Hotspot({ x, y, label }: { x: number; y: number; label: string }) {
-  return (
-    <button
-      type="button"
-      aria-label={label}
-      className="group/spot absolute z-10 -translate-x-1/2 -translate-y-1/2 p-sm"
-      style={{ left: `${x}%`, top: `${y}%` }}
-    >
-      <span
-        aria-hidden
-        className="absolute inset-sm rounded-pill bg-white/60 motion-safe:animate-ping"
-      />
-      <span
-        aria-hidden
-        className="relative block size-[22px] rounded-pill bg-white ring-[6px] ring-black/55 transition-colors duration-200 ease-ag group-hover/spot:ring-green group-focus-visible/spot:ring-green"
-      />
-      <span
-        aria-hidden
-        className="pointer-events-none absolute bottom-full left-1/2 mb-xs -translate-x-1/2 translate-y-xs whitespace-nowrap rounded-pill bg-white px-smd py-xs text-xs text-black opacity-0 transition-[opacity,transform] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover/spot:translate-y-0 group-hover/spot:opacity-100 group-focus-visible/spot:translate-y-0 group-focus-visible/spot:opacity-100"
-      >
-        {label}
-      </span>
-    </button>
   );
 }
 

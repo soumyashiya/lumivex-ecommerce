@@ -1,0 +1,11 @@
+[   73687ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2478
+[   73900ms] [LOG] [Fast Refresh] done in 303ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2478
+[   74008ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2478
+[   74286ms] [LOG] [Fast Refresh] done in 382ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2478
+[   81774ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2478
+[   82007ms] [LOG] [Fast Refresh] done in 340ms @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2478
+[  138036ms] [ERROR] WebSocket connection to 'ws://localhost:4100/_next/webpack-hmr?id=l_e6cIW0lGcvszEyUyY3o' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_client_0r5nbpw._.js:13423
+[  139040ms] [ERROR] WebSocket connection to 'ws://localhost:4100/_next/webpack-hmr?id=l_e6cIW0lGcvszEyUyY3o' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_client_0r5nbpw._.js:13423
+[  140046ms] [ERROR] WebSocket connection to 'ws://localhost:4100/_next/webpack-hmr?id=l_e6cIW0lGcvszEyUyY3o' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_client_0r5nbpw._.js:13423
+[  141054ms] [ERROR] WebSocket connection to 'ws://localhost:4100/_next/webpack-hmr?id=l_e6cIW0lGcvszEyUyY3o' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_client_0r5nbpw._.js:13423
+[  142064ms] [ERROR] WebSocket connection to 'ws://localhost:4100/_next/webpack-hmr?id=l_e6cIW0lGcvszEyUyY3o' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4100/_next/static/chunks/node_modules_next_dist_client_0r5nbpw._.js:13423
